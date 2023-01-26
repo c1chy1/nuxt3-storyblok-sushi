@@ -3,22 +3,18 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev:https": "nuxt dev --https",
+    "dev:https" : "nuxt dev --https",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@marvr/storyblok-rich-text-vue-renderer": "3.2.1",
-    "@nuxt/image-edge": "1.0.0-27840416.dc1ed65",
-    "@nuxtjs/fontaine": "^0.2.4",
+    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
+    "@nuxtjs/composition-api" : "^0.33.1",
     "@nuxtjs/tailwindcss": "^6.2.0",
-    "@tailwindcss/typography": "0.5.9",
-    "nuxt": "^3.1.1"
+    "nuxt": "^3.0.0-rc.14"
   },
   "dependencies": {
-    "@nuxtjs/critters": "^0.4.0",
-    "@storyblok/nuxt": "^5.0.2",
-    "@tailwindcss/aspect-ratio": "0.4.2"
+    "@storyblok/nuxt": "^5.0.2"
   }
 }

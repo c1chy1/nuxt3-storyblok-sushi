@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@marvr/storyblok-rich-text-vue-renderer': 3.2.1
   '@nuxtjs/tailwindcss': ^6.2.0
   '@storyblok/nuxt': ^5.0.2
   nuxt: ^3.1.1
@@ -9,6 +10,7 @@ dependencies:
   '@storyblok/nuxt': 5.0.2
 
 devDependencies:
+  '@marvr/storyblok-rich-text-vue-renderer': 3.2.1
   '@nuxtjs/tailwindcss': 6.3.0
   nuxt: 3.1.1
 
@@ -808,6 +810,19 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: true
+
+  /@marvr/storyblok-rich-text-types/3.2.1:
+    resolution: {integrity: sha512-W6iiJi8dPi7Dz4qGwnd+Zxtf7ltl+apjslHyWobikCoX8w6P4o7rpE1nBTsDjWK0ORncwId1B5bEPE0fpfILhg==}
+    dev: true
+
+  /@marvr/storyblok-rich-text-vue-renderer/3.2.1:
+    resolution: {integrity: sha512-6FQVhAu+TjyQs4Mu4PTkTX1LW7QIdfOnIEPy1TdVGK8px6VEIALm5j0/7o4tvqJhyxNTU2P9oB4bLO15Kn1qfA==}
+    dependencies:
+      '@marvr/storyblok-rich-text-types': 3.2.1
+      vue: 3.2.45
+    optionalDependencies:
+      vue-router: 4.1.6_vue@3.2.45
     dev: true
 
   /@netlify/functions/1.4.0:

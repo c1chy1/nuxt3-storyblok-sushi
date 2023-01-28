@@ -3,6 +3,16 @@ module.exports = {
 
   theme: {
     extend: {
+
+
+
+      fonts: {
+        // these will extend the default theme
+        sans: ['Open Sans', 'Open Sans:400,700'],
+        mono: ['Fira Code', 'Fira Mono:400,700'],
+        display: ['Dosis', 'Dosis:400,700'],
+      },
+
       colors: {
         'jobs-blue': {
           DEFAULT: '#0014AA',

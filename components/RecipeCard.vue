@@ -15,6 +15,8 @@ defineProps<{
       <div class="p-4 relative min-h-[200px]">
         <h3 class="font-bold text-xl text-shrimp-600 w-1/2">
           {{ content.title }}
+
+          test
         </h3>
         <span class="bg-gray-100 rounded-full absolute right-8 -top-[33px] p-4">
           <img

@@ -23,7 +23,9 @@ defineProps({
         <p class="text-xs text-gray-700 mb-8">{{ blok.text }}</p>
         <ul class="flex justify-end">
           <li v-for="action in blok.actions" class="mr-4">
-            <StoryblokComponent :blok="action" />
+            <NuxtLink to="/recipes">
+              <StoryblokComponent :blok="action" />
+            </NuxtLink>
           </li>
         </ul>
       </div>

@@ -44,7 +44,7 @@ const story = await fetchRecipeBySlug(slug as string)
         </div>
       </div>
     </header>
-    <div class="mx-auto prose px-8 md:px-0">
+    <div class="mx-auto prose prose-img:rounded-xl px-8 md:px-0">
       <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
     </div>
   </div>

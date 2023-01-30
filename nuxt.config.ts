@@ -1,5 +1,4 @@
-
-import {apiPlugin}  from "@storyblok/vue"
+import {apiPlugin} from "@storyblok/vue"
 
 export default defineNuxtConfig({
     ssr: false,
@@ -12,14 +11,16 @@ export default defineNuxtConfig({
             baseURL: 'https://a.storyblok.com',
         },
     },
-    modules:[ ['@storyblok/nuxt',
-        { accessToken: process.env.STORYBLOK_API_TOKEN,
+    modules: [['@storyblok/nuxt',
+        {
+            accessToken: process.env.STORYBLOK_API_TOKEN,
             bridge: true,
             use: [apiPlugin]
-        }] ,
+        }],
 
         '@nuxt/image-edge',
-        '@nuxtjs/tailwindcss'],
-
+        '@nuxtjs/tailwindcss',
+        '@nuxtjs/fontaine',
+        '@nuxtjs/critters'],
 })
 

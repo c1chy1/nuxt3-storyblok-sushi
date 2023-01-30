@@ -15,6 +15,8 @@
     "@nuxt/image-edge": "1.0.0-27840416.dc1ed65"
   },
   "dependencies": {
-    "@storyblok/nuxt": "^5.0.2"
+    "@storyblok/nuxt": "^5.0.2",
+    "@tailwindcss/aspect-ratio": "0.4.0",
+    "@tailwindcss/typography": "0.5.0"
   }
 }

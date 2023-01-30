@@ -5,10 +5,14 @@ specifiers:
   '@nuxt/image-edge': 1.0.0-27840416.dc1ed65
   '@nuxtjs/tailwindcss': ^6.2.0
   '@storyblok/nuxt': ^5.0.2
+  '@tailwindcss/aspect-ratio': 0.4.0
+  '@tailwindcss/typography': 0.5.0
   nuxt: ^3.1.1
 
 dependencies:
   '@storyblok/nuxt': 5.0.2
+  '@tailwindcss/aspect-ratio': 0.4.0
+  '@tailwindcss/typography': 0.5.0
 
 devDependencies:
   '@marvr/storyblok-rich-text-vue-renderer': 3.2.1
@@ -1276,6 +1280,23 @@ packages:
     resolution: {integrity: sha512-r23LAho/M2fk6bNUW39XDTMM8V+Eug9gZoZf3ZBRoW40fpnjzP8eQj0hnCqhFK5gfOFVsmsL206AAbQx1xz3lQ==}
     dependencies:
       '@storyblok/js': 2.0.11
+    dev: false
+
+  /@tailwindcss/aspect-ratio/0.4.0:
+    resolution: {integrity: sha512-WJu0I4PpqNPuutpaA9zDUq2JXR+lorZ7PbLcKNLmb6GL9/HLfC7w3CRsMhJF4BbYd/lkY6CfXOvkYpuGnZfkpQ==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dev: false
+
+  /@tailwindcss/typography/0.5.0:
+    resolution: {integrity: sha512-1p/3C6C+JJziS/ghtG8ACYalbA2SyLJY27Pm33cVTlAoY6VQ7zfm2H64cPxUMBkVIlWXTtWHhZcZJPobMRmQAA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
     dev: false
 
   /@trysound/sax/0.2.0:
@@ -3410,6 +3431,10 @@ packages:
   /lodash._reinterpolate/3.0.0:
     resolution: {integrity: sha512-xYHt68QRoYGjeeM/XOE1uJtvXQAgvszfBhjV4yvsQH0u2i9I6cI6c6/eG4Hh3UAOVn0y/xAXwmTzEay49Q//HA==}
 
+  /lodash.castarray/4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+    dev: false
+
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
@@ -3432,11 +3457,14 @@ packages:
 
   /lodash.isplainobject/4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
-    dev: true
 
   /lodash.memoize/4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
     dev: true
+
+  /lodash.merge/4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: false
 
   /lodash.pick/4.4.0:
     resolution: {integrity: sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q==}
@@ -3459,7 +3487,6 @@ packages:
 
   /lodash.uniq/4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
-    dev: true
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}

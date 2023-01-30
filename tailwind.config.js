@@ -1,18 +1,20 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+
 module.exports = {
   content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue'],
 
   theme: {
+
+
     extend: {
 
 
-
-      fonts: {
-        // these will extend the default theme
-        sans: ['Open Sans', 'Open Sans:400,700'],
-        mono: ['Fira Code', 'Fira Mono:400,700'],
-        display: ['Dosis', 'Dosis:400,700'],
+      fontFamily: {
+        sans: ["'Open Sans'", ...defaultTheme.fontFamily.sans],
+        mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
+        display: ['Dosis', 'display'],
       },
-
       colors: {
         'jobs-blue': {
           DEFAULT: '#0014AA',
@@ -48,5 +50,6 @@ module.exports = {
     },
 
   },
-  plugins: [],
+  plugins: [ require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
+
 }

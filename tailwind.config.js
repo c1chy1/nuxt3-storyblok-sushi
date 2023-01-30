@@ -49,7 +49,7 @@ module.exports = {
       }
 
     },
-    plugins: [ tailwindAspectRatio , tailwindTypography],
   },
+  plugins: [ tailwindAspectRatio , require('@tailwindcss/typography')],
 
 }

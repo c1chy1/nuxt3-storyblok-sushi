@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
 
-@font-face {
+    @apply bg-gray-100
 }
+
+

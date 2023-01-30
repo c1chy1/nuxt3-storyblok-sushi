@@ -19,7 +19,7 @@ defineProps<{
         </h3>
         <span class="bg-gray-100 rounded-full absolute right-8 -top-[33px] p-4">
           <img
-              class="w-[36px] h-[36px] filter-grayscale contrast-25"
+              class="w-[36px] h-[36px] grayscale contrast-[.25] contrast-25"
               :src="content.category.content.icon.filename"
               alt=""
           />

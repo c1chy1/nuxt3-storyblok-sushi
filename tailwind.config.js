@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-
+import tailwindAspectRatio from "@tailwindcss/aspect-ratio";
+import tailwindTypography from "@tailwindcss/typography"
 
 module.exports = {
   content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue'],
@@ -12,8 +13,8 @@ module.exports = {
 
       fontFamily: {
         sans: ["'Open Sans'", ...defaultTheme.fontFamily.sans],
-        mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
-        display: ['Dosis', 'display'],
+        mono: ["'Fira Code'", ...defaultTheme.fontFamily.mono],
+        display: ["'Dosis'", 'display'],
       },
       colors: {
         'jobs-blue': {
@@ -48,8 +49,7 @@ module.exports = {
       }
 
     },
-
+    plugins: [ tailwindAspectRatio , tailwindTypography],
   },
-  plugins: [ require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
 
 }

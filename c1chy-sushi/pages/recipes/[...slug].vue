@@ -4,6 +4,10 @@ const route = useRoute()
 const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
+
+
+console.log(story)
+
 </script>
 <template>
   <div class="container mx-auto text-gray-600">

@@ -24,8 +24,12 @@
 
 
 
-<script setup>
 
-defineProps({ blok: Object })
+<script setup lang="ts">
 
+defineProps({ blok:
+      {
+        type:Object,
+        default: ()=> ({})
+      }})
 </script>

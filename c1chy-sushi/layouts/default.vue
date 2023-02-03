@@ -1,13 +1,10 @@
 <template>
-$END$
+  <TheHeader />
+  <div class="page mt-16">
+    <slot />
+  </div>
 </template>
 
-<script>
-export default {
-name: "default"
-}
+<script setup>
+useState('locale', () => 'en')
 </script>
-
-<style scoped>
-
-</style>

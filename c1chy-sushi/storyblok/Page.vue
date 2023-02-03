@@ -2,6 +2,7 @@
 
 
   <div v-editable="blok">
+
     <StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
   </div>
 
@@ -10,9 +11,11 @@
 </template>
 
 
-<script setup>
+<script setup lang="ts">
 
-defineProps({ blok: Object })
-
-
+defineProps({ blok:
+      {
+        type:Object,
+        default: ()=> ({})
+      }})
 </script>

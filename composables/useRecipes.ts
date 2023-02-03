@@ -25,7 +25,7 @@ export function useRecipes() {
         }))
     }
 
-    async function fetchRecipeBySlug(slug: string) {
+    async function fetchRecipeBySlug(slug: string ) {
         try {
             const { data } = await storyblokApi.get('cdn/stories/', {
                 version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',

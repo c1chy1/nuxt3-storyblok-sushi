@@ -5,23 +5,20 @@ const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
 
-
-console.log(story)
-
 </script>
 <template>
-    <div class="text-gray-600">
-      <header v-if="story" class="relative mb-24 container mx-auto px-4 md:px-0">
-        <div class="flex justify-end w-full md:w-1/2">
-          <img
-              class="rounded-lg aspect-square object-cover"
-              :src="story.content.media.filename"
-              :alt="story.content.media.alt"
-          />
-        </div>
-        <div
-            class="bg-white rounded-lg overflow-hidden md:shadow-md md:px-8 py-8 w-full md:absolute md:w-1/2 top-4 right-8"
-        >
+  <div class="text-gray-600">
+    <header v-if="story" class="relative mb-24 container mx-auto px-4 md:px-0">
+      <div class="flex justify-end w-full md:w-1/2">
+        <img
+            class="rounded-lg aspect-square object-cover"
+            :src="story.content.media.filename"
+            :alt="story.content.media.alt"
+        />
+      </div>
+      <div
+          class="bg-white rounded-lg overflow-hidden md:shadow-md md:px-8 py-8 w-full md:absolute md:w-1/2 top-4 right-8"
+      >
         <h1 class="text-shrimp-500 font-display text-4xl font-bold mb-8 w-2/3">
           {{ story.content.title }}
         </h1>
@@ -35,13 +32,13 @@ console.log(story)
             <span class="ml-2">Serves {{ story.content.comensales }}</span>
           </li>
         </ul>
-          <div class="mx-auto prose px-8 md:px-0 prose-img:rounded-xl">
+        <div class="mx-auto prose px-8 md:px-0 prose-img:rounded-xl">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>
     </header>
-      <div class="mx-auto prose prose px-8 md:px-0 prose-img:rounded-xl">
-        <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
-      </div>
+    <div class="mx-auto prose prose px-8 md:px-0 prose-img:rounded-xl">
+      <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
     </div>
+  </div>
 </template>

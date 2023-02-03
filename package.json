@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev:https": "nuxt dev --https",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.2.0",
+    "nuxt": "^3.1.1",
+    "@marvr/storyblok-rich-text-vue-renderer": "3.2.1"
+  },
+  "dependencies": {
+    "@storyblok/nuxt": "^5.0.2",
+    "@nuxtjs/i18n": "^8.0.0-beta.9"
+  }
+}

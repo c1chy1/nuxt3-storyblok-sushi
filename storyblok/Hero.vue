@@ -15,8 +15,8 @@ defineProps({
           provider="storyblok"
           format="webp"
           aspect-ratio="16/9"
-          sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
-           class="w-full object-cover"
+          sizes="sm:w-16 md:w-32 lg:50vw xl:40vw"
+
           :src="blok.media.filename"
           :alt="blok.media.alt"
           :title="blok.media.title"

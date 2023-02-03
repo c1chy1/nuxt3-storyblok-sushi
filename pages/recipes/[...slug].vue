@@ -17,8 +17,8 @@ console.log(story)
               provider="storyblok"
               format="webp"
               aspect-ratio="16/9"
-              sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
-              class="w-full object-cover"
+              sizes="sm:50vw md:75vw lg:[600px] xl:[1200px]"
+              class="object-cover"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />

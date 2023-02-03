@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {content} from "../tailwind.config";
 
-defineProps({
+
+const props = defineProps({
   blok: {
     type: Object,
     default: () => ({}),
@@ -39,7 +39,7 @@ await fetchCategories()
         <div class="w-1/3">
           <img
               v-if="blok.media"
-              :src="blok.media.filename"
+              :src="props.blok.media.filename"
               :alt="blok.media.alt"
               :title="blok.media.title"
           />

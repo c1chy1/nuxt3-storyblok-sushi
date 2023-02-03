@@ -63,7 +63,7 @@ export default <Partial<Config>>{
                     '900': '#632702',
                 },
             }
-        },
+        }
     },
     content: [
         "./components/**/*.{vue,js}",

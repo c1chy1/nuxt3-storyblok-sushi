@@ -13,8 +13,12 @@ console.log(story)
     <div class="text-gray-600">
       <header v-if="story" class="relative mb-24 container mx-auto px-4 md:px-0">
         <div class="flex justify-end w-full md:w-1/2">
-          <img
-              class="rounded-lg aspect-square object-cover"
+          <NuxtImg
+              provider="storyblok"
+              format="webp"
+              aspect-ratio="16/9"
+              sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
+              class="w-full object-cover"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />

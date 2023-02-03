@@ -1,18 +1,33 @@
 <script setup lang="ts">
 
-
-const props = defineProps({
+defineProps({
   blok: {
     type: Object,
     default: () => ({}),
-  },
+  }
 })
+
+
+
 const { categories, fetchCategories, formattedCategories } = useCategories()
 await fetchCategories()
 </script>
 <template>
   <section class="relative categories bg-shrimp-400 w-full h-[600px] mt-24 md:mt-[9rem]">
-    <img src="/tint-orange.png" class="absolute right-0 -top-[2rem] md:-top-[12rem]" alt="" />
+
+
+
+    <NuxtImg
+        format="webp"
+        aspect-ratio="16/9"
+        class="absolute right-0 -top-[2rem] md:-top-[12rem]"
+        src="/tint-orange.png"
+        :alt="blok.media.alt"
+        :title="blok.media.title"
+    />
+
+
+
     <div class="z-10 absolute w-full py-20 px-8 md:px-0">
       <div class="container mx-auto flex items-center md:justify-between z-10 flex-col-reverse md:flex-row">
         <div class="w-full py-8 md:py-0 md:w-1/2">
@@ -37,12 +52,17 @@ await fetchCategories()
           </ul>
         </div>
         <div class="w-1/3">
-          <img
-              v-if="blok.media"
-              :src="props.blok.media.filename"
-              :alt="blok.media.alt"
-              :title="blok.media.title"
-          />
+
+          <NuxtImg
+                    v-if="blok.media"
+                    format="webp"
+                    aspect-ratio="16/9"
+                    provider="storyblok"
+                    sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
+                    class="w-2/3 object-cover mx-auto"
+                    :src="blok.media.filename"
+                    :alt="blok.media.alt"/>
+
         </div>
       </div>
     </div>

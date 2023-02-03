@@ -10,7 +10,12 @@ const story = await fetchRecipeBySlug(slug as string)
   <div class="text-gray-600">
     <header v-if="story" class="relative mb-24 container mx-auto px-4 md:px-0">
       <div class="flex justify-end w-full md:w-1/2">
-        <img
+        <NuxtImg
+            v-if="blok.media"
+            provider="storyblok"
+            format="webp"
+            aspect-ratio="16/9"
+            sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
             class="rounded-lg aspect-square object-cover"
             :src="story.content.media.filename"
             :alt="story.content.media.alt"

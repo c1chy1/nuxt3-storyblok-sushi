@@ -11,10 +11,12 @@ defineProps({
   <div class="hero">
     <div class="grid grid-cols-2 mx-auto container font-sans">
       <NuxtImg
+          v-if="blok.media"
+          provider="storyblok"
+          format="webp"
           aspect-ratio="16/9"
-          sizes="sm:100vw md:75vw lg:600px xl:1200px"
+          sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
            class="w-full object-cover"
-
           :src="blok.media.filename"
           :alt="blok.media.alt"
           :title="blok.media.title"

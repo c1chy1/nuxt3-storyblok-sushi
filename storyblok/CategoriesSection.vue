@@ -17,15 +17,7 @@ await fetchCategories()
 
 
 
-    <NuxtImg
-        format="webp"
-        aspect-ratio="16/9"
-        class="absolute right-0 -top-[2rem] md:-top-[12rem]"
-        src="/tint-orange.png"
-        :alt="blok.media.alt"
-        :title="blok.media.title"
-    />
-
+    <img src="/tint-orange.png" class="absolute right-0 -top-[2rem] md:-top-[12rem]" alt="" />
 
 
     <div class="z-10 absolute w-full py-20 px-8 md:px-0">

@@ -4,3 +4,7 @@
     <slot />
   </div>
 </template>
+
+<script setup>
+useState('locale', () => 'en')
+</script>

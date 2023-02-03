@@ -1,12 +1,11 @@
-@import url(./fonts.css);
-
 @tailwind base;
+
+@layer base {
+}
+
 @tailwind components;
 @tailwind utilities;
 
-body {
 
-    @apply bg-gray-100
+@font-face {
 }
-
-

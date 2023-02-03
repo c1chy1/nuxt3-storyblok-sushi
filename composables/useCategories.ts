@@ -2,6 +2,8 @@ const state = reactive({
     categories: [],
 })
 
+const locale = useState('locale')
+
 export function useCategories() {
     const storyblokApi = useStoryblokApi()
 
@@ -10,16 +12,21 @@ export function useCategories() {
             version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
             starts_with: 'categories/',
             is_startpage: false,
+            language: locale.value
         })
-
+        console.log(data)
         state.categories = data.stories
     }
 
+
+
+
     const formattedCategories = computed(() =>
         state.categories
-            .map(({ uuid, name, content }) => ({
+            .map(({ uuid, content }) => ({
                 uuid,
-                name,
+                name : content.label ,
+                content,
                 icon: content.icon,
             }))
             .slice(0, 3)

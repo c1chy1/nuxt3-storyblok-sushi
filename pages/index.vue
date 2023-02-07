@@ -1,7 +1,7 @@
 <script setup>
 const { slug } = useRoute().params;
 const { locale } = useI18n(); // Read the locale
-const resolveRelations = ['recipes-list']
+const resolveRelations = ['recipes-list.recipes']
 const storyblokApiInstance = useStoryblokApi();
 const url = slug && slug.length > 0 ? slug.join('/') : 'home';
 const { data } = await useAsyncData(
@@ -15,7 +15,7 @@ const { data } = await useAsyncData(
         }
     )
 );
-const story = useState(`${locale.value}-${url}-story`, () => data.value.data.story);
+const story = useState(`${locale.value}-${url}`, () => data.value.data.story);
 onMounted(() => {
   if (story.value && story.value.id) {
     useStoryblokBridge(

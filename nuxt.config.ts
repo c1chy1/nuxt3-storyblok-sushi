@@ -26,10 +26,10 @@ export default defineNuxtConfig({
 
       i18n: {
         strategy: 'prefix_except_default',
-        locales: ['en', 'de'],
+        locales: ['en', 'de', 'pl'],
         defaultLocale: 'en', // default locale
     },
     generate: {
-        routes: ['/de']
+        routes: ['/de', '/pl']
     }
 })

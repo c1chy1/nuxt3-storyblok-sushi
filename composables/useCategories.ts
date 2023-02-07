@@ -14,7 +14,6 @@ export function useCategories() {
             is_startpage: false,
             language: locale.value
         })
-        console.log(data)
         state.categories = data.stories
     }
 

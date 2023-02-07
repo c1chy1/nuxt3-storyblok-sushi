@@ -3,7 +3,7 @@ let { slug } = useRoute().params
 onBeforeMount(() => {
   useState('locale').value = 'de'
 })
-const resolveRelations = ['recipes-list.recipes']
+const resolveRelations = ['recipes-list']
 const story = await useStoryblok(
     slug && slug.length > 0 ? slug.join('/') : 'home',
     {

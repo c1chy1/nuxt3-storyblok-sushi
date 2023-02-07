@@ -2,8 +2,12 @@
 import { Ref } from 'vue'
 
 const state = reactive({
-    recipes: [],
+    recipes: []
 })
+
+
+console.log(state.recipes)
+
 const locale = useState('locale')
 export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
     const storyblokApi = useStoryblokApi()
@@ -17,6 +21,7 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
             language: locale.value
         }
 
+
         if (filter?.value) {
             params = {
                 ...params,
@@ -28,6 +33,19 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
             }
         }
 
+        /*            if (params.language === "pl") {
+                        params = {
+                            ...params,
+                            filter_query: {
+                                title: {
+                                    like: `*${filter.value}*`,
+                                },
+                            },
+                        }
+                    }*/
+
+        console.log(params)
+
         if (category?.value) {
             params = {
                 ...params,
@@ -38,16 +56,24 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
                 },
             }
         }
-        const { data } = await storyblokApi.get('cdn/stories/', params)
+
+        const {data} = await storyblokApi.get('cdn/stories/', params)
+
 
         state.recipes = data.stories.map(recipe => ({
             ...recipe,
+
+            name : recipe.content.title,
+
             content: {
                 ...recipe.content,
                 category: data.rels.find(({ uuid }) => uuid === recipe.content.category),
             },
         }))
+
+        console.log(state.recipes)
     }
+
 
     async function fetchRecipeBySlug(slug: string) {
         try {
@@ -69,12 +95,15 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
 
     const filteredRecipes = computed(() =>
         state.recipes.filter(
+
             recipe =>
                 recipe.name.toLowerCase().includes(filter.value.toLowerCase()) &&
                 recipe.content.category.name.toLowerCase().includes(category.value.toLowerCase()),
         ),
+
     )
 
+    console.log(filteredRecipes)
     return {
         ...toRefs(state),
         fetchRecipes,

@@ -1,9 +1,12 @@
 <template>
   <header class="w-full h-24 bg-[#f7f6fd]">
     <div class="container h-full mx-auto flex items-center justify-between">
-      <NuxtLink :to="localeUrl() || '/home'">
-        <h1 class="text-[#50b0ae] text-3xl font-bold">Storyblok Nuxt</h1>
-      </NuxtLink>
+
+      <NuxtLink :to="localeUrl() || '/home'" class="logo flex items-center font-display text-3xl font-bold text-gray-800">
+        <img src="/logo.svg" class="h-10 w-10 mr-2" alt="Sushi Wuut" />
+        c1chy<span class="text-shrimp-600">Sushi</span>
+        </NuxtLink>
+
       <nav>
         <ul class="flex items-center space-x-8 text-lg font-bold">
 

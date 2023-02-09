@@ -1,7 +1,7 @@
 <script setup>
 const { slug } = useRoute().params;
 const { locale } = useI18n(); // Read the locale
-const resolveRelations = ['recipes-list.recipes']
+const resolveRelations = ['category']
 const storyblokApiInstance = useStoryblokApi();
 const url = slug && slug.length > 0 ? slug.join('/') : 'home';
 const { data } = await useAsyncData(

@@ -6,19 +6,27 @@ const category = ref('')
 const { categories, fetchCategories } = useCategories()
 await fetchCategories()
 // Feature: fetching the recipes
-const { recipes, fetchRecipes } = useRecipes(filter, category)
+const { recipes, fetchRecipes , filteredRecipes } = useRecipes(filter, category)
 await fetchRecipes()
+
+onBeforeMount(() => {
+
+
+
+});
+
 watch(filter, async () => {
+
+  console.log(filteredRecipes)
+
   await fetchRecipes()
 
-
-  console.log(filter)
-  console.log(recipes)
 })
 
 watch(category, async () => {
   await fetchRecipes()
 })
+
 
 </script>
 <template>
@@ -44,7 +52,7 @@ watch(category, async () => {
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12">
       <RecipeCard
-          v-for="{ uuid, content, slug } in recipes"
+          v-for="{ uuid, content, slug  } in filteredRecipes"
           :key="uuid"
           :uuid="uuid"
           :content="content"

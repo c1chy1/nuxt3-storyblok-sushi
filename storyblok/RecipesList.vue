@@ -7,13 +7,13 @@ defineProps({
     default: () => ({}),
   },
 })
-
+const name = ref('')
 const locale = useState('locale')
 
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 
 
-const { recipes, fetchRecipes } = useRecipes()
+const { recipes, fetchRecipes } = useRecipes(name)
 await fetchRecipes()
 </script>
 <template>

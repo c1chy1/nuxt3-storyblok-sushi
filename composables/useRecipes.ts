@@ -1,4 +1,3 @@
-
 import { Ref } from 'vue'
 
 const state = reactive({
@@ -21,31 +20,6 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
             language: locale.value
         }
 
-
-        if (filter?.value) {
-            params = {
-                ...params,
-                filter_query: {
-                    title: {
-                        like: `*${filter.value}*`,
-                    },
-                },
-            }
-        }
-
-        /*            if (params.language === "pl") {
-                        params = {
-                            ...params,
-                            filter_query: {
-                                title: {
-                                    like: `*${filter.value}*`,
-                                },
-                            },
-                        }
-                    }*/
-
-        console.log(params)
-
         if (category?.value) {
             params = {
                 ...params,
@@ -62,18 +36,13 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
 
         state.recipes = data.stories.map(recipe => ({
             ...recipe,
-
-            name : recipe.content.title,
-
             content: {
                 ...recipe.content,
                 category: data.rels.find(({ uuid }) => uuid === recipe.content.category),
             },
         }))
 
-        console.log(state.recipes)
     }
-
 
     async function fetchRecipeBySlug(slug: string) {
         try {
@@ -95,10 +64,8 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
 
     const filteredRecipes = computed(() =>
         state.recipes.filter(
-
             recipe =>
-                recipe.name.toLowerCase().includes(filter.value.toLowerCase()) &&
-                recipe.content.category.name.toLowerCase().includes(category.value.toLowerCase()),
+                recipe.content.title.toLowerCase().includes(filter.value.toLowerCase())
         ),
 
     )

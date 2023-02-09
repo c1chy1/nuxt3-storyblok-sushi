@@ -4,9 +4,6 @@ const state = reactive({
     recipes: []
 })
 
-
-console.log(state.recipes)
-
 const locale = useState('locale')
 export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
     const storyblokApi = useStoryblokApi()
@@ -70,7 +67,6 @@ export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
 
     )
 
-    console.log(filteredRecipes)
     return {
         ...toRefs(state),
         fetchRecipes,

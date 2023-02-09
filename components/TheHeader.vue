@@ -4,13 +4,9 @@
       <NuxtLink :to="localeUrl() || '/home'">
         <h1 class="text-[#50b0ae] text-3xl font-bold">Storyblok Nuxt</h1>
       </NuxtLink>
-      <nav v-if="headerMenu">
+      <nav>
         <ul class="flex items-center space-x-8 text-lg font-bold">
-          <li v-for="blok in headerMenu" :key="blok._uid">
-            <NuxtLink :to="`${localeUrl()}/${blok.link.cached_url}`" class="hover:text-[#50b0ae]">
-              {{ blok.link.story.name }}
-            </NuxtLink>
-          </li>
+
           <li class="flex">
             <span
                 v-for="loc in locales"
@@ -22,7 +18,6 @@
             </span>
           </li>
 
-          <li> <button @click="test()">test</button></li>
         </ul>
       </nav>
     </div>
@@ -30,7 +25,8 @@
 </template>
 
 
-<script setup>
+<script setup lang="ts">
+
 const router = useRouter()
 const locales = ['en', 'de', 'pl']
 const locale = useState('locale')
@@ -40,19 +36,7 @@ const changeLocale = (loc) => {
   router.push({path: localeUrl() || '/home' })
 }
 
-const storyblokApi = useStoryblokApi()
-const { data } = await storyblokApi.get('cdn/stories/config', {
-  version: 'draft',
-  resolve_links: 'url',
-})
 
-
-function test() {
-  console.log(locale.value)
-}
-
-
-const headerMenu = ref(data.story.content.header_menu)
 </script>
 
 <style scoped>

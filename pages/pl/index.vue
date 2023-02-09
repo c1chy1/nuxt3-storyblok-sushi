@@ -3,7 +3,7 @@ let { slug } = useRoute().params
 onBeforeMount(() => {
   useState('locale').value = 'pl'
 })
-const resolveRelations = ['recipes-list']
+const resolveRelations = ['category']
 const story = await useStoryblok(
     slug && slug.length > 0 ? slug.join('/') : 'home',
     {
@@ -19,4 +19,5 @@ const story = await useStoryblok(
 
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
+
 </template>

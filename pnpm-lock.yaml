@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@averjs/nuxt-compression': ^1.2.2
   '@kevinmarrec/nuxt-pwa': ^0.16.2
   '@marvr/storyblok-rich-text-vue-renderer': 3.2.1
   '@nuxt/image-edge': ^1.0.0-27919678.2f5b64b
@@ -19,6 +20,7 @@ dependencies:
   '@storyblok/nuxt': 5.0.2
 
 devDependencies:
+  '@averjs/nuxt-compression': 1.2.2
   '@kevinmarrec/nuxt-pwa': 0.16.2
   '@marvr/storyblok-rich-text-vue-renderer': 3.2.1
   '@nuxt/image-edge': 1.0.0-27919678.2f5b64b
@@ -36,6 +38,19 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
+
+  /@averjs/nuxt-compression/1.2.2:
+    resolution: {integrity: sha512-Xf0FGSgDU2nFbiI5ZDLhJImGtKfoB3+Awfp7jPi6KrKmOsYThm814tbjeUSlZ4GpJfjNZ+0N+czM3T4tVdFO0w==}
+    dependencies:
+      '@nuxt/kit': 3.1.2
+      globby: 13.1.3
+      pathe: 0.3.9
+      vite-plugin-compression: 0.5.1
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+      - vite
+    dev: true
 
   /@babel/code-frame/7.18.6:
     resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
@@ -6466,6 +6481,18 @@ packages:
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.8
       vscode-uri: 3.0.7
+    dev: true
+
+  /vite-plugin-compression/0.5.1:
+    resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
+    peerDependencies:
+      vite: '>=2.0.0'
+    dependencies:
+      chalk: 4.1.2
+      debug: 4.3.4
+      fs-extra: 10.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite/4.1.1:

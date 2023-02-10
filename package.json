@@ -9,14 +9,16 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@marvr/storyblok-rich-text-vue-renderer": "3.2.1",
+
     "@kevinmarrec/nuxt-pwa": "^0.16.2",
+    "@marvr/storyblok-rich-text-vue-renderer": "3.2.1",
     "@nuxt/image-edge": "^1.0.0-27919678.2f5b64b",
     "@nuxtjs/fontaine": "^0.2.4",
     "@nuxtjs/tailwindcss": "^6.3.1",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/typography": "^0.5.9",
-    "nuxt": "^3.1.2"
+    "nuxt": "^3.1.2",
+    "@averjs/nuxt-compression": "^1.2.2"
   },
   "dependencies": {
     "@nuxtjs/critters": "^0.4.0",

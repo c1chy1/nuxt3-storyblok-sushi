@@ -3,7 +3,9 @@ import {apiPlugin} from "@storyblok/vue"
 export default defineNuxtConfig({
     ssr: false,
 
-
+    nitro: {
+        compressPublicAssets: true,
+    },
 
     css: ["~/assets/css/tailwind.css"],
     build: {
@@ -14,6 +16,8 @@ export default defineNuxtConfig({
             baseURL: 'https://a.storyblok.com',
         },
     },
+
+
     modules: [['@storyblok/nuxt',
         {
             accessToken: process.env.STORYBLOK_API_TOKEN,
@@ -22,6 +26,8 @@ export default defineNuxtConfig({
         }],
         ['@kevinmarrec/nuxt-pwa', {
 
+
+        baseURL: "/home",
             workbox: {
                 enabled: true,
 
@@ -45,6 +51,7 @@ export default defineNuxtConfig({
         '@nuxtjs/i18n',
         '@nuxt/image-edge',
         '@nuxtjs/tailwindcss',
+        '@averjs/nuxt-compression',
         '@nuxtjs/fontaine',
         '@nuxtjs/critters'],
 
@@ -62,5 +69,25 @@ export default defineNuxtConfig({
     },
 
 
+    compression: {
+        viteCompression: {
+            algorithm: 'gzip',
+            threshold: 513
+        }
+    },
 
+
+    vite: {
+        build: {
+            chunkSizeWarningLimit: 1024,
+            manifest: false,
+            rollupOptions: {
+                output: {
+                    manualChunks: {
+                    }
+                }
+            },
+            ssr: false
+        },
+    }
 })

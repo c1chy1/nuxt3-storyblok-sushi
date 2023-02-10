@@ -22,16 +22,22 @@ export default defineNuxtConfig({
         }],
         ['@kevinmarrec/nuxt-pwa', {
 
+            workbox: {
+                enabled: true,
+
+            },
             icon: {
                 maskablePadding: 0,
             },
+
             manifest: {
+                name: 'c1chy sushi',
                 lang: 'en',
                 display: 'standalone',
-                name: 'Nuxt App',
-                short_name: 'Nuxt App',
-                theme_color: '#00DC82',
-            },
+                description: "sushi recipes",
+                theme_color: "#D15105",
+                background_color: "#FB8D4B"
+            }
 
         }],
         '@nuxtjs/i18n',
@@ -40,21 +46,11 @@ export default defineNuxtConfig({
         '@nuxtjs/fontaine',
         '@nuxtjs/critters'],
 
-      i18n: {
+    i18n: {
         strategy: 'prefix_except_default',
         locales: ['en', 'de', 'pl'],
         defaultLocale: 'en', // default locale
     },
-
-/*    pwa: {
-
-        workbox: {
-            enabled: true,
-
-        },
-
-
-    }*/
 
 
 })

@@ -36,7 +36,9 @@ export default defineNuxtConfig({
                 display: 'standalone',
                 description: "sushi recipes",
                 theme_color: "#D15105",
-                background_color: "#FB8D4B"
+                background_color: "#FB8D4B",
+                start_url: '/',
+                useWebmanifestExtension: false,
             }
 
         }],
@@ -51,6 +53,14 @@ export default defineNuxtConfig({
         locales: ['en', 'de', 'pl'],
         defaultLocale: 'en', // default locale
     },
+
+    postcss: {
+        plugins: {
+            tailwindcss: {},
+            autoprefixer: {},
+        },
+    },
+
 
 
 })

@@ -2,6 +2,9 @@ import {apiPlugin} from "@storyblok/vue"
 
 export default defineNuxtConfig({
     ssr: false,
+
+
+
     css: ["~/assets/css/tailwind.css"],
     build: {
         transpile: ['@marvr/storyblok-rich-text-vue-renderer'],
@@ -17,7 +20,20 @@ export default defineNuxtConfig({
             bridge: true,
             use: [apiPlugin]
         }],
+        ['@kevinmarrec/nuxt-pwa', {
 
+            icon: {
+                maskablePadding: 0,
+            },
+            manifest: {
+                lang: 'en',
+                display: 'standalone',
+                name: 'Nuxt App',
+                short_name: 'Nuxt App',
+                theme_color: '#00DC82',
+            },
+
+        }],
         '@nuxtjs/i18n',
         '@nuxt/image-edge',
         '@nuxtjs/tailwindcss',
@@ -29,7 +45,16 @@ export default defineNuxtConfig({
         locales: ['en', 'de', 'pl'],
         defaultLocale: 'en', // default locale
     },
-    generate: {
-        routes: ['/de', '/pl']
-    }
+
+/*    pwa: {
+
+        workbox: {
+            enabled: true,
+
+        },
+
+
+    }*/
+
+
 })

@@ -12,7 +12,7 @@ defineProps<{
 }>()
 </script>
 <template>
-  <article class="bg-white rounded-lg overflow-hidden shadow-md" :key="uuid">
+  <article class="bg-white dark:bg-dark-navigation  rounded-lg overflow-hidden shadow-md" :key="uuid">
     <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" >
       <NuxtImg  aspect-ratio="16/9"
                 provider="storyblok"
@@ -21,7 +21,7 @@ defineProps<{
                 :src="content.media.filename"
                 :alt="content.media.alt" />
       <div class="p-4 relative min-h-[200px]">
-        <h3 class="font-bold text-xl text-shrimp-600 w-1/2">
+        <h3 class="font-bold text-xl text-shrimp-600 dark:text-dark-paragraph w-1/2">
           {{ content.title }}
         </h3>
         <span class="bg-gray-100 rounded-full absolute right-8 -top-[33px] p-4">

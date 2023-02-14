@@ -34,6 +34,13 @@ h2 {
 
 }
 
+h3 {
+
+    @apply  dark:bg-transparent transition-all duration-500
+
+
+}
+
 @layer base {
 
 }

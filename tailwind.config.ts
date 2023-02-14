@@ -37,9 +37,21 @@ export default <Partial<Config>>{
             },
 
             colors: {
+
+
+
+                'dark': {
+                    DEFAULT: '#55423d',
+                    background: '#55423d',
+                    navigation: '#9656a1',
+                    paragraph:'#fff3ec',
+                    buttonBackground : '#ffc0ad',
+                    buttonText : '#271c19'
+                },
+
                 'jobs-blue': {
-                    DEFAULT: '#0014AA',
-                    shade: '#001285',
+                    DEFAULT: '#55423d',
+                    shade: '#55423d',
                     contrast: '#FFFFFF',
                 },
                 'jobs-cyan': {

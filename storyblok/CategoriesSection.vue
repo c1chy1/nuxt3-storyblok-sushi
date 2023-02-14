@@ -11,7 +11,7 @@ const { categories, fetchCategories, formattedCategories } = useCategories()
 await fetchCategories()
 </script>
 <template>
-  <section class="relative categories bg-shrimp-400 w-full h-[600px] mt-24 md:mt-[9rem]">
+  <section class="relative categories bg-shrimp-400 dark:bg-dark-background w-full h-[600px] mt-24 md:mt-[9rem] transition-all duration-700">
 
     <img src="/tint-orange.png" class="absolute right-0 -top-[2rem] md:-top-[12rem]" alt="" />
     <div class="z-10 absolute w-full py-20 px-8 md:px-0">

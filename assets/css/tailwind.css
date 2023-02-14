@@ -6,7 +6,32 @@
 
 
 body {
-    @apply bg-gray-100  dark:bg-amber-700 transition-all duration-1000
+    @apply bg-gray-100  dark:bg-dark-background dark:text-dark-paragraph transition-all duration-500
+}
+
+header {
+
+    @apply bg-gray-100  dark:bg-dark-navigation dark:text-dark-paragraph transition-all duration-500
+
+}
+button {
+
+    @apply transition-all duration-700
+
+}
+
+h1 {
+
+    @apply dark:bg-transparent dark:text-dark-buttonBackground transition-all duration-500
+
+
+}
+
+h2 {
+
+    @apply  dark:bg-transparent dark:text-dark-buttonBackground transition-all duration-500
+
+
 }
 
 @layer base {

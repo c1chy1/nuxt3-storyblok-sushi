@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full h-24 bg-[#f7f6fd]">
+  <header class="fixed top-0 w-full h-24 dark:bg-dark-navigation z-50">
     <div class="container h-full mx-auto flex items-center justify-between">
 
       <NuxtLink :to="localeUrl() || '/home'" class="logo flex items-center font-display text-3xl font-bold text-gray-800">

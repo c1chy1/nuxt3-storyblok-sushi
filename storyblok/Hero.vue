@@ -1,14 +1,22 @@
 <script setup lang="ts">
+/*import { storeToRefs } from "pinia";
+import { usePWAInstallation } from "@/stores/pwa.store";
+import { useAppStore } from "@/stores/app.store";*/
+
+/*import { usePWAInstallation } from "@/stores/pwa.store";*/
+import Modal from "~/components/Modal.vue";
+
 defineProps({
   blok: {
     type: Object,
     default: () => ({}),
   },
 })
-</script>
 
+</script>
 <template>
   <div class="hero">
+
     <div class="grid grid-cols-2 mx-auto container font-sans">
       <NuxtImg
           v-if="blok.media"
@@ -22,6 +30,7 @@ defineProps({
           :title="blok.media.title"
       />
       <div class="p-4 pt-16">
+
         <h1 class="text-shrimp-600 font-display text-3xl font-bold mb-4">
           {{ blok.title }}
         </h1>

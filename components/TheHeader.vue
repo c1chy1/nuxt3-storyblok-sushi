@@ -20,6 +20,29 @@
               {{ loc }}
             </span>
           </li>
+<li>
+    <ClientOnly>
+      <img
+          class="h-8 mr-4 md:h-9 lg:mr-0"
+          :src="nuxtLogoSrc"
+          alt="Nuxt Logo"
+      >
+    </ClientOnly>
+
+
+</li>
+          <li>
+
+            <button
+                type="button"
+                @click="colorModeStore.switchColorMode"
+            >
+              <ClientOnly>
+                <Icon :name="colorModeIcon" />
+              </ClientOnly>
+            </button>
+
+          </li>
 
         </ul>
       </nav>
@@ -29,6 +52,16 @@
 
 
 <script setup lang="ts">
+
+
+
+
+import { useColorModeStore } from '@/stores/darkMode'
+const colorModeStore = useColorModeStore()
+const nuxtLogoSrc = computed(() => colorModeStore.isDarkMode ? '/img/full-logo-green-light.svg' : '/img/full-logo-green-dark.svg')
+const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'carbon:moon' : 'carbon:sun')
+
+
 
 const router = useRouter()
 const locales = ['en', 'de', 'pl']

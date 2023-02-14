@@ -43,11 +43,14 @@ export default defineNuxtConfig({
                 description: "sushi recipes",
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
-                start_url: '/',
+                start_url: '/home',
                 useWebmanifestExtension: false,
             }
 
         }],
+        '@nuxtjs/color-mode',
+        'nuxt-icon',
+        '@pinia/nuxt',
         '@nuxtjs/i18n',
         '@nuxt/image-edge',
         '@nuxtjs/tailwindcss',
@@ -68,6 +71,17 @@ export default defineNuxtConfig({
         },
     },
 
+
+    colorMode: {
+        preference: 'system', // default value of $colorMode.preference
+        fallback: 'light', // fallback value if not system preference found
+        hid: 'nuxt-color-mode-script',
+        globalName: '__NUXT_COLOR_MODE__',
+        componentName: 'ColorScheme',
+        classPrefix: '',
+        classSuffix: '', // remove -mode suffix for Tailwind Dark mode support
+        storageKey: 'nuxt-color-mode'
+    },
 
     compression: {
         viteCompression: {

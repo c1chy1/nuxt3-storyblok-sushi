@@ -3,8 +3,7 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
-<script >
-
+<script setup lang="ts">
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {

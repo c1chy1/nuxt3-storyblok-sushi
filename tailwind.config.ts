@@ -3,8 +3,12 @@ import tailwindTypography from "@tailwindcss/typography";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default <Partial<Config>>{
+
+    darkMode: "class",
+    mode: "jit",
     theme: {
         extend: {
+
             aspectRatio: {
                 auto: 'auto',
                 square: '1 / 1',

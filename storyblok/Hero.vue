@@ -39,7 +39,7 @@ defineProps({
         <h1 class="text-shrimp-600 font-display text-3xl font-bold mb-4">
           {{ blok.title }}
         </h1>
-        <p class="text-gray-700 mb-8">{{ blok.text }}</p>
+        <p class="mb-8">{{ blok.text }}</p>
         <ul class="flex justify-end">
           <li v-for="action in blok.actions" class="mr-4">
             <NuxtLink to="/recipes">

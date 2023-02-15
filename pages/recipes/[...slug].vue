@@ -10,9 +10,9 @@ console.log(story)
 
 </script>
 <template>
-    <div class="text-gray-600">
-      <header v-if="story" class="relative mb-24 container mx-auto px-4 md:px-0">
-        <div class="flex justify-end w-full md:w-1/2">
+<section>
+      <header v-if="story" class="relative my-32 container mx-auto px-4 md:px-0 bg-">
+        <div class="flex  justify-end w-full md:w-1/2">
           <NuxtImg
               loading="lazy"
               preload
@@ -26,9 +26,9 @@ console.log(story)
           />
         </div>
         <div
-            class="bg-white rounded-lg overflow-hidden md:shadow-md md:px-8 py-8 w-full md:absolute md:w-1/2 top-4 right-8"
+            class="bg-white dark:bg-dark-buttonText dark:bg-opacity-90 dark:contrast-[.80] rounded-lg overflow-hidden md:shadow-md md:px-8 py-8 w-full md:absolute md:w-1/2 top-4 right-8"
         >
-        <h1 class="text-shrimp-500 font-display text-4xl font-bold mb-12 w-2/3">
+        <h1 class="text-shrimp-700 font-display text-4xl font-bold mb-12 w-2/3">
           {{ story.content.title }}
         </h1>
           <span class="bg-gray-100 rounded-full absolute right-8 p-4">
@@ -38,27 +38,27 @@ console.log(story)
               alt=""
           />
         </span>
-        <ul class="flex mb-12 border-b border-gray-200 pb-4 text-gray-400">
-          <li class="flex items-center mr-4">
+        <ul class="flex mb-12 border-b border-gray-200 pb-4 text-gray-400 ">
+          <li class="flex items-center mr-4 dark:text-dark-paragraph transition-all">
             <ClientOnly>
-              <Icon name="ic:outline-more-time"  size="28" class="dark:text-dark-buttonText "/>
+              <Icon name="ic:outline-more-time"  size="28"/>
             </ClientOnly>
             <span class="ml-2">{{ story.content.prep_time }} mins</span>
           </li>
-          <li class="flex items-center">
+          <li class="flex items-center dark:text-dark-paragraph transition-all">
             <ClientOnly>
-              <Icon name="mdi:user-group"  size="28" class="dark:text-dark-buttonText"/>
+              <Icon name="mdi:user-group"  size="28"/>
             </ClientOnly>
             <span class="ml-2">Serves {{ story.content.comensales }}</span>
           </li>
         </ul>
-          <div class="prose leading-3 prose-li:text-dark-buttonText prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl">
+          <div class="prose prose-ul:font-display text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>
     </header>
-      <div class="mx-auto prose prose px-8 md:px-0 prose-img:rounded-xl ">
+      <div class="mx-auto mb-32  prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
         <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
-    </div>
+</section>
 </template>

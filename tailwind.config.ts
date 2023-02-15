@@ -49,22 +49,6 @@ export default <Partial<Config>>{
                     buttonText : '#271c19'
                 },
 
-                'jobs-blue': {
-                    DEFAULT: '#55423d',
-                    shade: '#55423d',
-                    contrast: '#FFFFFF',
-                },
-                'jobs-cyan': {
-                    DEFAULT: '#5CEBDE',
-                    shade: '#53d4c8',
-                    contrast: '#4A4A4A',
-                },
-                'jobs-yellow': {
-                    DEFAULT: '#FFFF64',
-                    shade: '#e6e65a',
-                    contrast: '#4A4A4A',
-                },
-
                 'shrimp': {
                     DEFAULT: '#FB8D4B',
                     '50': '#FFFFFF',

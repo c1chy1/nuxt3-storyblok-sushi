@@ -35,11 +35,11 @@ defineProps({
 
       </div>
 
-      <div class=" pt-16 w-full sm:w-1/3">
+      <div class=" p-8 md:p-4 mt-24 w-full sm:w-1/3">
         <h1 class="text-shrimp-600 font-display text-3xl font-bold mb-4">
           {{ blok.title }}
         </h1>
-        <p class="mb-8">{{ blok.text }}</p>
+        <p class="text-gray-700 mb-8">{{ blok.text }}</p>
         <ul class="flex justify-end">
           <li v-for="action in blok.actions" class="mr-4">
             <NuxtLink to="/recipes">

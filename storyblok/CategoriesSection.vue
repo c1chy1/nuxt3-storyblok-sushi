@@ -30,7 +30,7 @@ await fetchCategories()
                     :src="icon.filename"
                     :alt="icon.alt"
                 />
-                <h3 class="text-shrimp-600 dark:text-dark-buttonText font-display text-xl font-bold mb-4 ">
+                <h3 class="text-shrimp-600 dark:text-dark-paragraph font-display text-xl font-bold mb-4 ">
                   {{ name }}
                 </h3>
               </div>

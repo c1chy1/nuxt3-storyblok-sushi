@@ -37,19 +37,23 @@ const localeLang = locale.value
       Recepty
     </h2>
     <div class="w-full flex justify-between py-8 mb-4">
-      <div class="form-control w-1/2 flex items-center relative">
-        <input type="text" class="w-full bg-gray-200 rounded-lg px-4 py-2 text-sm"
+      <div class="form-control w-1/2 flex items-center relative dark:text-dark-buttonText">
+        <input type="text" class="w-full  dark:outline-0 bg-gray-200 rounded-lg px-4 py-2 text-sm"
                v-model="filter" />
-        <i class="absolute top-2 right-4 i-carbon-search"></i>
+        <ClientOnly>
+          <Icon name="material-symbols:content-paste-search-rounded"  size="28" class="dark:text-dark-buttonText absolute right-4"/>
+        </ClientOnly>
       </div>
-      <div class="form-control w-1/3 flex items-center relative">
-        <select class="w-full bg-gray-200 rounded-lg px-4 py-2 text-sm appearance-none"
+      <div class="form-control w-1/3 flex  items-center relative dark:text-dark-buttonText">
+        <select class="w-full bg-gray-200 dark:outline-0 rounded-lg px-4 py-2 text-sm appearance-none"
                 v-model="category">
           <option value="">None</option>
           <option v-for="{ content, uuid  } of categories"
                   :value="uuid">{{ content.label }}</option>
         </select>
-        <i class="absolute top-2 right-4 i-carbon-chevron-down"></i>
+        <ClientOnly>
+          <Icon name="material-symbols:keyboard-double-arrow-down"  size="28" class="absolute  right-4"/>
+        </ClientOnly>
       </div>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12">

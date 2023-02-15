@@ -17,20 +17,25 @@ defineProps({
 <template>
   <div class="hero">
 
-    <div class="grid grid-cols-2 mx-auto container font-sans">
-      <NuxtImg
-          v-if="blok.media"
-          provider="storyblok"
-          format="webp"
-          aspect-ratio="16/9"
-          sizes="sm:w-16 md:w-32 lg:50vw xl:40vw"
+    <div class="flex py-12 justify-between flex-col sm:flex-row mx-auto container font-sans">
 
-          :src="blok.media.filename"
-          :alt="blok.media.alt"
-          :title="blok.media.title"
-      />
-      <div class="p-4 pt-16">
+      <div class="w-full sm:w-1/2">
+        <NuxtImg
+            preload
+            v-if="blok.media"
+            provider="storyblok"
+            format="webp"
+            quality="100"
+            sizes="sm:w-16 md:w-32 lg:50vw xl:70vw"
+            class="h-auto"
+            :src="blok.media.filename"
+            :alt="blok.media.alt"
+            :title="blok.media.title"
+        />
 
+      </div>
+
+      <div class=" pt-16 w-full sm:w-1/3">
         <h1 class="text-shrimp-600 font-display text-3xl font-bold mb-4">
           {{ blok.title }}
         </h1>

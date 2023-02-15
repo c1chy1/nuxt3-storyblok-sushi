@@ -1,16 +1,17 @@
 <template>
-  <header class="fixed top-0 w-full h-24 dark:bg-dark-navigation z-50">
-    <div class="container h-full mx-auto flex items-center justify-between">
+  <header class="fixed   top-0 w-full h-24 dark:bg-dark-navigation z-50">
+    <div class="container   h-full mx-auto flex items-center justify-around">
 
-      <NuxtLink :to="localeUrl() || '/home'" class="logo flex items-center font-display text-3xl font-bold text-gray-800">
-        <img src="/logo.svg" class="h-10 w-10 mr-2" alt="Sushi Wuut" />
-        c1chy<span class="text-shrimp-600">Sushi</span>
-        </NuxtLink>
+      <NuxtLink :to="localeUrl() || '/home'"
+                class="logo flex items-center font-display text-3xl font-bold text-gray-800 dark:text-white transition-all">
+        <img src="/logo.svg" class="h-10 w-10 mr-2" alt="Sushi Wuut"/>
+        c1chy<span class="text-shrimp-600 ">Sushi</span>
+      </NuxtLink>
 
       <nav>
-        <ul class="flex items-center space-x-8 text-lg font-bold">
+        <ul class="flex  items-center space-x-8 text-lg font-bold transition-all duration-300">
 
-          <li class="flex">
+          <li class="flex relative">
             <span
                 v-for="loc in locales"
                 :class="{ 'bg-black text-white': (loc === locale) }"
@@ -19,29 +20,18 @@
             >
               {{ loc }}
             </span>
-          </li>
-<li>
-    <ClientOnly>
-      <img
-          class="h-8 mr-4 md:h-9 lg:mr-0"
-          :src="nuxtLogoSrc"
-          alt="Nuxt Logo"
-      >
-    </ClientOnly>
-
-
-</li>
-          <li>
-
             <button
                 type="button"
                 @click="colorModeStore.switchColorMode"
+                class="transition-all"
             >
+
+
+
               <ClientOnly>
-                <Icon :name="colorModeIcon" />
+                <Icon :name="colorModeIcon" size="48" class="absolute top-0"/>
               </ClientOnly>
             </button>
-
           </li>
 
         </ul>
@@ -52,15 +42,11 @@
 
 
 <script setup lang="ts">
+import {useColorModeStore} from '@/stores/darkMode'
 
-
-
-
-import { useColorModeStore } from '@/stores/darkMode'
 const colorModeStore = useColorModeStore()
 const nuxtLogoSrc = computed(() => colorModeStore.isDarkMode ? '/img/full-logo-green-light.svg' : '/img/full-logo-green-dark.svg')
-const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'carbon:moon' : 'carbon:sun')
-
+const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duotone' : 'ph:sun-duotone')
 
 
 const router = useRouter()
@@ -69,7 +55,7 @@ const locale = useState('locale')
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const changeLocale = (loc) => {
   locale.value = loc
-  router.push({path: localeUrl() || '/home' })
+  router.push({path: localeUrl() || '/home'})
 }
 
 

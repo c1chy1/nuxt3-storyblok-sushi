@@ -14,7 +14,9 @@ defineProps<{
 <template>
   <article class="bg-white dark:bg-dark-navigation  rounded-lg overflow-hidden shadow-md" :key="uuid">
     <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" >
-      <NuxtImg  aspect-ratio="16/9"
+      <NuxtImg
+          preload
+          aspect-ratio="16/9"
                 provider="storyblok"
                 format="webp"
                 sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]" class="w-full aspect-video object-cover"

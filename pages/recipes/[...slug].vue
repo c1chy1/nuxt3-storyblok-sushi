@@ -14,6 +14,7 @@ console.log(story)
       <header v-if="story" class="relative mb-24 container mx-auto px-4 md:px-0">
         <div class="flex justify-end w-full md:w-1/2">
           <NuxtImg
+              preload
               provider="storyblok"
               format="webp"
               aspect-ratio="16/9"

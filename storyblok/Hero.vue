@@ -36,7 +36,7 @@ defineProps({
       </div>
 
       <div class=" p-8 md:p-4 mt-24 w-full sm:w-1/3">
-        <h1 class="text-shrimp-600 font-display text-3xl font-bold mb-4">
+        <h1 class="text-shrimp-600 text-center font-display text-3xl font-bold mb-4">
           {{ blok.title }}
         </h1>
         <p class="mb-8">{{ blok.text }}</p>

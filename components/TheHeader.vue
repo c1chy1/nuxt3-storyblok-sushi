@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed   top-0 w-full h-24 bg-dark-navigation z-50">
+  <header class="fixed   top-0 w-full h-24 bg-shrimp-400 dark:bg-shrimp-900 z-50 transition-all duration-500">
     <div class="container   h-full mx-auto flex items-center justify-around">
 
       <NuxtLink :to="localeUrl() || '/home'"
@@ -9,13 +9,13 @@
       </NuxtLink>
 
       <nav>
-        <ul class="flex bg-dark-navigation items-center space-x-8 text-lg font-bold transition-all duration-500">
+        <ul class="flex bg-shrimp-400 dark:bg-shrimp-900  items-center space-x-8 text-lg font-bold transition-all duration-500">
 
           <li class="flex relative  ">
             <span
                 v-for="loc in locales"
                 :class="{ 'bg-black text-white ': (loc === locale) }"
-                class="block uppercase px-4 py-1 md:p-2 rounded-lg lg:px-4 cursor-pointer"
+                class="block uppercase px-4 py-1 md:p-2 rounded-lg lg:px-4 cursor-pointer transition-all duration-500"
                 @click="changeLocale(loc)"
             >
               {{ loc }}

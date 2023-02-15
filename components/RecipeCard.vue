@@ -16,6 +16,7 @@ defineProps<{
     <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" >
       <NuxtImg
           preload
+          loading="lazy"
           aspect-ratio="16/9"
                 provider="storyblok"
                 format="webp"

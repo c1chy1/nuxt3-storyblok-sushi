@@ -14,7 +14,9 @@ specifiers:
   '@storyblok/nuxt': ^5.1.0
   '@tailwindcss/aspect-ratio': 0.4.2
   '@tailwindcss/typography': ^0.5.9
+  gsap: npm:@gsap/business@^3.11.4
   nuxt: ^3.2.0
+  nuxt-gsap-module: ^1.7.2
   nuxt-icon: ^0.2.11
 
 dependencies:
@@ -22,6 +24,7 @@ dependencies:
   '@nuxtjs/i18n': 8.0.0-beta.9
   '@pinia/nuxt': 0.4.6
   '@storyblok/nuxt': 5.1.0
+  gsap: /@gsap/business/3.11.4
 
 devDependencies:
   '@averjs/nuxt-compression': 1.2.2
@@ -34,6 +37,7 @@ devDependencies:
   '@tailwindcss/aspect-ratio': 0.4.2
   '@tailwindcss/typography': 0.5.9
   nuxt: 3.2.0
+  nuxt-gsap-module: 1.7.2
   nuxt-icon: 0.2.11
 
 packages:
@@ -786,6 +790,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@gsap/business/3.11.4:
+    resolution: {integrity: sha512-+rAtCKKYO+EXUSSjQdkk5EEyZEC+FKJGinwTzQCpMfyCZN/n2ogtSH2HAP80S4gRGhCjBJeNxwyHrnUvHNDlyA==}
+    dev: false
 
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3610,6 +3618,10 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
 
+  /gsap/3.11.4:
+    resolution: {integrity: sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==}
+    dev: true
+
   /gzip-size/7.0.0:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -4845,6 +4857,12 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
+    dev: true
+
+  /nuxt-gsap-module/1.7.2:
+    resolution: {integrity: sha512-pVHsHv8Ra9Fn7CcuaWoG5MgigYwonNJipI/NGX8X5ta2IBitNWOYTgB+vHt1zYHUxo6lFaoptw1QrABm4hknQQ==}
+    dependencies:
+      gsap: 3.11.4
     dev: true
 
   /nuxt-icon/0.2.11:

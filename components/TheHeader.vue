@@ -44,8 +44,13 @@
 <script setup lang="ts">
 import {useColorModeStore} from '@/stores/darkMode'
 
+import { gsap } from "gsap";
+
+console.log(gsap)
+
+
+
 const colorModeStore = useColorModeStore()
-const nuxtLogoSrc = computed(() => colorModeStore.isDarkMode ? '/img/full-logo-green-light.svg' : '/img/full-logo-green-dark.svg')
 const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duotone' : 'ph:sun-duotone')
 
 

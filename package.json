@@ -19,12 +19,14 @@
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "nuxt": "^3.2.0",
+    "nuxt-gsap-module": "^1.7.2",
     "nuxt-icon": "^0.2.11"
   },
   "dependencies": {
     "@nuxtjs/critters": "^0.4.0",
     "@nuxtjs/i18n": "^8.0.0-beta.9",
     "@pinia/nuxt": "^0.4.6",
-    "@storyblok/nuxt": "^5.1.0"
+    "@storyblok/nuxt": "^5.1.0",
+    "gsap": "npm:@gsap/business@^3.11.4"
   }
 }

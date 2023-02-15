@@ -20,7 +20,7 @@ console.log(story)
               format="webp"
               aspect-ratio="16/9"
               sizes="sm:50vw md:75vw lg:[600px] xl:[1200px]"
-              class="object-cover"
+              class="object-cover rounded-lg aspect-square"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />
@@ -28,7 +28,7 @@ console.log(story)
         <div
             class="bg-white rounded-lg overflow-hidden md:shadow-md md:px-8 py-8 w-full md:absolute md:w-1/2 top-4 right-8"
         >
-        <h1 class="text-shrimp-500 font-display text-4xl font-bold mb-8 w-2/3">
+        <h1 class="text-shrimp-500 font-display text-4xl font-bold mb-12 w-2/3">
           {{ story.content.title }}
         </h1>
           <span class="bg-gray-100 rounded-full absolute right-8 p-4">
@@ -38,7 +38,7 @@ console.log(story)
               alt=""
           />
         </span>
-        <ul class="flex mb-8 border-b border-gray-200 pb-4">
+        <ul class="flex mb-12 border-b border-gray-200 pb-4 text-gray-400">
           <li class="flex items-center mr-4">
             <ClientOnly>
               <Icon name="ic:outline-more-time"  size="28" class="dark:text-dark-buttonText "/>
@@ -52,7 +52,7 @@ console.log(story)
             <span class="ml-2">Serves {{ story.content.comensales }}</span>
           </li>
         </ul>
-          <div class="mx-auto prose px-8 md:px-0 prose-img:rounded-xl prose:pl-0">
+          <div class="prose leading-3 prose-li:text-dark-buttonText prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>

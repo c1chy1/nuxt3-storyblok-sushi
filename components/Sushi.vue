@@ -23,22 +23,22 @@ const tl = gsap.timeline({
 onMounted(()=> {
 
   tl.from(circle1.value, {
-        x: "-=500",
+        x: "-=300",
         opacity:0,
         scrollTrigger: {
           trigger:scope.value,
-          start: '-=500',
+          start: '-=200',
           end: 'top 70%',
           scrub: 3
         },
       })
 
     .from(circle2.value, {
-      x: "+=500",
+      x: "+=300",
       opacity: 0,
       scrollTrigger: {
         trigger: scope.value,
-        start: '-=500',
+        start: '-=200',
         end: 'top 70%',
         scrub: 3
       },
@@ -47,8 +47,8 @@ onMounted(()=> {
     opacity: 0,
     scrollTrigger: {
       trigger: scope.value,
-      start: '-=350',
-      end: 'top 30%',
+      start: '-=120',
+      end: 'top 40%',
       scrub: 1
     },
   }, "-=1").
@@ -60,7 +60,7 @@ onMounted(()=> {
     ease: "Bounce.easeOut",
     scrollTrigger: {
       trigger: scope.value,
-      start: '-=290',
+      start: '-=90',
       end: 'top 30%',
       scrub: 1
     },
@@ -73,7 +73,7 @@ onMounted(()=> {
         ease: "Bounce.easeOut",
         scrollTrigger: {
           trigger: scope.value,
-          start: '-=230',
+          start: '-=30',
           end: 'top 30%',
           scrub: 1
         },
@@ -87,7 +87,7 @@ onMounted(()=> {
         rotation: 20,
         scrollTrigger: {
           trigger: scope.value,
-          start: '-=200',
+          start: '0',
           end: 'top 30%',
           scrub: 1
         },
@@ -100,7 +100,7 @@ onMounted(()=> {
         rotation: 20,
         scrollTrigger: {
           trigger: scope.value,
-          start: '-=200',
+          start: '0',
           end: 'top 30%',
           scrub: 1
         }

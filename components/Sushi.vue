@@ -1,7 +1,5 @@
 <script setup>
-import {useDefaultStore} from '~/stores/gsap'
 import gsap from 'gsap'
-const store = useDefaultStore()
 
 const scope = ref();
 const circle1 = ref()

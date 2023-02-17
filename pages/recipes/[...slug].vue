@@ -59,12 +59,12 @@ const story = await fetchRecipeBySlug(slug as string)
         </div>
       </div>
 
-        <Sushi/>
+
       </header>
-      <div class="mx-auto mb-32  prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
+      <div class="mx-auto prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
         <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
-
+  <Sushi/>
 
 </section>
 </template>

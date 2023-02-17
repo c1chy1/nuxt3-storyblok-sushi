@@ -111,7 +111,7 @@ onMounted(()=> {
     opacity: 0,
     scrollTrigger: {
       trigger: scope.value,
-      start: '-=200',
+      start: '-=100',
       end: 'top 30%',
       scrub: 1
     }

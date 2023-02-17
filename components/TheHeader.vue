@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed   top-0 w-full h-24 bg-shrimp-400 dark:bg-shrimp-900 z-50 transition-all duration-500">
+  <header class="static top-0 w-full h-24 bg-shrimp-400 dark:bg-shrimp-900 z-50 transition-all duration-500">
     <div class="container   h-full mx-auto flex items-center justify-around">
 
       <NuxtLink :to="localeUrl() || '/home'"
@@ -41,13 +41,6 @@
 
 <script setup lang="ts">
 import {useColorModeStore} from '@/stores/darkMode'
-
-import { gsap } from "gsap";
-
-console.log(gsap)
-
-
-
 const colorModeStore = useColorModeStore()
 const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duotone' : 'ph:sun-duotone')
 

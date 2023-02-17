@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 
     css: ["~/assets/css/tailwind.css"],
     build: {
-        transpile: ['@marvr/storyblok-rich-text-vue-renderer'],
+        transpile: ['@marvr/storyblok-rich-text-vue-renderer','gsap'],
     },
     image: {
         storyblok: {

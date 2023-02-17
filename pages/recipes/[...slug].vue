@@ -5,12 +5,11 @@ const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
 
-
-console.log(story)
-
 </script>
 <template>
 <section>
+
+
       <header v-if="story" class="relative my-32 container mx-auto px-4 md:px-0 bg-">
         <div class="flex  justify-end w-full md:w-1/2">
           <NuxtImg
@@ -52,13 +51,20 @@ console.log(story)
             <span class="ml-2">Serves {{ story.content.comensales }}</span>
           </li>
         </ul>
+
+
+
           <div class="prose prose-ul:font-display text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>
-    </header>
+
+        <Sushi/>
+      </header>
       <div class="mx-auto mb-32  prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
         <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
+
+
 </section>
 </template>

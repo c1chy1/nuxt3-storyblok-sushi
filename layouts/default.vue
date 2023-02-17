@@ -1,7 +1,11 @@
 <template>
+  <div id="smooth-wrapper">
+
   <TheHeader />
-  <div id="smooth-content" class="page mt-16">
-    <slot />
+    <div id="smooth-content">
+
+    <slot class="page mt-16" />
+    </div>
   </div>
 </template>
 
@@ -19,4 +23,5 @@ let smoother = ScrollSmoother.create({
 gsap.timeline().to(smoother, {
   duration: 3
 })
+
 </script>

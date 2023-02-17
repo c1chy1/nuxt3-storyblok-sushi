@@ -29,8 +29,7 @@ onMounted(()=> {
           trigger:scope.value,
           start: '-=500',
           end: 'top 70%',
-          scrub: 3,
-          markers: true
+          scrub: 3
         },
       })
 
@@ -41,8 +40,7 @@ onMounted(()=> {
         trigger: scope.value,
         start: '-=500',
         end: 'top 70%',
-        scrub: 3,
-        markers: true
+        scrub: 3
       },
     }, "-=1").from(bowl.value, {
     x: "-190",
@@ -51,8 +49,7 @@ onMounted(()=> {
       trigger: scope.value,
       start: '-=350',
       end: 'top 30%',
-      scrub: 1,
-      markers: true
+      scrub: 1
     },
   }, "-=1").
   from(sushi1.value, {
@@ -65,8 +62,7 @@ onMounted(()=> {
       trigger: scope.value,
       start: '-=290',
       end: 'top 30%',
-      scrub: 1,
-      markers: true
+      scrub: 1
     },
   }).from(
       sushi2.value, {
@@ -79,8 +75,7 @@ onMounted(()=> {
           trigger: scope.value,
           start: '-=230',
           end: 'top 30%',
-          scrub: 1,
-          markers: true
+          scrub: 1
         },
       },
       "-=0.2"
@@ -94,8 +89,7 @@ onMounted(()=> {
           trigger: scope.value,
           start: '-=200',
           end: 'top 30%',
-          scrub: 1,
-          markers: true
+          scrub: 1
         },
       },
       "-=.4").from(
@@ -108,8 +102,7 @@ onMounted(()=> {
           trigger: scope.value,
           start: '-=200',
           end: 'top 30%',
-          scrub: 1,
-          markers: true
+          scrub: 1
         }
 
       },
@@ -120,8 +113,7 @@ onMounted(()=> {
       trigger: scope.value,
       start: '-=200',
       end: 'top 30%',
-      scrub: 1,
-      markers: true
+      scrub: 1
     }
   });
 

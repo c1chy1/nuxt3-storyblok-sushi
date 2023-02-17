@@ -122,12 +122,12 @@ onMounted(()=> {
 <template>
 
 
-<div class="container flex justify-center h-screen w-full" ref="scope">
+<div class="container relative flex justify-center h-screen w-full" ref="scope">
   <svg xmlns="http://www.w3.org/2000/svg" width="1181" height="595" viewBox="0 0 1181 595" >
       <g id="sushi" transform="translate(-93 -86)">
         <rect id="frame" width="1181" height="595" transform="translate(93 86)" fill="none"/>
-        <circle ref="circle1" id="bg-01" cx="177" cy="177" r="177" transform="translate(394 186)" fill="#f3fcf0" opacity="0.11"/>
-        <circle ref="circle2" id="bg-02" cx="54" cy="54" r="54" transform="translate(866 186)" fill="#f3fcf0" opacity="0.11"/>
+        <circle ref="circle1" id="bg-01" cx="177" cy="177" r="177" transform="translate(394 186)" class="fill-dark-navigation dark:fill-[#f3fcf0]"  opacity="0.11"/>
+        <circle ref="circle2" id="bg-02" cx="54" cy="54" r="54" transform="translate(866 186)" class="fill-dark-navigation dark:fill-[#f3fcf0]"  opacity="0.11"/>
         <g ref="bowl" id="bowl" transform="translate(15 27)">
           <path id="Path_7" data-name="Path 7" d="M637.812,458.906s52.01,49.079,94.922,66.775,120.291,34.031,165.456,25.545,40.848-52.973,7.524-73.964S763.962,440.672,740.978,451.5s-62.3,16.651-62.3,16.651Z" opacity="0.095"/>
           <g id="Group_1" data-name="Group 1" transform="translate(78.005 66.923)">

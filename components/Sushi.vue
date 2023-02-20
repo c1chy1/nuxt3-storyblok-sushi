@@ -108,7 +108,7 @@ onMounted(() => {
         "-=.4").from(
         chopstick2, {
           duration: 0.4,
-          y: -250,
+          y: -350,
           opacity: 0,
           rotation: 20,
           scrollTrigger: {
@@ -125,7 +125,7 @@ onMounted(() => {
           opacity: 0,
           scrollTrigger: {
             trigger: scope.value,
-            start: '-=1',
+            start: '0',
             end: 'top 50%',
             scrub: 1
           },

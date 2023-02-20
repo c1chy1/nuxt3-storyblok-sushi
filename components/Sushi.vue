@@ -158,7 +158,7 @@ onUnmounted(() => {
       ref="scope"
       id="scope"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" width="1181" height="595" viewBox="0 0 1181 595">
+    <svg class="xl:w-3/4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1181 595">
       <g id="sushi" transform="translate(-93 -86)">
         <rect id="frame" width="1181" height="595" transform="translate(93 86)" fill="none"/>
         <circle id="bg-01" cx="177" cy="177" r="177" transform="translate(394 186)"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { RichTextRenderer } from '@marvr/storyblok-rich-text-vue-renderer'
 const route = useRoute()
 const { slug } = route.params
@@ -54,7 +55,7 @@ const story = await fetchRecipeBySlug(slug as string)
 
 
 
-          <div class="prose prose-ul:font-display text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
+          <div class="test prose prose-ul:font-display text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>
@@ -64,7 +65,7 @@ const story = await fetchRecipeBySlug(slug as string)
       <div class="mx-auto prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
         <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
-  <Sushi/>
 
+  <Sushi/>
 </section>
 </template>

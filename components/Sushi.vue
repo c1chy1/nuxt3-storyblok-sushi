@@ -3,8 +3,19 @@ import gsap from 'gsap'
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 
+const props = defineProps({
+
+  story : Object
+
+ })
+
+
+
 const ctx = ref();
 const scope = ref();
+
+
+console.log(props.thanks)
 
 onMounted(() => {
   setTimeout(() => {
@@ -142,7 +153,6 @@ onUnmounted(() => {
 
 <template>
 
-
   <div
       class=" h-screen  container mx-auto relative flex flex-col justify-center items-center w-full box-border"
       ref="scope"
@@ -175,7 +185,7 @@ onUnmounted(() => {
               d="M6.3,259.738V0c5.983,0,6.3,14.393,6.3,14.393S9.984,242.467,8.608,251.987c-1,6.941-1.772,7.881-2.115,7.881a.248.248,0,0,1-.193-.13Zm-2.311-7.751C2.611,242.467,0,14.393,0,14.393S.315,0,6.3,0V259.738a.248.248,0,0,1-.2.13c-.341,0-1.11-.94-2.113-7.881Z"
               transform="matrix(0.848, 0.53, -0.53, 0.848, 871.709, 186.214)" fill="#1f271b"/>
         <g  id="sushi-01"
-           transform="matrix(0.899, 0.438, -0.438, 0.899, 410, 224)">
+           transform="matrix(0.899, 0.438, -0.438, 0.899, 408, 224)">
           <g id="Union_3" data-name="Union 3" transform="translate(312 78)">
             <path id="Path_1-2" data-name="Path 1"
                   d="M22.783,34.467A68.972,68.972,0,0,1,6.794,32.811a18.4,18.4,0,0,1-4.749-1.758C1.34,30.635.5,29.986.5,29.263A.976.976,0,0,1,.514,29.1l.1-.584H.5V5.7c0-.723.84-1.373,1.545-1.79A18.4,18.4,0,0,1,6.794,2.156,68.972,68.972,0,0,1,22.783.5,68.974,68.974,0,0,1,38.772,2.156a18.4,18.4,0,0,1,4.749,1.758c.7.417,1.545,1.066,1.545,1.79V28.515h-.114l.1.584a.976.976,0,0,1,.014.164c0,.723-.84,1.373-1.545,1.79a18.4,18.4,0,0,1-4.749,1.758A68.974,68.974,0,0,1,22.783,34.467Z"
@@ -208,7 +218,7 @@ onUnmounted(() => {
         </g>
       </g>
     </svg>
-    <h1  id="heading" class="heading text-3xl font-display">Your Sushi is Ready 😊</h1>
+    <h1  id="heading" class="heading text-3xl font-display">{{story.content.thanks}}</h1>
 
   </div>
 

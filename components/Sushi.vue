@@ -127,8 +127,7 @@ onMounted(() => {
             trigger: scope.value,
             start: '-=1',
             end: 'top 50%',
-            scrub: 1,
-            markers:true
+            scrub: 1
           },
         })
   }, scope.value)

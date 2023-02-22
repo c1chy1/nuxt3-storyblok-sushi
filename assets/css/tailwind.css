@@ -11,7 +11,7 @@ body {
 
 nav {
 
-    @apply bg-gray-100  dark:bg-dark-navigation dark:text-dark-paragraph transition-all duration-500
+    @apply dark:bg-dark-navigation dark:text-dark-paragraph transition-all duration-500
 
 }
 button {

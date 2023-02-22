@@ -1,7 +1,8 @@
 <template>
 
-
+  <TheHeader/>
 <Navigation/>
+
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <slot class="page mt-16" />

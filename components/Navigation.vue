@@ -146,10 +146,7 @@ onMounted(()=> {
 
 })
 
-
 import {useColorModeStore} from '@/stores/darkMode'
-import {MenuIconsDE, MenuIconsEN, MenuIconsPL} from "#components";
-import MenuIcon from "~/components/MenuIcon.vue";
 
 const colorModeStore = useColorModeStore()
 const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duotone' : 'ph:sun-duotone')

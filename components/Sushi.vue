@@ -79,7 +79,7 @@ onMounted(() => {
         }, "-=1").from(sushi1, {
       duration: 0.4,
       opacity: 0,
-      y: "-=300",
+      y: "-=400",
       rotation: -70,
       ease: "Bounce.easeOut",
       scrollTrigger: {
@@ -92,7 +92,7 @@ onMounted(() => {
         sushi2, {
           duration: 0.4,
           opacity: 0,
-          y: "-=300",
+          y: "-=400",
           rotation: 70,
           ease: "Bounce.easeOut",
           scrollTrigger: {
@@ -106,7 +106,7 @@ onMounted(() => {
     ).from(
         chopstick1, {
           duration: 0.4,
-          y: -250,
+          y: -350,
           opacity: 0,
           rotation: 20,
           scrollTrigger: {

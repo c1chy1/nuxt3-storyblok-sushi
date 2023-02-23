@@ -11,7 +11,7 @@
       <nav>
         <ul class="flex bg-shrimp-400 dark:bg-shrimp-900  items-center space-x-8 text-lg font-bold transition-all duration-500">
 
-          <li class="flex relative  ">
+          <li class="flex relative">
             <span
                 v-for="loc in locales"
                 :class="{ 'bg-black text-white ': (loc === locale) }"
@@ -25,7 +25,6 @@
                 @click="colorModeStore.switchColorMode"
                 class="transition-all"
             >
-
               <ClientOnly>
                 <Icon :name="colorModeIcon" size="48" class="absolute top-0"/>
               </ClientOnly>

@@ -1,11 +1,11 @@
 <template>
   <div
-        class="switch z-50 fixed right-24 top-6"
+        class="switch z-50 fixed right-24 top-6 bg-shrimp-500 dark:bg-dark-navigation"
         @click="open"
     >
       <div class="toggle-button">
         <div class="toggle"></div>
-        <div class="moon-mask"></div>
+        <div class="moon-mask bg-shrimp-500 dark:bg-dark-navigation "></div>
         <div class="circles-wrapper">
           <div class="circle"></div>
           <div class="circle"></div>
@@ -29,30 +29,27 @@ const colorModeStore = useColorModeStore()
 /*
 const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duotone' : 'ph:sun-duotone')
 */
-import gsap from "gsap";
+import gsap from "gsap"
 const tl = gsap.timeline({ paused: true });
 
-
-const toggle = ref(false)
+let toggle = false
 
 
    const open = () => {
-
      colorModeStore.switchColorMode()
-
-      tl
-          .to(".wrapper", 0.1, { backgroundImage: "none", backgroundColor: "#111" , scale: 0.2 }, 0.2)
+     tl
           .set(".switch", { boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)" })
 
-      tl
-          .to(".toggle-button", 0.2, { scale: 0.7 }, 0)
+      tl.to(".toggle-button", 0.2, { scale: 0.7 }, 0)
           .set(".toggle", { backgroundColor: "#FFF" })
           .set(".circle", { display: "none" })
           .to(".moon-mask", 0.2, { translateY: 20, translateX: -10 }, 0.2)
           .to(".toggle-button", 0.2, { translateY: 49 }, 0.2)
+          .to(".toggle-button", 0.2, { scale: 0.9 }, 0.5)
 
-      toggle.value = !toggle.value
-      if(toggle.value){
+
+      toggle = !toggle
+      if(toggle){
         tl.restart();
 
       } else {
@@ -85,7 +82,6 @@ $white: #fff;
   width: 60px;
   height: 110px;
   padding-top: 2px;
-  background-color: $grey;
   border-radius: 40px;
   cursor: pointer;
   outline: none;
@@ -110,7 +106,6 @@ $white: #fff;
   width: 35px;
   height: 35px;
   margin: -74px 0 0 34px;
-  background-color: $grey;
   border-radius: 50%;
 }
 .circles-wrapper {
@@ -151,20 +146,6 @@ $white: #fff;
       transform: rotate(235deg);
     }
   }
-}
-.text p {
-  margin-left: 5px;
-  font-size: 55px;
-  line-height: 1.1;
-  font-weight: 700;
-}
-.social-icons {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 70px;
 }
 
 </style>

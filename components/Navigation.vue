@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed right-24 bottom-24 z-20">
+  <nav class="fixed right-24 bottom-24 z-20 rounded-lg dark:bg-transparent">
     <div class="cube " ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal" ref="horizontal"></div>
@@ -7,7 +7,7 @@
       </div>
       <div class="quadrant ">
         <div v-for="item in icons" :key="icons.name"
-             :id="item.id" class="quadrant__item  border-dark dark:border-white active:border-2 "
+             :id="item.id" class="quadrant__item  shadow-2xl  border-dark dark:border-white active:border-2 "
              @click="changeLocale(item.loc)">
           <div class="quadrant__item__content  "
           ><component

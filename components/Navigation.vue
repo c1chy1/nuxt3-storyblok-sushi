@@ -5,15 +5,13 @@
         <div class="plus-horizontal" ref="horizontal"></div>
         <div class="plus-vertical" ref="vertical"></div>
       </div>
-      <div class="quadrant">
+      <div class="quadrant ">
         <div v-for="item in icons" :key="icons.name"
-             :id="item.id" class="quadrant__item"
+             :id="item.id" class="quadrant__item  border-dark dark:border-white active:border-2 "
              @click="changeLocale(item.loc)">
-          <div class="quadrant__item__content"
-          >
-            <component
-                :is="item.icon" :id="item.name"
-                :class="{ 'bg-black text-white w-full': (item.loc === locale )}">
+          <div class="quadrant__item__content  "
+          ><component
+              :is="item.icon" :id="item.name">
           </component>
           </div>
         </div>
@@ -30,9 +28,10 @@ import SearchIcon from "~/components/SearchIcon.vue";
 
 
 const router = useRouter()
+
 const locale = useState('locale')
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
-const changeLocale = (loc) => {
+const changeLocale = (loc ) => {
   locale.value = loc
   router.push({path: localeUrl() || '/home'})
 }
@@ -44,10 +43,6 @@ const cube = ref()
 const horizontal = ref()
 const vertical = ref()
 const number = ref(0)
-
-
-const array = ref([])
-
 
 const icons = shallowRef([
 
@@ -253,15 +248,17 @@ const icons = shallowRef([
 var tl = gsap.timeline({paused: true});
 
 function playTimeline(e: any) {
-
   e.stopPropagation();
   tl.play();
+
 }
 
 function reverseTimeline(e: any) {
   e.stopPropagation();
   tl.timeScale(1.8);
+
   tl.reverse();
+
 }
 
 onMounted(() => {
@@ -276,6 +273,7 @@ onMounted(() => {
     height: '150px',
     ease: "Expo.easeOut"
   }, 'first');
+  tl.to("svg", 0.3, {rotate: -45}, 'first');
   tl.to(vertical.value, 0.3, {height: '0', backgroundColor: '#f45c41', ease: "Power1.easeIn"}, 'first');
   tl.to(horizontal.value, 0.3, {width: '0', backgroundColor: '#f45c41', ease: "Power1.easeIn"}, 'first');
   tl.to(cube.value, 0, {backgroundColor: 'transparent'});
@@ -357,7 +355,7 @@ onMounted(() => {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;

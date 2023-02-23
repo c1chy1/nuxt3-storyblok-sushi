@@ -1,19 +1,20 @@
 <template>
   <nav class="fixed right-24 bottom-24 z-20">
-
-
     <div class="cube " ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal" ref="horizontal"></div>
         <div class="plus-vertical" ref="vertical"></div>
       </div>
       <div class="quadrant">
-
-        <div v-for="item in icons" :key="icons.name" :id="item.id" class="quadrant__item">
-          <div class="quadrant__item__content">
-
-            <component :is="item.icon" :id="item.name" >
-            </component>
+        <div v-for="item in icons" :key="icons.name"
+             :id="item.id" class="quadrant__item"
+             @click="changeLocale(item.loc)">
+          <div class="quadrant__item__content"
+          >
+            <component
+                :is="item.icon" :id="item.name"
+                :class="{ 'bg-black text-white w-full': (item.loc === locale )}">
+          </component>
           </div>
         </div>
       </div>
@@ -25,6 +26,16 @@
 <script setup lang="ts">
 
 import gsap from "gsap";
+import SearchIcon from "~/components/SearchIcon.vue";
+
+
+const router = useRouter()
+const locale = useState('locale')
+const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
+const changeLocale = (loc) => {
+  locale.value = loc
+  router.push({path: localeUrl() || '/home'})
+}
 
 
 const id = 0
@@ -34,15 +45,21 @@ const horizontal = ref()
 const vertical = ref()
 const number = ref(0)
 
-const icons = shallowRef ([
+
+const array = ref([])
+
+
+const icons = shallowRef([
+
 
   {
 
+    loc: "pl",
     id: `quadrant_${number.value++}`,
     name: "fade-up",
     icon: defineComponent({
       render: () =>
-          h('svg', { height: '40px', fill: '#973928', viewBox: '0 0 496 496' , class:  'arrow-up'}, [
+          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'arrow-up'}, [
             h('path', {
               d: 'M0,249.2v121.6c0,27.2,21.6,46.4,48,46.4h400c26.4,0,48-19.2,48-46.4V249.2H0z',
               style: 'fill:#E13E3E'
@@ -72,11 +89,13 @@ const icons = shallowRef ([
 
   },
   {
+
+    loc: "de",
     id: `quadrant_${number.value++}`,
     name: "fade-right",
     icon: defineComponent({
       render: () =>
-          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class:  'arrow-right' }, [
+          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'arrow-right'}, [
             h('path', {
               d: 'M0,304v65.6C0,396.8,21.6,416,48,416h400c26.4,0,48-19.2,48-46.4V304H0z',
               style: 'fill:#F8D12E'
@@ -87,7 +106,7 @@ const icons = shallowRef ([
             }),
             h('rect', {
               width: '496',
-              height:'112',
+              height: '112',
               style: 'fill:#DB2727',
               y: '192'
             }),
@@ -106,7 +125,7 @@ const icons = shallowRef ([
             }),
             h('path', {
               d: 'M448,80H48l370.4,112H496v-65.6C496,99.2,474.4,80,448,80z',
-              style:"fill:black"
+              style: "fill:black"
             }),
             h('polygon', {
               style: 'fill:#A00808',
@@ -123,11 +142,13 @@ const icons = shallowRef ([
 
 
   {
+
+    loc: "en",
     id: `quadrant_${number.value++}`,
     name: "fade-left",
     icon: defineComponent({
       render: () =>
-          h('svg', { height: '40px', fill: '#973928', viewBox: '0 0 496 496' , class:  'arrow-left' }, [
+          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'arrow-left'}, [
             h('path', {
               d: 'M496,369.6c0,27.2-21.6,46.4-48,46.4H48c-26.4,0-48-19.2-48-46.4V126.4C0,99.2,21.6,80,48,80h400 c26.4,0,48,19.2,48,46.4V369.6z',
               style: 'fill:#29337A'
@@ -177,8 +198,8 @@ const icons = shallowRef ([
               style: 'fill:#FFFFFF'
             }),
             h('rect', {
-              x:'216',
-              y:'368',
+              x: '216',
+              y: '368',
               width: '64',
               height: '48',
               style: 'fill:#D9ECED'
@@ -194,8 +215,8 @@ const icons = shallowRef ([
               style: 'fill:#E51D35'
             }),
             h('rect', {
-              x:'232',
-              y:'368',
+              x: '232',
+              y: '368',
               width: '32',
               height: '48',
               style: 'fill:#AF0026'
@@ -223,39 +244,38 @@ const icons = shallowRef ([
   {
     id: `quadrant_${number.value++}`,
     name: "fade-down",
-    icon: defineComponent({
-      render: () =>
-          h('svg', {height: '26px', fill: '#973928', viewBox: '0 0 32 32', class:  'arrow-down' }, [
-            h('path', {
-              d: 'M13,10h3v3h-3v7h-3v-7H7v-3h3V8.745c0-1.189,0.374-2.691,1.118-3.512C11.862,4.41,12.791,4,13.904,4H16v3h-2.1   C13.402,7,13,7.402,13,7.899V10z',
-            }),
-          ]),
-    }),
-
+    icon: SearchIcon,
+    loc:'recipes'
   }
-
 ])
 
 
 var tl = gsap.timeline({paused: true});
-function playTimeline(e : any) {
+
+function playTimeline(e: any) {
 
   e.stopPropagation();
   tl.play();
 }
 
-function reverseTimeline(e : any) {
+function reverseTimeline(e: any) {
   e.stopPropagation();
   tl.timeScale(1.8);
   tl.reverse();
 }
-onMounted(()=> {
 
+onMounted(() => {
 
 
   tl.timeScale(1.6);
 
-  tl.to(cube.value, 0.7, { translate: '25% 25%' ,  rotation: 45, width: '150px', height: '150px', ease: "Expo.easeOut"}, 'first');
+  tl.to(cube.value, 0.7, {
+    translate: '25% 25%',
+    rotation: 45,
+    width: '150px',
+    height: '150px',
+    ease: "Expo.easeOut"
+  }, 'first');
   tl.to(vertical.value, 0.3, {height: '0', backgroundColor: '#f45c41', ease: "Power1.easeIn"}, 'first');
   tl.to(horizontal.value, 0.3, {width: '0', backgroundColor: '#f45c41', ease: "Power1.easeIn"}, 'first');
   tl.to(cube.value, 0, {backgroundColor: 'transparent'});
@@ -269,21 +289,6 @@ onMounted(()=> {
   tl.to('#fade-left', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2');
 
 })
-
-import {useColorModeStore} from '@/stores/darkMode'
-
-const colorModeStore = useColorModeStore()
-const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duotone' : 'ph:sun-duotone')
-
-
-const router = useRouter()
-const locales = ['en', 'de', 'pl']
-const locale = useState('locale')
-const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
-const changeLocale = (loc) => {
-  locale.value = loc
-  router.push({path: localeUrl() || '/home'})
-}
 
 
 </script>
@@ -301,7 +306,6 @@ const changeLocale = (loc) => {
   transition: background 0.2s;
   border-radius: 6px;
 }
-
 
 
 .plus-vertical,
@@ -358,6 +362,8 @@ const changeLocale = (loc) => {
   align-items: center;
   justify-content: center;
 }
+
+
 
 .arrow-down,
 .arrow-left,

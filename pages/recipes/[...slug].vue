@@ -9,9 +9,8 @@ const story = await fetchRecipeBySlug(slug as string)
 </script>
 <template>
 <section>
-
-
       <header v-if="story" class="relative my-32 container mx-auto px-4 md:px-0 bg-">
+
         <div class="flex  justify-end w-full md:w-1/2">
           <NuxtImg
               loading="lazy"

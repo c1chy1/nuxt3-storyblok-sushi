@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 w-full h-24 bg-shrimp-400 dark:bg-shrimp-900 z-50 transition-all duration-500">
+  <header class="fixed top-0 w-full h-24 bg-shrimp-400 dark:bg-shrimp-900 z-30 transition-all duration-500">
     <div class="container   h-full mx-auto flex items-center justify-around">
 
       <NuxtLink :to="localeUrl() || '/home'"
@@ -30,8 +30,8 @@
                 <Icon :name="colorModeIcon" size="48" class="absolute top-0"/>
               </ClientOnly>
             </button>
-          </li>
 
+          </li>
         </ul>
       </nav>
     </div>

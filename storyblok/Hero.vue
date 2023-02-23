@@ -1,11 +1,4 @@
 <script setup lang="ts">
-/*import { storeToRefs } from "pinia";
-import { usePWAInstallation } from "@/stores/pwa.store";
-import { useAppStore } from "@/stores/app.store";*/
-
-/*import { usePWAInstallation } from "@/stores/pwa.store";*/
-import Modal from "~/components/Modal.vue";
-
 defineProps({
   blok: {
     type: Object,
@@ -13,11 +6,14 @@ defineProps({
   },
 })
 
+
+const locale = useState('locale')
+const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
+
 </script>
 <template>
-  <div class="hero">
-
-    <div class="flex py-12 justify-between flex-col sm:flex-row mx-auto container font-sans">
+  <div class="hero container mx-auto flex flex-col">
+    <div class="flex py-12 justify-between flex-col sm:flex-row mx-auto  font-sans">
 
       <div class="w-full sm:w-1/2">
         <NuxtImg
@@ -51,3 +47,4 @@ defineProps({
     </div>
   </div>
 </template>
+

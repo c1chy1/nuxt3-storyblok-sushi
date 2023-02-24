@@ -1,20 +1,12 @@
 <template>
-
-
   <dark-mode-button/>
   <Navigation/>
-
   <div id="smooth-wrapper">
     <div id="smooth-content">
-
-
       <Logo/>
-      <slot class="page mt-16" />
-      <ShareIcons/>
-    </div>
-
+      <slot class="page mt-16" /></div>
   </div>
-
+  <ShareIcons/>
 
 
 </template>

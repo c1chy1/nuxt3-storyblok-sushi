@@ -52,13 +52,10 @@ const story = await fetchRecipeBySlug(slug as string)
           </li>
         </ul>
 
-
-
           <div class="test prose prose-ul:font-display text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>
-
 
       </header>
       <div class="mx-auto prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">

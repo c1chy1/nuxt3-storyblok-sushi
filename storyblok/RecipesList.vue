@@ -1,23 +1,3 @@
-<script setup lang="ts">
-
-
-const props = defineProps<{blok:{
-    title:string,
-
-  }}>();
-const locale = useState('locale')
-
-
-
-
-const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
-
-const { recipes, fetchRecipes } = useRecipes()
-
-await fetchRecipes()
-
-console.log(props.blok.title)
-</script>
 <template>
   <section class="recipes-list w-full">
     <div class="container mx-auto py-20 px-8 sm:px-0">
@@ -36,3 +16,16 @@ console.log(props.blok.title)
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+
+const props = defineProps<{blok:{
+    title:string,
+
+  }}>();
+const locale = useState('locale')
+
+const { recipes, fetchRecipes } = useRecipes()
+
+await fetchRecipes()
+</script>

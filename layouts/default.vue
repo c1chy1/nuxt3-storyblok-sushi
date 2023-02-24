@@ -1,11 +1,18 @@
 <template>
+
+
+
+
+<!--  <Preloader/>-->
   <dark-mode-button/>
-  <Navigation/>
+
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <Logo/>
-      <slot class="page mt-16" /></div>
+      <slot class="page mt-16" />
+    </div>
   </div>
+  <Navigation/>
   <ShareIcons/>
 
 

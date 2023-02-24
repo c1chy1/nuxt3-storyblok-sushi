@@ -2,8 +2,8 @@
   <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
     <div class="cube w-16 h-16 shadow-2xl rounded-lg" ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
-        <div class="plus-horizontal bg-black dark:bg-white " ref="horizontal"></div>
-        <div class="plus-vertical bg-black dark:bg-white" ref="vertical"></div>
+        <div class="plus-horizontal bg-white " ref="horizontal"></div>
+        <div class="plus-vertical bg-white" ref="vertical"></div>
       </div>
       <div class="quadrant ">
         <div v-for="item in icons" :key="icons.name"
@@ -22,29 +22,21 @@
 
 
 <script setup lang="ts">
-
 import gsap from "gsap";
 import SearchIcon from "~/components/SearchIcon.vue";
-
-
 const router = useRouter()
-
 const locale = useState('locale')
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const changeLocale = (loc ) => {
   locale.value = loc
   router.push({path: localeUrl() || '/home'})
 }
-
-
 const id = 0
 const cube = ref()
 const horizontal = ref()
 const vertical = ref()
 const number = ref(0)
-
 const icons = shallowRef([
-
   {
     loc: "pl",
     id: `quadrant_${number.value++}`,
@@ -78,10 +70,8 @@ const icons = shallowRef([
             }),
           ]),
     }),
-
   },
   {
-
     loc: "de",
     id: `quadrant_${number.value++}`,
     name: "fade-right",
@@ -129,12 +119,8 @@ const icons = shallowRef([
             }),
           ]),
     }),
-
   },
-
-
   {
-
     loc: "en",
     id: `quadrant_${number.value++}`,
     name: "fade-left",
@@ -146,46 +132,34 @@ const icons = shallowRef([
               style: 'fill:#29337A'
             }),
             h('path', {
-
               d: 'M48,80h400c26.4,0,48,19.2,48,46.4v243.2c0,27.2-25.6,46.4-52,46.4',
               style: 'fill:#1B265B'
             }),
-
             h('path', {
-
               d: 'M48,80h400c26.4,0,48,19.2,48,46.4V216',
               style: 'fill:#111D49'
             }),
             h('path', {
-
               d: 'M496,368.8c0,27.2-21.6,47.2-48,47.2H48c-26.4,0-48-20.8-48-48',
               style: 'fill:#111D49'
             }),
-
             h('polygon', {
-
               points: '272,248 442.4,80 394.4,80 248,226.4 101.6,80 53.6,80 224,248 53.6,416 101.6,416 248,269.6 394.4,416 442.4,416',
               style: 'fill:#FFFFFF'
             }),
-
             h('polygon', {
-
               points: '102.4,368 53.6,416 101.6,416 149.6,368',
               style: 'fill:#D9ECED'
             }),
             h('polygon', {
-
               points: '346.4,368 394.4,416 442.4,416 393.6,368',
               style: 'fill:#D9ECED'
             }),
             h('polygon', {
-
               points: '411.2,386.4 272,249.6 442.4,80 394.4,80 248,226.4 101.6,80 53.6,80 85.6,110.4',
               style: 'fill:#D9ECED'
             }),
-
             h('polygon', {
-
               points: '496,216 280,216 280,80 216,80 216,216 0,216 0,280 216,280 216,416 280,416 280,280 496,280 ',
               style: 'fill:#FFFFFF'
             }),
@@ -197,12 +171,10 @@ const icons = shallowRef([
               style: 'fill:#D9ECED'
             }),
             h('polygon', {
-
               points: '496,216 280,216 280,80 216,80 216,216 0,216 0,280 216,280 216,416 280,416 280,280 496,280 ',
               style: 'fill:#D9ECED'
             }),
             h('polygon', {
-
               points: '496,232 264,232 273.6,232 432.8,80 416.8,80 264,232 264,80 232,80 232,232 232,232 77.6,80 63.2,80 216,232 0,232 0,264 216.8,264 67.2,416 81.6,416 232,264 232,416 264,416 264,265.6 418.4,416 432.8,416 280,264 496,264 ',
               style: 'fill:#E51D35'
             }),
@@ -214,24 +186,19 @@ const icons = shallowRef([
               style: 'fill:#AF0026'
             }),
             h('polygon', {
-
               points: '114.4,368 67.2,416 81.6,416 129.6,368',
               style: 'fill:#AF0026'
             }),
             h('polygon', {
-
               points: '369.6,368 418.4,416 432.8,416 384,368',
               style: 'fill:#AF0026'
             }),
             h('polygon', {
-
               points: '278.4,232 432.8,80 416.8,80 264,232 264,80 232,80 232,232 232,232 77.6,80 63.2,80 151.2,167.2 343.2,328.8 280,264 496,264 496,232 264,232',
               style: 'fill:#AF0026'
             }),
-
           ]),
     }),
-
   },
   {
     id: `quadrant_${number.value++}`,
@@ -240,27 +207,18 @@ const icons = shallowRef([
     loc:'recipes'
   }
 ])
-
-
 var tl = gsap.timeline({paused: true});
-
 function playTimeline(e: any) {
   e.stopPropagation();
   tl.play();
-
 }
-
 function reverseTimeline(e: any) {
   e.stopPropagation();
   tl.timeScale(1.8);
-
   tl.reverse();
-
 }
 onMounted(() => {
-
   tl.timeScale(1.6);
-
   tl.to(cube.value, 0.7, {
     translate: '25% 25%',
     rotation: 45,
@@ -279,14 +237,12 @@ onMounted(() => {
   tl.to('#fade-down', 0.2, {opacity: 1, y: 0}, 'seperate+=0.2');
   tl.to('#quadrant_3', 0.15, {x: 5, y: 5, borderRadius : 10}, 'seperate');
   tl.to('#fade-left', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2');
-
 })
-
-
 </script>
 
 <style scoped lang="scss">
 .cube {
+
 
   display: flex;
   align-items: center;
@@ -295,11 +251,8 @@ onMounted(() => {
   cursor: pointer;
   transition: background 0.2s;
 }
-
-
 .plus-vertical,
 .plus-horizontal {
-
   border-radius: 4px;
   position: absolute;
   top: 50%;
@@ -307,19 +260,16 @@ onMounted(() => {
   transform: translate(-50%, -50%);
   z-index: 10;
 }
-
 .plus-vertical {
   height: 50%;
   width: 5px;
 }
-
 .plus-horizontal {
   width: 50%;
   height: 5px;
 }
-
 .quadrant {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
@@ -329,7 +279,6 @@ onMounted(() => {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .quadrant__item {
   width: 50%;
   height: 50%;
@@ -340,25 +289,16 @@ onMounted(() => {
 }
 #quadrant_0 {
   border-top-left-radius: 12px!important;
-
 }
 #quadrant_1 {
   border-top-right-radius: 12px!important;
-
 }
-
 #quadrant_2 {
   border-bottom-left-radius: 12px!important;
-
 }
 #quadrant_3 {
   border-bottom-right-radius: 12px!important;
-
 }
-
-
-
-
 .quadrant__item__content {
   width: 100%;
   height: 100%;
@@ -370,28 +310,21 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
 }
-
-
-
 .arrow-down,
 .arrow-left,
 .arrow-right,
 .arrow-up {
   opacity: 0;
 }
-
 .arrow-up {
   transform: translateY(10px);
 }
-
 .arrow-down {
   transform: translateY(-10px);
 }
-
 .arrow-left {
   transform: translateX(10px);
 }
-
 .arrow-right {
   transform: translateX(-10px);
 }

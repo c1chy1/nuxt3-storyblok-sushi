@@ -10,7 +10,7 @@ defineProps<{
 }>()
 </script>
 <template>
-  <article class="bg-white dark:bg-dark-buttonText  rounded-lg overflow-hidden shadow-2xl" :key="uuid">
+  <article class="bg-white dark:bg-shrimp-900  rounded-lg overflow-hidden shadow-2xl" :key="uuid">
     <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" >
       <NuxtImg
           preload

@@ -51,7 +51,6 @@ onMounted(() => {
         start: '-=200',
         end: 'top 70%',
         scrub: 3,
-
       },
     })
         .from(circle2, {
@@ -116,7 +115,7 @@ onMounted(() => {
             scrub: 1
           },
         },
-        "-=.4").from(
+        "-=.7").from(
         chopstick2, {
           duration: 0.4,
           y: -350,
@@ -130,15 +129,14 @@ onMounted(() => {
           }
         },
         "-=.4")
-
         .from(heading, {
           y: 400,
           opacity: 0,
           scrollTrigger: {
             trigger: scope.value,
-            start: '0',
-            end: 'top 50%',
-            scrub: 1
+            scrub: true,
+            start: '-15% -15%',
+            end: '0'
           },
         })
   }, scope.value)
@@ -223,8 +221,3 @@ onUnmounted(() => {
   </div>
 
 </template>
-
-
-<style scoped>
-
-</style>

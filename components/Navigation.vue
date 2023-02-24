@@ -1,11 +1,11 @@
 <template>
-  <nav class="fixed right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
+  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
     <div class="cube shadow-2xl rounded-lg" ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal bg-black dark:bg-white " ref="horizontal"></div>
         <div class="plus-vertical bg-black dark:bg-white" ref="vertical"></div>
       </div>
-      <div class="quadrant bg-black ">
+      <div class="quadrant bg-black dark:bg-white ">
         <div v-for="item in icons" :key="icons.name"
              :id="item.id" class="quadrant__item bg-[#FA6A14] dark:bg-dark-navigation  shadow-2xl  border-dark dark:border-white active:border-2 "
              @click="changeLocale(item.loc)">
@@ -287,10 +287,8 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .cube {
-  width: 60px;
-  height: 60px;
-  display: flex;
 
+  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;

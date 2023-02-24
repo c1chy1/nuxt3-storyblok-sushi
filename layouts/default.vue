@@ -6,9 +6,13 @@
 
   <div id="smooth-wrapper">
     <div id="smooth-content">
+
+
       <Logo/>
       <slot class="page mt-16" />
+      <ShareIcons/>
     </div>
+
   </div>
 
 

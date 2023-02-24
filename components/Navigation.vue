@@ -46,9 +46,7 @@ const number = ref(0)
 
 const icons = shallowRef([
 
-
   {
-
     loc: "pl",
     id: `quadrant_${number.value++}`,
     name: "fade-up",

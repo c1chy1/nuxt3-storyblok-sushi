@@ -1,8 +1,8 @@
 <template>
   <div class="sushi-container bg-[#BBBBAA] dark:bg-dark top-0 left-0 absolute flex flex-col  items-center  z-50 h-screen transition-all">
     <div class="chopstick-container ">
-      <div class="chopstick1"></div>
-      <div class="chopstick2"></div>
+      <div class="chopstick chopstick1 z-50"></div>
+      <div class="chopstick chopstick2"></div>
     </div>
     <div class="roll  ">
       <div class="rice"></div>
@@ -23,11 +23,6 @@
 <script setup lang="ts">
 
 
-/*var restart = document.querySelector(".seaweed");
-restart.onclick = function() {
-  slowbounce.reverse();
-}*/
-
 import gsap from 'gsap'
 const beginAnimation =  gsap.timeline();
 
@@ -39,10 +34,12 @@ onMounted(()=> {
 function start() {
 
   beginAnimation.from('.sushi-container',3,{y:-0, ease:"Back.easeOut"})
-      .to('.chopstick-container', 1.5, {top: 325}, 1.5)
-      .to('.chopstick1', 2, {rotation:10}, 3.5)
-      .to('.chopstick2', 2, {rotation:-10}, 3.5)
 
+      .to('.chopstick-container', 1.5, { top: 350}, 1.5)
+      .to('.chopstick', 1.5, { opacity:1}, 1.5)
+      .to('.chopstick2', 1, {backgroundColor: '#3F2F2FFF'}, 2)
+      .to('.chopstick1', 2, {rotation:190}, 3.5)
+      .to('.chopstick2', 2, {rotation:165}, 3.5)
       .to('.shine-left', .5, {left:'36.3%'}, 4.2)
       .to('.shine-right', .5, {left:'45.5%'}, 4.2)
       .to('.mouth', .5, {borderRadius: '90% 90% 10% 10%'}, 4.2)
@@ -60,8 +57,7 @@ function start() {
 
   position: relative;
 
-  /*animation: bounce 2s infinite;*/
-}
+
 .roll {
 
   display: flex;
@@ -70,6 +66,7 @@ function start() {
   position: relative;
 }
 .chopstick-container {
+
   height: 500px;
   width: 500px;
   position: relative;
@@ -178,32 +175,64 @@ function start() {
 }
 .chopstick1 {
   position: absolute;
-  top: 1%;
-  left: 52%;
-  transform: translate(-50%) rotate(-20deg);
-  border-top: 480px solid #b48f48;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  transform: translate(-50%) rotate(-200deg);
   height: 0;
   width: 10px;
-  z-index: 3;
+  background: #654F4F;
+
 }
 .chopstick2 {
   position: absolute;
-  top: 3%;
-  left: 50%;
-  transform: translate(-50%) rotate(-5deg);
-  border-top: 450px solid #907031;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  transform: translate(-50%) rotate(-185deg);
   height: 0;
   width: 10px;
-  -ms-transform: rotate(-5deg); /* IE 9 */
-  -webkit-transform: rotate(-5deg); /* Safari */
+  background: #654F4F;
 }
 
+  .chopstick {
 
-.dish
+    opacity: 0;
+    left:50%;
+    width: 15px;
+    height: 455px;
+
+    border-radius: 10px;
+    clip-path: polygon(35% 0%, 80% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .chopstick::before, .chopstick::after {
+    content: "";
+    width: 15px;
+    display: block;
+  }
+
+  .chopstick::before {
+    height: 25px;
+    background: #fff;
+  }
+
+  .chopstick::after {
+    height: 60px;
+    background: repeating-linear-gradient(0deg, #654F4F, #654F4F 11px, #F1E3AA 2px, #F1E3AA 19px);
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .chopstick-one {
+
+    right: 24px;
+    transform: translate(-50%) rotate(-20deg);
+  }
+
+  .chopstick-two {
+    right: 40px;
+    transform: rotate(10deg);
+  }
+
+
+  .dish
 {
   position: absolute;
 
@@ -218,34 +247,6 @@ function start() {
   -o-box-shadow:inset 0px 0 0 35px #FFF;
   box-shadow:inset 0px 0 0 35px #FFF;
 }
-
-/*.heart {
-  background-color: #ff4f20;
-  display: inline-block;
-  height: 15px;
-  position: absolute;
-  top: 40%;
-  left: 49%;
-  transform: rotate(-45deg);
-  width: 15px;
-}
-.heart:before,
-.heart:after {
-  content: "";
-  background-color: #ff4f20;
-  border-radius: 50%;
-  height: 15px;
-  position: absolute;
-  width: 15px;
-}
-.heart:before {
-  top: -8px;
-  left: 0;
-}
-.heart:after {
-  left: 8px;
-  top: 0;
-}*/
 
 @keyframes bounce {
   0%{transform: translateY(0);
@@ -290,6 +291,6 @@ function start() {
 @-webkit-keyframes fade-in { /* Safari and Chrome */
   from { opacity: 0; }
   to   { opacity: 1; }
-}
+}}
 
 </style>

@@ -1,10 +1,10 @@
 <template>
-  <div class="sushi-container top-0 left-0 absolute flex flex-col  items-center  z-50  h-screen bg-white">
-    <div class="chopstick-container">
+  <div class="sushi-container bg-[#BBBBAA] dark:bg-dark top-0 left-0 absolute flex flex-col  items-center  z-50 h-screen transition-all">
+    <div class="chopstick-container ">
       <div class="chopstick1"></div>
       <div class="chopstick2"></div>
     </div>
-    <div class="roll">
+    <div class="roll  ">
       <div class="rice"></div>
       <div class="seaweed"></div>
       <div class="salmon"></div>
@@ -14,13 +14,14 @@
       <div class="shine-right"></div>
       <div class="mouth"></div>
       <div class="tongue"></div>
+
     </div>
+    <div class="dish -bottom-16"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-/*var slowbounce = TweenMax.from(".sushi-container", 3, {y:-100, ease:Back.easeOut})
-.to("sushi-container", 3, {y:200, ease:Back.easeOut});*/
+
 
 /*var restart = document.querySelector(".seaweed");
 restart.onclick = function() {
@@ -32,7 +33,6 @@ const beginAnimation =  gsap.timeline();
 
 onMounted(()=> {
 
-
   start();
 })
 
@@ -42,32 +42,24 @@ function start() {
       .to('.chopstick-container', 1.5, {top: 325}, 1.5)
       .to('.chopstick1', 2, {rotation:10}, 3.5)
       .to('.chopstick2', 2, {rotation:-10}, 3.5)
+
       .to('.shine-left', .5, {left:'36.3%'}, 4.2)
       .to('.shine-right', .5, {left:'45.5%'}, 4.2)
       .to('.mouth', .5, {borderRadius: '90% 90% 10% 10%'}, 4.2)
       .to('.shine-left', .5, {left:'35%',top:'68.8%',width:'16px',height:'16px'}, 5.2)
+      .to('.roll', 1, {animation:'shake 1s 4'}, 2)
       .to('.shine-right', .5, {left:'44%',top:'69.8%',width:'16px',height:'16px'}, 5.2)
-      .to('.roll', 3, {animation:'shake 0.5s 3'}, 5.7)
       .to('.sushi-container',0.6,{ease:"Power4.easeOut", y:'-100%'}, 6.7)
-      .to('.repeat', 4, {animation: 'fade-in 3s forwards'}, 7.5);
 }
 
-function repeat() {
-  beginAnimation.restart();
-}
-
-/*function middle() {
-  var middleAnimation = new TimelineMax();
-  middleAnimation.from('.shine-left', .5, {left:'36.3%'}, 4.2)
-  .to('.shine-left', .5, {left:'32%',width:'10px',height:'10px'}, 4.2);
-}*/
 </script>
 
-<style scoped>
+<style>
 
 .sushi-container {
 
   position: relative;
+
   /*animation: bounce 2s infinite;*/
 }
 .roll {
@@ -168,44 +160,39 @@ function repeat() {
   position: absolute;
   top: 75%;
   left: 35.7%;
-  transform: translate(-50%);
+  transform: translate(-50%) rotate(3deg);
   width: 30px;
   height: 20px;
   background-color: #000;
   border-radius: 0 0 90% 90%;
-  transform: rotate(3deg);
 }
 .tongue {
   position: absolute;
   top: 77.3%;
   left: 37%;
-  transform: translate(-50%);
+  transform: translate(-50%) rotate(3deg);
   width: 17px;
   height: 5px;
   background-color: #ff1233;
   border-radius: 50%;
-  transform: rotate(3deg);
 }
 .chopstick1 {
   position: absolute;
   top: 1%;
   left: 52%;
-  transform: translate(-50%);
+  transform: translate(-50%) rotate(-20deg);
   border-top: 480px solid #b48f48;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   height: 0;
   width: 10px;
-  -ms-transform: rotate(-20deg); /* IE 9 */
-  -webkit-transform: rotate(-20deg); /* Safari */
-  transform: rotate(-20deg);
   z-index: 3;
 }
 .chopstick2 {
   position: absolute;
   top: 3%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%) rotate(-5deg);
   border-top: 450px solid #907031;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -213,11 +200,24 @@ function repeat() {
   width: 10px;
   -ms-transform: rotate(-5deg); /* IE 9 */
   -webkit-transform: rotate(-5deg); /* Safari */
-  transform: rotate(-5deg);
 }
 
 
+.dish
+{
+  position: absolute;
 
+  z-index:-1;
+  width: 350px;
+  height: 350px;
+  background:rgb(243 244 246);
+  border-radius:50%;
+  transform:rotateX(60deg);
+  -webkit-box-shadow:inset 0px 0 0 35px #FFF;
+  -moz-box-shadow:inset 0px 0 0 35px #FFF;
+  -o-box-shadow:inset 0px 0 0 35px #FFF;
+  box-shadow:inset 0px 0 0 35px #FFF;
+}
 
 /*.heart {
   background-color: #ff4f20;
@@ -261,6 +261,9 @@ function repeat() {
   100% { transform: translateY(0px); }
 }
 
+
+
+
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -275,6 +278,7 @@ function repeat() {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -288,17 +292,4 @@ function repeat() {
   to   { opacity: 1; }
 }
 
-.repeat {
-  position: absolute;
-  top: 300px;
-  left: 50%;
-  transform: translate(-50%);
-  color: black;
-  opacity: 0;
-  cursor: pointer;
-}
-.repeat:hover {
-  transition: 1s;
-  color: #bb0d0d;
-}
 </style>

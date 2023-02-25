@@ -3,7 +3,7 @@
 
 
 
-  <Preloader/>
+  <Intro/>
   <dark-mode-button/>
 
   <div id="smooth-wrapper">

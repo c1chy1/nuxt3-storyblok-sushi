@@ -4,8 +4,7 @@
 
 
   <Intro/>
-  <dark-mode-button/>
-
+  <DarkModeButton/>
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <Logo/>

@@ -1,22 +1,22 @@
 <template>
-  <div class="sushi-container bg-[#BBBBAA] dark:bg-dark top-0 left-0 absolute flex flex-col  items-center  z-50 h-screen transition-all">
-    <div class="chopstick-container ">
+  <div class="sushi-container w-[100vw] absolute h-screen bg-[#BBBBAA] dark:bg-dark top-0 left-0  flex flex-col  items-center  z-50 h-screen transition-all">
+    <div class="chopstick-container h-1/2">
       <div class="chopstick chopstick1 z-50"></div>
-      <div class="chopstick chopstick2"></div>
+      <div class="chopstick chopstick2 "></div>
     </div>
-    <div class="roll  ">
-      <div class="rice"></div>
-      <div class="seaweed"></div>
-      <div class="salmon"></div>
-      <div class="eye-left"></div>
-      <div class="shine-left"></div>
-      <div class="eye-right"></div>
-      <div class="shine-right"></div>
-      <div class="mouth"></div>
-      <div class="tongue"></div>
+    <div class="roll w-3/4 bottom-12 flex flex-col items-center">
+      <div class="rice w-3/4 h-12 -top-6 absolute"></div>
+      <div class="seaweed w-3/4 h-32 "></div>
+      <div class="salmon w-5/12 h-10 -top-10 absolute"></div>
+      <div class="eye-left left-[39%]"></div>
+      <div class="shine-left left-[38.4%]"></div>
+      <div class="eye-right left-[46%]"></div>
+      <div class="shine-right left-[45.4%] top-[70.5%]"></div>
+      <div class="mouth left-[40%] top-[44.5vh]"></div>
+      <div class="tongue left-[41%] top-[45.5vh]"></div>
 
     </div>
-    <div class="dish -bottom-16"></div>
+    <div class="dish w-64 h-64 -bottom-12"></div>
   </div>
 </template>
 
@@ -28,30 +28,40 @@ const beginAnimation =  gsap.timeline();
 
 onMounted(()=> {
 
-  start();
+/*  start();*/
 })
 
 function start() {
 
-  beginAnimation.from('.sushi-container',3,{y:-0, ease:"Back.easeOut"})
 
-      .to('.chopstick-container', 1.5, { top: 350}, 1.5)
-      .to('.chopstick', 1.5, { opacity:1}, 1.5)
-      .to('.chopstick2', 1, {backgroundColor: '#3F2F2FFF'}, 2)
-      .to('.chopstick1', 2, {rotation:190}, 3.5)
-      .to('.chopstick2', 2, {rotation:165}, 3.5)
-      .to('.shine-left', .5, {left:'36.3%'}, 4.2)
-      .to('.shine-right', .5, {left:'45.5%'}, 4.2)
-      .to('.mouth', .5, {borderRadius: '90% 90% 10% 10%'}, 4.2)
-      .to('.shine-left', .5, {left:'35%',top:'68.8%',width:'16px',height:'16px'}, 5.2)
-      .to('.roll', 1, {animation:'shake 1s 4'}, 2)
-      .to('.shine-right', .5, {left:'44%',top:'69.8%',width:'16px',height:'16px'}, 5.2)
-      .to('.sushi-container',0.6,{ease:"Power4.easeOut", y:'-100%'}, 6.7)
+  let mm = gsap.matchMedia()
+
+  mm.add("(max-width: 480px)", ()=> {
+
+
+    beginAnimation.from('.sushi-container',3,{y:-0, ease:"Back.easeOut"})
+        .to('.chopstick-container', 1.5, { top: '40%'}, 1.5)
+        .to('.chopstick', 1.5, { opacity:1}, 1.5)
+        .to('.chopstick2', 1, {backgroundColor: '#3F2F2FFF'}, 2)
+        .to('.chopstick1', 2, {rotation:190}, 3.5)
+        .to('.chopstick2', 2, {rotation:165}, 3.5)
+        .to('.shine-left', .5, {left:'36.3%'}, 4.2)
+        .to('.shine-right', .5, {left:'45.5%'}, 4.2)
+        .to('.mouth', .5, {borderRadius: '90% 90% 10% 10%'}, 4.2)
+        .to('.shine-left', .5, {left:'35%',top:'68.8%',width:'16px',height:'16px'}, 5.2)
+        .to('.roll', 1, {animation:'shake 1s 4'}, 2)
+        .to('.shine-right', .5, {left:'44%',top:'69.8%',width:'16px',height:'16px'}, 5.2)
+        .to('.sushi-container',0.6,{ease:"Power4.easeOut", y:'-100%'}, 6.7)
+
+
+  })
+
+
 }
 
 </script>
 
-<style>
+<style scoped lang="scss">
 
 .sushi-container {
 
@@ -60,26 +70,16 @@ function start() {
 
 .roll {
 
-  display: flex;
-  height: 500px;
-  width: 500px;
-  position: relative;
+  position: absolute;
 }
 .chopstick-container {
 
-  height: 500px;
-  width: 500px;
+
   position: relative;
 }
 
 
 .rice {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-  width: 230px;
-  height: 50px;
   border-radius: 50%;
   background-color: #fef3d4;
   border: 3px solid black;
@@ -87,35 +87,24 @@ function start() {
   z-index: 1;
 }
 .seaweed {
-  position: absolute;
-  top: 56%;
-  left: 50%;
-  transform: translate(-50%);
-  width: 230px;
-  height: 150px;
+
+
   background-color: #2e362a;
   border-radius: 0 0 40% 40%;
   border: 3px solid black;
   box-shadow: inset -10px 0 0 10px #21271f;
 }
 .salmon {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%);
-  width: 130px;
-  height: 40px;
+
   background-color: #ff4f20;
   border-radius: 50% 50% 30% 30%;
   border: 3px solid black;
-  box-shadow: inset -40px -20px 0 0 #ff3600;
+  box-shadow: inset -45px -16px 0 0 #ff3600;
   z-index: 2;
 }
 .eye-left {
   position: absolute;
   top: 68%;
-  left: 35%;
-  transform: translate(-50%);
   width: 18px;
   height: 18px;
   background-color: #000;
@@ -125,8 +114,7 @@ function start() {
 .shine-left {
   position: absolute;
   top: 69.2%;
-  left: 34.1%;
-  transform: translate(-50%);
+
   width: 5px;
   height: 5px;
   background-color: #e7e7e7;
@@ -135,8 +123,8 @@ function start() {
 .eye-right {
   position: absolute;
   top: 69%;
-  left: 44%;
-  transform: translate(-50%);
+
+
   width: 18px;
   height: 18px;
   background-color: #000;
@@ -145,9 +133,8 @@ function start() {
 }
 .shine-right {
   position: absolute;
-  top: 70%;
-  left: 43.3%;
-  transform: translate(-50%);
+
+
   width: 5px;
   height: 5px;
   background-color: #e7e7e7;
@@ -155,9 +142,7 @@ function start() {
 }
 .mouth {
   position: absolute;
-  top: 75%;
-  left: 35.7%;
-  transform: translate(-50%) rotate(3deg);
+
   width: 30px;
   height: 20px;
   background-color: #000;
@@ -165,9 +150,6 @@ function start() {
 }
 .tongue {
   position: absolute;
-  top: 77.3%;
-  left: 37%;
-  transform: translate(-50%) rotate(3deg);
   width: 17px;
   height: 5px;
   background-color: #ff1233;
@@ -190,12 +172,10 @@ function start() {
 }
 
   .chopstick {
-
+ height: 100%;
     opacity: 0;
     left:50%;
     width: 15px;
-    height: 455px;
-
     border-radius: 10px;
     clip-path: polygon(35% 0%, 80% 0%, 100% 100%, 0% 100%);
     position: absolute;
@@ -237,8 +217,6 @@ function start() {
   position: absolute;
 
   z-index:-1;
-  width: 350px;
-  height: 350px;
   background:rgb(243 244 246);
   border-radius:50%;
   transform:rotateX(60deg);

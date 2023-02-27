@@ -1,22 +1,22 @@
 <template>
   <div class="sushi-container w-[100vw] absolute h-screen bg-[#BBBBAA] dark:bg-dark top-0 left-0  flex flex-col  items-center  justify-end z-50 h-screen transition-all">
-    <div class="chopstick-container w-0 h-1/2 top-0">
+    <div class="chopstick-container h-1/2  top-0">
       <div class="chopstick chopstick1  z-50"></div>
       <div class="chopstick chopstick2 "></div>
     </div>
-    <div ref=roll class="roll w-3/4 bottom-12 flex flex-col items-center">
-      <div class="rice w-3/4 h-12 -top-6 absolute"></div>
+    <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">
+      <div class="rice w-3/4   h-12 top-4 absolute"></div>
       <div class="seaweed w-3/4 h-32 "></div>
-      <div class="salmon w-5/12 h-10 -top-10 absolute"></div>
+      <div class="salmon w-1/2 h-8 top-3 absolute"></div>
       <div class="eye-left  w-5 h-5 left-[25%] top-[40%]  absolute"></div>
       <div class="shine-left h-1 w-1  left-[26.4%] top-[44%] absolute"></div>
-      <div class="eye-right w-5 h-5 left-[43%] top-[44%]  absolute"></div>
-      <div class="shine-right h-1 w-1 left-[44.4%] top-[48%] absolute"></div>
-      <div class="mouth w-7 h-5 left-[30%] top-[65%] absolute"></div>
-      <div class="tongue w-5 h-1.5 left-[32%] top-[74%] absolute"></div>
+      <div class="eye-right w-5 h-5 left-[43%] top-[40%]  absolute"></div>
+      <div class="shine-right h-1 w-1 left-[44.4%] top-[44%] absolute"></div>
+      <div class="mouth w-7 h-5 left-[30%] top-[59%] absolute"></div>
+      <div class="tongue w-5 h-1.5 left-[31.7%] top-[65%] absolute"></div>
 
     </div>
-    <div class="dish w-64 h-64 -bottom-12"></div>
+    <div class="dish opacity-1  w-64 h-64 sm:w-80 sm:h-80 -bottom-2 sm:-bottom-8 absolute"></div>
   </div>
 </template>
 
@@ -26,8 +26,6 @@
 import gsap from 'gsap'
 const beginAnimation =  gsap.timeline();
 
-
-const roll = ref()
 
 onMounted(()=> {
 
@@ -41,11 +39,12 @@ function start() {
 
 
   let responsive = gsap.matchMedia()
-  responsive.add("(max-width: 480px)", ()=> {
-
-
-    beginAnimation.from('.sushi-container',3,{y:-0, ease:"Back.easeOut"})
-        .to('.chopstick-container', 1.5, { top: '33%'}, 1.5)
+  responsive.add("(min-width: 0)", ()=> {
+    beginAnimation
+        .to(".body", { overflow: "hidden" })
+        .from('.dish',1,{opacity: 0, bottom:'-25%', ease:"Back.easeOut"})
+        .from('.sushi-container',3,{y:-0, ease:"Back.easeOut"})
+        .to('.chopstick-container', 1.5, { top: '30%'}, 1.5)
         .to('.chopstick', 1.5, { opacity:1}, 1.5)
         .to('.chopstick2', 1, {backgroundColor: '#3F2F2FFF'}, 2)
         .to('.chopstick1', 2, {rotation:190}, 3.5)
@@ -60,15 +59,21 @@ function start() {
             x: [1,-1, -3,3,1,-1,-3,3,-1,1,1],
             y: [1,-2,0,2,-1,2,1,1,-1,2,-2]
           },
+          speed:1000,
+          repeat:2,
           duration: 1,
           yoyo:true
-        }).to('.shine-right', .5, {left:'44%',top:'45%',width:'14px',height:'14px'}, 5.2)
+        }).to('.shine-right', .5, {left:'44.2%',top:'41.4%',width:'14px',height:'14px'}, 5.2)
         .to('.sushi-container',0.6,{ease:"Power4.easeOut", y:'-100%'}, 6.7)
+        .to(".body", { overflow: "" });
 
 
   })
+  responsive.add("(min-width: 1024px)", ()=> {
 
+    beginAnimation.to('.chopstick-container', 1.5, { top: '34%'}, 1.5)
 
+})
 }
 
 </script>
@@ -214,8 +219,6 @@ function start() {
 
 
   .dish {
-    position: absolute;
-
     z-index: -1;
     background: rgb(243 244 246);
     border-radius: 50%;

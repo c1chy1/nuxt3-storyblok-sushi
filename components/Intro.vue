@@ -41,7 +41,6 @@ function start() {
   let responsive = gsap.matchMedia()
   responsive.add("(min-width: 0)", ()=> {
     beginAnimation
-        .to(".body", { overflow: "hidden" })
         .from('.dish',1,{opacity: 0, bottom:'-25%', ease:"Back.easeOut"})
         .from('.sushi-container',3,{y:-0, ease:"Back.easeOut"})
         .to('.chopstick-container', 1.5, { top: '30%'}, 1.5)
@@ -65,7 +64,6 @@ function start() {
           yoyo:true
         }).to('.shine-right', .5, {left:'44.2%',top:'41.4%',width:'14px',height:'14px'}, 5.2)
         .to('.sushi-container',0.6,{ease:"Power4.easeOut", y:'-100%'}, 6.7)
-        .to(".body", { overflow: "" });
 
 
   })

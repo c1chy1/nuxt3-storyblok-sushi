@@ -36,7 +36,7 @@ defineProps<{
     </NuxtLink>
   </article>-->
   <article>
-    <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" >
+
     <div class="card-hover w-full relative text-right rounded-xl">
 
       <div class="card-hover__content h-1/3 ">
@@ -52,12 +52,12 @@ defineProps<{
               alt=""
           />
         </span>
-        <a href="#" class="card-hover__link">
+        <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" class="card-hover__link">
           <span>Learn How</span>
           <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
-        </a>
+        </NuxtLink>
       </div>
       <div class="card-hover__extra">
 

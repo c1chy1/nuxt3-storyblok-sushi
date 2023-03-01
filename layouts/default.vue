@@ -3,7 +3,7 @@
 
 
 
-<!--  <Intro/>-->
+  <Intro/>
   <DarkModeButton/>
   <div id="smooth-wrapper">
     <div id="smooth-content">

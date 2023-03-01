@@ -1,29 +1,28 @@
 <template>
   <div
-        class="switch z-50 fixed right-24 top-6 bg-shrimp-500 dark:bg-dark-navigation"
-        @click="open"
-    >
-      <div class="toggle-button">
-        <div class="toggle"></div>
-        <div class="moon-mask bg-shrimp-500 dark:bg-dark-navigation "></div>
-        <div class="circles-wrapper">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
+      class="switch z-50 fixed right-24 top-6 bg-shrimp-500 dark:bg-dark-navigation"
+      @click="open"
+  >
+    <div class="toggle-button">
+      <div class="toggle"></div>
+      <div class="moon-mask bg-shrimp-500 dark:bg-dark-navigation "></div>
+      <div class="circles-wrapper">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
       </div>
     </div>
+  </div>
 
 
 </template>
 
 <script setup lang="ts">
-
 import {useColorModeStore} from '@/stores/darkMode'
 const colorModeStore = useColorModeStore()
 /*
@@ -31,53 +30,39 @@ const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duoton
 */
 import gsap from "gsap"
 const tl = gsap.timeline({ paused: true });
-
 let toggle = false
-
-
-   const open = () => {
-     colorModeStore.switchColorMode()
-     tl
-          .set(".switch", { boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)" })
-
-      tl.to(".toggle-button", 0.2, { scale: 0.7 }, 0)
-          .set(".toggle", { backgroundColor: "#FFF" })
-          .set(".circle", { display: "none" })
-          .to(".moon-mask", 0.2, { translateY: 20, translateX: -10 }, 0.2)
-          .to(".toggle-button", 0.2, { translateY: 49 }, 0.2)
-          .to(".toggle-button", 0.2, { scale: 0.9 }, 0.5)
-
-
-      toggle = !toggle
-      if(toggle){
-        tl.restart();
-
-      } else {
-        tl.reverse();
-
-      }}
-
+const open = () => {
+  colorModeStore.switchColorMode()
+  tl
+      .set(".switch", { boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)" })
+  tl.to(".toggle-button", 0.2, { scale: 0.7 }, 0)
+      .set(".toggle", { backgroundColor: "#FFF" })
+      .set(".circle", { display: "none" })
+      .to(".moon-mask", 0.2, { translateY: 20, translateX: -10 }, 0.2)
+      .to(".toggle-button", 0.2, { translateY: 49 }, 0.2)
+      .to(".toggle-button", 0.2, { scale: 0.9 }, 0.5)
+  toggle = !toggle
+  if(toggle){
+    tl.restart();
+  } else {
+    tl.reverse();
+  }}
 </script>
 
 <style scoped lang="scss">
-
 $black: #111;
 $yellow: #fdb813;
 $grey: #514e4b;
 $white: #fff;
 /* ***** Colors - End ***** */
-
 /* ***** Global Styles - Start ***** */
-
 %center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 /* ***** Global Styles - End ***** */
-
 /* ***** Specific Styles - Start ***** */
-
 .switch {
   width: 60px;
   height: 110px;
@@ -147,5 +132,4 @@ $white: #fff;
     }
   }
 }
-
 </style>

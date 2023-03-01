@@ -1,6 +1,11 @@
 import { defineStore } from "pinia";
 
+
 export const useColorModeStore = defineStore('colorMode', () => {
+
+
+
+
     const colorMode = useColorMode()
 
     const isDarkMode = computed(() => colorMode.value === 'dark')
@@ -9,6 +14,7 @@ export const useColorModeStore = defineStore('colorMode', () => {
     function switchColorMode () {
         if (isDarkMode.value) {
             colorMode.preference = 'light'
+
         } else if (isLightMode.value) {
             colorMode.preference = 'dark'
         }

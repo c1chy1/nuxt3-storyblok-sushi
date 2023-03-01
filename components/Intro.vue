@@ -1,8 +1,9 @@
 <template>
-  <div class="sushi-container w-[100vw] absolute h-screen bg-[#BBBBAA] dark:bg-dark top-0 left-0  flex flex-col  items-center  justify-end z-50 h-screen transition-all">
+  <div
+      class="sushi-container  absolute h-screen bg-[#BBBBAA] dark:bg-dark top-0 left-0  flex flex-col  items-center  justify-end z-50 h-screen transition-all">
     <div class="chopstick-container h-1/2  top-0">
-      <div class="chopstick chopstick1  z-50"></div>
-      <div class="chopstick chopstick2 "></div>
+      <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all  z-50"></div>
+      <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all"></div>
     </div>
     <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">
       <div class="rice w-3/4   h-12 top-4 absolute"></div>
@@ -24,54 +25,51 @@
 
 
 import gsap from 'gsap'
-const beginAnimation =  gsap.timeline();
+
+const beginAnimation = gsap.timeline();
 
 
-onMounted(()=> {
+onMounted(() => {
 
   start();
 })
 
 function start() {
 
-
-
-
-
   let responsive = gsap.matchMedia()
-  responsive.add("(min-width: 0)", ()=> {
+  responsive.add("(min-width: 0)", () => {
     beginAnimation
-        .from('.dish',1,{opacity: 0, bottom:'-25%', ease:"Back.easeOut"})
-        .from('.sushi-container',3,{y:-0, ease:"Back.easeOut"})
-        .to('.chopstick-container', 1.5, { top: '30%'}, 1.5)
-        .to('.chopstick', 1.5, { opacity:1}, 1.5)
-        .to('.chopstick2', 1, {backgroundColor: '#3F2F2FFF'}, 2)
-        .to('.chopstick1', 2, {rotation:190}, 3.5)
-        .to('.chopstick2', 2, {rotation:165}, 3.5)
-        .to('.shine-left', .5, {left:'30%'}, 4.2)
-        .to('.shine-right', .5, {left:'48%'}, 4.2)
+        .from('.dish', 1, {opacity: 0, bottom: '-25%', ease: "Back.easeOut"})
+        .from('.sushi-container', 3, {y: -0, ease: "Back.easeOut"})
+        .to('.chopstick-container', 1.5, {top: '30%'}, 1.5)
+        .to('.chopstick', 1.5, {opacity: 1}, 1.5)
+        .to('.chopstick2', 1, {
+          webkitFilter: "brightness(0.8)",
+          filter: "brightness(0.8)",
+        }, 2)
+        .to('.chopstick1', 2, {rotation: 190}, 3.5)
+        .to('.chopstick2', 2, {rotation: 165}, 3.5)
+        .to('.shine-left', .5, {left: '30%'}, 4.2)
+        .to('.shine-right', .5, {left: '48%'}, 4.2)
         .to('.mouth', .5, {borderRadius: '90% 90% 10% 10%'}, 4.2)
-        .to('.shine-left', .5, {left:'26.4%',top:'41.7%',width:'14px',height:'14px'}, 5.2)
+        .to('.shine-left', .5, {left: '26.4%', top: '41.7%', width: '14px', height: '14px'}, 5.2)
         .to(".roll", {
           keyframes: {
-            rotation: [0,-1,1,0,1,-1,0,-1,1,0,-1],
-            x: [1,-1, -3,3,1,-1,-3,3,-1,1,1],
-            y: [1,-2,0,2,-1,2,1,1,-1,2,-2]
+            rotation: [0, -1, 1, 0, 1, -1, 0, -1, 1, 0, -1],
+            x: [1, -1, -3, 3, 1, -1, -3, 3, -1, 1, 1],
+            y: [1, -2, 0, 2, -1, 2, 1, 1, -1, 2, -2]
           },
-          speed:1000,
-          repeat:2,
+          repeat: 2,
           duration: 1,
-          yoyo:true
-        }).to('.shine-right', .5, {left:'44.2%',top:'41.4%',width:'14px',height:'14px'}, 5.2)
-        .to('.sushi-container',0.6,{ease:"Power4.easeOut", y:'-100%'}, 6.7)
-
+          yoyo: true
+        }).to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
+        .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)
 
   })
-  responsive.add("(min-width: 1024px)", ()=> {
+  responsive.add("(min-width: 1024px)", () => {
+    beginAnimation.to('.chopstick-container', 1.5, {top: '34%'}, 1.5)
 
-    beginAnimation.to('.chopstick-container', 1.5, { top: '34%'}, 1.5)
-
-})
+  })
 }
 
 </script>
@@ -91,7 +89,7 @@ function start() {
   .chopstick-container {
 
 
-    position:absolute;
+    position: absolute;
   }
 
 
@@ -164,7 +162,6 @@ function start() {
     transform: translate(-50%) rotate(-200deg);
     height: 0;
     width: 10px;
-    background: #654F4F;
 
   }
 
@@ -173,7 +170,6 @@ function start() {
     transform: translate(-50%) rotate(-185deg);
     height: 0;
     width: 10px;
-    background: #654F4F;
   }
 
   .chopstick {

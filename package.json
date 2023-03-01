@@ -18,7 +18,7 @@
     "@nuxtjs/tailwindcss": "^6.4.0",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/typography": "^0.5.9",
-    "nuxt": "^3.2.0",
+    "nuxt": "^3.2.3",
     "nuxt-gsap-module": "^1.7.2",
     "nuxt-icon": "^0.2.11",
     "sass": "^1.58.3",

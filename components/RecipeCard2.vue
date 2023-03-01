@@ -74,7 +74,6 @@ defineProps<{
           :src="content.media.filename"
           :alt="content.media.alt" />
     </div>
-    </NuxtLink>
   </article>
 
 

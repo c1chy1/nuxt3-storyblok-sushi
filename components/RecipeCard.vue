@@ -1,5 +1,4 @@
 <script setup lang="ts">
-console.log(localStorage)
 const {locale} = useI18n()
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 

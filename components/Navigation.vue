@@ -1,5 +1,24 @@
 <template>
-  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
+
+
+
+  <button @click="store.toggleMenu" :class="{ active : !store.navOpen}" class="menu-button" ref="menuButton">
+    <div class="menu-bar"></div>
+    <div class="menu-bar"></div>
+    <div class="menu-bar"></div>
+  </button>
+  <nav id="menu" ref="menu">
+    <ul class="menu-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Our Team</a></li>
+    </ul>
+  </nav>
+
+
+<!--  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
     <div class="cube w-16 h-16 shadow-2xl rounded-lg" ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal bg-white " ref="horizontal"></div>
@@ -17,7 +36,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav>-->
 </template>
 
 
@@ -237,13 +256,124 @@ onMounted(() => {
   tl.to('#fade-down', 0.2, {opacity: 1, y: 0}, 'seperate+=0.2');
   tl.to('#quadrant_3', 0.15, {x: 5, y: 5, borderRadius : 10}, 'seperate');
   tl.to('#fade-left', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2');
+
+
+
+  if (store.navOpen) {
+    tl.reverse();
+    store.navOpen = false;
+  } else {
+    tl.play();
+    store.navOpen = true;
+  }
+
+
+ /* tl.to(bars.value[0], 0.1, {
+    top: '5px',
+    rotation: 45,
+  }, 0)
+      .to(bars.value[1], 0.1, {
+        opacity: 0
+      }, 0)
+      .to(bars.value[2], 0.1, {
+        top: '-7px',
+        rotation: -45,
+      }, 0)
+      .to('#menu', 0.4, {
+        width: '100%',
+        height: '0.5%',
+      }, '-=0.2')
+      .to('#menu', 0.4, {
+        height: '100%',
+        ease: "Bounce.easeOut"
+      }, '-=0.2')
+*/
+
 })
+
+import { useNavStore } from "~/stores/nav";
+let store = useNavStore();
+
+
+
+
+const menu = ref()
+
+const menuButton = ref()
+
+
+
+const open = ref(false)
+const bars = ref(['.menu-bar'])
+
+console.log(bars)
+
+
+
+
+   /* .to(menu.value.find('a'), 0.4, {
+      opacity: 1
+    })*/
+
+
+
+/*$(document).ready(function () {
+  var bars = $('.menu-bar');
+  var menu = $('#menu');
+  var menuButton = $('.menu-button');
+  var timeline = new TimelineMax({paused: true});
+  var open = false;
+
+  timeline
+      .to(bars[0], 0.1, {
+        top: '5px',
+        rotation: 45,
+      }, 0)
+      .to(bars[1], 0.1, {
+        opacity: 0
+      }, 0)
+      .to(bars[2], 0.1, {
+        top: '-7px',
+        rotation: -45,
+      }, 0)
+      .to(menu, 0.4, {
+        width: '100%',
+        height: '0.5%',
+      }, '-=0.2')
+      .to(menu, 0.4, {
+        height: '100%',
+        ease: Bounce.easeOut
+      }, '-=0.2')
+      .to(menu.find('a'), 0.4, {
+        opacity: 1
+      })
+
+  menuButton.on('click', function () {
+    $(this).toggleClass('active');
+    if (open) {
+      timeline.reverse();
+      open = false;
+    } else {
+      timeline.play();
+      open = true;
+    }
+  });
+
+  menu.find('a').on('click', function () {
+    timeline.reverse();
+  });
+});*/
+
+
+
+
+
+
 </script>
 
 <style scoped lang="scss">
+
 .cube {
-
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,4 +458,81 @@ onMounted(() => {
 .arrow-right {
   transform: translateX(-10px);
 }
+
+
+
+
+
+
+
+.menu-button {
+  border: 0;
+  background-color: transparent;
+  padding: 15px;
+  border-radius: 50px;
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 999999;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    background-color: yellow;
+    .menu-bar {
+      background-color: black;
+    }
+  }
+
+  .menu-bar {
+    width: 30px;
+    height: 2px;
+    background-color: red;
+    position: relative;
+    margin: 4px 0;
+    transform-origin: center center;
+  }
+}
+
+#menu {
+  height: 0;
+  width: 0;
+  position: fixed;
+  background-color: lighten(#00ffff, 40%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.menu-nav {
+  list-style: none;
+  margin: 0;
+  padding: 30px 0;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: 2rem;
+  overflow: hidden;
+
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
+    opacity: 0;
+    font-family: 'Space Mono', monospace;
+
+    &:hover {
+      background-color: lighten(#00ffff, 60%);
+    }
+  }
+}
+
+
 </style>

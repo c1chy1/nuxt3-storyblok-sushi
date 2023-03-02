@@ -11,8 +11,8 @@ defineProps({
       class="font-bold font-sans border-2 rounded-full px-2 py-1.5 relative"
       :class="
       blok.type === 'solid'
-        ? 'bg-shrimp-600 text-white border-transparent  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
-        : 'bg-white text-shrimp-600 border-shrimp-600  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
+        ? 'bg-shrimp-600 text-white border-transparent dark:hover:text-white  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
+        : 'bg-white text-shrimp-600 border-shrimp-600  dark:hover:text-white dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
     "
   >
     {{ blok.label }}
@@ -25,10 +25,9 @@ defineProps({
 
 <style scoped>
 button {
-  --c: #ffc0ad;
-  color: var(--c);
+
   font-size: 16px;
-  border: 0.3em solid var(--c);
+
   border-radius: 0.5em;
   font-weight: bold;
   font-family: sans-serif;
@@ -44,7 +43,7 @@ button span {
   position: absolute;
   width: 25%;
   height: 100%;
-  background-color: var(--c);
+  background-color: #FA6A14;
   transform: translateY(150%);
   border-radius: 50%;
   left: calc((var(--n) - 1) * 25%);

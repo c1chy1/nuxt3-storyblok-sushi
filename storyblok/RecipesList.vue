@@ -5,7 +5,7 @@
 {{blok.title}}
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
-        <RecipeCard2
+        <RecipeCard
             v-for="{ uuid, content, slug } in recipes"
             :key="uuid"
             :uuid="uuid"

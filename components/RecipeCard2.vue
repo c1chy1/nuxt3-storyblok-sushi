@@ -3,6 +3,9 @@
 const { locale } = useI18n()
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 
+
+let disabled = true
+
 defineProps<{
   uuid: string
   content: any
@@ -10,56 +13,37 @@ defineProps<{
 }>()
 </script>
 <template>
-<!--  <article class="bg-white dark:bg-shrimp-900  rounded-lg overflow-hidden shadow-2xl" :key="uuid">
-    <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" >
-      <NuxtImg
-          preload
-          loading="lazy"
-          aspect-ratio="16/9"
-                provider="storyblok"
-                format="webp"
-                sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]" class="w-full aspect-video object-cover"
-                :src="content.media.filename"
-                :alt="content.media.alt" />
-      <div class="p-4 relative min-h-[200px]">
-        <h3 class="font-bold text-xl text-shrimp-600 dark:text-dark-paragraph w-1/2">
+
+  <article class="  rounded-lg overflow-hidden shadow-2xl" :key="uuid">
+
+    <div class="card-hover h-[36rem]  group w-full relative text-right rounded-xl ">
+
+
+      <div class="card-hover__content flex flex-col items-center  h-1/3 ">
+        <h3 class="card-hover__title mx-auto w-2/3 font-bold text-2xl font-display text-shrimp-600 dark:text-dark-paragraph w-1/2">
           {{ content.title }}
         </h3>
-        <span class="bg-gray-100 rounded-full absolute right-8 -top-[33px] p-4">
-          <img
-              class="w-[36px] h-[36px] grayscale contrast-[.25]"
+        <p class="card-hover__text "> {{ content.description }}</p>
+
+        <img
+              class=" mx-auto  transform transition-all duration-500 group-hover:-translate-x-[8rem] w-12 h-12   grayscale contrast-[.25]"
               :src="content.category.content.icon.filename"
               alt=""
           />
-        </span>
-      </div>
-    </NuxtLink>
-  </article>-->
-  <article>
 
-    <div class="card-hover w-full relative text-right rounded-xl">
+        <NuxtLink  :to="`${localeUrl()}/recipes/${slug}`" class="card-hover__link text-2xl  font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full"
 
-      <div class="card-hover__content h-1/3 ">
-        <h3 class="card-hover__title mx-auto w-2/3 font-bold text-lg text-shrimp-600 dark:text-dark-paragraph w-1/2">
-          {{ content.title }}
-        </h3>
-        <p class="card-hover__text"> {{ content.description }}</p>
-
-        <span class="absolute rounded-full w-32  left-0 top-10 p-4">
-          <img
-              class="icon  w-12 h-12 grayscale contrast-[.25]"
-              :src="content.category.content.icon.filename"
-              alt=""
-          />
-        </span>
-        <NuxtLink :to="`${localeUrl()}/recipes/${slug}`" class="card-hover__link">
+        >
           <span>Learn How</span>
-          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <svg class="w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </NuxtLink>
-      </div>
-      <div class="card-hover__extra">
+
+        </div>
+
+
+      <div class="card-hover__extra rounded-lg">
 
         <h4>Learn <span>now !<br></span> it's very<span> simple!</span></h4>
       </div>
@@ -70,7 +54,7 @@ defineProps<{
           aspect-ratio="16/9"
           provider="storyblok"
           format="webp"
-          sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]" class="card__img w-full aspect-video object-cover"
+          sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]" class="card__img w-full rounded-lg aspect-video object-cover"
           :src="content.media.filename"
           :alt="content.media.alt" />
     </div>
@@ -85,9 +69,9 @@ defineProps<{
 $firaSans: 'Fira Sans', sans-serif;
 
 
+
 .card-hover {
   $root: &;
-  height: 500px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 32px -10px rgba(0,0,0,0.08);
@@ -97,6 +81,7 @@ $firaSans: 'Fira Sans', sans-serif;
     #{$root}__extra {
       transform: translateY(0);
       transition: transform 0.35s;
+      transition-delay: 200ms;
     }
   }
 
@@ -107,16 +92,27 @@ $firaSans: 'Fira Sans', sans-serif;
         bottom: 100%;
         transform: translateY(100%);
         transition: all 0.35s cubic-bezier(.1,.72,.4,.97);
+
+
+       h3 {
+
+
+         transform: translateY(10%) scale(0.8);
+       }
+
+
       }
       &__link {
-        opacity: 1;
-        transform: translate(-50%, 0);
         transition: all 0.3s 0.35s cubic-bezier(.1,.72,.4,.97);
+       opacity: 1
       }
       &__text {
+
+        transform: translateY(100%);
         opacity: 1;
         transition: all 0.3s 0.35s cubic-bezier(.1,.72,.4,.97);
       }
+
     }
 
     .card__img {
@@ -171,18 +167,15 @@ $firaSans: 'Fira Sans', sans-serif;
     opacity: 0;
   }
 
+
+
   &__link {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 10%);
-    display: flex;
     flex-wrap: wrap;
-    align-items: center;
     text-decoration: none;
     color: #2d7f0b;
-    opacity: 0;
     padding: 10px;
     transition: all 0.35s;
+    opacity: 0;
 
     &:hover {
 
@@ -192,7 +185,6 @@ $firaSans: 'Fira Sans', sans-serif;
     }
 
     svg {
-      width: 18px;
       margin-left: 4px;
       transition: transform 0.3s;
     }
@@ -216,6 +208,7 @@ $firaSans: 'Fira Sans', sans-serif;
     transform: translateY(100%);
     will-change: transform;
     transition: transform 0.35s;
+
 
     span {
       color: #2d7f0b;

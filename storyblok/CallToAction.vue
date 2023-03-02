@@ -23,7 +23,7 @@ defineProps({
 </template>
 
 
-<style>
+<style scoped>
 button {
   --c: #ffc0ad;
   color: var(--c);

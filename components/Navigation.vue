@@ -2,7 +2,7 @@
 
 
 
-  <button @click="store.toggleMenu" :class="{ active : !store.navOpen}" class="menu-button" ref="menuButton">
+<!--  <button @click="store.toggleMenu" :class="{ active : !store.navOpen}" class="menu-button" ref="menuButton">
     <div class="menu-bar"></div>
     <div class="menu-bar"></div>
     <div class="menu-bar"></div>
@@ -15,10 +15,10 @@
       <li><a href="#">Contact</a></li>
       <li><a href="#">Our Team</a></li>
     </ul>
-  </nav>
+  </nav>-->
 
 
-<!--  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
+  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
     <div class="cube w-16 h-16 shadow-2xl rounded-lg" ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal bg-white " ref="horizontal"></div>
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-  </nav>-->
+  </nav>
 </template>
 
 

@@ -1,6 +1,6 @@
 <template>
   <div
-      class="sushi-container  absolute h-screen bg-[#BBBBAA] dark:bg-dark top-0 left-0  flex flex-col  items-center  justify-end z-50 h-screen transition-all">
+      class="sushi-container  fixed w-full h-screen bg-[#BBBBAA] dark:bg-dark top-0 left-0  flex flex-col  items-center  justify-end z-50 h-screen transition-all">
     <div class="chopstick-container h-1/2  top-0">
       <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all  z-50"></div>
       <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all"></div>
@@ -36,9 +36,13 @@ onMounted(() => {
 
 function start() {
 
+
+
   let responsive = gsap.matchMedia()
   responsive.add("(min-width: 0)", () => {
-    beginAnimation
+    beginAnimation  .set('body', {
+      overflow: 'hidden',
+    })
         .from('.dish', 1, {opacity: 0, bottom: '-25%', ease: "Back.easeOut"})
         .from('.sushi-container', 3, {y: -0, ease: "Back.easeOut"})
         .to('.chopstick-container', 1.5, {top: '30%'}, 1.5)
@@ -47,6 +51,7 @@ function start() {
           webkitFilter: "brightness(0.8)",
           filter: "brightness(0.8)",
         }, 2)
+        .set(window, {duration: 2, scrollTo: {y: "min"}})
         .to('.chopstick1', 2, {rotation: 190}, 3.5)
         .to('.chopstick2', 2, {rotation: 165}, 3.5)
         .to('.shine-left', .5, {left: '30%'}, 4.2)
@@ -62,10 +67,26 @@ function start() {
           repeat: 2,
           duration: 1,
           yoyo: true
-        }).to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
+        })
+
+        .set('body', {
+          overflow: 'auto',
+        })
+
+        .to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
         .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)
 
+
+
   })
+
+  function scrollToTop() {
+    beginAnimation.to(window, {duration: 0, scrollTo: {x:0,y:0}})
+
+  }
+
+
+
   responsive.add("(min-width: 1024px)", () => {
     beginAnimation.to('.chopstick-container', 1.5, {top: '34%'}, 1.5)
 
@@ -78,7 +99,6 @@ function start() {
 
 .sushi-container {
 
-  position: relative;
 
   .roll {
 

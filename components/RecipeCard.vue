@@ -66,7 +66,7 @@ $firaSans: 'Fira Sans', sans-serif;
 
     #{$root}__extra {
       transform: translateY(0);
-      transition: transform 0.35s;
+      transition: transform 0.5s;
       transition-delay: 200ms;
     }
   }
@@ -76,7 +76,7 @@ $firaSans: 'Fira Sans', sans-serif;
       &__content {
         bottom: 100%;
         transform: translateY(100%);
-        transition: all 0.35s cubic-bezier(.1, .72, .4, .97);
+        transition: all 0.5s cubic-bezier(.1, .72, .4, .97);
 
         h3 {
 
@@ -86,7 +86,7 @@ $firaSans: 'Fira Sans', sans-serif;
       }
 
       &__link {
-        transition: all 0.3s 0.35s cubic-bezier(.1, .72, .4, .97);
+        transition: all 0.3s 0.5s cubic-bezier(.1, .72, .4, .97);
         opacity: 1
       }
 
@@ -94,14 +94,14 @@ $firaSans: 'Fira Sans', sans-serif;
 
         transform: translateY(100%);
         opacity: 1;
-        transition: all 0.3s 0.35s cubic-bezier(.1, .72, .4, .97);
+        transition: all 0.3s 0.5s cubic-bezier(.1, .72, .4, .97);
       }
 
     }
 
     .card__img {
       transform: translateY(100%);
-      transition: 0.35s 0.1s transform cubic-bezier(.1, .72, .4, .97);
+      transition: 0.25s 0.1s transform cubic-bezier(.1, .72, .4, .97);
     }
   }
 
@@ -112,7 +112,7 @@ $firaSans: 'Fira Sans', sans-serif;
     bottom: 0;
     left: 0;
     transform: translateY(0);
-    transition: all 0.35s;
+    transition: all 0.5s;
     will-change: bottom, background-color, transform, padding;
     z-index: 1;
 
@@ -129,12 +129,12 @@ $firaSans: 'Fira Sans', sans-serif;
 
     &::before {
       top: -80px;
-      transition: all 0.35s;
+      transition: all 0.5s;
       clip-path: ellipse(60% 80px at bottom center);
     }
 
     &::after {
-      transition: all 0.35s;
+      transition: all 0.5s;
       bottom: -80px;
       clip-path: ellipse(60% 80px at top center);
     }
@@ -148,7 +148,7 @@ $firaSans: 'Fira Sans', sans-serif;
     flex-wrap: wrap;
     text-decoration: none;
     padding: 10px;
-    transition: all 0.35s;
+    transition: all 0.5s;
     opacity: 0;
 
     &:hover {
@@ -179,7 +179,7 @@ $firaSans: 'Fira Sans', sans-serif;
     z-index: 0;
     transform: translateY(100%);
     will-change: transform;
-    transition: transform 0.35s;
+    transition: transform 0.5s;
 
   }
 
@@ -193,7 +193,7 @@ $firaSans: 'Fira Sans', sans-serif;
     object-position: center;
     z-index: -1;
     transform: translateY(0);
-    transition: 0.35s 0.35s transform cubic-bezier(.1, .72, .4, .97);
+    transition: 0.5s 0.5s transform cubic-bezier(.1, .72, .4, .97);
   }
 }
 

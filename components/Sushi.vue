@@ -15,8 +15,6 @@ const ctx = ref();
 const scope = ref();
 
 
-console.log(props.thanks)
-
 onMounted(() => {
   setTimeout(() => {
     ScrollTrigger.refresh()

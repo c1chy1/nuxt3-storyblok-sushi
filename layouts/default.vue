@@ -3,7 +3,8 @@
 
 
 
-<!--  <Intro/>-->
+  <Intro/>
+  <Navigation/>
   <DarkModeButton/>
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -11,23 +12,22 @@
       <slot class="page mt-16" />
     </div>
   </div>
-  <Navigation/>
+
   <ShareIcons/>
 
 
 </template>
 
 <script setup lang="ts">
-
-useState('locale', () => 'en')
-
-
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 
-gsap.registerPlugin(ScrollSmoother,ScrollTrigger)
 
+useState('locale', () => 'en')
+
+
+gsap.registerPlugin(ScrollSmoother,ScrollTrigger)
 
 onMounted(()=> {
   if (ScrollTrigger.isTouch === 1) {

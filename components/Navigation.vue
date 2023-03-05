@@ -1,13 +1,19 @@
 <template>
 
 
-
-<!--  <button @click="store.toggleMenu" :class="{ active : !store.navOpen}" class="menu-button" ref="menuButton">
+  <button class="fixed left-4 top-4 menu-button" @click="scrollToTop">
     <div class="menu-bar"></div>
     <div class="menu-bar"></div>
     <div class="menu-bar"></div>
   </button>
-  <nav id="menu" ref="menu">
+
+
+
+  <nav id="menu"
+       ref="menu"
+       class="w-0 h-0"
+
+  >
     <ul class="menu-nav">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
@@ -15,10 +21,10 @@
       <li><a href="#">Contact</a></li>
       <li><a href="#">Our Team</a></li>
     </ul>
-  </nav>-->
+  </nav>
 
 
-  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
+<!--  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
     <div class="cube w-16 h-16 shadow-2xl rounded-lg" ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal bg-white " ref="horizontal"></div>
@@ -36,7 +42,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav>-->
 </template>
 
 
@@ -226,8 +232,10 @@ const icons = shallowRef([
     loc:'recipes'
   }
 ])
-var tl = gsap.timeline({paused: true});
-function playTimeline(e: any) {
+
+const tl = gsap.timeline({paused: true})
+
+/*function playTimeline(e: any) {
   e.stopPropagation();
   tl.play();
 }
@@ -235,9 +243,16 @@ function reverseTimeline(e: any) {
   e.stopPropagation();
   tl.timeScale(1.8);
   tl.reverse();
-}
+}*/
+const body = document.querySelector("body");
+
 onMounted(() => {
-  tl.timeScale(1.6);
+
+  const navEl = document.querySelector("#menu");
+
+  console.log(body)
+
+/*  tl.timeScale(1.6);
   tl.to(cube.value, 0.7, {
     translate: '25% 25%',
     rotation: 45,
@@ -255,58 +270,32 @@ onMounted(() => {
   tl.to('#quadrant_2', 0.15, {x: -5, y: 5, borderRadius : 10}, 'seperate');
   tl.to('#fade-down', 0.2, {opacity: 1, y: 0}, 'seperate+=0.2');
   tl.to('#quadrant_3', 0.15, {x: 5, y: 5, borderRadius : 10}, 'seperate');
-  tl.to('#fade-left', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2');
+  tl.to('#fade-left', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2');*/
 
 
-
-  if (store.navOpen) {
-    tl.reverse();
-    store.navOpen = false;
-  } else {
-    tl.play();
-    store.navOpen = true;
-  }
-
-
- /* tl.to(bars.value[0], 0.1, {
-    top: '5px',
-    rotation: 45,
-  }, 0)
-      .to(bars.value[1], 0.1, {
-        opacity: 0
-      }, 0)
-      .to(bars.value[2], 0.1, {
-        top: '-7px',
-        rotation: -45,
-      }, 0)
-      .to('#menu', 0.4, {
-        width: '100%',
-        height: '0.5%',
-      }, '-=0.2')
-      .to('#menu', 0.4, {
-        height: '100%',
-        ease: "Bounce.easeOut"
-      }, '-=0.2')
-*/
 
 })
 
+/*
 import { useNavStore } from "~/stores/nav";
 let store = useNavStore();
+*/
+
+
+const { isOpenMenu,closeMenu,toggleMenu } = useMenu()
+
+
+function scrollToTop() {
 
 
 
-
-const menu = ref()
-
-const menuButton = ref()
+ const test = gsap.to(window, {duration: 2, scrollTo: {x:0 , y: 0}, ease: "power2"})
 
 
 
-const open = ref(false)
-const bars = ref(['.menu-bar'])
+}
 
-console.log(bars)
+
 
 
 
@@ -473,7 +462,6 @@ console.log(bars)
   margin: 10px;
   width: 60px;
   height: 60px;
-  position: absolute;
   z-index: 999999;
   outline: none;
   cursor: pointer;
@@ -497,14 +485,11 @@ console.log(bars)
 }
 
 #menu {
-  height: 0;
-  width: 0;
   position: fixed;
-  background-color: lighten(#00ffff, 40%);
+  background-color: #FA6A14;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
 }
 
 .menu-nav {
@@ -515,7 +500,6 @@ console.log(bars)
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   font-size: 2rem;
   overflow: hidden;

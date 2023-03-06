@@ -62,6 +62,6 @@ const story = await fetchRecipeBySlug(slug as string)
         <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
 
-  <Sushi :story="story"/>
+  <AnimationsSushi :story="story"/>
 </section>
 </template>

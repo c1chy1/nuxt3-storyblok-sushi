@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavHamburger
+    <ButtonsNavHamburger
         @show-menu.once="toggleMenu" @click="open"
     />
 
@@ -8,13 +8,9 @@
          ref="menu"
          class="w-0 h-0 z-40 flex items-center"
     >
-      <ul class="menu-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Our Team</a></li>
-      </ul>
+      <div class="menu-nav h-full flex flex-col items-center">
+      <IconsNavIcons/>
+      </div>
     </nav>
   </div>
 
@@ -30,11 +26,10 @@ const tl = gsap.timeline({paused:true})
 
 
 
-
-
 onMounted(() => {
-  const links = document.querySelectorAll('.menu-nav a')
+  const links = document.querySelectorAll('.menu-nav svg')
 
+  console.log(links)
   tl.to(menu.value, 0.5, {
     width: '100%',
     height: '0.5%'

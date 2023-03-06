@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import {useColorModeStore} from '@/stores/darkMode'
+import {useColorModeStore} from '~/stores/darkMode'
 const colorModeStore = useColorModeStore()
 /*
 const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duotone' : 'ph:sun-duotone')

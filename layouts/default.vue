@@ -3,17 +3,16 @@
 
 
 
-<!--  <Intro/>-->
-  <Navigation/>
-  <DarkModeButton/>
+<!--  <SectionIntro/>-->
+  <LayoutNavigation/>
+  <ButtonsDarkModeButton/>
   <div id="smooth-wrapper">
     <div id="smooth-content">
-      <Logo/>
+      <IconsLogo/>
       <slot class="page mt-16" />
     </div>
   </div>
-
-  <ShareIcons/>
+  <IconsShareIcons/>
 
 
 </template>

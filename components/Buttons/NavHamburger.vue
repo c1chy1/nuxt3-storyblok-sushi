@@ -1,5 +1,5 @@
 <template>
-  <header class="z-50 top-24 left-24 h-10 w-12 fixed">
+  <header class="z-50 top-12 left-12 h-10 w-12 fixed">
     <div class="nav-container print:invisible">
       <input
         class="checkbox"

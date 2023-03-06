@@ -1,0 +1,103 @@
+<template>
+  <nav class="fixed  right-24 bottom-[7rem] z-20  rounded-lg dark:bg-transparent transition-all">
+    <div class="cube w-16 h-16 shadow-2xl rounded-lg" ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
+      <div class="plus ">
+        <div class="plus-horizontal bg-white " ref="horizontal"></div>
+        <div class="plus-vertical bg-white" ref="vertical"></div>
+      </div>
+      <div class="quadrant">
+    <IconsNavIcons/>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script setup lang="ts">
+import gsap from 'gsap'
+let tl = gsap.timeline();
+
+const cube = ref()
+const horizontal = ref()
+const vertical = ref()
+
+onMounted(() => {
+
+
+  let responsive = gsap.matchMedia()
+  responsive.add("(min-width: 1024px)", () => {
+    tl.timeScale(1.6);
+    tl.to(cube.value, 0.7, {
+      translate: '25% 25%',
+      rotation: 45,
+      width: '150px',
+      height: '150px',
+      ease: "Expo.easeOut"
+    }, 'first');
+    tl.to("svg", 0.3, {rotate: -45}, 'first');
+    tl.to(vertical.value, 0.3, {height: '0', ease: "Power1.easeIn"}, 'first');
+    tl.to(horizontal.value, 0.3, {width: '0',  ease: "Power1.easeIn"}, 'first');
+    tl.to('#quadrant_0', 0.15, {x: -5, y: -5 , borderRadius : 10}, 'seperate');
+    tl.to('#fade-up', 0.2, {opacity: 1, y: 0}, 'seperate+=0.2');
+    tl.to('#quadrant_1', 0.15, {x: 5, y: -5, borderRadius : 10}, 'seperate');
+    tl.to('#fade-right', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2');
+    tl.to('#quadrant_2', 0.15, {x: -5, y: 5, borderRadius : 10}, 'seperate');
+    tl.to('#fade-down', 0.2, {opacity: 1, y: 0}, 'seperate+=0.2');
+    tl.to('#quadrant_3', 0.15, {x: 5, y: 5, borderRadius : 10}, 'seperate');
+    tl.to('#fade-left', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2');
+
+  })
+})
+function playTimeline(e: any) {
+  e.stopPropagation();
+  tl.play();
+}
+function reverseTimeline(e: any) {
+  e.stopPropagation();
+  tl.timeScale(1.8);
+  tl.reverse();
+}
+</script>
+
+<style scoped>
+
+
+.cube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.plus-vertical,
+.plus-horizontal {
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.plus-vertical {
+  height: 50%;
+  width: 5px;
+}
+.plus-horizontal {
+  width: 50%;
+  height: 5px;
+}
+.quadrant {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+</style>

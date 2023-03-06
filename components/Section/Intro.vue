@@ -81,13 +81,10 @@ function start() {
 
 
   })
-
   function scrollToTop() {
     beginAnimation.to(window, {duration: 0, scrollTo: {x:0,y:0}})
 
   }
-
-
 
   responsive.add("(min-width: 1024px)", () => {
     beginAnimation.to('.chopstick-container', 1.5, {top: '34%'}, 1.5)

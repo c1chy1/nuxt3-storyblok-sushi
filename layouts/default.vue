@@ -4,7 +4,7 @@
 
 
 <!--  <Intro/>-->
-  <Navigation preload/>
+  <Navigation/>
   <DarkModeButton/>
   <div id="smooth-wrapper">
     <div id="smooth-content">

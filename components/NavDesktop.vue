@@ -30,7 +30,6 @@ let tl = gsap.timeline();
 
 
 
-
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const changeLocale = (loc ) => {
   locale.value = loc

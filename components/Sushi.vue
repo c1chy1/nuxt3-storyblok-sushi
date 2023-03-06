@@ -41,7 +41,10 @@ onMounted(() => {
     const heading = self.selector("#heading")
 
 
-    timeline.from(circle1, {
+    timeline
+        .addLabel('start')
+
+        .from(circle1, {
       x: "-=300",
       opacity: 0,
       scrollTrigger: {
@@ -137,6 +140,7 @@ onMounted(() => {
             end: '0'
           },
         })
+        .addLabel('end')
   }, scope.value)
 })
 

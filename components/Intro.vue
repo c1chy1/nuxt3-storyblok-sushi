@@ -29,6 +29,8 @@ import gsap from 'gsap'
 const beginAnimation = gsap.timeline();
 
 
+
+
 onMounted(() => {
 
   start();
@@ -51,7 +53,7 @@ function start() {
           webkitFilter: "brightness(0.8)",
           filter: "brightness(0.8)",
         }, 2)
-        .set(window, {duration: 2, scrollTo: {y: "min"}})
+        .set( window , {duration: 2, scrollTo: {y: "min"}})
         .to('.chopstick1', 2, {rotation: 190}, 3.5)
         .to('.chopstick2', 2, {rotation: 165}, 3.5)
         .to('.shine-left', .5, {left: '30%'}, 4.2)

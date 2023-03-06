@@ -3,8 +3,8 @@
 
 
 
-  <Intro/>
-  <Navigation/>
+<!--  <Intro/>-->
+  <Navigation preload/>
   <DarkModeButton/>
   <div id="smooth-wrapper">
     <div id="smooth-content">

@@ -14,7 +14,7 @@ const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 <template>
 
 
-  <div class="hero container mx-auto flex flex-col">
+  <div id="hero" class="hero container mx-auto flex flex-col">
     <div class="flex py-12 justify-between flex-col sm:flex-row mx-auto  font-sans">
 
       <div class="w-full sm:w-1/2">

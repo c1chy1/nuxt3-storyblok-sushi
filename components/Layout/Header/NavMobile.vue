@@ -1,7 +1,7 @@
 <template>
   <div>
     <ButtonsNavHamburger
-        @show-menu.once="toggleMenu" @click="open"
+        @show-menu.once="toggleMenu" @click="toggle"
     />
 
     <nav id="menu"
@@ -9,7 +9,9 @@
          class="w-0 h-0 z-40 flex items-center"
     >
       <div class="menu-nav h-full flex flex-col items-center">
-      <IconsNavIcons/>
+      <IconsNavIcons
+      :close="toggle"
+      />
       </div>
     </nav>
   </div>
@@ -28,8 +30,10 @@ const tl = gsap.timeline({paused:true})
 
 onMounted(() => {
   const links = document.querySelectorAll('.menu-nav svg')
+  const divs = document.querySelectorAll('.menu-nav .quadrant__item')
 
   console.log(links)
+  console.log(divs)
   tl.to(menu.value, 0.5, {
     width: '100%',
     height: '0.5%'
@@ -39,8 +43,13 @@ onMounted(() => {
         height: '100%',
         ease: "Bounce.easeOut"
       }, '-=0.2')
+
+      .to(divs, 0.4, {
+        width: '50%'
+      })
+
       .to(links, 0.4, {
-opacity:1
+        opacity:1
   })
 
 })
@@ -49,7 +58,7 @@ const { isOpenMenu,closeMenu,toggleMenu , openMenu } = useMenu()
 
 
 
-function open() {
+function toggle() {
 
   if (isOpenMenu.value) {
     tl.reverse();

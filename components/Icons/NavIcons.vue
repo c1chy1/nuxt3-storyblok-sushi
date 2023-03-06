@@ -1,18 +1,28 @@
 <template>
   <div v-for="item in icons" :key="icons.name"
-       :id="item.id" class="quadrant__item my-1 lg:my-0 bg-[#FA6A14] dark:bg-dark-navigation  shadow-2xl  border-dark dark:border-white active:border-2 "
+       :id="item.id"
+       class="quadrant__item my-1 w-0 lg:w-1/2 lg:my-0 bg-[#FA6A14] dark:bg-dark-navigation  shadow-2xl  border-dark dark:border-white active:border-2 "
        @click="changeLocale(item.loc)">
-    <div class="quadrant__item__content lg:absolute transform lg:-translate-x-1/2 lg:-translate-y-1/2"
+    <div
+
+        @click="close"
+
+        class="quadrant__item__content lg:absolute transform lg:-translate-x-1/2 lg:-translate-y-1/2"
 
 
-    ><component class="w-12 h-12 opacity-0"
+    ><component class=" w-12 h-12 opacity-0 "
         :is="item.icon" :id="item.name">
     </component>
+
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
+const props = defineProps({
+  close : Object
+})
 
 import SearchIcon from "~/components/Icons/SearchIcon.vue";
 
@@ -24,6 +34,7 @@ const changeLocale = (loc ) => {
   locale.value = loc
   router.push({path: localeUrl() || '/home'})
 }
+
 
 
 
@@ -207,7 +218,7 @@ const icons = shallowRef([
 
 <style scoped>
 .quadrant__item {
-  width: 50%;
+
   height: 50%;
   display: flex;
   align-items: center;

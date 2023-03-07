@@ -1,5 +1,5 @@
 <template>
-  <div class="hero container mx-auto flex flex-col z-50">
+  <div class=" px-4 container mx-auto flex flex-col z-50">
 
   <NuxtLink :to="localeUrl() || '/home'"
             class=" logo pt-4  flex items-center font-display text-3xl font-bold text-gray-800 dark:text-white transition-all">

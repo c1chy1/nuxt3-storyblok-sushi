@@ -32,8 +32,6 @@ onMounted(() => {
   const links = document.querySelectorAll('.menu-nav svg')
   const divs = document.querySelectorAll('.menu-nav .quadrant__item')
 
-  console.log(links)
-  console.log(divs)
   tl.to(menu.value, 0.5, {
     width: '100%',
     height: '0.5%'

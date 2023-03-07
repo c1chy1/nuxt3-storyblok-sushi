@@ -19,7 +19,9 @@
 
 <script setup lang="ts">
 
-const props = defineProps<{blok:{
+const props = defineProps<{
+
+  blok:{
     title:string,
 
   }}>();

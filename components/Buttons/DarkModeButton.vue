@@ -1,12 +1,12 @@
 <template>
   <div
-      class="switch z-50 fixed right-24 top-6 bg-shrimp-500 dark:bg-dark-navigation"
+      class="switch z-50 fixed  right-2 top-2 h-20   w-10 lg:h-28  lg:right-24 lg:top-6 bg-shrimp-500 dark:bg-dark-navigation"
       @click="open"
   >
     <div class="toggle-button">
-      <div class="toggle"></div>
+      <div class="toggle h-8 w-8 mx-auto"></div>
       <div class="moon-mask bg-shrimp-500 dark:bg-dark-navigation "></div>
-      <div class="circles-wrapper">
+      <div class="circles-wrapper absolute -left-2.5 top-11">
         <div class="circle"></div>
         <div class="circle"></div>
         <div class="circle"></div>
@@ -31,16 +31,31 @@ const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'ph:moon-duoton
 import gsap from "gsap"
 const tl = gsap.timeline({ paused: true });
 let toggle = false
-const open = () => {
-  colorModeStore.switchColorMode()
+
+const localDarkMode = localStorage.getItem("nuxt-color-mode")
+console.log(localDarkMode)
+
+
+
+
+
+onMounted(()=> {
+
   tl
       .set(".switch", { boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)" })
-  tl.to(".toggle-button", 0.2, { scale: 0.7 }, 0)
+      .to(".toggle-button", 0.2, { scale: 0.7 }, 0)
       .set(".toggle", { backgroundColor: "#FFF" })
       .set(".circle", { display: "none" })
       .to(".moon-mask", 0.2, { translateY: 20, translateX: -10 }, 0.2)
       .to(".toggle-button", 0.2, { translateY: 49 }, 0.2)
       .to(".toggle-button", 0.2, { scale: 0.9 }, 0.5)
+
+
+})
+
+const open = () => {
+  colorModeStore.switchColorMode()
+
   toggle = !toggle
   if(toggle){
     tl.restart();
@@ -64,8 +79,7 @@ $white: #fff;
 /* ***** Global Styles - End ***** */
 /* ***** Specific Styles - Start ***** */
 .switch {
-  width: 60px;
-  height: 110px;
+
   padding-top: 2px;
   border-radius: 40px;
   cursor: pointer;
@@ -74,15 +88,11 @@ $white: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .toggle-button {
-  transform: scale(0.8);
+  transform: scale(0.5);
   transform-origin: center center;
 }
 .toggle {
   position: relative;
-  width: 35px;
-  height: 35px;
-  margin: 12px;
-  margin-top: 12px;
   background-color: $yellow;
   border-radius: 50%;
 }

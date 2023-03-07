@@ -1,14 +1,14 @@
 <template>
-  <header class="z-50 top-12 left-12 h-10 w-12 fixed">
-    <div class="nav-container print:invisible">
+  <header class="z-50 bottom-8 right-4 h-10 w-12 fixed">
+    <div class="nav-container flex items-center h-12 p-2 rounded-full bg-shrimp-600 print:invisible">
       <input
-        class="checkbox"
+        class="checkbox flex items-center p-2 "
         type="checkbox"
         name="menu"
        v-model="isOpenMenu"
         aria-label="Menu"
       />
-      <div for="menu" class="hamburger-lines">
+      <div for="menu" class="hamburger-lines w-[28px] h-[23px]  mx-auto flex flex-col justify-between">
         <span class="line line1 drop-shadow-2xl"></span>
         <span class="line line2 drop-shadow-2xl"></span>
         <span class="line line3 drop-shadow-2xl"></span>
@@ -29,34 +29,21 @@ emit("showMenu");
 
 <style scoped>
 .nav-container {
-  display: block;
   position: relative;
-  height: 60px;
-}
 
+}
 .nav-container .checkbox {
+
   position: absolute;
-  display: block;
-  height: 36px;
-  width: 32px;
-  top: 12px;
-  left: 20px;
   z-index: 5;
   opacity: 0;
   cursor: pointer;
 }
 
 .nav-container .hamburger-lines {
-  display: block;
-  height: 26px;
-  width: 32px;
-  position: absolute;
-  top: 17px;
-  left: 10px;
+
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
 }
 
 .nav-container .hamburger-lines .line {
@@ -64,21 +51,24 @@ emit("showMenu");
   height: 5px;
   width: 100%;
   border-radius: 10px;
-  background: rgb(181, 184, 240);
+  background: white;
 }
 
 .nav-container .hamburger-lines .line1 {
   transform-origin: 0% 0%;
   transition: transform 0.4s ease-in-out;
+  transition-delay: 0.5s;
 }
 
 .nav-container .hamburger-lines .line2 {
   transition: transform 0.2s ease-in-out;
+  transition-delay: 0.5s;
 }
 
 .nav-container .hamburger-lines .line3 {
-  transform-origin: 0% 100%;
+  transform-origin: 0 100%;
   transition: transform 0.4s ease-in-out;
+  transition-delay: 0.5s;
 }
 
 .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {

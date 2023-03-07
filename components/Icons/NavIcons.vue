@@ -4,13 +4,12 @@
        class="quadrant__item my-1 w-0 lg:w-1/2 lg:my-0 bg-[#FA6A14] dark:bg-dark-navigation  shadow-2xl  border-dark dark:border-white active:border-2 "
        @click="changeLocale(item.loc)">
     <div
-
         @click="close"
-
         class="quadrant__item__content lg:absolute transform lg:-translate-x-1/2 lg:-translate-y-1/2"
 
+    ><component
 
-    ><component class=" w-12 h-12 opacity-0 "
+        class=" w-12 h-12 opacity-0 "
         :is="item.icon" :id="item.name">
     </component>
 

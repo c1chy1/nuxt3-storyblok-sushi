@@ -8,7 +8,7 @@ defineProps({
 </script>
 <template>
   <button
-      class="font-bold font-sans border-2 rounded-full px-2 py-1.5 relative"
+      class="font-bold font-sans text-xs lg:text-base border-2 rounded-full px-2 py-1.5 relative"
       :class="
       blok.type === 'solid'
         ? 'bg-shrimp-600 text-white border-transparent hover:text-dark-buttonText dark:hover:text-white  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
@@ -28,8 +28,6 @@ defineProps({
 
 <style scoped>
 button {
-
-  font-size: 16px;
 
   border-radius: 0.5em;
   font-weight: bold;

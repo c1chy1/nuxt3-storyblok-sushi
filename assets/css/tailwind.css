@@ -9,11 +9,6 @@ body {
     @apply bg-gray-100  dark:bg-dark-background dark:text-dark-paragraph transition-all duration-500
 }
 
-/*nav {
-
-    @apply dark:bg-dark-navigation dark:text-dark-paragraph transition-all duration-500
-
-}*/
 button {
 
     @apply transition-all duration-700

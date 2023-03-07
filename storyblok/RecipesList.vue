@@ -1,7 +1,7 @@
 <template>
   <section class="recipes-list w-full">
     <div class="container mx-auto py-20 px-8 sm:px-0">
-      <h2 class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
+      <h2 class="text-shrimp-500 font-display text-2xl lg:text-4xl font-bold mb-8 lg:mb-16 w-2/3">
 {{blok.title}}
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">

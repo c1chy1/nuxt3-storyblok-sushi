@@ -12,7 +12,7 @@ defineProps<{
   <article class="  rounded-lg overflow-hidden shadow-2xl " :key="uuid">
     <div class="card-hover  h-[28rem]   lg:h-[36rem] lg:h-full   group w-full relative text-right rounded-xl ">
       <div class="card-hover__content after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
-        <h3 class="card-hover__title mx-auto w-5/6 font-bold text-2xl font-display text-shrimp-600 dark:text-shrimp-300 w-1/2 z-10">
+        <h3 class="card-hover__title mx-auto w-5/6 font-bold text-xl lg:text-2xl font-display text-shrimp-600 dark:text-shrimp-300 w-1/2 z-10">
           {{ content.title }}
         </h3>
         <p class="card-hover__text z-10 hidden lg:block"> {{ content.description }}</p>
@@ -28,11 +28,11 @@ defineProps<{
         />
 
         <NuxtLink :to="`${localeUrl()}/recipes/${slug}`"
-                  class="card-hover__link dark:bg-shrimp-900  dark:text-shrimp-300 text-2xl text-shrimp-600 font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full"
+                  class="card-hover__link dark:bg-shrimp-900  dark:text-shrimp-300 text-xl lg:text-2xl text-shrimp-600 font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full"
 
         >
           <span class="">Learn How</span>
-          <svg class="w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <svg class=" w-6 lg:w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
           </svg>
         </NuxtLink>

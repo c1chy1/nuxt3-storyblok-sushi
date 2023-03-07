@@ -9,9 +9,9 @@ const story = await fetchRecipeBySlug(slug as string)
 </script>
 <template>
 <section>
-      <header v-if="story" class="relative my-32 container mx-auto px-4 md:px-0 bg-">
+      <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
-        <div class="flex  justify-end w-full md:w-1/2">
+        <div class="flex  justify-end w-full lg:w-1/2">
           <NuxtImg
               loading="lazy"
               preload
@@ -19,7 +19,7 @@ const story = await fetchRecipeBySlug(slug as string)
               format="webp"
               aspect-ratio="16/9"
               sizes="sm:50vw md:75vw lg:[600px] xl:[1200px]"
-              class="object-cover rounded-lg aspect-square"
+              class="mx-auto w-full  object-cover rounded-lg aspect-square"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />
@@ -27,7 +27,7 @@ const story = await fetchRecipeBySlug(slug as string)
         <div
             class="bg-white dark:bg-dark-buttonText dark:bg-opacity-90 dark:contrast-[.80] rounded-lg overflow-hidden md:shadow-md md:px-8 py-8 w-full md:absolute md:w-1/2 top-4 right-8"
         >
-        <h1 class="text-shrimp-700 font-display text-4xl font-bold mb-12 w-2/3">
+        <h1 class="text-shrimp-700 font-display text-center text-xl lg:text-left lg:text-4xl font-bold mb-12 lg:w-2/3">
           {{ story.content.title }}
         </h1>
           <span class="bg-gray-100 rounded-full absolute right-8 p-4">
@@ -37,14 +37,14 @@ const story = await fetchRecipeBySlug(slug as string)
               alt=""
           />
         </span>
-        <ul class="flex mb-12 border-b border-gray-200 pb-4 text-gray-400 ">
-          <li class="flex items-center mr-4 dark:text-dark-paragraph transition-all">
+        <ul class="flex mb-12 px-6 lg:px-2 border-b border-gray-200 pb-4 text-gray-400 ">
+          <li class="flex items-center mr-4 text-sm lg:text-base dark:text-dark-paragraph transition-all">
             <ClientOnly>
               <Icon name="ic:outline-more-time"  size="28"/>
             </ClientOnly>
             <span class="ml-2">{{ story.content.prep_time }} mins</span>
           </li>
-          <li class="flex items-center dark:text-dark-paragraph transition-all">
+          <li class="flex items-center text-sm lg:text-base dark:text-dark-paragraph transition-all">
             <ClientOnly>
               <Icon name="mdi:user-group"  size="28"/>
             </ClientOnly>
@@ -52,13 +52,13 @@ const story = await fetchRecipeBySlug(slug as string)
           </li>
         </ul>
 
-          <div class="test prose prose-ul:font-display text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
+          <div class="test prose prose-ul:font-display lg:text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>
 
       </header>
-      <div class="mx-auto prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
+      <div class="mx-auto pt-6 lg:pt-4 prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display lg:text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
         <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
 

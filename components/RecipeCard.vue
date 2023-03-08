@@ -9,8 +9,8 @@ defineProps<{
 }>()
 </script>
 <template>
-  <article class="  rounded-lg overflow-hidden shadow-2xl " :key="uuid">
-    <div class="card-hover  h-[28rem]   lg:h-[36rem] lg:h-full   group w-full relative text-right rounded-xl ">
+  <article class="rounded-lg overflow-hidden shadow-2xl " :key="uuid">
+    <div class="card-hover  h-[28rem]   lg:h-[36rem]    group w-full relative text-right rounded-xl ">
       <div class="card-hover__content after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
         <h3 class="card-hover__title mx-auto w-5/6 font-bold text-xl lg:text-2xl font-display text-shrimp-600 dark:text-shrimp-300 w-1/2 z-10">
           {{ content.title }}

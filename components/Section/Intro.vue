@@ -1,6 +1,8 @@
 <template>
   <div
-      class="sushi-container  fixed w-full h-screen bg-[#BBBBAA] dark:bg-dark top-0 left-0  flex flex-col  items-center  justify-end z-50 h-screen transition-all">
+      class="sushi-container  fixed w-full h-screen bg-[#BBBBAA]   dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
+
+
     <div class="chopstick-container h-1/2  top-0">
       <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all  z-50"></div>
       <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all"></div>
@@ -19,6 +21,7 @@
     </div>
     <div class="dish opacity-1  w-64 h-64 sm:w-80 sm:h-80 -bottom-2 sm:-bottom-8 absolute"></div>
   </div>
+
 </template>
 
 <script setup lang="ts">

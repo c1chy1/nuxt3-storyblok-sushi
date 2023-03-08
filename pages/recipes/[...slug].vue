@@ -19,7 +19,7 @@ const story = await fetchRecipeBySlug(slug as string)
               format="webp"
               aspect-ratio="16/9"
               sizes="sm:50vw md:75vw lg:[600px] xl:[1200px]"
-              class="mx-auto w-full  object-cover rounded-lg aspect-square"
+              class="mx-auto w-full lg:w-11/12 lg:mr-4  object-cover rounded-lg aspect-square"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />

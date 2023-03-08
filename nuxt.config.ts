@@ -7,7 +7,7 @@ export default defineNuxtConfig({
         compressPublicAssets: true,
     },
 
-    css: ["~/assets/css/tailwind.css"],
+    css: ['~/assets/css/tailwind.css','~/assets/css/tailwind.css'],
     build: {
         transpile: ['@marvr/storyblok-rich-text-vue-renderer','gsap'],
     },
@@ -15,6 +15,9 @@ export default defineNuxtConfig({
         storyblok: {
             baseURL: 'https://a.storyblok.com',
         },
+    },
+    app: {
+       pageTransition: { page: 'page' , mode: 'out-in'}
     },
 
 

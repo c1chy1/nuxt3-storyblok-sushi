@@ -6,15 +6,15 @@
     <div class="toggle-button pt-2 transform scale-50 lg:scale-[70%]">
       <div class="toggle h-8 w-8  mx-auto"></div>
       <div class="moon-mask bg-shrimp-600 dark:bg-dark-navigation "></div>
-      <div class="circles-wrapper absolute -left-[8px] top-[53px] lg:-left-[1px] ">
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
-        <div class="circle h-2 w-0.5 lg:h-2"></div>
+      <div class="circles-wrapper absolute -left-[8px] top-[52px] lg:-left-[1px] ">
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
+        <div class="circle h-2 w-0.5 lg:w-1"></div>
       </div>
     </div>
   </div>

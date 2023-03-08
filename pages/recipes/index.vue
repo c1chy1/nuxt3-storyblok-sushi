@@ -26,7 +26,7 @@ const localeLang = locale.value
 
 </script>
 <template>
-  <div class="container mx-auto py-20">
+  <div class="container mx-auto  py-10 lg:py-20 px-8">
     <h2 v-if="localeLang === 'en'" class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
     Recipes
     </h2>
@@ -56,7 +56,7 @@ const localeLang = locale.value
         </ClientOnly>
       </div>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12">
+    <div class="grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 ">
       <RecipeCard
           v-for="{ uuid, content, slug  } in filteredRecipes"
           :key="uuid"

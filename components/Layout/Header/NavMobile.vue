@@ -6,9 +6,9 @@
 
     <nav id="menu"
          ref="menu"
-         class="w-0 h-0 z-40 flex items-center"
+         class="w-0 h-0 z-40 flex items-center bg-shrimp-600 dark:bg-dark-background transition-all"
     >
-      <div class="menu-nav h-full flex flex-col items-center">
+      <div class="menu-nav h-full flex flex-col justify-around items-center">
       <IconsNavIcons
       :close="toggle"
       />
@@ -74,7 +74,6 @@ function toggle() {
 
 #menu {
   position: fixed;
-  background-color: #FA6A14;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

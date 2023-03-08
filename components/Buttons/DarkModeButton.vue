@@ -1,20 +1,20 @@
 <template>
   <div
-      class="switch z-50 fixed  right-2 top-2 h-20   w-10 lg:h-28  lg:right-24 lg:top-6 bg-shrimp-500 dark:bg-dark-navigation"
+      class="switch z-50 fixed  right-2 top-2 h-20 w-10 lg:w-14 lg:h-28  lg:right-24 lg:top-6 bg-shrimp-600 dark:bg-dark-navigation"
       @click="open"
   >
-    <div class="toggle-button">
-      <div class="toggle h-8 w-8 mx-auto"></div>
-      <div class="moon-mask bg-shrimp-500 dark:bg-dark-navigation "></div>
-      <div class="circles-wrapper absolute -left-2.5 top-11">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+    <div class="toggle-button pt-2 transform scale-50 lg:scale-[70%]">
+      <div class="toggle h-8 w-8  mx-auto"></div>
+      <div class="moon-mask bg-shrimp-600 dark:bg-dark-navigation "></div>
+      <div class="circles-wrapper absolute -left-[8px] top-[53px] lg:-left-[1px] ">
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
+        <div class="circle h-2 w-0.5 lg:h-2"></div>
       </div>
     </div>
   </div>
@@ -33,23 +33,28 @@ const tl = gsap.timeline({ paused: true });
 let toggle = false
 
 const localDarkMode = localStorage.getItem("nuxt-color-mode")
-console.log(localDarkMode)
-
-
-
 
 
 onMounted(()=> {
 
-  tl
-      .set(".switch", { boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)" })
-      .to(".toggle-button", 0.2, { scale: 0.7 }, 0)
-      .set(".toggle", { backgroundColor: "#FFF" })
-      .set(".circle", { display: "none" })
-      .to(".moon-mask", 0.2, { translateY: 20, translateX: -10 }, 0.2)
-      .to(".toggle-button", 0.2, { translateY: 49 }, 0.2)
-      .to(".toggle-button", 0.2, { scale: 0.9 }, 0.5)
 
+  tl
+      .set(".switch", {boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)"})
+      .to(".toggle-button", 0.2, {scale: 0.7}, 0)
+      .set(".toggle", {backgroundColor: "#FFF"})
+      .set(".circle", {display: "none"})
+      .to(".moon-mask", 0.2, {translateY: 32, translateX: -20}, 0.2)
+      .to(".toggle-button", 0.2, {translateY: 32}, 0.2)
+      .to(".toggle-button", 0.2, {scale: 0.7}, 0.5)
+
+
+  let responsive = gsap.matchMedia()
+  responsive.add("(min-width: 1024px)", () => {
+    tl
+        .to(".moon-mask", 0.2, {translateY: 32, translateX: -10}, 0.2)
+        .to(".toggle-button", 0.2, {translateY: 60}, 0.2)
+        .to(".toggle-button", 0.2, {scale: 0.9}, 0.5)
+  })
 
 })
 
@@ -88,7 +93,6 @@ $white: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .toggle-button {
-  transform: scale(0.5);
   transform-origin: center center;
 }
 .toggle {
@@ -106,8 +110,6 @@ $white: #fff;
 .circles-wrapper {
   .circle {
     position: absolute;
-    width: 4px;
-    height: 8px;
     background-color: $white;
     border-radius: 10px;
     &:first-child {

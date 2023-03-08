@@ -1,11 +1,11 @@
 <template>
   <div v-for="item in icons" :key="icons.name"
        :id="item.id"
-       class="quadrant__item my-1 w-0 lg:w-1/2 lg:my-0 bg-[#FA6A14] dark:bg-dark-navigation  shadow-2xl  border-dark dark:border-white active:border-2 "
+       class="quadrant__item my-1 w-0 lg:w-1/2 h-1/6 lg:h-1/2 lg:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
        @click="changeLocale(item.loc)">
     <div
         @click="close"
-        class="quadrant__item__content lg:absolute transform lg:-translate-x-1/2 lg:-translate-y-1/2"
+        class="quadrant__item__content  lg:absolute transform lg:-translate-x-1/2 lg:-translate-y-1/2"
 
     ><component
 
@@ -218,24 +218,28 @@ const icons = shallowRef([
 <style scoped>
 .quadrant__item {
 
-  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
+
+
 #quadrant_0 {
-  border-top-left-radius: 12px!important;
+
+  border-radius: 25px;
 }
 #quadrant_1 {
-  border-top-right-radius: 12px!important;
+  border-radius: 25px;
 }
 #quadrant_2 {
-  border-bottom-left-radius: 12px!important;
+  border-radius: 25px;
 }
 #quadrant_3 {
-  border-bottom-right-radius: 12px!important;
+  border-radius: 25px;
 }
+
+
 .quadrant__item__content {
   width: 100%;
   height: 100%;

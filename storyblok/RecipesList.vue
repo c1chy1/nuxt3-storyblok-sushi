@@ -4,8 +4,7 @@
       <h2 class="text-shrimp-500 font-display text-2xl lg:text-4xl font-bold mb-8 lg:mb-16 w-2/3">
 {{blok.title}}
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
-        <RecipeCard
+      <div class="grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 ">        <RecipeCard
             v-for="{ uuid, content, slug } in recipes"
             :key="uuid"
             :uuid="uuid"

@@ -1,5 +1,5 @@
 <template>
-  <header class="z-50 bottom-8 right-4 h-10 w-12 fixed">
+  <header class="z-40 bottom-8 right-4 h-10 w-12 fixed">
     <div class="nav-container flex items-center h-12 p-2 rounded-full bg-shrimp-600 transition-all transform delay-1000 print:invisible"
          :class="isOpenMenu ? 'dark:bg-transparent' : 'dark:bg-dark-navigation'"
     >

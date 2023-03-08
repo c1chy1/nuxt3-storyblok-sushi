@@ -3,7 +3,7 @@
 
 
 
-<!--  <SectionIntro/>-->
+  <SectionIntro/>
   <LayoutNavigation/>
   <ButtonsDarkModeButton/>
   <div id="smooth-wrapper">

@@ -2,51 +2,48 @@
 
 
 
-
-  <SectionIntro/>
+<main>
+<!--  <SectionIntro/>-->
   <LayoutNavigation/>
   <ButtonsDarkModeButton/>
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-      <IconsLogo/>
-      <slot class="page mt-16" />
-    </div>
-  </div>
+    <IconsLogo/>
+      <NuxtPage class="page mt-16" />
   <IconsShareIcons/>
-
-
+</main>
 </template>
 
 <script setup lang="ts">
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
 
+const router = useRouter()
 
 useState('locale', () => 'en')
 
 
-gsap.registerPlugin(ScrollSmoother,ScrollTrigger)
-
-onMounted(()=> {
-  if (ScrollTrigger.isTouch === 1) {
-
-    ScrollSmoother.create({
-      smooth: 2,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
-      smoothTouch: 0.1
-    })
-
-  } else {
-
-   ScrollSmoother.create({
-      smooth: 2,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
-    })
-
-  }
-
-})
 </script>
+<style>
+.page-enter-from {
+
+  opacity: 0;
+  transform: translateY(100px);
+}
+.page-enter-active,
+.page-leave-active {
+  transition: all 1s;
+}
+/* .page-enter, */
+.page-leave-to {
+  opacity: 0;
+}
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 1s;
+}
+.layout-enter-from,
+.layout-leave-to {
+  filter: grayscale(1);
+}
+#smooth-content {
+  will-change: transform;
+}
+
+</style>

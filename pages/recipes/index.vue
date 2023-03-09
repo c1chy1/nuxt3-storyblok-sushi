@@ -1,39 +1,12 @@
-<script setup lang="ts">
-
-const locale = useState('locale')
-
-const filter = ref('')
-
-const category = ref('')
-const { categories, fetchCategories } = useCategories()
-await fetchCategories()
-
-const { fetchRecipes , filteredRecipes } = useRecipes(filter, category)
-await fetchRecipes()
-
-watch(filter, async () => {
-
-
-  await fetchRecipes()
-
-})
-
-watch(category, async () => {
-  await fetchRecipes()
-})
-
-const localeLang = locale.value
-
-</script>
 <template>
   <div class="container mx-auto  py-10 lg:py-20 px-8">
     <h2 v-if="localeLang === 'en'" class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
     Recipes
     </h2>
-    <h2 v-else-if="localeLang === 'de'" class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
+    <h2 v-if="localeLang === 'de'" class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
       Rezepte
     </h2>
-    <h2 v-else-if="localeLang === 'pl'" class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
+    <h2 v-if="localeLang === 'pl'" class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
       Recepty
     </h2>
     <div class="w-full flex justify-between py-8 mb-4">
@@ -66,3 +39,30 @@ const localeLang = locale.value
     </div>
   </div>
 </template>
+<script setup lang="ts">
+
+const locale = useState('locale')
+
+const filter = ref('')
+
+const category = ref('')
+const { categories, fetchCategories } = useCategories()
+await fetchCategories()
+
+const { fetchRecipes , filteredRecipes } = useRecipes(filter, category)
+await fetchRecipes()
+
+watch(filter, async () => {
+
+
+  await fetchRecipes()
+
+})
+
+watch(category, async () => {
+  await fetchRecipes()
+})
+
+const localeLang = locale.value
+
+</script>

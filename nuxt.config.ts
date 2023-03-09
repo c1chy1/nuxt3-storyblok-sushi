@@ -16,9 +16,12 @@ export default defineNuxtConfig({
             baseURL: 'https://a.storyblok.com',
         },
     },
+
     app: {
-       pageTransition: { page: 'page' , mode: 'out-in'}
+        pageTransition: { name: 'page', mode: 'out-in' },
+        layoutTransition: { name: 'layout', mode: 'out-in' }
     },
+
 
 
     modules: [['@storyblok/nuxt',

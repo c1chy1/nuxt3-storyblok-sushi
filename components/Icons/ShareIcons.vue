@@ -44,8 +44,6 @@ const close = () => {
 
 <style scoped lang="sass">
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700")
-body
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAhFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAABqamrHx8e5ubnBwcHIyMjT09PLy8vPz8/MzMzW1tba2trY2Njd3d3j4+Pg4ODh4eHl5eXm5ubm5ubq6urq6urn5+fX19fr6+vu7u7o6Ojr6+vp6enn5+fp6enZ2dnb29vg4ODj4+Pb29vd3d3Y2Ni7xc8dAAAALHRSTlMAAQIDBAUGDCAhITM6Ozs8Pj5CRElKTE9RU1RVVllZWVpaXF5eZGRkZGlpb0QJKPIAAADPSURBVHjatZJZD4IwEIQtPZBDkPuQipzW8v//n8UQFkuMT8zrl53Mzu7pOCFkKCG0B4aBMSEYK6oTTChTogQvDAg1ff6S3DPpwoDYg+iaRy9G64vNZGqrIs+Lqp1sxWCImENbZmkcp1nZjiZZxxCmvrhlSRSGUZLdhEcxWv0Y74o0urpuEKVFx9nqaBAm6zwOXcdxwzivJSNbdNcRGPbKMNgaQoynHgPCjxB++ISHlS1Y+bysDEWNqqimE8NM0K5eKfkF6v1zFP2Uvx/gML0BQC8SZ10Cd14AAAAASUVORK5CYII=), auto
 .content
   display: flex
   justify-content: center

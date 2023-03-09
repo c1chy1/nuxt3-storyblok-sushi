@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const {locale} = useI18n()
+const locale = useState('locale')
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
+const localeLang = locale.value
 
 defineProps<{
   uuid: string
@@ -12,17 +13,17 @@ defineProps<{
   <article class="rounded-lg overflow-hidden shadow-2xl w-72 2xl:w-80 mx-auto " :key="uuid">
     <div class="card-hover  h-[28rem]    lg:h-[32rem]  mx-auto  group w-full relative text-right rounded-xl ">
       <div class="card-hover__content after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
-        <h3 class="card-hover__title mx-auto w-5/6 font-bold text-xl lg:text-2xl font-display text-shrimp-600 dark:text-shrimp-300 w-1/2 z-10">
+        <h3 class="card-hover__title mx-auto lg:w-5/6 font-bold text-base lg:text-xl font-display text-shrimp-600 dark:text-shrimp-300  z-10">
           {{ content.title }}
         </h3>
-        <p class="card-hover__text z-10 hidden lg:block"> {{ content.description }}</p>
+        <p class="card-hover__text z-10 hidden  lg:block"> {{ content.description }}</p>
 
         <img
-            class=" mt-6 px-auto  dark:text-red dark:contrast-[1]
+            class=" mt-6 ml-4 px-auto  dark:text-red dark:contrast-[1]
 
 
-            group-hover:-translate-x-[8rem] group-hover:scale-75 group-hover:-translate-y-8
-            lg:group-hover:-translate-x-[8rem] lg:group-hover:scale-75 w-16 h-16 grayscale contrast-[.25] z-10 transform transition-all  duration-500 "
+            group-hover:-translate-x-[100px] group-hover:scale-75 group-hover:-translate-y-8
+            lg:group-hover:-translate-x-[125px] lg:group-hover:scale-75 w-16 h-16 grayscale contrast-[.25] z-10 transform transition-all  duration-500 "
             :src="content.category.content.icon.filename"
             alt=""
         />
@@ -31,14 +32,18 @@ defineProps<{
                   class="card-hover__link dark:bg-shrimp-900  dark:text-shrimp-300 text-xl lg:text-2xl text-shrimp-600 font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full"
 
         >
-          <span class="">Learn How</span>
+          <span v-if="localeLang === 'en'" >Learn How</span>
+          <span v-if="localeLang === 'pl'" >Naucz się jak</span>
+          <span v-if="localeLang === 'de'" >Lern wie</span>
           <svg class=" w-6 lg:w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
           </svg>
         </NuxtLink>
       </div>
       <div class="card-hover__extra text-[#55423d] text-2xl font-mono  rounded-lg">
-        <h4>Learn <span class="text-[#9A3C03]">now !<br></span> it's very<span  class="text-[#9A3C03]"> simple!</span></h4>
+        <h4  v-if="localeLang === 'en'"  >Learn <span class="text-[#9A3C03]">now!<br></span> it's very<span  class="text-[#9A3C03]"> simple!</span></h4>
+        <h4  v-if="localeLang === 'pl'" >Naucz <span class="text-[#9A3C03]">się !<br></span> to bardzo<span  class="text-[#9A3C03]"> proste!</span></h4>
+        <h4  v-if="localeLang === 'de'" >Lern <span class="text-[#9A3C03]">jetzt !<br></span> es ist<span  class="text-[#9A3C03]"> einfach!</span></h4>
       </div><NuxtImg
         preload
         loading="lazy"

@@ -1,6 +1,6 @@
 <template>
-  <header class="z-40 bottom-8 right-4 h-10 w-12 fixed">
-    <div class="nav-container flex items-center h-12 p-2 rounded-full bg-shrimp-600 transition-all transform delay-1000 print:invisible"
+  <header class="z-[45] bottom-8 right-4 h-10 w-12 fixed">
+    <div class="nav-container flex items-center h-12 p-2 rounded-full bg-shrimp-600 dark:bg-dark-navigation  transition-all transform delay-1000 print:invisible"
          :class="isOpenMenu ? 'dark:bg-transparent' : 'dark:bg-dark-navigation'"
     >
       <input
@@ -32,7 +32,6 @@ emit("showMenu");
 <style scoped>
 .nav-container {
   position: relative;
-
 }
 .nav-container .checkbox {
 

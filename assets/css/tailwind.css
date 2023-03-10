@@ -1,5 +1,3 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,14 +22,14 @@ h1 {
 
 h2 {
 
-    @apply  dark:bg-transparent dark:text-dark-buttonBackground transition-all duration-500
+    @apply dark:bg-transparent dark:text-dark-buttonBackground transition-all duration-500
 
 
 }
 
 h3 {
 
-    @apply  transition-all duration-500
+    @apply transition-all duration-500
 
 
 }
@@ -40,23 +38,33 @@ li {
     @apply transition-all duration-300
 
 }
-.page-enter-active,
-.page-leave-active {
-    transition: all 0.8s;
+
+.zoom-enter-active,
+.zoom-leave-active {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: zoom;
 }
-.page-enter-from,
-.page-leave-to {
-    opacity: 0;
-    filter: blur(1rem);
+
+.zoom-leave-active {
+    animation-direction: reverse;
+}
+
+@keyframes zoom {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @layer base {
 
 
 }
-
-
-
 
 
 @font-face {
@@ -74,7 +82,6 @@ li {
     font-style: normal;
     font-display: swap;
 }
-
 
 
 @font-face {

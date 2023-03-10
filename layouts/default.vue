@@ -7,7 +7,11 @@
   <LayoutNavigation/>
   <ButtonsDarkModeButton/>
     <IconsLogo/>
-      <NuxtPage class="page mt-16" />
+
+  <transition name="scale-slide">
+    <NuxtPage class="page mt-16" />
+  </transition>
+
   <IconsShareIcons/>
 </main>
 </template>

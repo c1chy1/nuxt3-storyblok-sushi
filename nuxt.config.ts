@@ -18,8 +18,17 @@ export default defineNuxtConfig({
     },
 
     app: {
-        pageTransition: { name: 'slide' , mode:'out-in'}
+        pageTransition: { name: 'slide' , mode:'out-in'},
+
+       head: {
+
+           bodyAttrs: {
+               class: 'overflow-x-hidden'
+           },
+       }
+
     },
+
 
 
 

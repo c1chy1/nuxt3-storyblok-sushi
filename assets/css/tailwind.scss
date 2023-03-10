@@ -46,11 +46,6 @@ li {
 
 }
 
-.slide-leave {
-
-    animation: bounce .5s;
-
-}
 .slide-leave-to {
     opacity: 0;
     transform: translateX(100%);

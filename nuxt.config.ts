@@ -7,7 +7,7 @@ export default defineNuxtConfig({
         compressPublicAssets: true,
     },
 
-    css: ['~/assets/css/tailwind.css'],
+    css: ['~/assets/css/tailwind.scss'],
     build: {
         transpile: ['@marvr/storyblok-rich-text-vue-renderer','gsap'],
     },
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     },
 
     app: {
-        pageTransition: { name: 'zoom' , mode:'out-in'},
+        pageTransition: { name: 'slide' , mode:'out-in'},
     },
 
 

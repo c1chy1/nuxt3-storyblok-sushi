@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 ">
-      <RecipeCard
+      <SectionRecipeCard
           v-for="{ uuid, content, slug  } in filteredRecipes"
           :key="uuid"
           :uuid="uuid"

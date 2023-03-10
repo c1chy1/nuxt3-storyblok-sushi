@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 body {
-    @apply bg-gray-100  dark:bg-dark-background dark:text-dark-paragraph transition-all duration-500
+    @apply bg-gray-100  dark:bg-dark-background dark:text-dark-paragraph transition-all duration-500 overflow-x-hidden
 }
 
 button {
@@ -39,27 +40,60 @@ li {
 
 }
 
-.zoom-enter-active,
-.zoom-leave-active {
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-    animation-name: zoom;
+.slide-enter-from{
+    opacity: 0;
+    transform: translateX(-100%);
+
 }
 
-.zoom-leave-active {
-    animation-direction: reverse;
+.slide-leave {
+
+    animation: bounce .5s;
+
+}
+.slide-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.slide-enter-active,
+.slide-leave-active {
+    transition: 0.3s ease-out;
 }
 
-@keyframes zoom {
-    from {
-        opacity: 0;
-        transform: scale3d(0.3, 0.3, 0.3);
+
+/*
+@keyframes bounce {
+    from,
+    20%,
+    55%,
+    85%,
+    to {
+        animation-timing-function: cubic-bezier(0.320, 0.70, 0.355, 1);
+        transform: translate3d(0, 0, 0);
     }
 
-    100% {
-        opacity: 1;
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.700, 0.05, 0.855,
+                0.06);
+        transform: translate3d(0, -30px, 0);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.700, 0.05, 0.855,
+                0.06);
+        transform: translate3d(0, -15px, 0);
+    }
+
+    90% {
+        transform: translate3d(0, -4px, 0);
     }
 }
+
+*/
+
+
+
 
 @layer base {
 

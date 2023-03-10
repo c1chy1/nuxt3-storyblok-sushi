@@ -8,7 +8,7 @@
   <ButtonsDarkModeButton/>
     <IconsLogo/>
 
-    <NuxtPage class="page mt-16 overflow-y-hidden w-full" />
+    <slot class="page mt-16 overflow-y-hidden w-full" />
 
   <IconsShareIcons/>
 </main>

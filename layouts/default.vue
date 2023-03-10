@@ -3,7 +3,7 @@
 
 
 <main>
-<!--  <Intro/>-->
+  <Intro/>
   <LayoutNavigation/>
   <ButtonsDarkModeButton/>
     <IconsLogo/>
@@ -15,8 +15,6 @@
 </template>
 
 <script setup lang="ts">
-
-import FadeTransition from "~/components/Transitions/FadeTransition.vue";
 
 const router = useRouter()
 

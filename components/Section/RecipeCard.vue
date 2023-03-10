@@ -22,14 +22,14 @@ defineProps<{
             class=" mt-6 ml-4 px-auto  dark:text-red dark:contrast-[1]
 
 
-            group-hover:-translate-x-[100px] group-hover:scale-75 group-hover:-translate-y-8
-            lg:group-hover:-translate-x-[125px] lg:group-hover:scale-75 w-16 h-16 grayscale contrast-[.25] z-10 transform transition-all  duration-500 "
+            group-hover:translate-x-[90px] group-hover:scale-75 group-hover:translate-y-[75px]
+            lg:group-hover:translate-x-[110px] lg:group-hover:scale-75 lg:group-hover:translate-y-[90px]  lg:group-hover:absolute  w-16 h-16 grayscale contrast-[.25] z-10 transform transition-all  duration-500 "
             :src="content.category.content.icon.filename"
             alt=""
         />
 
         <NuxtLink :to="`${localeUrl()}/recipes/${slug}`"
-                  class="card-hover__link dark:bg-shrimp-900  dark:text-shrimp-300 text-xl lg:text-2xl text-shrimp-600 font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full"
+                  class="card-hover__link dark:bg-shrimp-900  dark:text-shrimp-300 text-xl lg:text-2xl text-shrimp-600 font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full z-30"
 
         >
           <span v-if="localeLang === 'en'" >Learn How</span>

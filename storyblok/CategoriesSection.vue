@@ -37,7 +37,7 @@ await fetchCategories()
             </li>
           </ul>
         </div>
-        <div class="w-2/3 sm:w-1/3 lg:w-1/4 z-20 mx-auto">
+        <div class="w-2/3 sm:w-1/3 lg:w-1/4 z-10 mx-auto">
 
           <NuxtImg
                     v-if="blok.media"

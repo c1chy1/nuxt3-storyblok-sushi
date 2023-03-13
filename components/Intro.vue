@@ -83,9 +83,7 @@ function start() {
         })
 
         .to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
-/*
         .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)
-*/
 
 
 

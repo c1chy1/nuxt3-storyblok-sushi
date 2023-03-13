@@ -1,10 +1,10 @@
 <template>
   <div
-      class="sushi-container fixed w-full h-screen bg-[#BBBBAA]    dark:bg-dark top-0 left-0  flex flex-col  items-center justify-center z-50 h-screen transition-all">
+      class="sushi-container fixed w-full h-screen bg-[#BBBBAA]  overflow-x-hidden  dark:bg-dark top-0 left-0  flex flex-col  items-center justify-center   xl:justify-end z-50 h-screen transition-all">
 
 
-    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 top-4"></div>
-    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all top-4"></div>
+    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 top-4   xl:top-1/3"></div>
+    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all top-4  xl:top-1/3"></div>
 
 <div class="transform scale-[60%] md:scale-75 h-1/5 relative">
 
@@ -50,7 +50,8 @@ function start() {
   let responsive = gsap.matchMedia()
   responsive.add("(min-width: 0)", () => {
     beginAnimation  .set('body', {
-      overflow: 'hidden',
+      overflowY: 'hidden',
+
     })
         .from('.dish', 1, {opacity: 0, bottom: '-25%', ease: "Back.easeOut"})
         .from('.sushi-container', 3, {y: -0, ease: "Back.easeOut"})
@@ -79,7 +80,8 @@ function start() {
         })
 
         .set('body', {
-          overflow: 'auto',
+          overflowY: 'auto',
+          overflowX: 'hidden'
         })
 
         .to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)

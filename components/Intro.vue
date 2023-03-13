@@ -1,12 +1,12 @@
 <template>
   <div
-      class="sushi-container fixed w-full h-screen bg-[#BBBBAA]   dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
+      class="sushi-container fixed w-full h-screen bg-[#BBBBAA]    dark:bg-dark top-0 left-0  flex flex-col  items-center justify-center z-50 h-screen transition-all">
 
 
-    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50  bottom-36"></div>
-    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all bottom-36"></div>
+    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 top-4"></div>
+    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all top-4"></div>
 
-<div class="transform scale-[60%] md:scale-75 h-1/5 mb-12 relative">
+<div class="transform scale-[60%] md:scale-75 h-1/5 relative">
 
 
   <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">
@@ -84,6 +84,7 @@ function start() {
 
         .to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
         .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)
+
 
 
 

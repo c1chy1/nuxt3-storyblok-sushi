@@ -36,7 +36,7 @@ const localDarkMode = localStorage.getItem("nuxt-color-mode")
 
 
 onMounted(()=> {
-
+ if(localDarkMode === 'dark')  colorModeStore.switchColorMode()
 
   tl
       .set(".switch", {boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)"})
@@ -61,10 +61,11 @@ onMounted(()=> {
 const open = () => {
   colorModeStore.switchColorMode()
 
-  toggle = !toggle
+toggle = !toggle
+
   if(toggle){
     tl.restart();
-  } else {
+  } else if (!toggle) {
     tl.reverse();
   }}
 </script>

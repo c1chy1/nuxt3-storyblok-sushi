@@ -1,156 +1,3 @@
-<script setup>
-import gsap from 'gsap'
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-
-
-const props = defineProps({
-
-  story : Object
-
- })
-
-
-
-const ctx = ref();
-const scope = ref();
-
-
-onMounted(() => {
-  setTimeout(() => {
-    ScrollTrigger.refresh()
-    ScrollTrigger.update()
-  }, 100)
-
-  const timeline = new gsap.timeline({
-    defaults: {
-      duration: 1,
-      transformOrigin: "center",
-      ease: "ease"
-    }
-  });
-
-  ctx.value = gsap.context((self) => {
-
-    const circle1 = self.selector("#bg-01");
-    const circle2 = self.selector("#bg-02");
-    const bowl = self.selector("#bowl")
-    const sushi1 = self.selector("#sushi-01")
-    const sushi2 = self.selector("#sushi-02")
-    const chopstick1 = self.selector("#chopstick-01")
-    const chopstick2 = self.selector("#chopstick-02")
-    const heading = self.selector("#heading")
-
-
-    timeline
-        .addLabel('start')
-
-        .from(circle1, {
-      x: "-=300",
-      opacity: 0,
-      scrollTrigger: {
-        trigger: scope.value,
-        start: '-=200',
-        end: 'top 70%',
-        scrub: 3,
-      },
-    })
-        .from(circle2, {
-          x: "+=300",
-          opacity: 0,
-          scrollTrigger: {
-            trigger: scope.value,
-            start: '-=200',
-            end: 'top 70%',
-            scrub: 3,
-          },
-        })
-        .from(bowl, {
-          x: "-=190",
-          opacity: 0,
-          scrollTrigger: {
-            trigger: scope.value,
-            /*      start : "top top",
-                  pin:true,
-                  scrub: 1*/
-            start: '-=120',
-            end: 'top 40%',
-            scrub: 1
-          },
-        }, "-=1").from(sushi1, {
-      duration: 0.4,
-      opacity: 0,
-      y: "-=400",
-      rotation: -70,
-      ease: "Bounce.easeOut",
-      scrollTrigger: {
-        trigger: scope.value,
-        start: '-=90',
-        end: 'top 30%',
-        scrub: 1
-      },
-    }).from(
-        sushi2, {
-          duration: 0.4,
-          opacity: 0,
-          y: "-=400",
-          rotation: 70,
-          ease: "Bounce.easeOut",
-          scrollTrigger: {
-            trigger: scope.value,
-            start: '-=30',
-            end: 'top 30%',
-            scrub: 1
-          },
-        },
-        "-=0.2"
-    ).from(
-        chopstick1, {
-          duration: 0.4,
-          y: -350,
-          opacity: 0,
-          rotation: 20,
-          scrollTrigger: {
-            trigger: scope.value,
-            start: '0',
-            end: 'top 30%',
-            scrub: 1
-          },
-        },
-        "-=.7").from(
-        chopstick2, {
-          duration: 0.4,
-          y: -350,
-          opacity: 0,
-          rotation: 20,
-          scrollTrigger: {
-            trigger: scope.value,
-            start: '0',
-            end: 'top 30%',
-            scrub: 1
-          }
-        },
-        "-=.4")
-        .from(heading, {
-          y: 400,
-          opacity: 0,
-          scrollTrigger: {
-            trigger: scope.value,
-            scrub: true,
-            start: '-15% -15%',
-            end: '0'
-          },
-        })
-        .addLabel('end')
-  }, scope.value)
-})
-
-onUnmounted(() => {
-  ctx.value.revert(); // <- Easy Cleanup!
-});
-
-
-</script>
-
 <template>
 
   <div
@@ -201,7 +48,7 @@ onUnmounted(() => {
           </g>
         </g>
         <g id="sushi-02"
-           transform="matrix(0.788, -0.616, 0.616, 0.788, 425, 585)">
+           transform="matrix(0.788, -0.616, 0.616, 0.788, 412, 585)">
           <g id="Union_3-2" data-name="Union 3" transform="translate(312 78)">
             <path id="Path_3" data-name="Path 3"
                   d="M22.783,34.467A68.972,68.972,0,0,1,6.794,32.811a18.4,18.4,0,0,1-4.749-1.758C1.34,30.635.5,29.986.5,29.263A.976.976,0,0,1,.514,29.1l.1-.584H.5V5.7c0-.723.84-1.373,1.545-1.79A18.4,18.4,0,0,1,6.794,2.156,68.972,68.972,0,0,1,22.783.5,68.974,68.974,0,0,1,38.772,2.156a18.4,18.4,0,0,1,4.749,1.758c.7.417,1.545,1.066,1.545,1.79V28.515h-.114l.1.584a.976.976,0,0,1,.014.164c0,.723-.84,1.373-1.545,1.79a18.4,18.4,0,0,1-4.749,1.758A68.974,68.974,0,0,1,22.783,34.467Z"
@@ -223,3 +70,155 @@ onUnmounted(() => {
   </div>
 
 </template>
+<script setup>
+import gsap from 'gsap'
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+
+const props = defineProps({
+
+  story : Object
+
+})
+
+
+
+const ctx = ref();
+const scope = ref();
+
+
+onMounted(() => {
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+    ScrollTrigger.update()
+  }, 100)
+
+  const timeline = new gsap.timeline({
+    defaults: {
+      duration: 1,
+      transformOrigin: "center",
+      ease: "ease"
+    }
+  });
+
+  ctx.value = gsap.context((self) => {
+
+    const circle1 = self.selector("#bg-01");
+    const circle2 = self.selector("#bg-02");
+    const bowl = self.selector("#bowl")
+    const sushi1 = self.selector("#sushi-01")
+    const sushi2 = self.selector("#sushi-02")
+    const chopstick1 = self.selector("#chopstick-01")
+    const chopstick2 = self.selector("#chopstick-02")
+    const heading = self.selector("#heading")
+
+
+    timeline
+        .addLabel('start')
+
+        .from(circle1, {
+          x: "-=300",
+          opacity: 0,
+          scrollTrigger: {
+            trigger: scope.value,
+            start: '-=200',
+            end: 'top 70%',
+            scrub: 3,
+          },
+        })
+        .from(circle2, {
+          x: "+=300",
+          opacity: 0,
+          scrollTrigger: {
+            trigger: scope.value,
+            start: '-=200',
+            end: 'top 70%',
+            scrub: 3,
+          },
+        })
+        .from(bowl, {
+          x: "-=190",
+          opacity: 0,
+          scrollTrigger: {
+            trigger: scope.value,
+            /*      start : "top top",
+                  pin:true,
+                  scrub: 1*/
+            start: '-=120',
+            end: 'top 40%',
+            scrub: 1
+          },
+        }, "-=1").from(sushi1, {
+      duration: 0.4,
+      opacity: 0,
+      y: "-=400",
+      rotation: -70,
+      ease: "Bounce.easeOut",
+      scrollTrigger: {
+        trigger: scope.value,
+        start: '-=90',
+        end: 'top 30%',
+        scrub: 1
+      },
+    }).from(
+        sushi2, {
+          duration: 0.4,
+          opacity: 0,
+          y: "-=380",
+          rotation: 70,
+          ease: "Bounce.easeOut",
+          scrollTrigger: {
+            trigger: scope.value,
+            start: '-=30',
+            end: 'top 30%',
+            scrub: 1
+          },
+        },
+        "-=0.2"
+    ).from(
+        chopstick1, {
+          duration: 0.4,
+          y: -350,
+          opacity: 0,
+          rotation: 20,
+          scrollTrigger: {
+            trigger: scope.value,
+            start: '0',
+            end: 'top 30%',
+            scrub: 1
+          },
+        },
+        "-=.7").from(
+        chopstick2, {
+          duration: 0.4,
+          y: -350,
+          opacity: 0,
+          rotation: 20,
+          scrollTrigger: {
+            trigger: scope.value,
+            start: '0',
+            end: 'top 30%',
+            scrub: 1
+          }
+        },
+        "-=.4")
+        .from(heading, {
+          y: 400,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: scope.value,
+            scrub: true,
+            start: '15% 15%',
+            end: '-15%'
+          },
+        })
+        .addLabel('end')
+  }, scope.value)
+})
+
+onUnmounted(() => {
+  ctx.value.revert(); // <- Easy Cleanup!
+});
+
+
+</script>

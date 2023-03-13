@@ -5,8 +5,9 @@
 
 
 body {
-    @apply bg-gray-100  dark:bg-dark-background dark:text-dark-paragraph transition-all duration-500
+    @apply bg-gray-100 scroll-smooth dark:bg-dark-background dark:text-dark-paragraph transition-all duration-500
 }
+
 
 button {
 
@@ -54,7 +55,9 @@ li {
 .slide-leave-active {
     transition: 0.5s ease-out;
 }
-
+#smooth-content {
+    will-change: transform;
+}
 
 /*
 @keyframes bounce {

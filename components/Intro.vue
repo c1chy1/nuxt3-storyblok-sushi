@@ -6,7 +6,7 @@
     <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 top-4   xl:top-1/3"></div>
     <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all top-4  xl:top-1/3"></div>
 
-<div class="transform scale-[60%] md:scale-75 h-1/5 relative">
+<div class="transform scale-[60%] lg:scale-75 2xl:scale-100 h-1/5 relative">
 
 
   <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">

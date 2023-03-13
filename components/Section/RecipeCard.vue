@@ -19,8 +19,8 @@ defineProps<{
         <p class="card-hover__text dark:text-dark-paragraph z-50 absolute top-4 lg:top-2 "> {{ content.description }}</p>
 
         <img
-            class=" mt-6 ml-4 lg:ml-0 px-auto  dark:text-red dark:contrast-[1]
-              group-hover:translate-x-[90px] group-hover:scale-75 group-hover:translate-y-[75px]
+            class="absolute lg:relative mt-16  lg:mt-6 group-hover:ml-4  px-auto  dark:text-red dark:contrast-[1]
+              group-hover:translate-x-[90px] group-hover:scale-75 group-hover:translate-y-[65px]
             lg:group-hover:translate-x-[110px] lg:group-hover:scale-75 lg:group-hover:translate-y-[90px]  lg:group-hover:absolute  w-16 h-16 grayscale contrast-[.25] z-50 transform transition-all  duration-500 "
             :src="content.category.content.icon.filename"
             alt=""

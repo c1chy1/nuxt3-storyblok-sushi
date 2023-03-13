@@ -1,27 +1,31 @@
 <template>
   <div
-      class="sushi-container  fixed w-full h-screen bg-[#BBBBAA]   dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
+      class="sushi-container fixed w-full h-screen bg-[#BBBBAA]   dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
 
 
-    <div class="chopstick-container h-1/2  top-0">
-      <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all  z-50"></div>
-      <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all"></div>
-    </div>
-    <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">
+    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50  bottom-36"></div>
+    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all bottom-36"></div>
+
+<div class="transform scale-[60%] md:scale-75 h-1/5 mb-12 relative">
+
+
+  <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">
+
       <div class="rice w-3/4   h-12 top-4 absolute"></div>
       <div class="seaweed w-3/4 h-32 "></div>
-      <div class="salmon w-1/2 h-8 top-3 absolute"></div>
+      <div class="salmon w-1/2 h-8 top-3  absolute"></div>
       <div class="eye-left  w-5 h-5 left-[25%] top-[40%]  absolute"></div>
       <div class="shine-left h-1 w-1  left-[26.4%] top-[44%] absolute"></div>
       <div class="eye-right w-5 h-5 left-[43%] top-[40%]  absolute"></div>
       <div class="shine-right h-1 w-1 left-[44.4%] top-[44%] absolute"></div>
       <div class="mouth w-7 h-5 left-[30%] top-[59%] absolute"></div>
       <div class="tongue w-5 h-1.5 left-[31.7%] top-[65%] absolute"></div>
+    <div class="dish opacity-1  w-52 h-48  md:h-52 md:w-64    -bottom-12     sm:bottom-8  md:-bottom-12 absolute"></div>
 
-    </div>
-    <div class="dish opacity-1  w-64 h-64 sm:w-80 sm:h-80 -bottom-2 sm:-bottom-8 absolute"></div>
   </div>
 
+  </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -50,7 +54,7 @@ function start() {
     })
         .from('.dish', 1, {opacity: 0, bottom: '-25%', ease: "Back.easeOut"})
         .from('.sushi-container', 3, {y: -0, ease: "Back.easeOut"})
-        .to('.chopstick-container', 1.5, {top: '30%'}, 1.5)
+        .to('.chopstick-container', 1.5, {top: '20%'}, 1.5)
         .to('.chopstick', 1.5, {opacity: 1}, 1.5)
         .to('.chopstick2', 1, {
           webkitFilter: "brightness(0.8)",
@@ -79,7 +83,9 @@ function start() {
         })
 
         .to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
+/*
         .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)
+*/
 
 
 
@@ -110,8 +116,6 @@ function start() {
 
   .chopstick-container {
 
-
-    position: absolute;
   }
 
 
@@ -180,22 +184,22 @@ function start() {
   }
 
   .chopstick1 {
-    position: absolute;
-    transform: translate(-50%) rotate(-200deg);
+
+    transform: translate(-50%) rotate(-187deg);
     height: 0;
     width: 10px;
 
   }
 
   .chopstick2 {
-    position: absolute;
-    transform: translate(-50%) rotate(-185deg);
+
+    transform: translate(-50%) rotate(-200deg);
     height: 0;
     width: 10px;
   }
 
   .chopstick {
-    height: 100%;
+    height: 50%;
     opacity: 0;
     width: 15px;
     border-radius: 10px;
@@ -222,16 +226,7 @@ function start() {
     bottom: 0px;
   }
 
-  .chopstick-one {
 
-    right: 24px;
-    transform: translate(-50%) rotate(-20deg);
-  }
-
-  .chopstick-two {
-    right: 40px;
-    transform: rotate(10deg);
-  }
 
 
   .dish {

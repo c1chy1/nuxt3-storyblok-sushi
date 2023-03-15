@@ -1,12 +1,12 @@
 <template>
 
   <div
-      class=" h-screen    mx-auto relative flex flex-col justify-center items-center  box-border"
+      class=" h-screen  container  mx-auto relative flex flex-col justify-center items-center  box-border"
       ref="scope"
       id="scope"
   >
-    <svg class="xl:w-3/4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1181 595">
-      <g id="sushi" class="-translate-x-16">
+    <svg class=" w-2/3  xl:w-3/4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1181 595">
+      <g id="sushi">
         <rect id="frame" fill="none"/>
         <circle id="bg-01" cx="177" cy="177"  r="177" transform="translate(394 186)"
                 class="  fill-dark-navigation dark:fill-[#f3fcf0]" opacity="0.11"/>
@@ -112,16 +112,17 @@ function scrollAnimation() {
 
 
       timelineSushi.from(circle1, {
-        x: "-=1200",
+        x: "-=120%",
         scrollTrigger: {
           trigger: scope.value,
           start: '-=250',
           end: 'top 70%',
-          scrub: 3
+          scrub: 3,
+          markers:true,
         },
       })
           .from(circle2, {
-            x: "+=600",
+            x: "+=120%",
             opacity: 0,
             scrollTrigger: {
               trigger: scope.value,
@@ -131,7 +132,7 @@ function scrollAnimation() {
             },
           })
           .from(bowl, {
-            x: "-=1200",
+            x: "-=120%",
             opacity: 0,
             scrollTrigger: {
               trigger: scope.value,

@@ -112,7 +112,7 @@ function scrollAnimation() {
 
 
       timelineSushi.from(circle1, {
-        x: "-=120%",
+        x: "-=220%",
         scrollTrigger: {
           trigger: scope.value,
           start: '-=250',

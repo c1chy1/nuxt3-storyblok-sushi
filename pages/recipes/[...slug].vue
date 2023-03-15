@@ -1,12 +1,4 @@
-<script setup lang="ts">
 
-import { RichTextRenderer } from '@marvr/storyblok-rich-text-vue-renderer'
-const route = useRoute()
-const { slug } = route.params
-const { fetchRecipeBySlug } = useRecipes()
-const story = await fetchRecipeBySlug(slug as string)
-
-</script>
 <template>
 <section>
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
@@ -62,6 +54,18 @@ const story = await fetchRecipeBySlug(slug as string)
         <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
 
-  <AnimationsSushi :story="story"/>
+  <AnimationsSushi :story="story" />
 </section>
 </template>
+
+<script setup lang="ts">
+
+import { RichTextRenderer } from '@marvr/storyblok-rich-text-vue-renderer'
+
+const route = useRoute()
+const { slug } = route.params
+const { fetchRecipeBySlug } = useRecipes()
+const story = await fetchRecipeBySlug(slug as string)
+
+
+</script>

@@ -6,10 +6,10 @@
       id="scope"
   >
     <svg class="xl:w-3/4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1181 595">
-      <g id="sushi" transform="translate(-93 -86)">
-        <rect id="frame" width="1181" height="595" transform="translate(93 86)" fill="none"/>
-        <circle id="bg-01" cx="177" cy="177" r="177" transform="translate(394 186)"
-                class="fill-dark-navigation dark:fill-[#f3fcf0]" opacity="0.11"/>
+      <g id="sushi">
+        <rect id="frame" fill="none"/>
+        <circle id="bg-01" cx="177" cy="177"  r="177" transform="translate(394 186)"
+                class="  fill-dark-navigation dark:fill-[#f3fcf0]" opacity="0.11"/>
         <circle  id="bg-02" cx="54" cy="54" r="54" transform="translate(866 186)"
                 class="fill-dark-navigation dark:fill-[#f3fcf0]" opacity="0.11"/>
         <g  id="bowl" transform="translate(15 27)">
@@ -112,18 +112,17 @@ function scrollAnimation() {
 
 
       timelineSushi.from(circle1, {
-        x: "-=300",
-        opacity: 0,
+        x: "-=1200",
         scrollTrigger: {
           trigger: scope.value,
-          start: '-=200',
+          start: '-=250',
           end: 'top 70%',
           scrub: 3,
           markers:true,
         },
       })
           .from(circle2, {
-            x: "+=300",
+            x: "+=600",
             opacity: 0,
             scrollTrigger: {
               trigger: scope.value,
@@ -133,7 +132,7 @@ function scrollAnimation() {
             },
           })
           .from(bowl, {
-            x: "-=190",
+            x: "-=890",
             opacity: 0,
             scrollTrigger: {
               trigger: scope.value,
@@ -208,7 +207,6 @@ function scrollAnimation() {
               end: '-15%'
             },
           })
-          .addLabel('end')
     }, scope.value)
 
 }

@@ -6,7 +6,7 @@
       id="scope"
   >
     <svg class=" w-2/3  xl:w-3/4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1181 595">
-      <g id="sushi">
+      <g id="sushi" class="-translate-x-12">
         <rect id="frame" fill="none"/>
         <circle id="bg-01" cx="177" cy="177"  r="177" transform="translate(394 186)"
                 class="  fill-dark-navigation dark:fill-[#f3fcf0]" opacity="0.11"/>
@@ -116,7 +116,7 @@ function scrollAnimation() {
         scrollTrigger: {
           trigger: scope.value,
           start: '-=250',
-          end: 'top 70%',
+          end: 'top 50%',
           scrub: 3,
           markers:true,
         },
@@ -126,7 +126,7 @@ function scrollAnimation() {
             opacity: 0,
             scrollTrigger: {
               trigger: scope.value,
-              start: '-=200',
+              start: '-=250',
               end: 'top 70%',
               scrub: 3,
             },
@@ -139,7 +139,7 @@ function scrollAnimation() {
               /*      start : "top top",
                   pin:true,
                   scrub: 1*/
-              start: '-=120',
+              start: '-=220',
               end: 'top 40%',
               scrub: 1
             },
@@ -151,7 +151,7 @@ function scrollAnimation() {
         ease: "Bounce.easeOut",
         scrollTrigger: {
           trigger: scope.value,
-          start: '-=90',
+          start: '-=180',
           end: 'top 30%',
           scrub: 1
         },
@@ -164,7 +164,7 @@ function scrollAnimation() {
             ease: "Bounce.easeOut",
             scrollTrigger: {
               trigger: scope.value,
-              start: '-=30',
+              start: '-=130',
               end: 'top 30%',
               scrub: 1
             },
@@ -178,7 +178,7 @@ function scrollAnimation() {
             rotation: 20,
             scrollTrigger: {
               trigger: scope.value,
-              start: '0',
+              start: '-=90',
               end: 'top 30%',
               scrub: 1
             },
@@ -191,8 +191,8 @@ function scrollAnimation() {
             rotation: 20,
             scrollTrigger: {
               trigger: scope.value,
-              start: '0',
-              end: 'top 30%',
+              start: '-=45',
+              end: 'top 40%',
               scrub: 1
             }
           },
@@ -203,8 +203,8 @@ function scrollAnimation() {
             scrollTrigger: {
               trigger: scope.value,
               scrub: true,
-              start: '15% 15%',
-              end: '-15%'
+              start: '-=5',
+              end: 'top 30%',
             },
           })
     }, scope.value)

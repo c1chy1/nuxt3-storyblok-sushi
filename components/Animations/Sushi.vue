@@ -117,8 +117,7 @@ function scrollAnimation() {
           trigger: scope.value,
           start: '-=250',
           end: 'top 50%',
-          scrub: 3,
-          markers:true,
+          scrub: 3
         },
       })
           .from(circle2, {

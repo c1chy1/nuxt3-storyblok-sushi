@@ -1,11 +1,11 @@
 <template>
 
   <div
-      class=" h-screen  container  mx-auto relative flex flex-col justify-center items-center  box-border"
+      class=" h-screen  container  mx-auto relative flex flex-col lg:justify-center items-center  box-border"
       ref="scope"
       id="scope"
   >
-    <svg class="  xl:w-3/4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1181 595">
+    <svg class=" xl:w-3/4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1181 595">
       <g id="sushi" class="-translate-x-12">
         <rect id="frame" fill="none"/>
         <circle id="bg-01" cx="177" cy="177"  r="177" transform="translate(394 186)"
@@ -115,9 +115,9 @@ function scrollAnimation() {
         x: "-=220%",
         scrollTrigger: {
           trigger: scope.value,
+          scrub: 3,
           start: '-=250',
-          end: 'top 50%',
-          scrub: 3
+          end: 'top 70%',
         },
       })
           .from(circle2, {
@@ -212,11 +212,12 @@ function scrollAnimation() {
 
 
 
+
 onMounted(() => {
-  ScrollTrigger.enable()
   setTimeout(() => {
     toggle = true
     ScrollTrigger.refresh()
+
   }, 1000)
 
 if(!toggle) scrollAnimation()

@@ -67,5 +67,75 @@ const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
 
+useHead({
+  title: `${story?.content.title} - c1chy.Sushi`,
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: story?.content.excerpt,
+    },
+    // og
+    {
+      hid: 'og:description',
+      property: 'og:description',
+      content: story?.content.excerpt,
+    },
+    {
+      hid: 'og:title',
+      property: 'og:title',
+      content: `${story?.content.title} - Sushi Wuut`,
+    },
+    {
+      hid: 'og:type',
+      property: 'og:type',
+      content: 'article',
+    },
+    {
+      hid: 'og:url',
+      property: 'og:url',
+      content: `https://localhost:3000/recipes/${slug}`,
+    },
+    {
+      hid: 'og:image',
+      property: 'og:image',
+      content: story?.content.media?.filename,
+    },
+    {
+      hid: 'og:image:alt',
+      property: 'og:image:alt',
+      content: story?.content.media?.alt,
+    },
+    {
+      hid: 'og:publish_date',
+      property: 'og:publish_date',
+      content: story?.published_at,
+    },
+    // Twitter
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@test' },
+    {
+      hid: 'twitter:title',
+      property: 'twitter:title',
+      content: `${story?.content.title} - Sushi Wuut`,
+    },
+    {
+      hid: 'twitter:description',
+      name: 'twitter:description',
+      content: story?.content.excerpt,
+    },
+    {
+      hid: 'twitter:image',
+      name: 'twitter:image',
+      content: story?.content.media?.filename,
+    },
+    {
+      hid: 'twitter:image:alt',
+      name: 'twitter:image:alt',
+      content: story?.content.media?.alt,
+    },
+  ],
+
+})
 
 </script>

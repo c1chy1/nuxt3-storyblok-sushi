@@ -1,7 +1,7 @@
 <template>
   <header class="z-[45] bottom-8 right-4 h-10 w-12 fixed">
-    <div class="nav-container flex items-center h-12 p-2 rounded-full bg-shrimp-600 dark:bg-dark-navigation  transition-all transform delay-1000 print:invisible"
-         :class="isOpenMenu ? 'dark:bg-transparent' : 'dark:bg-dark-navigation'"
+    <div class="nav-container flex items-center h-12 p-2 rounded-full bg-shrimp-600 dark:bg-dark-navigation transition-all  delay-1000 print:invisible"
+         :class="isOpenMenu ? 'dark:bg-transparent ' : 'dark:bg-dark-navigation  '"
     >
       <input
         class="checkbox flex items-center p-2 "

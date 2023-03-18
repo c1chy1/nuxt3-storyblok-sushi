@@ -71,10 +71,10 @@ pwa: {
     app: {
 
         pageTransition: { name: 'slide' , mode:'out-in'},
-       head: {
+  /*     head: {
 
 
-
+/!*
            meta: [
 
                {
@@ -137,12 +137,12 @@ pwa: {
                    name: 'twitter:image:alt',
                    content: "Twitter alt",
                },
-           ],
+           ],*!/
 
            bodyAttrs: {
                class: 'overflow-x-hidden'
            }
-       }
+       }*/
 
     },
 
@@ -218,15 +218,7 @@ pwa: {
         build: {
             chunkSizeWarningLimit: 1024,
             manifest: false,
-            rollupOptions: {
-                output: {
-                    manualChunks: {
-                    }
-                }
-            },
-            ssr: false
-        },
-    },
+    }}
 
 
 })

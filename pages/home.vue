@@ -32,27 +32,12 @@ onMounted(() => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 useHead(
     {
       title: ` home - c1chy.Sushi`,
+      htmlAttrs: {
+        lang: "en",
+      },
       meta: [
 
         {
@@ -129,7 +114,7 @@ useHead(
 
     <ShareNetwork
         network="facebook"
-        url="https://c1chy-sushi.netlify.app/home/"
+        url="https://www.moodsplanet.com/"
         title="CV online."
         description="I'm mohammad sharifi programmer front-end."
         hashtags="vuejs,javascript"

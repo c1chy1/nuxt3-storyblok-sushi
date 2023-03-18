@@ -23,6 +23,20 @@
           <i class="fab fah fa-lg fa-twitter"></i>
           <span>Share on Twitter</span>
         </ShareNetwork>
+
+
+        <ShareNetwork
+            network="facebook"
+            url="https://news.vuejs.org/issues/180"
+            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+            description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+            quote="The hot reload is so fast it\'s near instant. - Evan You"
+            hashtags="vuejs,vite,javascript"
+            twitterUser="youyuxi"
+        >
+          <i class="fab fah fa-lg fa-twitter"></i>
+          <span>Share on Twitter</span>
+        </ShareNetwork>
 <!--        <ShareNetwork
             network="facebook"
             :url="href"
@@ -99,19 +113,17 @@ const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
 
-if (process.client) {
-
- function href() {
-  window.location.href
- }
+const locale = useState('locale')
 
 
-}
-console.log(story)
 
 useHead(
     {
       title: ` ${story.content.title}- c1chy.Sushi`,
+
+      htmlAttrs: {
+        lang: locale.value,
+      },
       meta: [
 
         {

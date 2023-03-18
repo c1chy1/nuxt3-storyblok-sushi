@@ -1,7 +1,6 @@
 import {apiPlugin} from "@storyblok/vue"
 
 
-
 /*
 const OPEN_GRAPH = [
     {
@@ -63,6 +62,7 @@ pwa: {
         ogSiteName: false,
         ogType: false,
         theme_color: "#D15105",
+
     }
 },
 
@@ -71,7 +71,6 @@ pwa: {
     app: {
 
         pageTransition: { name: 'slide' , mode:'out-in'},
-
        head: {
 
 
@@ -140,8 +139,6 @@ pwa: {
                },
            ],*/
 
-
-
            bodyAttrs: {
                class: 'overflow-x-hidden'
            }
@@ -155,12 +152,9 @@ pwa: {
             bridge: true,
             use: [apiPlugin]
         }],
-        ['@kevinmarrec/nuxt-pwa', {
+ /*       ['@kevinmarrec/nuxt-pwa', {
 
-            ogTitle: false,
-            ogImage: false,
-            ogUrl: false,
-             baseURL: "/home",
+        baseURL: "/home",
 
             workbox: {
                 enabled: true,
@@ -171,14 +165,13 @@ pwa: {
             },
             manifest: {
                 name: 'c1chy sushi',
-                lang: 'en',
                 display: 'standalone',
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
                 start_url: '/home',
                 useWebmanifestExtension: true,
             }
-        }],
+        }],*/
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',

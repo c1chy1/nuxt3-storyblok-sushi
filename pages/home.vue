@@ -38,10 +38,12 @@ onMounted(() => {
 
 
   <main role="main">
+<!--
     <LayoutSeoHead
         :title="slug"
 
     />
+-->
 
     <ButtonsSocial
     title="c1chy sushi"

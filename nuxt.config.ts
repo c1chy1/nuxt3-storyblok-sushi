@@ -1,47 +1,6 @@
 import {apiPlugin} from "@storyblok/vue"
 
 
-const OPEN_GRAPH = [
-
-    {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss'
-    },
-
-    {
-        hid: 'og:url',
-        property: 'og:url',
-        content: 'http://alvarosaburido.dev',
-    },
-    {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
-    },
-    { property: 'og:updated_time', content: new Date().toISOString() },
-]
-
-const TWITTER = [
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: '@shushiwuut' },
-    {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
-    },
-    {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
-    },
-    {
-        hid: 'twitter:image:alt',
-        name: 'twitter:image:alt',
-        content: 'Sushi Wuut Preview',
-    },
-]
-
 
 
 export default defineNuxtConfig({
@@ -67,23 +26,6 @@ export default defineNuxtConfig({
         pageTransition: { name: 'slide' , mode:'out-in'},
 
 
-        head: {
-            meta: [
-                {
-                    hid: 'description',
-                    name: 'description',
-                    content: 'Sushi Wuut is sushi recipe CHUJA TAM app built with Nuxt 3, Storyblok, and Unocss',
-                },
-                { hid: 'author', name: 'author', content: 'Alvaro Saburido' },
-                {
-                    hid: 'keywords',
-                    property: 'keywords',
-                    keywords: 'sushi, recipes, nuxt, storyblok, unocss',
-                },
-                ...OPEN_GRAPH,
-                ...TWITTER,
-            ],
-        },
 
 
 

@@ -37,7 +37,7 @@ onMounted(() => {
   <LayoutSeoHead
       title="MSG Maschinenbau"
       description="Bester Partner im Bereich Maschinenbau. Wir liefern für unsere Kunden innovative Lösungen im Bereich des Sondermaschinenbaues und Messtechnik."
-      image="/assets/seo.jpg"
+      image="https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
   />
   <main role="main">
 

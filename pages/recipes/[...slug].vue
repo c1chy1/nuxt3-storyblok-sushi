@@ -4,12 +4,35 @@
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
 
-        <ButtonsSocial
+<!--        <ButtonsSocial
             :title="story.content.title"
             :url="'https://c1chy-sushi.netlify.app/recipes/' + slug"
             :media="story?.content.media.filename"
 
-        />
+        />-->
+
+        <ShareNetwork
+            network="twitter"
+            url="https://news.vuejs.org/issues/180"
+            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+            description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+            quote="The hot reload is so fast it\'s near instant. - Evan You"
+            hashtags="vuejs,vite,javascript"
+            twitterUser="youyuxi"
+        >
+          <i class="fab fah fa-lg fa-twitter"></i>
+          <span>Share on Twitter</span>
+        </ShareNetwork>
+<!--        <ShareNetwork
+            network="facebook"
+            :url="href"
+            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+        >
+          <img
+              src="../../public/icon.png"
+              alt=""
+          />
+        </ShareNetwork>-->
 
 
         <div class="flex  justify-end w-full lg:w-1/2">
@@ -76,7 +99,14 @@ const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
 
+if (process.client) {
 
+ function href() {
+  window.location.href
+ }
+
+
+}
 console.log(story)
 
 useHead(

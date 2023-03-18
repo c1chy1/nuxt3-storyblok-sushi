@@ -38,27 +38,15 @@ onMounted(() => {
 
 
   <main role="main">
+    <LayoutSeoHead
+        :title="slug"
 
-    <ShareNetwork
-        network="facebook"
-        url="https://c1chy-sushi.netlify.app/home/"
-        title="CV online."
-        description="I'm mohammad sharifi programmer front-end."
-        hashtags="vuejs,javascript"
-    >
-      Share
-    </ShareNetwork>
+    />
 
-    <ShareNetwork
-        network="twitter"
-        url="https://c1chy-sushi.netlify.app/home/"
-        title="CV online."
-        description="I'm mohammad sharifi programmer front-end."
-        hashtags="vuejs,javascript"
-    >
-      Share Twitter
-    </ShareNetwork>
-
+    <ButtonsSocial
+    title="c1chy sushi"
+    url="https://localhost:3000/home"
+    />
   <StoryblokComponent v-if="story" :blok="story.content" />
   </main>
 </template>

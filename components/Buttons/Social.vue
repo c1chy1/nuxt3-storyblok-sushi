@@ -6,13 +6,11 @@
                   :network="network.network"
                   :title="title"
                   :url="url"
-                  :media="media"
 
                   quote="whesh la zone"
                   class="p-1 bg-trso-blue">
 <h2>{{route.fullPath}}</h2>
       <h2>{{title}}</h2>
-      <h2>{{media}}</h2>
       <component :is="network.icon" class="h-6 w-6" />  {{network.name}}
     </ShareNetwork>
   </div>
@@ -22,7 +20,7 @@
 const props = defineProps({
   title: String,
    url : String,
-  media: String
+
 })
 
 const route = useRoute()

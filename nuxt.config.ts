@@ -2,21 +2,13 @@ import {apiPlugin} from "@storyblok/vue"
 
 
 const OPEN_GRAPH = [
-    {
-        hid: 'og:site_name',
-        property: 'og:site_name',
-        content: 'Sushi Wuut',
-    },
+
     {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss'
     },
-    {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'Sushi Wuut',
-    },
+
     {
         hid: 'og:url',
         property: 'og:url',
@@ -33,11 +25,6 @@ const OPEN_GRAPH = [
 const TWITTER = [
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@shushiwuut' },
-    {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'Sushi Wuut',
-    },
     {
         hid: 'twitter:description',
         name: 'twitter:description',
@@ -81,12 +68,11 @@ export default defineNuxtConfig({
 
 
         head: {
-            title: 'Sushi Wuut',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+                    content: 'Sushi Wuut is sushi recipe CHUJA TAM app built with Nuxt 3, Storyblok, and Unocss',
                 },
                 { hid: 'author', name: 'author', content: 'Alvaro Saburido' },
                 {

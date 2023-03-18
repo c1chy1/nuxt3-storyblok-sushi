@@ -2,9 +2,8 @@
 <template>
 
   <LayoutSeoHead
-      title="slug"
-      description="slug"
-      image="https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
+      :title="slug"
+
   />
 <section>
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
@@ -41,7 +40,7 @@
             twitterUser="youyuxi"
         >
           <i class="fab fah fa-lg fa-twitter"></i>
-          <span>Share on Twitter</span>
+          <span>Share on Facebook</span>
         </ShareNetwork>
 <!--        <ShareNetwork
             network="facebook"

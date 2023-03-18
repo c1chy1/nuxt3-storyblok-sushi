@@ -35,6 +35,8 @@ onMounted(() => {
 
 <template>
 
+
+
   <main role="main">
 
     <ShareNetwork

@@ -117,7 +117,7 @@ useHead(
   {
     hid: 'og:url',
     property: 'og:url',
-    content: `www.c1chy-sushi.eu`,
+    content: `https://c1chy-sushi.netlify.app/home/`,
   },
   {
     hid: 'og:image',

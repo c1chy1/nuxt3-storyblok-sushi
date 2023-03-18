@@ -114,7 +114,7 @@ useHead(
 
     <ShareNetwork
         network="facebook"
-        url="https://www.moodsplanet.com/"
+        url="https://c1chy-sushi.netlify.app/home/"
         title="CV online."
         description="I'm mohammad sharifi programmer front-end."
         hashtags="vuejs,javascript"

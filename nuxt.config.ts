@@ -1,27 +1,26 @@
 import {apiPlugin} from "@storyblok/vue"
 
 
-/*
 const OPEN_GRAPH = [
     {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: 'c1chy sushi',
+        content: 'Sushi Wuut',
     },
     {
         hid: 'og:description',
         property: 'og:description',
-        content: 'c1chy sushi is sushi xxx 1recipe app built with Nuxt 3, Storyblok, and Unocss',
+        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
     },
     {
         hid: 'og:title',
         property: 'og:title',
-        content: 'c1chy.Sushi',
+        content: 'Sushi Wuut',
     },
     {
         hid: 'og:url',
         property: 'og:url',
-        content: 'c1chy-sushi.netlify.app/',
+        content: 'http://alvarosaburido.dev',
     },
     {
         hid: 'og:image',
@@ -30,8 +29,31 @@ const OPEN_GRAPH = [
     },
     { property: 'og:updated_time', content: new Date().toISOString() },
 ]
-*/
 
+const TWITTER = [
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@shushiwuut' },
+    {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Sushi Wuut',
+    },
+    {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+    },
+    {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
+    },
+    {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'Sushi Wuut Preview',
+    },
+]
 
 
 
@@ -52,25 +74,33 @@ export default defineNuxtConfig({
         },
     },
 
-pwa: {
-
-    meta: {
-        ogTitle: false,
-        ogImage: false,
-        ogUrl: false,
-        ogDescription: false,
-        ogSiteName: false,
-        ogType: false,
-        theme_color: "#D15105",
-
-    }
-},
-
-
 
     app: {
 
         pageTransition: { name: 'slide' , mode:'out-in'},
+
+
+        head: {
+            title: 'Sushi Wuut',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+                },
+                { hid: 'author', name: 'author', content: 'Alvaro Saburido' },
+                {
+                    hid: 'keywords',
+                    property: 'keywords',
+                    keywords: 'sushi, recipes, nuxt, storyblok, unocss',
+                },
+                ...OPEN_GRAPH,
+                ...TWITTER,
+            ],
+        },
+
+
+
   /*     head: {
 
 

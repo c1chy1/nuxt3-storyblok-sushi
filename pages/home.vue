@@ -137,6 +137,16 @@ useHead(
       Share
     </ShareNetwork>
 
+    <ShareNetwork
+        network="twitter"
+        url="https://c1chy-sushi.netlify.app/home/"
+        title="CV online."
+        description="I'm mohammad sharifi programmer front-end."
+        hashtags="vuejs,javascript"
+    >
+      Share Twitter
+    </ShareNetwork>
+
   <StoryblokComponent v-if="story" :blok="story.content" />
   </main>
 </template>

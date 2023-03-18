@@ -47,6 +47,12 @@ onMounted(() => {
     title="c1chy sushi"
     url="https://localhost:3000/home"
     />
+
+    <ButtonsSocial
+        title="c1chy sushi"
+        description="opis"
+        url="https://c1chy-sushi.netlify.app/home/"
+    />
   <StoryblokComponent v-if="story" :blok="story.content" />
   </main>
 </template>

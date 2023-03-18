@@ -13,7 +13,6 @@ const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 </script>
 <template>
 
-
   <div id="hero" class="hero container mx-auto flex flex-col ">
     <div class="flex pt-8 lg:pt-12 justify-between flex-col sm:flex-row mx-auto  font-sans">
 

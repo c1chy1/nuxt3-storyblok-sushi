@@ -75,7 +75,7 @@ import gsap from 'gsap'
 
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
-const props = defineProps({
+defineProps({
 
   story : Object,
 

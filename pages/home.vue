@@ -28,8 +28,14 @@ onMounted(() => {
   }
 });
 
+
+
 </script>
 
+
 <template>
+
+  <main role="main">
   <StoryblokComponent v-if="story" :blok="story.content" />
+  </main>
 </template>

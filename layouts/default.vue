@@ -1,6 +1,7 @@
 <template>
 <main>
 <!--  <Intro/>-->
+
   <LayoutNavigation/>
   <ButtonsDarkModeButton/>
     <IconsLogo/>
@@ -9,11 +10,9 @@
 </main>
 </template>
 
+
+
 <script setup lang="ts">
-
-const router = useRouter()
-
 useState('locale', () => 'en')
-
 
 </script>

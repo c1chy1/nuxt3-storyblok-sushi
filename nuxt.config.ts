@@ -2,6 +2,7 @@ import {apiPlugin} from "@storyblok/vue"
 
 
 
+/*
 const OPEN_GRAPH = [
     {
         hid: 'og:site_name',
@@ -11,7 +12,7 @@ const OPEN_GRAPH = [
     {
         hid: 'og:description',
         property: 'og:description',
-        content: 'c1chy sushi is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+        content: 'c1chy sushi is sushi xxx 1recipe app built with Nuxt 3, Storyblok, and Unocss',
     },
     {
         hid: 'og:title',
@@ -30,31 +31,9 @@ const OPEN_GRAPH = [
     },
     { property: 'og:updated_time', content: new Date().toISOString() },
 ]
+*/
 
-const TWITTER = [
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: '@c1chysushi' },
-    {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'c1chy sushi',
-    },
-    {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'c1chy.Sushi is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
-    },
-    {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
-    },
-    {
-        hid: 'twitter:image:alt',
-        name: 'twitter:image:alt',
-        content: 'c1chy.Sushi Preview',
-    },
-]
+
 
 
 export default defineNuxtConfig({
@@ -74,28 +53,92 @@ export default defineNuxtConfig({
         },
     },
 
+pwa: {
+
+    meta: {
+        ogTitle: false,
+        ogImage: false,
+        ogUrl: false,
+        ogDescription: false,
+        ogSiteName: false,
+        ogType: false,
+        theme_color: "#D15105",
+    }
+},
+
+
+
     app: {
+
         pageTransition: { name: 'slide' , mode:'out-in'},
 
        head: {
 
-            title: 'c1chy.sushi',
 
-           meta: [
+
+ /*          meta: [
+
                {
                    hid: 'description',
-                   name: 'description',
-                   content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+                   name: 'c1chy Sushi description',
+                   content: "test",
                },
-               { hid: 'author', name: 'author', content: 'Alvaro Saburido' },
+               // og
                {
-                   hid: 'keywords',
-                   property: 'keywords',
-                   keywords: 'sushi, recipes, nuxt, storyblok, unocss',
+                   hid: 'og:description',
+                   property: 'og:description',
+                   content: "c1chy Sushi description",
                },
-               ...OPEN_GRAPH,
-               ...TWITTER,
-           ],
+               {
+                   hid: 'og:title',
+                   property: 'og:title',
+                   content: `c1chy Sushi title`,
+               },
+               {
+                   hid: 'og:type',
+                   property: 'og:type',
+                   content: 'article',
+               },
+               {
+                   hid: 'og:url',
+                   property: 'og:url',
+                   content: `www.c1chy-sushi.eu`,
+               },
+               {
+                   hid: 'og:image',
+                   property: 'og:image',
+                   content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
+               },
+               {
+                   hid: 'og:image:alt',
+                   property: 'og:image:alt',
+                   content: "alt image c1chy sushi",
+               },
+
+               // Twitter
+               { name: 'twitter:card', content: 'summary_large_image' },
+               { name: 'twitter:site', content: '@c1chy' },
+               {
+                   hid: 'twitter:title',
+                   property: 'twitter:title',
+                   content: `Twitter title`,
+               },
+               {
+                   hid: 'twitter:description',
+                   name: 'twitter:description',
+                   content: "Twitter description",
+               },
+               {
+                   hid: 'twitter:image',
+                   name: 'twitter:image',
+                   content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
+               },
+               {
+                   hid: 'twitter:image:alt',
+                   name: 'twitter:image:alt',
+                   content: "Twitter alt",
+               },
+           ],*/
 
 
 
@@ -114,8 +157,11 @@ export default defineNuxtConfig({
         }],
         ['@kevinmarrec/nuxt-pwa', {
 
+            ogTitle: false,
+            ogImage: false,
+            ogUrl: false,
+             baseURL: "/home",
 
-        baseURL: "/home",
             workbox: {
                 enabled: true,
 
@@ -123,18 +169,15 @@ export default defineNuxtConfig({
             icon: {
                 maskablePadding: 0,
             },
-
             manifest: {
                 name: 'c1chy sushi',
                 lang: 'en',
                 display: 'standalone',
-                description: "sushi recipes",
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
                 start_url: '/home',
-                useWebmanifestExtension: false,
+                useWebmanifestExtension: true,
             }
-
         }],
         '@nuxtjs/color-mode',
         'nuxt-icon',

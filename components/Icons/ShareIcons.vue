@@ -1,7 +1,13 @@
 <template>
   <div class="content items-center fixed lg:flex-col left-3 lg:left-12 bottom-4 lg:bottom-0 z-30">
 
-    <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
+
+
+
+
+
+
+<!--    <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
             :class="[{ open : show  } , check ? '' : 'sent']"
             @click="open">
 
@@ -25,11 +31,14 @@
     </button>
     <button class="shareButton tw  bg-[#FA6A14] p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="prime:twitter"/>
-    </button>
+    </button>-->
 
   </div>
 </template>
 <script setup lang="ts">
+
+
+
 const show = ref();
 const check = ref(true);
 const open = () => {
@@ -40,6 +49,7 @@ const close = () => {
   show.value = false
   check.value = !check.value
 }
+
 </script>
 
 <style scoped lang="sass">

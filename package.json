@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@averjs/nuxt-compression": "^1.2.2",
-    "@kevinmarrec/nuxt-pwa": "^0.16.2",
+    "@kevinmarrec/nuxt-pwa": "^0.17.0",
     "@marvr/storyblok-rich-text-vue-renderer": "3.2.1",
     "@nuxt/image-edge": "^1.0.0-27919678.2f5b64b",
     "@nuxtjs/color-mode": "^3.2.0",
@@ -29,6 +29,7 @@
     "@nuxtjs/i18n": "^8.0.0-beta.9",
     "@pinia/nuxt": "^0.4.6",
     "@storyblok/nuxt": "^5.1.0",
-    "gsap": "npm:@gsap/business@^3.11.4"
+    "gsap": "npm:@gsap/business@^3.11.4",
+    "vue-social-sharing": "^4.0.0-alpha4"
   }
 }

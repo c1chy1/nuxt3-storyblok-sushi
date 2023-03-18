@@ -52,24 +52,24 @@ onMounted(() => {
 
 useHead(
     {
-      title: ` ${story.content.title}- c1chy.Sushi`,
+      title: ` home - c1chy.Sushi`,
       meta: [
 
         {
           hid: 'description',
           name: 'c1chy Sushi description',
-          content: story?.content.description,
+          content: "test",
         },
         // og
         {
           hid: 'og:description',
           property: 'og:description',
-          content: story?.content.description,
+          content: "c1chy Sushi description",
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content:  ` ${story.content.title}- c1chy.Sushi`,
+          content: `c1chy Sushi title`,
         },
         {
           hid: 'og:type',
@@ -79,12 +79,12 @@ useHead(
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://c1chy-sushi.netlify.app/recipes/${slug}`,
+          content: `www.c1chy-sushi.eu`,
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: story?.content.media?.filename,
+          content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
         },
         {
           hid: 'og:image:alt',
@@ -98,24 +98,17 @@ useHead(
         {
           hid: 'twitter:title',
           property: 'twitter:title',
-          content:  `${story.content.title}- c1chy.Sushi`,
+          content: `Twitter title`,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: story?.content.description,
+          content: "Twitter description",
         },
-
-        {
-          hid: 'twitter:url',
-          name: 'twitter:url',
-          content: `https://c1chy-sushi.netlify.app/recipes/${slug}`,
-        },
-
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: story?.content.media?.filename,
+          content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
         },
         {
           hid: 'twitter:image:alt',

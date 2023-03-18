@@ -128,7 +128,7 @@ useHead(
         {
           hid: 'og:title',
           property: 'og:title',
-          content:  ` ${story.content.title}- c1chy.Sushi`,
+          content:  `${story.content.title}- c1chy.Sushi`,
         },
         {
           hid: 'og:type',

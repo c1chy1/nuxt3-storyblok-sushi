@@ -31,7 +31,7 @@ const locale = useState('locale')
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const changeLocale = (loc ) => {
   locale.value = loc
-  router.push({path: localeUrl() || '/home'})
+  router.push({path: localeUrl() || '/'})
 }
 
 

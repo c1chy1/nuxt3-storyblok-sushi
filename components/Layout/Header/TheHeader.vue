@@ -2,7 +2,7 @@
   <header class="fixed top-0 w-full h-24 bg-shrimp-400 dark:bg-shrimp-900 z-30 transition-all duration-500">
     <div class="container   h-full mx-auto flex items-center justify-around">
 
-      <NuxtLink :to="localeUrl() || '/home'"
+      <NuxtLink :to="localeUrl() || '/'"
                 class="logo flex items-center font-display text-3xl font-bold text-gray-800 dark:text-white transition-all">
         <img src="/logo.svg" class="h-10 w-10 mr-2" alt="Sushi Wuut"/>
         c1chy<span class="text-shrimp-600  ">Sushi</span>
@@ -50,7 +50,7 @@ const locale = useState('locale')
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const changeLocale = (loc) => {
   locale.value = loc
-  router.push({path: localeUrl() || '/home'})
+  router.push({path: localeUrl() || '/'})
 }
 
 

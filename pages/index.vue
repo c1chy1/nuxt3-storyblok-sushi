@@ -42,11 +42,10 @@ onMounted(() => {
 
     />
 -->
-<!--
     <ButtonsSocial
     title="c1chy sushi facebook"
     url="https://c1chy-sushi.netlify.app/"
-    />-->
+    />
 
 <ShareNetwork
     network="facebook"

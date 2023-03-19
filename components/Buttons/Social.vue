@@ -27,6 +27,7 @@ const route = useRoute()
 const networks = [
   { network: 'facebook', name: 'Facebook', icon: resolveComponent('IconsFacebook') },
   { network: 'twitter', name: 'Twitter', icon: resolveComponent('IconsTwitter') },
+  { network: 'whatsapp', name: 'Whatsapp', icon: resolveComponent('IconsWhatsapp') },
 ]
 const tags = ref('')
 onMounted(() => {

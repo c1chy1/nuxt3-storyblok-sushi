@@ -30,14 +30,13 @@ export default defineNuxtConfig({
 head: {
 
     meta: [
-        {          hid: "og:site_name", property: "og:site_name", content: "I Love Painting" },
+        { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
         { hid: "og:type", property: "og:type", content: "website" },
         {
             hid: "og:url",
             property: "og:url",
             content: "https://c1chy-sushi.netlify.app/",
         },
-
 
         {
             hid: "og:image:type",
@@ -53,12 +52,12 @@ head: {
         {
             hid: "og:title",
             property: "og:title",
-            content: "My Amazing Blog on The Joy of Painting WIELKI PENIS CI ZUCKENBERGGGGGGG",
+            content: "c1chy.Sushi",
         },
         {
             hid: "og:description",
             property: "og:description",
-            content: "Articles focused on the beautiful art of landscape painting.",
+            content: "Your favorite Japanese recipes app",
         },
         {
             hid: "og:image",

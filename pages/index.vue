@@ -56,6 +56,16 @@ onMounted(() => {
     class="text-gray-600 hover:text-gray-900 widget"
 
 > Facebook</ShareNetwork>
+
+    <ShareNetwork
+        network="twitter"
+        url="https://c1chy-sushi.netlify.app/"
+        title="facebook title"
+        description="description"
+        class="text-gray-600 hover:text-gray-900 widget"
+
+    > Twitter</ShareNetwork>
+
   <StoryblokComponent v-if="story" :blok="story.content" />
   </main>
 </template>

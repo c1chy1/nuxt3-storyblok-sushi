@@ -6,6 +6,21 @@ import {apiPlugin} from "@storyblok/vue"
 const OPEN_GRAPH = [
     { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
     { hid: "og:type", property: "og:type", content: "website" },
+
+
+    {
+        hid: "og:title",
+        property: "og:title",
+        content: "c1chy.Sushi",
+    },
+
+    {
+        hid: "og:description",
+        property: "og:description",
+        content: "Your favorite Japanese recipes app",
+    },
+
+
     {
         hid: "og:url",
         property: "og:url",
@@ -17,36 +32,17 @@ const OPEN_GRAPH = [
         property: "og:image:type" ,
         content: "image/jpeg"
     },
-
-    {
-        hid: "og:image:secure_url",
-        property: "og:image:secure_url" ,
-        content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
-    },
-    {
-        hid: "og:title",
-        property: "og:title",
-        content: "c1chy.Sushi",
-    },
-    {
-        hid: "og:description",
-        property: "og:description",
-        content: "Your favorite Japanese recipes app",
-    },
     {
         hid: "og:image",
         itemprop:"image",
         property: "og:image",
-        content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
-    },
-
+        content: "icon.png"    },
 
     {
-        hid: 'og:image:alt',
-        name: 'og:image:alt',
-        content: 'c1chy.Sushi Preview',
+        hid: "og:image:secure_url",
+        property: "og:image:secure_url" ,
+        content: "icon.png"
     },
-
     {
         hid: 'og:image:width',
         name: 'og:image:width',
@@ -56,6 +52,13 @@ const OPEN_GRAPH = [
         hid: 'og:image:height',
         name: 'og:image:height',
         content: '156',
+    },
+
+
+    {
+        hid: 'og:image:alt',
+        name: 'og:image:alt',
+        content: 'c1chy.Sushi Preview',
     },
 
 

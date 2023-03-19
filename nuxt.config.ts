@@ -119,6 +119,18 @@ export default defineNuxtConfig({
 head: {
     title: 'c1chy.Sushi',
 
+
+    link: [
+        {
+
+            itemprop: imageURLShouldBeFromSameDomainName,
+            href: 'https://c1chy-sushi.netlify.app'
+
+        }
+
+
+    ],
+
     meta: [
 
 

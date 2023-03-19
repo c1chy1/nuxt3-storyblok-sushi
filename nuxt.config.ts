@@ -35,6 +35,7 @@ const OPEN_GRAPH = [
     {
         hid: "og:image",
         property: "og:image",
+        itemprop : "image",
         content: imageURLShouldBeFromSameDomainName    },
 
     {

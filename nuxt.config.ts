@@ -53,7 +53,7 @@ head: {
         {
             hid: "og:title",
             property: "og:title",
-            content: "My Amazing Blog on The Joy of Painting",
+            content: "My Amazing Blog on The Joy of Painting WIELKI PENIS CI ZUCKENBERGGGGGGG",
         },
         {
             hid: "og:description",

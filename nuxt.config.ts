@@ -83,7 +83,7 @@ const TWITTER = [
     {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
+        content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-200x200.png',
     },
     {
         hid: 'twitter:image:alt',

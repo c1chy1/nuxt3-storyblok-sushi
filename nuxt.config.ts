@@ -43,6 +43,7 @@ const OPEN_GRAPH = [
         property: "og:image:secure_url" ,
         content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-200x200.png"
     },
+/*
     {
         hid: 'og:image:width',
         name: 'og:image:width',
@@ -53,6 +54,7 @@ const OPEN_GRAPH = [
         name: 'og:image:height',
         content: '156',
     },
+*/
 
 
     {

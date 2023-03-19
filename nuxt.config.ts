@@ -36,22 +36,22 @@ const OPEN_GRAPH = [
         hid: "og:image",
         itemprop:"image",
         property: "og:image",
-        content: "https://www.web300421.roc130.rockinghoster.cloud/icon.png"    },
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-200x200.png"    },
 
     {
         hid: "og:image:secure_url",
         property: "og:image:secure_url" ,
-        content: "https://www.web300421.roc130.rockinghoster.cloud/icon.png"
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-200x200.png"
     },
     {
         hid: 'og:image:width',
         name: 'og:image:width',
-        content: '380',
+        content: '320',
     },
     {
         hid: 'og:image:height',
         name: 'og:image:height',
-        content: '200',
+        content: '156',
     },
 
 
@@ -67,7 +67,7 @@ const OPEN_GRAPH = [
 
 const TWITTER = [
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: '@shushiwuut' },
+    { name: 'twitter:site', content: '@c1chy.Sushi' },
     {
         hid: 'twitter:title',
         name: 'twitter:title',

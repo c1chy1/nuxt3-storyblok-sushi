@@ -45,7 +45,7 @@ const OPEN_GRAPH = [
     {
         hid: 'og:image:width',
         name: 'og:image:width',
-        content: '200',
+        content: '300',
     },
     {
         hid: 'og:image:height',
@@ -115,6 +115,7 @@ export default defineNuxtConfig({
 
 head: {
     title: 'c1chy.Sushi',
+
     meta: [
 
 

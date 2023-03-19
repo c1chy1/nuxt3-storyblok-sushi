@@ -70,7 +70,7 @@ onMounted(() => {
         network="whatsapp"
         url="https://c1chy-sushi.netlify.app/"
         title="whatsapp title"
-        description="description"
+        description="description he he he"
         class="text-gray-600 hover:text-gray-900 widget"
 
     > Whatsapp</ShareNetwork>

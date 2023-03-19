@@ -30,7 +30,7 @@ const OPEN_GRAPH = [
     {
         hid: "og:image:type",
         property: "og:image:type" ,
-        content: "image/jpeg"
+        content: "image/png"
     },
     {
         hid: "og:image",

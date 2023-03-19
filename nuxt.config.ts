@@ -46,7 +46,7 @@ const OPEN_GRAPH = [
     {
         hid: 'og:image:width',
         name: 'og:image:width',
-        content: '156',
+        content: '320',
     },
     {
         hid: 'og:image:height',

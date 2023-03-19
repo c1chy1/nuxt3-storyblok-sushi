@@ -42,10 +42,10 @@ onMounted(() => {
 
     />
 -->
-    <ButtonsSocial
+<!--    <ButtonsSocial
     title="c1chy sushi facebook"
     url="https://c1chy-sushi.netlify.app/"
-    />
+    />-->
 
 <ShareNetwork
     network="facebook"
@@ -66,13 +66,13 @@ onMounted(() => {
     > Twitter</ShareNetwork>
 
     <ShareNetwork
-        network="whatsapp"
+        network="telegram"
         url="https://c1chy-sushi.netlify.app/"
         title="whatsapp title"
         description="description he he he"
         class="text-gray-600 hover:text-gray-900 widget"
 
-    > Whatsapp</ShareNetwork>
+    > Telegram</ShareNetwork>
 
 
 

@@ -75,6 +75,8 @@ onMounted(() => {
 
     > Whatsapp</ShareNetwork>
 
+
+
   <StoryblokComponent v-if="story" :blok="story.content" />
   </main>
 </template>

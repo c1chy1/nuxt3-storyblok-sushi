@@ -36,12 +36,12 @@ const OPEN_GRAPH = [
         hid: "og:image",
         itemprop:"image",
         property: "og:image",
-        content: "icon.png"    },
+        content: "https://www.web300421.roc130.rockinghoster.cloud/icon.png"    },
 
     {
         hid: "og:image:secure_url",
         property: "og:image:secure_url" ,
-        content: "icon.png"
+        content: "https://www.web300421.roc130.rockinghoster.cloud/icon.png"
     },
     {
         hid: 'og:image:width',

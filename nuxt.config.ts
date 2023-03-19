@@ -1,7 +1,7 @@
 import {apiPlugin} from "@storyblok/vue"
 
 
-const imageURLShouldBeFromSameDomainName = 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png'
+
 
 const OPEN_GRAPH = [
     { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
@@ -24,7 +24,7 @@ const OPEN_GRAPH = [
     {
         hid: "og:url",
         property: "og:url",
-        content: "https://c1chy-sushi.netlify.app",
+        content: "https://c1chy-sushi.netlify.app/",
     },
 
     {
@@ -35,15 +35,13 @@ const OPEN_GRAPH = [
     {
         hid: "og:image",
         property: "og:image",
-        itemprop : "image",
-        content: imageURLShouldBeFromSameDomainName    },
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
 
     {
         hid: "og:image:secure_url",
         property: "og:image:secure_url" ,
-        content: imageURLShouldBeFromSameDomainName
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
     },
-/*
     {
         hid: 'og:image:width',
         name: 'og:image:width',
@@ -54,7 +52,6 @@ const OPEN_GRAPH = [
         name: 'og:image:height',
         content: '200',
     },
-*/
 
 
     {
@@ -83,7 +80,7 @@ const TWITTER = [
     {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: imageURLShouldBeFromSameDomainName,
+        content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
     },
     {
         hid: 'twitter:image:alt',
@@ -118,18 +115,6 @@ export default defineNuxtConfig({
 
 head: {
     title: 'c1chy.Sushi',
-
-
-    link: [
-        {
-
-            itemprop: imageURLShouldBeFromSameDomainName,
-            href: 'https://c1chy-sushi.netlify.app'
-
-        }
-
-
-    ],
 
     meta: [
 

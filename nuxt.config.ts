@@ -35,7 +35,7 @@ head: {
         {
             hid: "og:url",
             property: "og:url",
-            content: "https://bobross.com",
+            content: "https://c1chy-sushi.netlify.app/",
         },
 
 

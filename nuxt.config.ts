@@ -35,12 +35,12 @@ const OPEN_GRAPH = [
     {
         hid: "og:image",
         property: "og:image",
-        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199"    },
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
 
     {
         hid: "og:image:secure_url",
         property: "og:image:secure_url" ,
-        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199"
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
     },
     {
         hid: 'og:image:width',
@@ -80,7 +80,7 @@ const TWITTER = [
     {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199',
+        content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
     },
     {
         hid: 'twitter:image:alt',

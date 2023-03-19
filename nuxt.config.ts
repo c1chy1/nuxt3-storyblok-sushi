@@ -50,7 +50,7 @@ head: {
         {
             hid: "og:image",
             property: "og:image",
-            content: "/a-lovely-image.png",
+            content: "icon.png",
         },
         { property: "og:image:width", content: "740" },
         { property: "og:image:height", content: "300" },

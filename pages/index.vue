@@ -42,17 +42,20 @@ onMounted(() => {
 
     />
 -->
-
+<!--
     <ButtonsSocial
-    title="c1chy sushi"
-    url="https://localhost:3000/"
-    />
+    title="c1chy sushi facebook"
+    url="https://c1chy-sushi.netlify.app/"
+    />-->
 
-    <ButtonsSocial
-        title="c1chy sushi"
-        description="opis"
-        url="https://c1chy-sushi.netlify.app/"
-    />
+<ShareNetwork
+    network="facebook"
+    url="https://c1chy-sushi.netlify.app/"
+    title="facebook title"
+    description="description"
+    class="text-gray-600 hover:text-gray-900 widget"
+
+> Facebook</ShareNetwork>
   <StoryblokComponent v-if="story" :blok="story.content" />
   </main>
 </template>

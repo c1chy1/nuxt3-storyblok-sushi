@@ -30,38 +30,38 @@ export default defineNuxtConfig({
 head: {
 
     meta: [
-        { property: "og:site_name", content: "I Love Painting" },
-        {  property: "og:type", content: "website" },
+        {          hid: "og:site_name", property: "og:site_name", content: "I Love Painting" },
+        { hid: "og:type", property: "og:type", content: "website" },
         {
-
+            hid: "og:url",
             property: "og:url",
             content: "https://c1chy-sushi.netlify.app/",
         },
 
 
         {
-
+            hid: "og:image:type",
             property: "og:image:type" ,
             content: "image/jpeg"
         },
 
         {
-
+            hid: "og:image:secure_url",
             property: "og:image:secure_url" ,
             content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
         },
         {
-
+            hid: "og:title",
             property: "og:title",
             content: "My Amazing Blog on The Joy of Painting",
         },
         {
-
+            hid: "og:description",
             property: "og:description",
             content: "Articles focused on the beautiful art of landscape painting.",
         },
         {
-
+            hid: "og:image",
             property: "og:image",
             content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
         }

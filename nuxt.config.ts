@@ -35,8 +35,16 @@ const OPEN_GRAPH = [
     },
     {
         hid: "og:image",
+        itemprop:"image",
         property: "og:image",
         content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
+    },
+
+
+    {
+        hid: 'og:image:alt',
+        name: 'og:image:alt',
+        content: 'c1chy.Sushi Preview',
     },
 
     { property: 'og:updated_time', content: new Date().toISOString() },
@@ -48,12 +56,12 @@ const TWITTER = [
     {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Sushi Wuut',
+        content: "c1chy.Sushi",
     },
     {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+        content: "Your favorite Japanese recipes app"
     },
     {
         hid: 'twitter:image',
@@ -63,7 +71,7 @@ const TWITTER = [
     {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'Sushi Wuut Preview',
+        content: 'c1chy.Sushi Preview',
     },
 ]
 

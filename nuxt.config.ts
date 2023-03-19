@@ -37,6 +37,19 @@ head: {
             property: "og:url",
             content: "https://bobross.com",
         },
+
+
+        {
+            hid: "og:image:type",
+            property: "og:image:type" ,
+            content: "image/jpeg"
+        },
+
+        {
+            hid: "og:image:secure_url",
+            property: "og:image:secure_url" ,
+            content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
+        },
         {
             hid: "og:title",
             property: "og:title",
@@ -50,10 +63,9 @@ head: {
         {
             hid: "og:image",
             property: "og:image",
-            content: "icon.png",
-        },
-        { property: "og:image:width", content: "740" },
-        { property: "og:image:height", content: "300" },
+            content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
+        }
+
     ]
 
 

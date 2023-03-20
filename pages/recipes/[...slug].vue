@@ -133,7 +133,7 @@ useSeoMeta({
   ogDescription: "test ogDescription",
   ogImage: story.content.media.filename,
   ogImageSecureUrl : story.content.media.filename,
-  ogUrl : `https://c1chy-sushi.netlify.app/recipes + ${slug}`
+  ogUrl : `https://c1chy-sushi.netlify.app/recipes/${slug}`
 
 
 })
@@ -145,7 +145,7 @@ title: story.content.title,
   ogDescription: "test ogDescription",
   ogImage: story.content.media.filename,
   ogImageSecureUrl :story.content.media.filename,
-  ogUrl : `https://c1chy-sushi.netlify.app/recipes + ${slug}`
+  ogUrl : `https://c1chy-sushi.netlify.app/recipes/${slug}`
 
 })
 

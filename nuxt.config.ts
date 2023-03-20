@@ -139,6 +139,39 @@ export default defineNuxtConfig({
 
         pageTransition: { name: 'slide' , mode:'out-in'},
 
+/*
+head: {
+
+
+            meta: [
+
+                {
+                    hid: "og:url",
+                    property: "og:url",
+                    content: "https://c1chy-sushi.netlify.app/",
+                },
+
+                {
+                    hid: "og:image:type",
+                    property: "og:image:type" ,
+                    content: "image/png"
+                },
+                {
+                    hid: "og:image",
+                    property: "og:image",
+                    content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
+
+                {
+                    hid: "og:image:secure_url",
+                    property: "og:image:secure_url" ,
+                    content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+                },
+            ]
+}
+*/
+
+
+
 
 /*head: {
 /!*    title: 'c1chy.Sushi',*!/

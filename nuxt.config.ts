@@ -96,17 +96,19 @@ export default defineNuxtConfig({
 
 
 
+/*
     routeRules: {
- /*       // Static page generated on-demand, revalidates in background (ISG)
+ /!*       // Static page generated on-demand, revalidates in background (ISG)
         '/blog/!**': { swr: true },
 
         // Static page generated on-demand once (SSG - or at least mighty close)
-        '/articles/!**': { static: true },*/
+        '/articles/!**': { static: true },*!/
 
         // Render these routes on the client (SPA)
-        '/recipes/**': { ssr: true },
+        '/recipes/!**': { ssr: true },
 
     },
+*/
 
 
     nitro: {

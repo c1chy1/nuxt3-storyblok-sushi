@@ -1,7 +1,7 @@
 <template><div v-if="false"></div></template>
 
 <script setup lang="ts">
-const { WEBSITE_URL } = useRuntimeConfig()
+/*const { WEBSITE_URL } = useRuntimeConfig()*/
 
 
 interface Props {
@@ -17,6 +17,11 @@ useHead({
     lang: 'en',
   },
   meta: [
+
+
+    { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
+    { hid: "og:type", property: "og:type", content: "website" },
+
     {
       hid: 'description',
       name: 'description',

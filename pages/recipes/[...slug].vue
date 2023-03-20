@@ -5,11 +5,11 @@
 <section>
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
-<!--        <LayoutSeoHead
+        <LayoutSeoHead
         :title="slug"
         :image="story.content.media.filename"
 
-        />-->
+        />
 
 <!--        <ButtonsSocial
             :title="story.content.title"
@@ -168,7 +168,7 @@ definePageMeta({
 
 console.log(story)
 
-/*useSeoMeta({
+useSeoMeta({
 
   title: story.content.title,
   ogTitle: "test ogTitle",
@@ -192,13 +192,14 @@ title: story.content.title,
 
 })
 
+/*
 defineOgImageStatic({
 
   title: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png",
   description  : "opis"
-})*/
+})
+*/
 
-/*
 useHead(
     {
       title: ` ${story.content.title}- c1chy.Sushi`,
@@ -277,7 +278,7 @@ useHead(
         },
       ]
     }
-)*/
+)
 
 
 </script>

@@ -114,14 +114,14 @@ export default defineNuxtConfig({
 
 
 head: {
-    title: 'c1chy.Sushi',
+/*    title: 'c1chy.Sushi',*/
 
-    meta: [
+/*    meta: [
 
 
         ...OPEN_GRAPH,
         ...TWITTER,
-    ]
+    ]*/
 
 
 
@@ -209,7 +209,7 @@ head: {
             bridge: true,
             use: [apiPlugin]
         }],
-        ['@kevinmarrec/nuxt-pwa', {
+  /*      ['@kevinmarrec/nuxt-pwa', {
 
         baseURL: "/",
 
@@ -227,7 +227,7 @@ head: {
                 background_color: "#FB8D4B",
                 useWebmanifestExtension: true,
             }
-        }],
+        }],*/
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',

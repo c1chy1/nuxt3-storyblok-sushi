@@ -47,7 +47,7 @@ useHead({
     {
       hid: 'og:url',
       property: 'og:url',
-      content: props.url,
+      content: "https://c1chy-sushi.netlify.app/",
     },
     {
       hid: 'og:title',
@@ -62,7 +62,7 @@ useHead({
     {
       hid: 'og:image',
       property: 'og:image',
-      content: props.image},
+      content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"},
     {
       hid: "og:image:type",
       property: "og:image:type" ,
@@ -72,7 +72,7 @@ useHead({
     {
       hid: 'og:image:secure_url',
       property: 'og:image:secure_url',
-      content: props.image},
+      content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"},
     {
       hid: 'og:image:alt',
       property: 'og:image:alt',

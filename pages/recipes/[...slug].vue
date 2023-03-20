@@ -18,7 +18,7 @@
 
         />-->
 
-<!--        <ShareNetwork
+        <ShareNetwork
             network="twitter"
             :url="`https://c1chy-sushi.netlify.app/recipes/ + ${slug}`"
             title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
@@ -29,7 +29,7 @@
         >
           <i class="fab fah fa-lg fa-twitter"></i>
           <span>Share on Twitter</span>
-        </ShareNetwork>-->
+        </ShareNetwork>
 
 
         <ShareNetwork

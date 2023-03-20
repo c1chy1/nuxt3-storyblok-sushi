@@ -92,6 +92,21 @@ const TWITTER = [
 export default defineNuxtConfig({
     ssr: false,
 
+
+
+    routeRules: {
+ /*       // Static page generated on-demand, revalidates in background (ISG)
+        '/blog/!**': { swr: true },
+
+        // Static page generated on-demand once (SSG - or at least mighty close)
+        '/articles/!**': { static: true },*/
+
+        // Render these routes on the client (SPA)
+        '/recipes/**': { ssr: true },
+
+    },
+
+
     nitro: {
         compressPublicAssets: true,
     },
@@ -209,7 +224,7 @@ head: {
             bridge: true,
             use: [apiPlugin]
         }],
-  /*      ['@kevinmarrec/nuxt-pwa', {
+      /*  ['@kevinmarrec/nuxt-pwa', {
 
         baseURL: "/",
 
@@ -272,8 +287,7 @@ head: {
 
     vite: {
         build: {
-            chunkSizeWarningLimit: 1024,
-            manifest: false,
+            chunkSizeWarningLimit: 1024
     }}
 
 

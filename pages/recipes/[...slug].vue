@@ -5,11 +5,11 @@
 <section>
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
-        <LayoutSeoHead
+<!--        <LayoutSeoHead
         :title="slug"
         :image="story.content.media.filename"
 
-        />
+        />-->
 
 <!--        <ButtonsSocial
             :title="story.content.title"
@@ -124,6 +124,18 @@ const locale = useState('locale')
 
 
 
+useServerSeoMeta({
+
+title: ()=> story.value.content.metadata.title,
+  ogTitle: ()=> story.value.content.metadata.title,
+  description: ()=> story.value.content.metadata.description,
+  ogDescription: ()=> story.value.content.metadata.description,
+
+})
+
+
+
+/*
 useHead(
     {
       title: ` ${story.content.title}- c1chy.Sushi`,
@@ -202,7 +214,7 @@ useHead(
         },
       ]
     }
-)
+)*/
 
 
 </script>

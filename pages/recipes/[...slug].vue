@@ -7,7 +7,8 @@
 
         <LayoutSeoHead
         :title="slug"
-        
+        :image="story.content.media.filename"
+
         />
 
 <!--        <ButtonsSocial

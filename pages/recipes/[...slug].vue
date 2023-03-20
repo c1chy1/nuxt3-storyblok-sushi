@@ -18,6 +18,40 @@
 
         />-->
 
+        <Head>
+          <Link rel="canonical" v-if="story" :href="story.url" />
+          <Meta name="og:title" v-if="story" :content="story.content.title" />
+          <Meta name="og:url" v-if="story" content="https://c1chy-sushi.netlify.app/" />
+          <Meta
+              name="og:description"
+              v-if="story"
+              :content="story.content.title"
+          />
+          <Meta
+              name="og:image"
+              v-if="story"
+              :content="story.content.media.filename"
+          />
+          <Meta
+              name="og:image:secure_url"
+              v-if="story"
+              :content="story.content.media.filename"
+          />
+          <Meta name="twitter:title" v-if="story" :content="story.content.title" />
+          <Meta name="twitter:url" v-if="story" content="https://c1chy-sushi.netlify.app/" />
+
+          <Meta
+              name="twitter:image"
+              v-if="story"
+              content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+          />
+          <Meta
+              name="twitter:image:secure_url"
+              v-if="story"
+              content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+          />
+        </Head>
+
         <ShareNetwork
             network="twitter"
             :url="`https://c1chy-sushi.netlify.app/recipes/ + ${slug}`"
@@ -123,9 +157,16 @@ const story = await fetchRecipeBySlug(slug as string)
 const locale = useState('locale')
 
 
+
+definePageMeta({
+
+
+
+})
+
 console.log(story)
 
-useSeoMeta({
+/*useSeoMeta({
 
   title: story.content.title,
   ogTitle: "test ogTitle",
@@ -153,7 +194,7 @@ defineOgImageStatic({
 
   title: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png",
   description  : "opis"
-})
+})*/
 
 /*
 useHead(

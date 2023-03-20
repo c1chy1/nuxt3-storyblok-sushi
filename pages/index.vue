@@ -29,7 +29,7 @@ onMounted(() => {
 });
 
 console.log(story)
-useServerSeoMeta({
+/*useServerSeoMeta({
 
 
   ogTitle: "test",
@@ -43,7 +43,7 @@ defineOgImageStatic({
 
   title: "tytuł",
   description  : "opis"
-})
+})*/
 /*useServerSeoMeta({
 
   title: ()=> story.content.meta_data.title,
@@ -144,6 +144,8 @@ useHead({
       image="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
 
   />-->
+
+
   <main role="main">
 <!--
     <LayoutSeoHead

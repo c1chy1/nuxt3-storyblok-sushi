@@ -30,13 +30,21 @@ onMounted(() => {
 
 console.log(story)
 
-useServerSeoMeta({
+/*useServerSeoMeta({
 
-  title: ()=> story.content.seo.title,
-  ogTitle: ()=> story.content.seo.title,
-  description: ()=> story.content.seo.description,
-  ogDescription: ()=> story.content.seo.description,
+  title: ()=> story.content.meta_data.title,
+  ogTitle: ()=> story.content.metadata.title,
+  description: ()=> story.content.metadata.description,
+  ogDescription: ()=> story.content.metadata.description,
 
+})*/
+
+
+
+defineOgImageStatic({
+
+title: "tytuł",
+  description  : "opis"
 })
 /*useServerSeoMeta({
   title: 'My Amazing Site',

@@ -1,4 +1,5 @@
 import {apiPlugin} from "@storyblok/vue"
+import runtimeConfig from "nitropack/dist/runtime/config";
 
 
 
@@ -93,7 +94,15 @@ const TWITTER = [
 
 export default defineNuxtConfig({
     ssr: false,
-    target: 'static',
+
+
+    extends: [
+        'nuxt-seo-kit'],
+        runtimeConfig: {
+        public: {
+            siteUrl: process.env.PUBLIC_URL
+
+}},
 
 /*
     routeRules: {

@@ -94,6 +94,10 @@ const TWITTER = [
 
 export default defineNuxtConfig({
     ssr: false,
+
+
+    mode: 'universal',
+
     app: {
 
         pageTransition: { name: 'slide' , mode:'out-in'},

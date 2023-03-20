@@ -19,6 +19,8 @@
         />-->
 
         <Head>
+
+          <Title :content="story.content.title">{{story.content.title}}</Title>
           <Link rel="canonical" v-if="story" :href="story.url" />
           <Meta name="og:title" v-if="story" :content="story.content.title" />
           <Meta name="og:url" v-if="story" content="https://c1chy-sushi.netlify.app/" />

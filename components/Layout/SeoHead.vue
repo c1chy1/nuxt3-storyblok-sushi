@@ -8,6 +8,7 @@ interface Props {
   title: string
   description: string
   image: string
+  url: string
 }
 const props = defineProps<Props>()
 useHead({
@@ -41,6 +42,13 @@ useHead({
       name: 'twitter:image:alt',
       content: props.title,
     },
+
+
+    {
+      hid: 'og:url',
+      property: 'og:url',
+      content: props.url,
+    },
     {
       hid: 'og:title',
       property: 'og:title',
@@ -55,6 +63,12 @@ useHead({
       hid: 'og:image',
       property: 'og:image',
       content: props.image},
+    {
+      hid: "og:image:type",
+      property: "og:image:type" ,
+      content: "image/png"
+    },
+
     {
       hid: 'og:image:secure_url',
       property: 'og:image:secure_url',

@@ -3,6 +3,7 @@ import {apiPlugin} from "@storyblok/vue"
 
 
 
+/*
 const OPEN_GRAPH = [
     { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
     { hid: "og:type", property: "og:type", content: "website" },
@@ -88,6 +89,7 @@ const TWITTER = [
         content: 'c1chy.Sushi Preview',
     },
 ]
+*/
 
 export default defineNuxtConfig({
     ssr: false,

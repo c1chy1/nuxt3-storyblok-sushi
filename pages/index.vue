@@ -29,7 +29,20 @@ onMounted(() => {
 });
 
 console.log(story)
+useServerSeoMeta({
 
+  title: "test",
+  ogTitle: ()=> story.value.content.metadata.title,
+  description: ()=> story.value.content.metadata.description,
+  ogDescription: ()=> story.value.content.metadata.description,
+
+})
+
+defineOgImageStatic({
+
+  title: "tytuł",
+  description  : "opis"
+})
 /*useServerSeoMeta({
 
   title: ()=> story.content.meta_data.title,

@@ -41,11 +41,7 @@ console.log(story)
 
 
 
-defineOgImageStatic({
 
-title: "tytuł",
-  description  : "opis"
-})
 /*useServerSeoMeta({
   title: 'My Amazing Site',
   ogTitle: 'My Amazing Site',

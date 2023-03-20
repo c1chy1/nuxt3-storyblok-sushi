@@ -140,19 +140,19 @@ export default defineNuxtConfig({
         pageTransition: { name: 'slide' , mode:'out-in'},
 
 
-head: {
-/*    title: 'c1chy.Sushi',*/
+/*head: {
+/!*    title: 'c1chy.Sushi',*!/
 
-/*    meta: [
+/!*    meta: [
 
 
         ...OPEN_GRAPH,
         ...TWITTER,
-    ]*/
+    ]*!/
 
 
 
-}
+}*/
 
 
   /*     head: {

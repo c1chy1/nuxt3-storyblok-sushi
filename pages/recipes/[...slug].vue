@@ -21,7 +21,7 @@
         <ShareNetwork
             network="twitter"
             :url="`https://c1chy-sushi.netlify.app/recipes/ + ${slug}`"
-            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+            :title="story.content.title"
             description="This week, I’d like to introduce you to `Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
             quote="The hot reload is so fast it\'s near instant. - Evan You"
             hashtags="vuejs,vite,javascript"
@@ -123,19 +123,32 @@ const story = await fetchRecipeBySlug(slug as string)
 const locale = useState('locale')
 
 
+console.log(story)
 
-useServerSeoMeta({
+useSeoMeta({
 
-title: "test",
-  ogTitle: ()=> story.value.content.metadata.title,
-  description: ()=> story.value.content.metadata.description,
-  ogDescription: ()=> story.value.content.metadata.description,
+  ogTitle: "test ogTitle",
+  description: "test description",
+  ogDescription: "test ogDescription",
+  ogImage: story.content.media.filename,
+  ogImageSecureUrl : 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png'
+
 
 })
+/*useServerSeoMeta({
+
+title: story.content.title,
+  ogTitle: "test ogTitle",
+  description: "test description",
+  ogDescription: "test ogDescription",
+  ogImage: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
+  ogImageUrl: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png'
+
+})*/
 
 defineOgImageStatic({
 
-  title: "tytuł",
+  title: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png",
   description  : "opis"
 })
 

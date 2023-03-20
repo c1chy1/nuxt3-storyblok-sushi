@@ -31,12 +31,13 @@ onMounted(() => {
 console.log(story)
 useServerSeoMeta({
 
-  title: "test",
-  ogTitle: ()=> story.value.content.metadata.title,
+
+  ogTitle: "test",
   description: ()=> story.value.content.metadata.description,
   ogDescription: ()=> story.value.content.metadata.description,
 
 })
+
 
 defineOgImageStatic({
 

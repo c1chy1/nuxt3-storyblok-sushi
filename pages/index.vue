@@ -27,12 +27,15 @@ onMounted(() => {
     );
   }
 });
+
+console.log(story)
+
 useServerSeoMeta({
 
-  title: ()=> "test",
-  ogTitle: ()=> "test",
-  description: ()=> "test",
-  ogDescription: ()=> "test",
+  title: ()=> story.content.seo.title,
+  ogTitle: ()=> story.content.seo.title,
+  description: ()=> story.content.seo.description,
+  ogDescription: ()=> story.content.seo.description,
 
 })
 /*useServerSeoMeta({

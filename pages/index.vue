@@ -34,7 +34,11 @@ onMounted(() => {
 <template>
 
 
+  <LayoutSeoHead
+      title="c1chy.Sushi"
+      image="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
 
+  />
   <main role="main">
 <!--
     <LayoutSeoHead

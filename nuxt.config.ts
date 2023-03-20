@@ -93,8 +93,7 @@ const TWITTER = [
 
 export default defineNuxtConfig({
     ssr: false,
-
-
+    target: 'static',
 
 /*
     routeRules: {

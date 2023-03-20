@@ -28,18 +28,94 @@ onMounted(() => {
   }
 });
 
+useServerSeoMeta({
+  title: 'My Amazing Site',
+  ogTitle: 'My Amazing Site',
+  description: 'This is my amazing site, let me tell you all about it.',
+  ogDescription: 'This is my amazing site, let me tell you all about it.',
+  ogImage: 'https://example.com/image.png',
+  twitterCard: 'summary_large_image',
+})
+/*
+useHead({
+
+  meta:  [
+    { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
+    { hid: "og:type", property: "og:type", content: "website" },
+
+
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "c1chy.Sushi",
+    },
+
+    {
+      hid: "og:description",
+      property: "og:description",
+      content: "Your favorite Japanese recipes app",
+    },
+
+
+    {
+      hid: "og:url",
+      property: "og:url",
+      content: "https://c1chy-sushi.netlify.app/",
+    },
+
+    {
+      hid: "og:image:type",
+      property: "og:image:type" ,
+      content: "image/png"
+    },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
+
+    {
+      hid: "og:image:secure_url",
+      property: "og:image:secure_url" ,
+      content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+    },
+    {
+      hid: 'og:image:width',
+      name: 'og:image:width',
+      content: '300',
+    },
+    {
+      hid: 'og:image:height',
+      name: 'og:image:height',
+      content: '200',
+    },
+
+
+    {
+      hid: 'og:image:alt',
+      name: 'og:image:alt',
+      content: 'c1chy.Sushi Preview',
+    },
+
+
+    { property: 'og:updated_time', content: new Date().toISOString() },
+  ]
+})
+*/
+
+
+
 </script>
 
 
 <template>
 
-
+<!--
   <LayoutSeoHead
       title="c1chy.Sushi"
       url="https://c1chy-sushi.netlify.app/"
       image="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
 
-  />
+  />-->
   <main role="main">
 <!--
     <LayoutSeoHead

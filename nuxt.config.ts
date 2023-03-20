@@ -209,9 +209,9 @@ head: {
             bridge: true,
             use: [apiPlugin]
         }],
- /*       ['@kevinmarrec/nuxt-pwa', {
+        ['@kevinmarrec/nuxt-pwa', {
 
-        baseURL: "/home",
+        baseURL: "/",
 
             workbox: {
                 enabled: true,
@@ -228,7 +228,7 @@ head: {
                 start_url: '/home',
                 useWebmanifestExtension: true,
             }
-        }],*/
+        }],
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',

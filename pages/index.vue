@@ -74,6 +74,15 @@ onMounted(() => {
 
     > Telegram</ShareNetwork>
 
+    <ShareNetwork
+        network="whatsapp"
+        url="https://c1chy-sushi.netlify.app/"
+        title="whatsapp title"
+        description="description he he he"
+        class="text-gray-600 hover:text-gray-900 widget"
+
+    > Whatsapp</ShareNetwork>
+
 
 
   <StoryblokComponent v-if="story" :blok="story.content" />

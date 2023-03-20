@@ -127,24 +127,27 @@ console.log(story)
 
 useSeoMeta({
 
+  title: story.content.title,
   ogTitle: "test ogTitle",
   description: "test description",
   ogDescription: "test ogDescription",
   ogImage: story.content.media.filename,
-  ogImageSecureUrl : 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png'
+  ogImageSecureUrl : story.content.media.filename,
+  ogUrl : `https://c1chy-sushi.netlify.app/recipes + ${slug}`
 
 
 })
-/*useServerSeoMeta({
+useServerSeoMeta({
 
 title: story.content.title,
   ogTitle: "test ogTitle",
   description: "test description",
   ogDescription: "test ogDescription",
-  ogImage: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
-  ogImageUrl: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png'
+  ogImage: story.content.media.filename,
+  ogImageSecureUrl :story.content.media.filename,
+  ogUrl : `https://c1chy-sushi.netlify.app/recipes + ${slug}`
 
-})*/
+})
 
 defineOgImageStatic({
 

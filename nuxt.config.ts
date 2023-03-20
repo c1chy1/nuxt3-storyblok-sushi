@@ -225,7 +225,6 @@ head: {
                 display: 'standalone',
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
-                start_url: '/home',
                 useWebmanifestExtension: true,
             }
         }],

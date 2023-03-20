@@ -5,6 +5,10 @@
 <section>
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
+        <LayoutSeoHead
+        :title="slug"
+        
+        />
 
 <!--        <ButtonsSocial
             :title="story.content.title"
@@ -13,7 +17,7 @@
 
         />-->
 
-        <ShareNetwork
+<!--        <ShareNetwork
             network="twitter"
             :url="`https://c1chy-sushi.netlify.app/recipes/ + ${slug}`"
             title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
@@ -24,13 +28,13 @@
         >
           <i class="fab fah fa-lg fa-twitter"></i>
           <span>Share on Twitter</span>
-        </ShareNetwork>
+        </ShareNetwork>-->
 
 
         <ShareNetwork
             network="facebook"
-            url="https://c1chy-sushi.netlify.app/"
-            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+            :url="`https://c1chy-sushi.netlify.app/recipes/ + ${slug}`"
+            :title="story.content.title"
             description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
             quote="The hot reload is so fast it\'s near instant. - Evan You"
             hashtags="vuejs,vite,javascript"

@@ -171,7 +171,7 @@ export default defineNuxtConfig({
             bridge: true,
             use: [apiPlugin]
         }],
-      /*  ['@kevinmarrec/nuxt-pwa', {
+        ['@kevinmarrec/nuxt-pwa', {
 
         baseURL: "/",
 
@@ -189,7 +189,7 @@ export default defineNuxtConfig({
                 background_color: "#FB8D4B",
                 useWebmanifestExtension: true,
             }
-        }],*/
+        }],
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',

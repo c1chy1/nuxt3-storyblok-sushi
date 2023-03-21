@@ -1,7 +1,7 @@
 <template>
   <div class="content items-center fixed lg:flex-col left-3 lg:left-12 bottom-4 lg:bottom-0 z-30">
 
-<!--    <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
+    <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
             :class="[{ open : show  } , check ? '' : 'sent']"
             @click="open">
 
@@ -17,15 +17,43 @@
             d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
       </svg>
     </button>
+    <ShareNetwork
+        network="facebook"
+        url="https://c1chy-sushi.netlify.app/"
+        title="c1chy.Sushi"
+        description="Your favorite Japanese recipes app"
+        @open="open"
+        @change="check"
+        @close="close"
+    >
     <button class="shareButton fb bg-[#FA6A14] p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0  dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="ri:facebook-fill"/>
     </button>
-    <button class="shareButton ig bg-[#FA6A14] p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
-      <Icon class="h-5 w-5 mx-auto" name="icon-park-solid:instagram"/>
-    </button>
+    </ShareNetwork>
+    <ShareNetwork
+        network="twitter"
+        url="https://c1chy-sushi.netlify.app/"
+        title="twitter title"
+        description="description"
+
+    >
     <button class="shareButton tw  bg-[#FA6A14] p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="prime:twitter"/>
-    </button>-->
+    </button>
+    </ShareNetwork>
+    <ShareNetwork
+        network="telegram"
+        url="https://c1chy-sushi.netlify.app/"
+        title="telegram title"
+        description="description he he he"
+        @open="open"
+        @change="check"
+        @close="close"
+
+    ><button class="shareButton ig bg-[#FA6A14] p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
+      <Icon class="h-5 w-5 mx-auto" name="icon-park:telegram"/>
+    </button>
+    </ShareNetwork>
 
   </div>
 </template>

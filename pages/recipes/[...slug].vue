@@ -5,11 +5,11 @@
 <section>
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
-        <LayoutSeoHead
+<!--        <LayoutSeoHead
         :title="slug"
         :image="story.content.media.filename"
 
-        />
+        />-->
 
 <!--        <ButtonsSocial
             :title="story.content.title"
@@ -18,7 +18,7 @@
 
         />-->
 
-        <Head>
+<!--        <Head>
 
           <Title :content="story.content.title">{{story.content.title}}</Title>
           <Link rel="canonical" v-if="story" :href="story.url" />
@@ -52,12 +52,13 @@
               v-if="story"
               content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
           />
-        </Head>
+        </Head>-->
 
         <ShareNetwork
             network="twitter"
             :url="`https://c1chy-sushi.netlify.app/recipes/ + ${slug}`"
-            :title="story.content.title"
+            :title="story.content.metadata.title"
+            :media="story.content.media.filename"
             description="This week, I’d like to introduce you to `Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
             quote="The hot reload is so fast it\'s near instant. - Evan You"
             hashtags="vuejs,vite,javascript"
@@ -72,6 +73,7 @@
             network="facebook"
             :url="`https://c1chy-sushi.netlify.app/recipes/ + ${slug}`"
             :title="story.content.title"
+            :media="story.content.media.filename"
             description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
             quote="The hot reload is so fast it\'s near instant. - Evan You"
             hashtags="vuejs,vite,javascript"
@@ -168,15 +170,18 @@ definePageMeta({
 
 console.log(story)
 
+console.log(story.content.metadata.title)
+
 useSeoMeta({
 
   title: story.content.title,
+  ogSiteName: "https://c1chy-sushi.netlify.app",
   ogTitle: "test ogTitle",
   description: "test description",
   ogDescription: "test ogDescription",
   ogImage: story.content.media.filename,
   ogImageSecureUrl : story.content.media.filename,
-  ogUrl : `https://c1chy-sushi.netlify.app/recipes/${slug}`
+  ogUrl : story.full_slug
 
 
 })
@@ -188,7 +193,7 @@ title: story.content.title,
   ogDescription: "test ogDescription",
   ogImage: story.content.media.filename,
   ogImageSecureUrl :story.content.media.filename,
-  ogUrl : `https://c1chy-sushi.netlify.app/recipes/${slug}`
+  ogUrl : story.full_slug
 
 })
 
@@ -208,6 +213,9 @@ useHead(
         lang: locale.value,
       },
       meta: [
+
+        { hid: "og:site_name", property: "og:site_name", content: "https://c1chy-sushi.netlify.app" },
+        { hid: "og:type", property: "og:type", content: "website" },
 
         {
           hid: 'description',
@@ -233,7 +241,7 @@ useHead(
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://c1chy-sushi.netlify.app/recipes/${slug}`,
+          content: story.full_slug,
         },
         {
           hid: 'og:image',

@@ -137,64 +137,7 @@ useHead({
 
 <template>
 
-<!--
-  <LayoutSeoHead
-      title="c1chy.Sushi"
-      url="https://c1chy-sushi.netlify.app/"
-      image="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
-
-  />-->
-<!--
-  <Head>
-    <Title>Home c1chy.Sushi</Title>
-    <Link rel="canonical" v-if="story" href="https://c1chy-sushi.netlify.app/" />
-    <Meta name="og:title" v-if="story" content="Home c1chy.Sushi" />
-    <Meta name="og:url" v-if="story" content="https://c1chy-sushi.netlify.app/" />
-
-    <Meta
-        name="og:description"
-
-        content="story.content.title"
-    />
-    <Meta
-        name="og:image"
-        v-if="story"
-        content="test meta"
-    />
-    <Meta
-        name="og:image"
-        v-if="story"
-        content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
-    />
-    <Meta
-        name="og:image:secure_url"
-        v-if="story"
-        content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
-    />
-
-    <Meta
-        name="twitter:image"
-        v-if="story"
-        content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
-    />
-    <Meta
-        name="twitter:image:secure_url"
-        v-if="story"
-        content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
-    />
-  </Head>-->
   <main role="main">
-<!--
-    <LayoutSeoHead
-        :title="slug"
-
-    />
--->
-<!--    <ButtonsSocial
-    title="c1chy sushi facebook"
-    url="https://c1chy-sushi.netlify.app/"
-    />-->
-
 <ShareNetwork
     network="facebook"
     url="https://c1chy-sushi.netlify.app/"

@@ -1,5 +1,6 @@
 import {apiPlugin} from "@storyblok/vue"
-import runtimeConfig from "nitropack/dist/runtime/config";
+
+
 
 
 
@@ -84,6 +85,11 @@ const TWITTER = [
         content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
     },
     {
+        hid: 'twitter:image:secure_url',
+        name: 'twitter:image:secure_url',
+        content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
+    },
+    {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: 'c1chy.Sushi Preview',
@@ -92,9 +98,6 @@ const TWITTER = [
 
 export default defineNuxtConfig({
     ssr: false,
-
-
-    mode: 'universal',
 
     app: {
 
@@ -128,9 +131,6 @@ export default defineNuxtConfig({
                     ]
         },*/
 
-
-
-
         head: {
             bodyAttrs: {
                      class: 'overflow-x-hidden'
@@ -142,26 +142,9 @@ export default defineNuxtConfig({
                 ...TWITTER,
             ]
 
-
-
         }
 
-
     },
-
-/*
-    routeRules: {
- /!*       // Static page generated on-demand, revalidates in background (ISG)
-        '/blog/!**': { swr: true },
-
-        // Static page generated on-demand once (SSG - or at least mighty close)
-        '/articles/!**': { static: true },*!/
-
-        // Render these routes on the client (SPA)
-        '/recipes/!**': { ssr: true },
-
-    },
-*/
 
 
     nitro: {

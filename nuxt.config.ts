@@ -1,8 +1,6 @@
 import {apiPlugin} from "@storyblok/vue"
 
-
-
-
+import { createSEOMeta } from "./utils/seo";
 
 
 const OPEN_GRAPH = [
@@ -22,7 +20,11 @@ const OPEN_GRAPH = [
         content: "Your favorite Japanese recipes app",
     },
 
-
+    {
+        hid: "og:locale",
+        property: "og:locale",
+        content: "en",
+    },
     {
         hid: "og:url",
         property: "og:url",
@@ -44,17 +46,6 @@ const OPEN_GRAPH = [
         property: "og:image:secure_url" ,
         content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
     },
-    {
-        hid: 'og:image:width',
-        name: 'og:image:width',
-        content: '300',
-    },
-    {
-        hid: 'og:image:height',
-        name: 'og:image:height',
-        content: '200',
-    },
-
 
     {
         hid: 'og:image:alt',
@@ -100,52 +91,25 @@ export default defineNuxtConfig({
     ssr: false,
 
     app: {
-
         pageTransition: { name: 'slide' , mode:'out-in'},
-
- /*       head: {
-
-            meta: [
-
-                        {
-                            hid: "og:url",
-                            property: "og:url",
-                            content: "https://c1chy-sushi.netlify.app/",
-                        },
-
-                        {
-                            hid: "og:image:type",
-                            property: "og:image:type" ,
-                            content: "image/png"
-                        },
-                        {
-                            hid: "og:image",
-                            property: "og:image",
-                            content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
-
-                        {
-                            hid: "og:image:secure_url",
-                            property: "og:image:secure_url" ,
-                            content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
-                        },
-                    ]
-        },*/
-
         head: {
             bodyAttrs: {
                      class: 'overflow-x-hidden'
                  },
+
             title: 'c1chy.Sushi',
             meta: [
 
-                ...OPEN_GRAPH,
-                ...TWITTER,
+                ...createSEOMeta({
+
+                    description: "Your Japanese App",
+                })
+
+               /* ...OPEN_GRAPH,
+                ...TWITTER,*/
             ]
-
         }
-
     },
-
 
     nitro: {
         compressPublicAssets: true,
@@ -161,16 +125,13 @@ export default defineNuxtConfig({
         },
     },
 
-
-
-
-
     modules: [['@storyblok/nuxt',
         {
             accessToken: process.env.STORYBLOK_API_TOKEN,
             bridge: true,
             use: [apiPlugin]
         }],
+/*
         ['@kevinmarrec/nuxt-pwa', {
 
         baseURL: "/",
@@ -184,12 +145,14 @@ export default defineNuxtConfig({
             },
             manifest: {
                 name: 'c1chy sushi',
+                lang: ,
                 display: 'standalone',
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
                 useWebmanifestExtension: true,
             }
         }],
+*/
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',

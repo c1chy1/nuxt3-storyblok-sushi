@@ -1,6 +1,20 @@
 <template>
   <div class="content items-center fixed lg:flex-col left-3 lg:left-12 bottom-4 lg:bottom-0 z-30">
 
+
+
+
+    <Social
+
+:title="story.content.title"
+:url="url"
+:media="story.content.media.filename"
+    />
+
+
+
+
+<!--
     <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
             :class="[{ open : show  } , check ? '' : 'sent']"
             @click="open">
@@ -20,7 +34,7 @@
     <ShareNetwork
         network="facebook"
         url="https://c1chy-sushi.netlify.app/"
-        title="c1chy.Sushi"
+        :title="story.content.title"
         description="Your favorite Japanese recipes app"
         @open="open"
         @change="check"
@@ -32,10 +46,10 @@
     </ShareNetwork>
     <ShareNetwork
         network="twitter"
-        url="https://c1chy-sushi.netlify.app/"
-        title="twitter title"
-        description="description"
-
+        :title="story.content.title"
+        @open="open"
+        @change="check"
+        @close="close"
     >
     <button class="shareButton tw  bg-[#FA6A14] p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="prime:twitter"/>
@@ -45,7 +59,7 @@
         network="telegram"
         url="https://c1chy-sushi.netlify.app/"
         title="telegram title"
-        description="description he he he"
+
         @open="open"
         @change="check"
         @close="close"
@@ -54,12 +68,25 @@
       <Icon class="h-5 w-5 mx-auto" name="icon-park:telegram"/>
     </button>
     </ShareNetwork>
+-->
 
   </div>
 </template>
 <script setup lang="ts">
 
+import Social from "~/components/Buttons/Social.vue";
 
+const props = defineProps({
+
+  story: Object,
+  slug: String
+
+})
+
+const url = `https://c1chy-sushi.netlify.app/recipes/${props.story.slug}`
+
+console.log(props.story)
+console.log(url)
 
 const show = ref();
 const check = ref(true);

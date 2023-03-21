@@ -1,4 +1,5 @@
 <script setup>
+
 const { slug } = useRoute().params;
 const { locale } = useI18n(); // Read the locale
 const resolveRelations = ['categories']
@@ -29,7 +30,6 @@ onMounted(() => {
 });
 
 </script>
-
 <template>
   <main role="main">
     <StoryblokComponent v-if="story" :blok="story.content" />

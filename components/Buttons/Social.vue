@@ -6,7 +6,8 @@
                   :network="network.network"
                   :title="title"
                   :url="url"
-
+                  :media="media"
+                  description="test SOCIAL"
                   quote="whesh la zone"
                   class="p-1 bg-trso-blue">
 <h2>{{route.fullPath}}</h2>
@@ -20,6 +21,7 @@
 const props = defineProps({
   title: String,
    url : String,
+  media: String
 
 })
 

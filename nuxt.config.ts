@@ -4,7 +4,6 @@ import runtimeConfig from "nitropack/dist/runtime/config";
 
 
 
-/*
 const OPEN_GRAPH = [
     { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
     { hid: "og:type", property: "og:type", content: "website" },
@@ -90,7 +89,6 @@ const TWITTER = [
         content: 'c1chy.Sushi Preview',
     },
 ]
-*/
 
 export default defineNuxtConfig({
     ssr: false,
@@ -102,11 +100,9 @@ export default defineNuxtConfig({
 
         pageTransition: { name: 'slide' , mode:'out-in'},
 
-        /*
-        head: {
+ /*       head: {
 
-
-                    meta: [
+            meta: [
 
                         {
                             hid: "og:url",
@@ -130,99 +126,26 @@ export default defineNuxtConfig({
                             content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
                         },
                     ]
-        }
-        */
+        },*/
 
 
 
 
-        /*head: {
-        /!*    title: 'c1chy.Sushi',*!/
-
-        /!*    meta: [
-
+        head: {
+            bodyAttrs: {
+                     class: 'overflow-x-hidden'
+                 },
+            title: 'c1chy.Sushi',
+            meta: [
 
                 ...OPEN_GRAPH,
                 ...TWITTER,
-            ]*!/
+            ]
 
 
 
-        }*/
+        }
 
-
-        /*     head: {
-
-
-      /!*
-                 meta: [
-
-                     {
-                         hid: 'description',
-                         name: 'c1chy Sushi description',
-                         content: "test",
-                     },
-                     // og
-                     {
-                         hid: 'og:description',
-                         property: 'og:description',
-                         content: "c1chy Sushi description",
-                     },
-                     {
-                         hid: 'og:title',
-                         property: 'og:title',
-                         content: `c1chy Sushi title`,
-                     },
-                     {
-                         hid: 'og:type',
-                         property: 'og:type',
-                         content: 'article',
-                     },
-                     {
-                         hid: 'og:url',
-                         property: 'og:url',
-                         content: `https://c1chy-sushi.netlify.app/home/`,
-                     },
-                     {
-                         hid: 'og:image',
-                         property: 'og:image',
-                         content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
-                     },
-                     {
-                         hid: 'og:image:alt',
-                         property: 'og:image:alt',
-                         content: "alt image c1chy sushi",
-                     },
-
-                     // Twitter
-                     { name: 'twitter:card', content: 'summary_large_image' },
-                     { name: 'twitter:site', content: '@c1chy' },
-                     {
-                         hid: 'twitter:title',
-                         property: 'twitter:title',
-                         content: `Twitter title`,
-                     },
-                     {
-                         hid: 'twitter:description',
-                         name: 'twitter:description',
-                         content: "Twitter description",
-                     },
-                     {
-                         hid: 'twitter:image',
-                         name: 'twitter:image',
-                         content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png",
-                     },
-                     {
-                         hid: 'twitter:image:alt',
-                         name: 'twitter:image:alt',
-                         content: "Twitter alt",
-                     },
-                 ],*!/
-
-                 bodyAttrs: {
-                     class: 'overflow-x-hidden'
-                 }
-             }*/
 
     },
 

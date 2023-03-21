@@ -144,7 +144,7 @@ useHead({
       image="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
 
   />-->
-
+<!--
   <Head>
     <Title>Home c1chy.Sushi</Title>
     <Link rel="canonical" v-if="story" href="https://c1chy-sushi.netlify.app/" />
@@ -182,7 +182,7 @@ useHead({
         v-if="story"
         content="https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
     />
-  </Head>
+  </Head>-->
   <main role="main">
 <!--
     <LayoutSeoHead

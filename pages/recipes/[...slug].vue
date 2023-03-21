@@ -181,7 +181,7 @@ useSeoMeta({
   ogDescription: "test ogDescription",
   ogImage: story.content.media.filename,
   ogImageSecureUrl : story.content.media.filename,
-  ogUrl : story.full_slug
+  ogUrl : `https://c1chy-sushi.netlify.app/${story.full_slug}`
 
 
 })
@@ -193,7 +193,7 @@ title: story.content.title,
   ogDescription: "test ogDescription",
   ogImage: story.content.media.filename,
   ogImageSecureUrl :story.content.media.filename,
-  ogUrl : story.full_slug
+  ogUrl : `https://c1chy-sushi.netlify.app/${story.full_slug}`
 
 })
 
@@ -241,7 +241,7 @@ useHead(
         {
           hid: 'og:url',
           property: 'og:url',
-          content: story.full_slug,
+          content : `https://c1chy-sushi.netlify.app/${story.full_slug}`
         },
         {
           hid: 'og:image',

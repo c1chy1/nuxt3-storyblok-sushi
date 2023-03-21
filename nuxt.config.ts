@@ -149,14 +149,6 @@ export default defineNuxtConfig({
 
     },
 
-    extends: [
-        'nuxt-seo-kit'],
-        runtimeConfig: {
-        public: {
-            siteUrl: process.env.PUBLIC_URL
-
-}},
-
 /*
     routeRules: {
  /!*       // Static page generated on-demand, revalidates in background (ISG)

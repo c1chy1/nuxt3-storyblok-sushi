@@ -45,7 +45,7 @@ const TWITTER = [
     },
     {
         hid: "twitter:image",
-        property: "twitter:image",
+        name: "twitter:image",
         content: "https://www.web300421.roc130.rockinghoster.cloud/c1chy.sushi.png"
     },
     {

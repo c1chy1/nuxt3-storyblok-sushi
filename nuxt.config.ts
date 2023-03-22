@@ -1,88 +1,7 @@
 import {apiPlugin} from "@storyblok/vue"
 
-/*const OPEN_GRAPH = [
-    { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
-    { hid: "og:type", property: "og:type", content: "website" },
 
 
-    {
-        hid: "og:title",
-        property: "og:title",
-        content: "c1chy.Sushi",
-    },
-
-    {
-        hid: "og:description",
-        property: "og:description",
-        content: "Your favorite Japanese recipes app",
-    },
-
-    {
-        hid: "og:locale",
-        property: "og:locale",
-        content: "en",
-    },
-    {
-        hid: "og:url",
-        property: "og:url",
-        content: "https://c1chy-sushi.netlify.app/",
-    },
-
-    {
-        hid: "og:image:type",
-        property: "og:image:type" ,
-        content: "image/png"
-    },
-    {
-        hid: "og:image",
-        property: "og:image",
-        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
-
-    {
-        hid: "og:image:secure_url",
-        property: "og:image:secure_url" ,
-        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
-    },
-
-    {
-        hid: 'og:image:alt',
-        name: 'og:image:alt',
-        content: 'c1chy.Sushi Preview',
-    },
-
-
-    { property: 'og:updated_time', content: new Date().toISOString() },
-]
-
-const TWITTER = [
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: '@c1chy.Sushi' },
-    {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: "c1chy.Sushi",
-    },
-    {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: "Your favorite Japanese recipes app"
-    },
-    {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
-    },
-    {
-        hid: 'twitter:image:secure_url',
-        name: 'twitter:image:secure_url',
-        content: 'https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png',
-    },
-    {
-        hid: 'twitter:image:alt',
-        name: 'twitter:image:alt',
-        content: 'c1chy.Sushi Preview',
-    },
-]*/
 
 export default defineNuxtConfig({
     ssr: false,
@@ -110,22 +29,12 @@ export default defineNuxtConfig({
         },
     },
 
-
-    pinia: {
-        autoImports: [
-            // automatically imports `defineStore`
-            'defineStore', // import { defineStore } from 'pinia'
-            ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
-        ],
-    },
-
     modules: [['@storyblok/nuxt',
         {
             accessToken: process.env.STORYBLOK_API_TOKEN,
             bridge: true,
             use: [apiPlugin]
         }],
-/*
         ['@kevinmarrec/nuxt-pwa', {
 
         baseURL: "/",
@@ -139,14 +48,12 @@ export default defineNuxtConfig({
             },
             manifest: {
                 name: 'c1chy sushi',
-                lang: ,
                 display: 'standalone',
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
                 useWebmanifestExtension: true,
             }
         }],
-*/
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',
@@ -159,18 +66,34 @@ export default defineNuxtConfig({
 
     i18n: {
         strategy: 'prefix_except_default',
-        locales: ['en', 'de', 'pl'],
+        locales: [
+
+            {
+                code: 'en',
+                iso: 'en-US',
+                name: 'English',
+            },
+            {
+                code: 'de',
+                iso: 'de-GE',
+                name: 'Germany',
+            },
+
+            {
+                code: 'pl',
+                iso: 'pl-pl',
+                name: 'Polish',
+            },],
         defaultLocale: 'en', // default locale
+        noPrefixDefaultLocale: true,
     },
 
-/*
     postcss: {
         plugins: {
             tailwindcss: {},
             autoprefixer: {},
         },
     },
-*/
 
 
     colorMode: {

@@ -4,17 +4,7 @@
 
 
 
-    <Social
 
-:title="story.content.title"
-:url="url"
-:media="story.content.media.filename"
-    />
-
-
-
-
-<!--
     <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
             :class="[{ open : show  } , check ? '' : 'sent']"
             @click="open">
@@ -34,7 +24,7 @@
     <ShareNetwork
         network="facebook"
         url="https://c1chy-sushi.netlify.app/"
-        :title="story.content.title"
+        title="story.content.title"
         description="Your favorite Japanese recipes app"
         @open="open"
         @change="check"
@@ -45,8 +35,25 @@
     </button>
     </ShareNetwork>
     <ShareNetwork
+                  network="twitter"
+                  url="https://c1chy-sushi.netlify.app/"
+                  :title="title"
+                  @open="open"
+                  @change="check"
+                  @close="close"
+
+    >
+      Twitter
+    </ShareNetwork>
+
+
+
+
+    <ShareNetwork
         network="twitter"
-        :title="story.content.title"
+        url="https://c1chy-sushi.netlify.app/"
+        media="https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
+        :title="title"
         @open="open"
         @change="check"
         @close="close"
@@ -58,7 +65,6 @@
     <ShareNetwork
         network="telegram"
         url="https://c1chy-sushi.netlify.app/"
-        title="telegram title"
 
         @open="open"
         @change="check"
@@ -68,25 +74,81 @@
       <Icon class="h-5 w-5 mx-auto" name="icon-park:telegram"/>
     </button>
     </ShareNetwork>
--->
 
   </div>
 </template>
 <script setup lang="ts">
 
-import Social from "~/components/Buttons/Social.vue";
 
-const props = defineProps({
+const { locale } = useI18n()
+const route = useRoute();
+let title = ref()
 
-  story: Object,
-  slug: String
+
+useHead({
+
+
+  title: locale.value,
+  htmlAttrs: {
+    lang:  locale.value,
+  },
+
+  meta: [
+
+    {
+      property: "og:title",
+      hid: "og:title",
+      content: "TITLE SHARE ICONS",
+    },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@c1chysushi' },
+    {
+      hid: 'twitter:title',
+      name: 'twitter:title',
+      content: "click",
+    },
+    {
+      hid: 'twitter:description',
+      name: 'twitter:description',
+      content: 'c1chy.Sushi is sushi recipe app xx built with Nuxt 3, Storyblok, and Unocss',
+    },
+    {
+      hid: 'twitter:image',
+      name: 'twitter:image',
+      content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
+    },
+    {
+      hid: 'twitter:image:alt',
+      name: 'twitter:image:alt',
+      content: 'c1chy.Sushi Preview',
+    },
+  ],
 
 })
 
-const url = `https://c1chy-sushi.netlify.app/recipes/${props.story.slug}`
 
-console.log(props.story)
-console.log(url)
+
+watch(route, value => {
+
+  if(route.fullPath === "/") title.value = 'Your favorite Japanese recipes app'
+  if(route.fullPath === "/de") title.value = 'Ihre Lieblings-App für japanische Rezepte'
+  if(route.fullPath === "/pl") title.value = 'Twoja ulubiona aplikacja z Japońskimi przepisami'
+
+
+  console.log(title.value)
+  console.log(route.name)
+  console.log(value)
+
+
+}, {deep: true, immediate: true})
+
+onMounted(()=> {
+
+
+  console.log(route)
+
+
+})
 
 const show = ref();
 const check = ref(true);

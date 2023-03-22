@@ -6,9 +6,7 @@
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
 
-        <IconsShareIcons
-            :story="story"
-        />
+
         <div class="flex  justify-end w-full lg:w-1/2">
           <NuxtImg
               loading="lazy"
@@ -73,82 +71,5 @@ const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
 const locale = useState('locale')
-
-
-
-
-
-
-
-/*
-onMounted(()=> {
-
-  useShare()
-
-})*/
-
-
-
-useHead({
-
-  meta : [
-
-
-    {
-      hid: "og:url",
-      property: "og:url" ,
-      content: `https://c1chy-sushi.netlify.app${route.path}`
-    },
-
-    {
-      hid: "og:image:type",
-      property: "og:image:type" ,
-      content: "image/png"
-    },
-    {
-      hid: "og:image",
-      property: "og:image",
-      content: story.content.media.filename
-    },
-
-    {
-      hid: "og:image:secure_url",
-      property: "og:image:secure_url" ,
-      content: story.content.media.filename
-    },
-
-    {
-      hid: 'twitter:image',
-      name: 'twitter:image',
-      content: story.content.media.filename},
-    {
-      hid: 'twitter:image:secure_url',
-      name: 'twitter:image:secure_url',
-      content: story.content.media.filename},
-  ]
-
-
-
-})
-
-
-/*
-const { title, description , image } = story.content
-
-
-
-useHead({
-
-  title ,
-
-meta : createSEOMeta({
-  description: story.content.description,
-  image: story.content.media.filename
-})
-
-})
-
-console.log(title)
-console.log(description)*/
 
 </script>

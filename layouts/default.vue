@@ -6,13 +6,14 @@
   <ButtonsDarkModeButton/>
     <IconsLogo/>
   <slot class="page mt-16 overflow-y-hidden w-full" />
-<!--  <IconsShareIcons/>-->
+  <IconsShareIcons/>
 </main>
 </template>
 
 
 
 <script setup lang="ts">
+
 useState('locale', () => 'en')
 
 </script>

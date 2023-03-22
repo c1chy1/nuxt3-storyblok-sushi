@@ -4,6 +4,8 @@
 
 <section>
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
+
+
         <IconsShareIcons
             :story="story"
         />
@@ -65,7 +67,6 @@
 <script setup lang="ts">
 
 import { RichTextRenderer } from '@marvr/storyblok-rich-text-vue-renderer'
-import {createSEOMeta} from "~/utils/seo";
 
 const route = useRoute()
 const { slug } = route.params
@@ -75,7 +76,9 @@ const locale = useState('locale')
 
 
 
-import {useShare} from "~/stores/share";
+
+
+
 
 /*
 onMounted(()=> {
@@ -84,11 +87,18 @@ onMounted(()=> {
 
 })*/
 
-console.log(useShare())
+
 
 useHead({
 
   meta : [
+
+
+    {
+      hid: "og:url",
+      property: "og:url" ,
+      content: `https://c1chy-sushi.netlify.app${route.path}`
+    },
 
     {
       hid: "og:image:type",
@@ -98,7 +108,8 @@ useHead({
     {
       hid: "og:image",
       property: "og:image",
-      content: story.content.media.filename},
+      content: story.content.media.filename
+    },
 
     {
       hid: "og:image:secure_url",
@@ -121,9 +132,8 @@ useHead({
 })
 
 
-
 /*
-const { title, description } = story.content
+const { title, description , image } = story.content
 
 
 
@@ -132,8 +142,8 @@ useHead({
   title ,
 
 meta : createSEOMeta({
-  description: story.content.description
-
+  description: story.content.description,
+  image: story.content.media.filename
 })
 
 })

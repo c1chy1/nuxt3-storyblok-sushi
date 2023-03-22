@@ -1,9 +1,6 @@
 import {apiPlugin} from "@storyblok/vue"
 
-import { createSEOMeta } from "./utils/seo";
-
-
-const OPEN_GRAPH = [
+/*const OPEN_GRAPH = [
     { hid: "og:site_name", property: "og:site_name", content: "c1chy.Sushi" },
     { hid: "og:type", property: "og:type", content: "website" },
 
@@ -85,7 +82,7 @@ const TWITTER = [
         name: 'twitter:image:alt',
         content: 'c1chy.Sushi Preview',
     },
-]
+]*/
 
 export default defineNuxtConfig({
     ssr: false,
@@ -96,18 +93,6 @@ export default defineNuxtConfig({
             bodyAttrs: {
                      class: 'overflow-x-hidden'
                  },
-
-            title: 'c1chy.Sushi',
-            meta: [
-
-                ...createSEOMeta({
-
-                    description: "Your Japanese App",
-                })
-
-               /* ...OPEN_GRAPH,
-                ...TWITTER,*/
-            ]
         }
     },
 
@@ -123,6 +108,15 @@ export default defineNuxtConfig({
         storyblok: {
             baseURL: 'https://a.storyblok.com',
         },
+    },
+
+
+    pinia: {
+        autoImports: [
+            // automatically imports `defineStore`
+            'defineStore', // import { defineStore } from 'pinia'
+            ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+        ],
     },
 
     modules: [['@storyblok/nuxt',

@@ -116,6 +116,7 @@ export default defineNuxtConfig({
                 maskablePadding: 0,
             },
             manifest: {
+                ogImage: 'https://www.web300421.roc130.rockinghoster.cloud/c1chy.sushi.png',
                 display: 'standalone',
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",

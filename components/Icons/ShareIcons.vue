@@ -19,7 +19,6 @@
     <ShareNetwork
         network="facebook"
         url="https://c1chy-sushi.netlify.app/"
-        :description="description"
         :title="title"
         @open="open"
         @change="check"
@@ -34,7 +33,6 @@
         network="twitter"
         url="https://c1chy-sushi.netlify.app/"
         :title="title"
-        :description="description"
         @open="open"
         @change="check"
         @close="close"
@@ -87,13 +85,7 @@ useHead({
 
 watch(route, value => {
 
-  if(locale.value === "en")
-  {
-    title.value = 'Your favorite Japanese recipes app'
-        description.value = 'Your favorite Japanese recipes app description'
-
-
-  }
+  if(locale.value === "en") title.value = 'Your favorite Japanese recipes app'
   if(locale.value === "de") title.value = 'Ihre Lieblings-App für japanische Rezepte'
   if(locale.value === "pl") title.value = 'Twoja ulubiona aplikacja z Japońskimi przepisami'
 

@@ -11,7 +11,11 @@ const OPEN_GRAPH = [
         property: 'og:title',
         content: 'c1chy.Sushi',
     },
-
+    {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Sushi App',
+    },
     {
         hid: 'og:url',
         property: 'og:url',
@@ -44,7 +48,7 @@ const TWITTER = [
     {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'c1chy.Sushi',
+        content: 'Sushi App',
     },
 
     {

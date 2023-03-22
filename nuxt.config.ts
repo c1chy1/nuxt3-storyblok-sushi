@@ -6,11 +6,6 @@ const OPEN_GRAPH = [
         property: 'og:site_name',
         content: 'c1chy.Sushi',
     },
- /*   {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Your favorite Japanese recipes app',
-    },*/
     {
         hid: 'og:title',
         property: 'og:title',
@@ -24,14 +19,15 @@ const OPEN_GRAPH = [
     {
         hid: "og:image",
         property: "og:image",
-        content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"    },
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+    },
 
-{
+    {
         hid: "og:image:secure_url",
-        property: "og:image:secure_url" ,
-        content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
-},
-    { property: 'og:updated_time', content: new Date().toISOString() },
+        property: "og:image:secure_url",
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+    },
+    {property: 'og:updated_time', content: new Date().toISOString()},
 ]
 
 const TWITTER = [
@@ -41,21 +37,17 @@ const TWITTER = [
         name: 'twitter:title',
         content: 'c1chy.Sushi',
     },
-/*    {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'Your favorite Japanese recipes app',
-    },*/
     {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
+        hid: "twitter:image",
+        property: "twitter:image",
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
     },
     {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: 'c1chy.Sushi Preview',
     },
+
 ]
 
 
@@ -63,22 +55,18 @@ export default defineNuxtConfig({
     ssr: false,
 
     app: {
-        pageTransition: { name: 'slide' , mode:'out-in'},
+        pageTransition: {name: 'slide', mode: 'out-in'},
         head: {
             bodyAttrs: {
-                     class: 'overflow-x-hidden'
-                 },
+                class: 'overflow-x-hidden'
+            },
 
             title: 'c1chy.Sushi',
-            meta : [
+            meta: [
                 ...OPEN_GRAPH,
                 ...TWITTER,
             ],
 
-            manifest: {
-                lang: 'en',
-                name: `PB Portfolio`,
-            },
         }
     },
 
@@ -88,7 +76,7 @@ export default defineNuxtConfig({
 
     css: ['~/assets/css/tailwind.scss'],
     build: {
-        transpile: ['@marvr/storyblok-rich-text-vue-renderer','gsap'],
+        transpile: ['@marvr/storyblok-rich-text-vue-renderer', 'gsap'],
     },
     image: {
         storyblok: {
@@ -104,7 +92,7 @@ export default defineNuxtConfig({
         }],
         ['@kevinmarrec/nuxt-pwa', {
 
-        baseURL: "/",
+            baseURL: "/",
 
             workbox: {
                 enabled: true,
@@ -114,12 +102,6 @@ export default defineNuxtConfig({
                 maskablePadding: 0,
             },
             manifest: {
-
-                ogDescription: 'testOG',
-                ogImage: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
-                ogTitle: 'c1chy.Sushi',
-                ogHost: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
-                name: 'c1chy sushi',
                 display: 'standalone',
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
@@ -189,7 +171,8 @@ export default defineNuxtConfig({
     vite: {
         build: {
             chunkSizeWarningLimit: 1024
-    }}
+        }
+    }
 
 
 })

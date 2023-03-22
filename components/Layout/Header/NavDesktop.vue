@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed  right-24 bottom-20 z-20  rounded-full dark:bg-transparent transition-all">
+  <nav class="fixed  right-24 bottom-28 z-20  rounded-full dark:bg-transparent transition-all">
     <div class="cube w-16 h-16 shadow-2xl rounded-lg " ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal bg-white " ref="horizontal"></div>

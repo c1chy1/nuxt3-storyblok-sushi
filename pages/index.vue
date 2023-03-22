@@ -1,6 +1,6 @@
 <script setup>
 const { slug } = useRoute().params;
-const { locale } = useI18n(); // Read the locale
+const { locale } = useI18n()
 const resolveRelations = ['categories']
 const storyblokApiInstance = useStoryblokApi();
 const url = slug && slug.length > 0 ? slug.join('/') : 'home';
@@ -28,12 +28,8 @@ onMounted(() => {
   }
 });
 
-
-
-
 </script>
 <template>
-
   <main role="main">
     <StoryblokComponent v-if="story" :blok="story.content" />
   </main>

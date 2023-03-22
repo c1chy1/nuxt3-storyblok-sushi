@@ -5,7 +5,7 @@
   <LayoutNavigation/>
   <ButtonsDarkModeButton/>
     <IconsLogo/>
-  <slot class="page mt-16 overflow-y-hidden w-full" />
+  <slot class="overflow-y-hidden w-full" />
   <IconsShareIcons/>
 </main>
 </template>

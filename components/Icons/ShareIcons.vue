@@ -1,10 +1,5 @@
 <template>
   <div class="content items-center fixed lg:flex-col left-3 lg:left-12 bottom-4 lg:bottom-0 z-30">
-
-
-
-
-
     <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
             :class="[{ open : show  } , check ? '' : 'sent']"
             @click="open">
@@ -24,7 +19,7 @@
     <ShareNetwork
         network="facebook"
         url="https://c1chy-sushi.netlify.app/"
-        title="story.content.title"
+        :title="title"
         description="Your favorite Japanese recipes app"
         @open="open"
         @change="check"
@@ -35,25 +30,9 @@
     </button>
     </ShareNetwork>
     <ShareNetwork
-                  network="twitter"
-                  url="https://c1chy-sushi.netlify.app/"
-                  :title="title"
-                  @open="open"
-                  @change="check"
-                  @close="close"
-
-    >
-      Twitter
-    </ShareNetwork>
-
-
-
-
-    <ShareNetwork
         network="twitter"
         url="https://c1chy-sushi.netlify.app/"
         :title="title"
-        description="test desc"
         @open="open"
         @change="check"
         @close="close"
@@ -65,7 +44,7 @@
     <ShareNetwork
         network="telegram"
         url="https://c1chy-sushi.netlify.app/"
-
+        :title="title"
         @open="open"
         @change="check"
         @close="close"
@@ -91,50 +70,18 @@ useHead({
     lang:  locale.value,
   },
 
-  meta: [
-
-    {
-      hid: 'twitter:description',
-      name: 'twitter:description',
-      content: 'c1chy.Sushi is sushi recipe app xx built with Nuxt 3, Storyblok, and Unocss',
-    },
-/*    {
-      hid: 'twitter:image',
-      name: 'twitter:image',
-      content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
-    },
-    {
-      hid: 'twitter:image:alt',
-      name: 'twitter:image:alt',
-      content: 'c1chy.Sushi Preview',
-    },*/
-  ],
 
 })
-
 
 
 watch(route, value => {
 
-  if(route.fullPath === "/") title.value = 'Your favorite Japanese recipes app'
-  if(route.fullPath === "/de") title.value = 'Ihre Lieblings-App für japanische Rezepte'
-  if(route.fullPath === "/pl") title.value = 'Twoja ulubiona aplikacja z Japońskimi przepisami'
-
-
-  console.log(title.value)
-  console.log(route.name)
-  console.log(value)
+  if(locale.value === "en") title.value = 'Your favorite Japanese recipes app'
+  if(locale.value === "de") title.value = 'Ihre Lieblings-App für japanische Rezepte'
+  if(locale.value === "pl") title.value = 'Twoja ulubiona aplikacja z Japońskimi przepisami'
 
 
 }, {deep: true, immediate: true})
-
-onMounted(()=> {
-
-
-  console.log(route)
-
-
-})
 
 const show = ref();
 const check = ref(true);

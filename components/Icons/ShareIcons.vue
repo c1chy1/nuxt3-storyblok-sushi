@@ -52,7 +52,6 @@
     <ShareNetwork
         network="twitter"
         url="https://c1chy-sushi.netlify.app/"
-        media="https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
         :title="title"
         description="test desc"
         @open="open"
@@ -84,8 +83,6 @@
 const { locale } = useI18n()
 const route = useRoute();
 let title = ref()
-
-
 useHead({
 
 
@@ -95,7 +92,8 @@ useHead({
   },
 
   meta: [
-
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@shushiwuut' },
     {
       property: "og:title",
       hid: "og:title",
@@ -113,7 +111,7 @@ useHead({
       name: 'twitter:description',
       content: 'c1chy.Sushi is sushi recipe app xx built with Nuxt 3, Storyblok, and Unocss',
     },
-    {
+/*    {
       hid: 'twitter:image',
       name: 'twitter:image',
       content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
@@ -122,7 +120,7 @@ useHead({
       hid: 'twitter:image:alt',
       name: 'twitter:image:alt',
       content: 'c1chy.Sushi Preview',
-    },
+    },*/
   ],
 
 })

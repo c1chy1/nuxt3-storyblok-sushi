@@ -24,20 +24,18 @@ const OPEN_GRAPH = [
     {
         hid: "og:image",
         property: "og:image",
-        itemprop : "image",
         content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
 
 {
-    hid: "og:image:secure_url",
+        hid: "og:image:secure_url",
         property: "og:image:secure_url" ,
-    content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
 },
     { property: 'og:updated_time', content: new Date().toISOString() },
 ]
 
 const TWITTER = [
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: '@shushiwuut' },
+
     {
         hid: 'twitter:title',
         name: 'twitter:title',
@@ -51,11 +49,6 @@ const TWITTER = [
     {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
-    },
-    {
-        hid: 'twitter:image:secure',
-        name: 'twitter:image:secure',
         content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
     },
     {
@@ -77,10 +70,14 @@ export default defineNuxtConfig({
                  },
 
             meta : [
-
+                ...OPEN_GRAPH,
                 ...TWITTER,
-                ...OPEN_GRAPH
-            ]
+            ],
+
+            manifest: {
+                lang: 'en',
+                name: `PB Portfolio`,
+            },
         }
     },
 
@@ -115,13 +112,17 @@ export default defineNuxtConfig({
             icon: {
                 maskablePadding: 0,
             },
-            manifest: {
+    /*        manifest: {
+
+
+                ogTitle: 'c1chy.Sushi',
+                ogHost: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
                 name: 'c1chy sushi',
                 display: 'standalone',
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
                 useWebmanifestExtension: true,
-            }
+            }*/
         }],
         '@nuxtjs/color-mode',
         'nuxt-icon',

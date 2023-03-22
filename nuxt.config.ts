@@ -4,12 +4,12 @@ const OPEN_GRAPH = [
     {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: 'Sushi Wuut',
+        content: 'c1chy.Sushi',
     },
     {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+        content: 'Your favorite Japanese recipes app',
     },
     {
         hid: 'og:title',

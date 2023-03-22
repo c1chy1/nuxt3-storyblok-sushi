@@ -54,6 +54,11 @@ const TWITTER = [
         content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
     },
     {
+        hid: 'twitter:image:secure',
+        name: 'twitter:image:secure',
+        content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
+    },
+    {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: 'Sushi Wuut Preview',

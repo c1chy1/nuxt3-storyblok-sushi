@@ -68,6 +68,8 @@ export default defineNuxtConfig({
             bodyAttrs: {
                      class: 'overflow-x-hidden'
                  },
+
+            title: 'c1chy.Sushi',
             meta : [
                 ...OPEN_GRAPH,
                 ...TWITTER,

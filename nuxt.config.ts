@@ -6,11 +6,11 @@ const OPEN_GRAPH = [
         property: 'og:site_name',
         content: 'c1chy.Sushi',
     },
-    {
+ /*   {
         hid: 'og:description',
         property: 'og:description',
         content: 'Your favorite Japanese recipes app',
-    },
+    },*/
     {
         hid: 'og:title',
         property: 'og:title',
@@ -41,11 +41,11 @@ const TWITTER = [
         name: 'twitter:title',
         content: 'c1chy.Sushi',
     },
-    {
+/*    {
         hid: 'twitter:description',
         name: 'twitter:description',
         content: 'Your favorite Japanese recipes app',
-    },
+    },*/
     {
         hid: 'twitter:image',
         name: 'twitter:image',
@@ -68,7 +68,6 @@ export default defineNuxtConfig({
             bodyAttrs: {
                      class: 'overflow-x-hidden'
                  },
-
             meta : [
                 ...OPEN_GRAPH,
                 ...TWITTER,
@@ -114,8 +113,8 @@ export default defineNuxtConfig({
             },
             manifest: {
 
-
-              ogImage: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
+                ogDescription: 'testOG',
+                ogImage: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
                 ogTitle: 'c1chy.Sushi',
                 ogHost: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
                 name: 'c1chy sushi',

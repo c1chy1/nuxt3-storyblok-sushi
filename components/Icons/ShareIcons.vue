@@ -70,16 +70,7 @@ useHead({
   title: 'c1chy.Sushi',
   htmlAttrs: {
     lang:  locale.value,
-  },
-
-  meta : [
-
-    {
-      property: 'og:description',
-      content: 'c1chy.Sushi desc',
-    },
-
-  ]
+  }
 })
 
 

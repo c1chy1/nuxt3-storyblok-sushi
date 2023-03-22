@@ -46,17 +46,6 @@ const TWITTER = [
         content: "https://www.web300421.roc130.rockinghoster.cloud/c1chy.sushi.png"
     },
     {
-        hid: 'twitter:image:height',
-        name: 'twitter:image:height',
-        content: 200,
-    },
-
-    {
-        hid: 'twitter:image:width',
-        name: 'twitter:image:width',
-        content: 600,
-    },
-    {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: 'c1chy.Sushi Preview',

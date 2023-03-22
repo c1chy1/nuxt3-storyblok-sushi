@@ -11,6 +11,12 @@ const OPEN_GRAPH = [
         property: 'og:title',
         content: 'c1chy.Sushi',
     },
+
+    {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'c1chy.Sushi',
+    },
     {
         hid: 'og:url',
         property: 'og:url',
@@ -40,6 +46,12 @@ const TWITTER = [
         name: 'twitter:title',
         content: 'c1chy.Sushi',
     },
+    {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'c1chy.Sushi',
+    },
+
     {
         hid: "twitter:image",
         name: "twitter:image",

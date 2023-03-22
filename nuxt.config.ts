@@ -13,11 +13,6 @@ const OPEN_GRAPH = [
     },
 
     {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'c1chy.Sushi',
-    },
-    {
         hid: 'og:url',
         property: 'og:url',
         content: 'https://c1chy-sushi.netlify.app',

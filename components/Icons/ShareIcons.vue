@@ -54,6 +54,7 @@
         url="https://c1chy-sushi.netlify.app/"
         media="https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
         :title="title"
+        description="test desc"
         @open="open"
         @change="check"
         @close="close"
@@ -88,7 +89,7 @@ let title = ref()
 useHead({
 
 
-  title: locale.value,
+  title: 'c1chy.Sushi',
   htmlAttrs: {
     lang:  locale.value,
   },

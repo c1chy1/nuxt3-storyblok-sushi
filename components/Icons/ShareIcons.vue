@@ -91,7 +91,7 @@ useHead({
     lang:  locale.value,
   },
 
-  meta: [
+ /* meta: [
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@shushiwuut' },
     {
@@ -111,7 +111,7 @@ useHead({
       name: 'twitter:description',
       content: 'c1chy.Sushi is sushi recipe app xx built with Nuxt 3, Storyblok, and Unocss',
     },
-/*    {
+/!*    {
       hid: 'twitter:image',
       name: 'twitter:image',
       content: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
@@ -120,8 +120,8 @@ useHead({
       hid: 'twitter:image:alt',
       name: 'twitter:image:alt',
       content: 'c1chy.Sushi Preview',
-    },*/
-  ],
+    },*!/
+  ],*/
 
 })
 

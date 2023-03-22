@@ -14,22 +14,22 @@ const OPEN_GRAPH = [
     {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Sushi Wuut',
+        content: 'c1chy.Sushi',
     },
     {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://c1chy-sushi.netlify.app/',
+        content: 'https://c1chy-sushi.netlify.app',
     },
     {
         hid: "og:image",
         property: "og:image",
-        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"    },
+        content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"    },
 
 {
         hid: "og:image:secure_url",
         property: "og:image:secure_url" ,
-        content: "https://www.web300421.roc130.rockinghoster.cloud/sushi-hero-380x199.png"
+        content: "https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png"
 },
     { property: 'og:updated_time', content: new Date().toISOString() },
 ]
@@ -39,12 +39,12 @@ const TWITTER = [
     {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Sushi Wuut',
+        content: 'c1chy.Sushi',
     },
     {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'Sushi Wuut is sushi recipe app built with Nuxt 3, Storyblok, and Unocss',
+        content: 'Your favorite Japanese recipes app',
     },
     {
         hid: 'twitter:image',
@@ -54,7 +54,7 @@ const TWITTER = [
     {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'Sushi Wuut Preview',
+        content: 'c1chy.Sushi Preview',
     },
 ]
 
@@ -112,9 +112,10 @@ export default defineNuxtConfig({
             icon: {
                 maskablePadding: 0,
             },
-    /*        manifest: {
+            manifest: {
 
 
+              ogImage: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
                 ogTitle: 'c1chy.Sushi',
                 ogHost: 'https://res.cloudinary.com/alvarosaburido/image/upload/v1671362003/OG_zpg7nx.png',
                 name: 'c1chy sushi',
@@ -122,7 +123,7 @@ export default defineNuxtConfig({
                 theme_color: "#D15105",
                 background_color: "#FB8D4B",
                 useWebmanifestExtension: true,
-            }*/
+            }
         }],
         '@nuxtjs/color-mode',
         'nuxt-icon',

@@ -33,6 +33,12 @@ const OPEN_GRAPH = [
 const TWITTER = [
 
     {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+    },
+
+    {
         hid: 'twitter:title',
         name: 'twitter:title',
         content: 'c1chy.Sushi',

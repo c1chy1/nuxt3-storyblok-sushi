@@ -29,16 +29,34 @@
         </ClientOnly>
       </div>
     </div>
+
     <div class="grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 ">
+      <transition-group name="home" mode="in-out">
       <SectionRecipeCard
           v-for="{ uuid, content, slug  } in filteredRecipes"
           :key="uuid"
           :uuid="uuid"
           :content="content"
           :slug="slug" />
+</transition-group>
     </div>
+
   </div>
 </template>
+
+<style>
+.home-enter-active,
+.home-leave-active {
+  transition: opacity 0.5s;
+}
+.home-enter,
+.home-leave-to {
+  opacity: 0;
+}
+
+
+</style>
+
 <script setup lang="ts">
 
 const locale = useState('locale')

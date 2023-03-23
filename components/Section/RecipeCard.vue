@@ -10,6 +10,7 @@ defineProps<{
 }>()
 </script>
 <template>
+
   <article class="rounded-lg overflow-hidden shadow-2xl w-72 2xl:w-80 mx-auto " :key="uuid">
     <div class="card-hover  h-[28rem]    lg:h-[32rem]  mx-auto  group w-full relative text-right rounded-xl ">
       <div class="card-hover__content  after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
@@ -57,6 +58,9 @@ defineProps<{
 
 </template>
 <style scoped lang="scss">
+
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap');
 

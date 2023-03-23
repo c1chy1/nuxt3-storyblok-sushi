@@ -39,7 +39,6 @@ onMounted(() => {
   if (locale.value === "de") label.value = 'Installieren'
   if (locale.value === "pl") label.value = 'Zainstaluj'
 
-
 })
 
 

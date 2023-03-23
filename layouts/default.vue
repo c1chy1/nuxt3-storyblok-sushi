@@ -20,18 +20,6 @@
     </button>
 
 </div>
-<!--    <button
-        v-if="!deferredPrompt"
-        ref="addBtn"
-        class="add-button fixed left-1/2 top-1/2 z-50"
-        @click="clickCallback"
-    >
-      Add
-    </button>
-
-    <button class="mainPage__button mainPage__button_2 mainPage__button_c p-button-lg p-button-rounded"
-            @click="onClick">SHARE
-    </button>-->
     <LayoutNavigation/>
     <ButtonsDarkModeButton/>
     <IconsLogo/>

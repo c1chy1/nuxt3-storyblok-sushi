@@ -62,7 +62,6 @@
 const { locale } = useI18n()
 const route = useRoute();
 const title = ref()
-const description = ref()
 
 useHead({
 

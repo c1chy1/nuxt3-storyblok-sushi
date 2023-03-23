@@ -30,6 +30,7 @@
     "@pinia/nuxt": "^0.4.6",
     "@storyblok/nuxt": "^5.1.0",
     "gsap": "npm:@gsap/business@^3.11.4",
+    "prompt-sync": "^4.2.0",
     "vue-social-sharing": "^4.0.0-alpha4"
   }
 }

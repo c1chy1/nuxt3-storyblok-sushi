@@ -1,16 +1,3 @@
-<script setup lang="ts">
-defineProps({
-  blok: {
-    type: Object,
-    default: () => ({}),
-  },
-})
-
-
-const locale = useState('locale')
-const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
-
-</script>
 <template>
 
   <div id="hero" class="hero container mx-auto flex flex-col ">
@@ -36,14 +23,27 @@ const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
         </h1>
         <p class="mb-8  text-xs lg:text-base">{{ blok.text }}</p>
         <ul class="flex justify-end">
-          <li v-for="action in blok.actions" class="mr-4">
-            <NuxtLink to="/recipes">
+          <li v-for="(action, index) in blok.actions" class="mr-4" >
+            <NuxtLink to="/recipes" v-if="index === 0">
               <StoryblokComponent :blok="action" />
             </NuxtLink>
+
           </li>
+          <ButtonsInstallApp/>
         </ul>
       </div>
     </div>
   </div>
 </template>
+<script setup lang="ts">
+ defineProps({
+  blok: {
+    type: Object,
+    default: () => ({}),
+  },
+})
+ const {locale} = useI18n()
 
+const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
+
+</script>

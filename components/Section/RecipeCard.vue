@@ -21,7 +21,7 @@ defineProps<{
         <img
             class="absolute lg:relative mt-16  lg:mt-6 group-hover:ml-4  px-auto  dark:text-red dark:contrast-[1]
               group-hover:translate-x-[80px] group-hover:scale-75 group-hover:translate-y-[65px]
-            lg:group-hover:translate-x-[90px] lg:group-hover:scale-75 lg:group-hover:translate-y-[90px]  lg:group-hover:absolute  w-16 h-16 grayscale contrast-[.25] z-50 transform transition-all  duration-500 "
+            lg:group-hover:translate-x-[100px] lg:group-hover:scale-75 lg:group-hover:translate-y-[90px]  lg:group-hover:absolute  w-16 h-16 grayscale contrast-[.25] z-50 transform transition-all  duration-500 "
             :src="content.category.content.icon.filename"
             alt=""
         />

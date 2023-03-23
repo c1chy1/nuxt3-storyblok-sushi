@@ -1,6 +1,7 @@
 <template>
   <main>
 <!--      <Intro/>-->
+
     <LayoutNavigation/>
     <ButtonsDarkModeButton/>
     <IconsLogo/>

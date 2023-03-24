@@ -6,6 +6,7 @@
         @click="installApp"
 
     ><div v-if="isInstallable"
+
       >
         <span class="bg-shrimp-600 dark:bg-dark"/>
         <span class="bg-shrimp-600 dark:bg-dark"/>
@@ -13,7 +14,10 @@
         <span class="bg-shrimp-600 dark:bg-dark"/>
         <span class="bg-shrimp-600 dark:bg-dark"/>
       </div>
-      <button :disabled="!isInstallable"  class=" px-2 md:px-4  xl:px-8" v-else>
+      <button
+          :disabled="!isInstallable"
+              :title="label + ' / Chrome / Android'"
+              class=" px-2 md:px-4  xl:px-8" v-else>
       <Icon name="zondicons:hand-stop"  />
       </button>
     </button>
@@ -36,11 +40,8 @@ const emit = defineEmits(["close"]);
 const installationStore = useInstallationStore();
 const {isInstallable} = storeToRefs(installationStore);
 
-
-
 const {locale} = useI18n()
 const label = ref()
-
 onMounted(() => {
 
   if (locale.value === "en") label.value = 'Install'
@@ -48,8 +49,6 @@ onMounted(() => {
   if (locale.value === "pl") label.value = 'Zainstaluj'
 
 })
-
-
 
 function installApp() {
 

@@ -5,8 +5,7 @@
         class="font-bold  font-sans text-xs lg:text-base border-2  px-2 py-1.5 relative bg-shrimp-600 text-white border-transparent hover:text-dark-buttonText dark:hover:text-white  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground"
         @click="installApp"
 
-    >
-      <div v-if="isInstallable"
+    ><div v-if="isInstallable"
       >
         <span class="bg-shrimp-600 dark:bg-dark"/>
         <span class="bg-shrimp-600 dark:bg-dark"/>
@@ -20,6 +19,8 @@
     </button>
 
   </li>
+
+
 </template>
 
 <script lang="ts" setup>
@@ -27,7 +28,14 @@
 import {storeToRefs} from "pinia";
 import {useInstallationStore} from "~/stores/installation";
 
+
+
 const emit = defineEmits(["close"]);
+
+
+const installationStore = useInstallationStore();
+const {isInstallable} = storeToRefs(installationStore);
+
 
 
 const {locale} = useI18n()
@@ -42,10 +50,9 @@ onMounted(() => {
 })
 
 
-const installationStore = useInstallationStore();
-const {isInstallable} = storeToRefs(installationStore);
 
 function installApp() {
+
   installationStore.installApp().then(() => emit("close"));
 }
 

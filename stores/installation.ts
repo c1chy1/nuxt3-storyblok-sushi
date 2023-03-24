@@ -7,6 +7,8 @@ export const useInstallationStore = defineStore("installation", () => {
     function setInstallPromptEvent(event: BeforeInstallPromptEvent) {
         installPromptEvent = event;
         isInstallable.value = true;
+
+
     }
 
     function unsetInstallEvent() {
@@ -28,5 +30,5 @@ export const useInstallationStore = defineStore("installation", () => {
         });
     }
 
-    return { isInstallable, installApp, setInstallPromptEvent };
+    return {  isInstallable, installApp, setInstallPromptEvent };
 });

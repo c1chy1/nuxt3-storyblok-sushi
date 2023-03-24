@@ -29,37 +29,97 @@
         </ClientOnly>
       </div>
     </div>
-
-    <div class="grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 ">
-      <transition-group name="home" mode="in-out">
+    <div>
+      <transition-group
+          ref="recipesList"
+          class="content__list"
+          tag="ul"
+          @before-enter="beforeEnter"
+          @enter="onEnter"
+          @leave="onLeave"
+          mode="in-out"
+          :css="false"
+          :class="`headerNav relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12  bottom-6 text-md `"
+      >
       <SectionRecipeCard
+
           v-for="{ uuid, content, slug  } in filteredRecipes"
           :key="uuid"
           :uuid="uuid"
           :content="content"
-          :slug="slug" />
+          :slug="slug"
+          :data-index="uuid"
+      />
 </transition-group>
     </div>
-
   </div>
 </template>
 
 <style>
-.home-enter-active,
-.home-leave-active {
-  transition: opacity 0.5s;
-}
-.home-enter,
-.home-leave-to {
-  opacity: 0;
-}
-
 
 </style>
 
 <script setup lang="ts">
 
-const locale = useState('locale')
+
+import gsap from 'gsap'
+
+const recipesList = ref()
+
+
+function beforeEnter(el:any, done:any) {
+  el.style.opacity = 0;
+  el.style.height = 0;
+}
+
+
+
+function onEnter(el:any , done:any) {
+
+  gsap.to(el, {
+    opacity: 1,
+    height: "100%",
+    delay: el.dataset.index * 0.15,
+    onComplete: done
+  });
+
+}
+
+
+
+
+function onLeave(el:any , done: any) {
+
+  console.log("el, done: ", el, done);
+  gsap.to(el, {
+    opacity: 0,
+    height: 0,
+    delay: el.dataset.index * 0.15,
+    onComplete: done
+  });
+
+}
+
+
+/*
+function leaveCancelled(el:any ) {
+
+  if (el.classList.contains('headerNav')) {
+    const mainLi = el.querySelectorAll('.headerNav li')
+    gsap.set(el, { opacity: 0, x: '-5%' })
+    gsap.set(mainLi, { opacity: 0, y: 20 })
+  }
+}
+*/
+
+
+onMounted(()=> {
+
+
+
+})
+
+const { locale } = useI18n()
 
 const filter = ref('')
 
@@ -87,3 +147,35 @@ const localeLang = locale.value
 
 
 </script>
+<style lang="scss" scoped>
+
+
+.company {
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+/* moving */
+.company-move {
+  transition: all 600ms ease-in-out 50ms;
+}
+
+/* appearing */
+.company-enter-active {
+  transition: all 400ms ease-out;
+}
+
+/* disappearing */
+.company-leave-active {
+  transition: all 200ms ease-in;
+  position: absolute;
+  z-index: 0;
+}
+
+/* appear at / disappear to */
+.company-enter,
+.company-leave-to {
+  opacity: 0;
+}
+
+</style>

@@ -29,20 +29,17 @@
         </ClientOnly>
       </div>
     </div>
-    <div>
+
       <transition-group
-          ref="recipesList"
           class="content__list"
-          tag="ul"
+          name="list"
+          tag="div"
           @before-enter="beforeEnter"
           @enter="onEnter"
-          @leave="onLeave"
-          mode="in-out"
           :css="false"
-          :class="`headerNav relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12  bottom-6 text-md `"
+          :class="`relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12  bottom-6 text-md `"
       >
       <SectionRecipeCard
-
           v-for="{ uuid, content, slug  } in filteredRecipes"
           :key="uuid"
           :uuid="uuid"
@@ -51,7 +48,7 @@
           :data-index="uuid"
       />
 </transition-group>
-    </div>
+
   </div>
 </template>
 
@@ -61,18 +58,24 @@
 
 <script setup lang="ts">
 
-
 import gsap from 'gsap'
 
-const recipesList = ref()
 
+const { locale } = useI18n()
+
+const filter = ref('')
+
+const category = ref('')
+const { categories, fetchCategories } = useCategories()
+await fetchCategories()
+
+const { fetchRecipes , filteredRecipes } = useRecipes(filter, category)
+await fetchRecipes()
 
 function beforeEnter(el:any, done:any) {
   el.style.opacity = 0;
   el.style.height = 0;
 }
-
-
 
 function onEnter(el:any , done:any) {
 
@@ -85,50 +88,6 @@ function onEnter(el:any , done:any) {
 
 }
 
-
-
-
-function onLeave(el:any , done: any) {
-
-  console.log("el, done: ", el, done);
-  gsap.to(el, {
-    opacity: 0,
-    height: 0,
-    delay: el.dataset.index * 0.15,
-    onComplete: done
-  });
-
-}
-
-
-/*
-function leaveCancelled(el:any ) {
-
-  if (el.classList.contains('headerNav')) {
-    const mainLi = el.querySelectorAll('.headerNav li')
-    gsap.set(el, { opacity: 0, x: '-5%' })
-    gsap.set(mainLi, { opacity: 0, y: 20 })
-  }
-}
-*/
-
-
-onMounted(()=> {
-
-
-
-})
-
-const { locale } = useI18n()
-
-const filter = ref('')
-
-const category = ref('')
-const { categories, fetchCategories } = useCategories()
-await fetchCategories()
-
-const { fetchRecipes , filteredRecipes } = useRecipes(filter, category)
-await fetchRecipes()
 
 watch(filter, async () => {
 
@@ -149,33 +108,22 @@ const localeLang = locale.value
 </script>
 <style lang="scss" scoped>
 
-
-.company {
-  backface-visibility: hidden;
-  z-index: 1;
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
 }
 
-/* moving */
-.company-move {
-  transition: all 600ms ease-in-out 50ms;
-}
-
-/* appearing */
-.company-enter-active {
-  transition: all 400ms ease-out;
-}
-
-/* disappearing */
-.company-leave-active {
-  transition: all 200ms ease-in;
-  position: absolute;
-  z-index: 0;
-}
-
-/* appear at / disappear to */
-.company-enter,
-.company-leave-to {
+.list-enter-from,
+.list-leave-to {
   opacity: 0;
+  transform: translateX(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+  position: absolute;
 }
 
 </style>

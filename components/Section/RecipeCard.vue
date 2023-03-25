@@ -1,14 +1,3 @@
-<script setup lang="ts">
-const { locale } = useI18n()
-const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
-const localeLang = locale.value
-
-defineProps<{
-  uuid: string
-  content: any
-  slug: string
-}>()
-</script>
 <template>
   <article class="rounded-lg overflow-hidden shadow-2xl w-72 2xl:w-80 mx-auto " :key="uuid">
     <div class="card-hover  h-[28rem]    lg:h-[32rem]  mx-auto  group w-full relative text-right rounded-xl ">
@@ -16,7 +5,7 @@ defineProps<{
         <h3 class="card-hover__title mx-auto lg:w-5/6 font-bold text-base lg:text-xl font-display text-shrimp-600 dark:text-shrimp-300  z-50">
           {{ content.title }}
         </h3>
-        <p class="card-hover__text dark:text-dark-paragraph z-50 absolute top-4 lg:top-2 "> {{ content.description }}</p>
+        <p class="card-hover__text dark:text-dark-paragraph w-3/4 lg:text-sm z-50 absolute top-4 lg:top-2 "> {{ content.description }}</p>
 
         <img
             class="absolute lg:relative mt-16  lg:mt-6 group-hover:ml-4  px-auto  dark:text-red dark:contrast-[1]
@@ -56,6 +45,20 @@ defineProps<{
 
 
 </template>
+
+<script setup lang="ts">
+const { locale } = useI18n()
+const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
+const localeLang = locale.value
+
+defineProps<{
+  uuid: {
+    requied: false
+  }
+  content: any
+  slug: string
+}>()
+</script>
 <style scoped lang="scss">
 
 

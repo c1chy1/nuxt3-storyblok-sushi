@@ -33,7 +33,7 @@
               alt=""
           />
         </span>
-        <ul class="flex mb-12 px-6 lg:px-2 border-b border-gray-200 pb-4 text-gray-400 ">
+        <ul class="flex  mb-4 lg:mb-8 px-6 lg:px-2 border-b border-gray-200 pb-4 text-gray-400 ">
           <li class="flex items-center mr-4 text-sm lg:text-base dark:text-dark-paragraph transition-all">
             <ClientOnly>
               <Icon name="ic:outline-more-time"  size="28"/>
@@ -48,7 +48,7 @@
           </li>
         </ul>
 
-          <div class="test prose prose-ul:font-display lg:text-xl leading-3 prose-li:text-dark-buttonText prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
+          <div class="test prose prose-ul:font-display  lg:text-md leading-0 prose-li:text-dark-buttonText prose-p:m-0 prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>

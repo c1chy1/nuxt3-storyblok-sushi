@@ -31,7 +31,6 @@
     </div>
 
       <transition-group
-          class="content__list"
           name="list"
           tag="div"
           @before-enter="beforeEnter"
@@ -108,7 +107,7 @@ const localeLang = locale.value
 </script>
 <style lang="scss" scoped>
 
-.list-move, /* apply transition to moving elements */
+.list-move,
 .list-enter-active,
 .list-leave-active {
   transition: all 0.5s ease;
@@ -120,8 +119,6 @@ const localeLang = locale.value
   transform: translateX(30px);
 }
 
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
 .list-leave-active {
   position: absolute;
 }

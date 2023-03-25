@@ -28,7 +28,7 @@ export function useCategories() {
                 content,
                 icon: content.icon,
             }))
-            .slice(0, 3)
+            .slice(0, 6)
             .reverse(),
     )
 

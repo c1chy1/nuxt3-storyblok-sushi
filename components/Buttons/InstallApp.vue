@@ -8,7 +8,7 @@
     ><div v-if="isInstallable"
 
       >
-        <span class="bg-shrimp-600 dark:bg-dark"/>
+        <span class="bg-shrimp-600 dark:bg-dark "/>
         <span class="bg-shrimp-600 dark:bg-dark"/>
         {{ label }}
         <span class="bg-shrimp-600 dark:bg-dark"/>

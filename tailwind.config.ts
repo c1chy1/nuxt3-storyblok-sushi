@@ -35,7 +35,6 @@ export default <Partial<Config>>{
                 mono: ["'Fira Code'", ...defaultTheme.fontFamily.mono],
                 display: ["'Dosis'", 'display'],
             },
-
             colors: {
 
 

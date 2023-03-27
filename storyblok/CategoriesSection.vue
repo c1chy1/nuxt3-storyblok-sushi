@@ -45,8 +45,8 @@ await fetchCategories()
               format="webp"
               aspect-ratio="16/9"
               provider="storyblok"
-              sizes="  sm:100vw md:75vw lg:[600px] xl:[1200px]"
-              class="  object-cover mx-auto "
+              sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
+              class="object-cover mx-auto "
               :src="blok.media.filename"
               :alt="blok.media.alt"/>
 

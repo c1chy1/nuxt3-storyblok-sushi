@@ -2,7 +2,7 @@
 <template>
 
 
-<section>
+<section :id="story.content.title"  >
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
 
@@ -54,8 +54,8 @@
       </div>
 
       </header>
-      <div class="mx-auto pt-6 lg:pt-4 prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display lg:text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
-        <RichTextRenderer v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
+      <div class="steps mx-auto pt-6 lg:pt-4 prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display lg:text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
+        <RichTextRenderer  v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
       </div>
 
   <AnimationsSushi :story="story" />
@@ -73,3 +73,13 @@ const story = await fetchRecipeBySlug(slug as string)
 const locale = useState('locale')
 
 </script>
+
+<style scoped>
+
+#Tonkatsu .prose :where(img):not(:where([class~="not-prose"] *)) {
+
+  margin: 0 auto;
+  width: 50%;
+}
+
+</style>

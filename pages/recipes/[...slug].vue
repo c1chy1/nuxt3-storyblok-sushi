@@ -5,8 +5,6 @@
 <section :id="story.content.title"  >
       <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
 
-
-
         <div class="flex  justify-end w-full lg:w-1/2">
           <NuxtImg
               loading="lazy"

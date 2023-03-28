@@ -77,8 +77,8 @@ export default defineNuxtConfig({
 
             title: 'c1chy.Sushi',
             meta: [
-                ...OPEN_GRAPH,
-                ...TWITTER,
+          /*      ...OPEN_GRAPH,
+                ...TWITTER,*/
             ],
 
         }
@@ -104,6 +104,7 @@ export default defineNuxtConfig({
             bridge: true,
             use: [apiPlugin]
         }],
+/*
         ['@kevinmarrec/nuxt-pwa', {
 
             baseURL: "/",
@@ -124,6 +125,7 @@ export default defineNuxtConfig({
                 useWebmanifestExtension: true,
             }
         }],
+*/
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',
@@ -145,13 +147,13 @@ export default defineNuxtConfig({
             },
             {
                 code: 'de',
-                iso: 'de-GE',
+                iso: 'de-DE',
                 name: 'Germany',
             },
 
             {
                 code: 'pl',
-                iso: 'pl-pl',
+                iso: 'pl-PL',
                 name: 'Polish',
             },],
         defaultLocale: 'en', // default locale

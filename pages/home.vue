@@ -1,6 +1,7 @@
 <script setup>
 const { slug } = useRoute().params;
 const { locale } = useI18n()
+
 const resolveRelations = ['categories']
 const storyblokApiInstance = useStoryblokApi();
 const url = slug && slug.length > 0 ? slug.join('/') : 'home';
@@ -15,6 +16,9 @@ const { data } = await useAsyncData(
         }
     )
 );
+
+
+
 const story = useState(`${locale.value}-${url}`, () => data.value.data.story);
 onMounted(() => {
   if (story.value && story.value.id) {
@@ -26,6 +30,7 @@ onMounted(() => {
         }
     );
   }
+
 });
 
 </script>

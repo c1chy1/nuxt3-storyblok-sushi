@@ -60,7 +60,7 @@
 import gsap from 'gsap'
 
 
-const { locale } = useI18n()
+const locale = useState('locale')
 
 const filter = ref('')
 

@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 
-useState('locale', () => 'en')
+const locale = useState('locale')
 
 </script>
 

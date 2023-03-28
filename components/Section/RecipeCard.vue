@@ -52,9 +52,7 @@ const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const localeLang = locale.value
 
 defineProps<{
-  uuid: {
-    requied: false
-  }
+  uuid: string
   content: any
   slug: string
 }>()

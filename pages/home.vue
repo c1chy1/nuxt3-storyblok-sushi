@@ -2,6 +2,12 @@
 const { slug } = useRoute().params;
 const { locale } = useI18n()
 
+
+
+onBeforeMount(() => {
+  useState('locale').value = 'en'
+})
+
 const resolveRelations = ['categories']
 const storyblokApiInstance = useStoryblokApi();
 const url = slug && slug.length > 0 ? slug.join('/') : 'home';
@@ -16,8 +22,6 @@ const { data } = await useAsyncData(
         }
     )
 );
-
-
 
 const story = useState(`${locale.value}-${url}`, () => data.value.data.story);
 onMounted(() => {

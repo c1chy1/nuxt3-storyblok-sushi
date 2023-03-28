@@ -104,10 +104,9 @@ export default defineNuxtConfig({
             bridge: true,
             use: [apiPlugin]
         }],
-/*
         ['@kevinmarrec/nuxt-pwa', {
 
-            baseURL: "/",
+            baseURL: "/home",
 
             workbox: {
                 enabled: true,
@@ -125,7 +124,6 @@ export default defineNuxtConfig({
                 useWebmanifestExtension: true,
             }
         }],
-*/
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@pinia/nuxt',

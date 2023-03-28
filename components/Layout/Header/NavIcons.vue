@@ -18,20 +18,19 @@
 </template>
 
 <script setup lang="ts">
-
-const props = defineProps({
+ defineProps({
   close : Function
 })
 
 import SearchIcon from "~/components/Icons/SearchIcon.vue";
 
 const router = useRouter()
-const locale = useState('locale')
+ const { locale } = useI18n()
 
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const changeLocale = (loc ) => {
   locale.value = loc
-  router.push({path: localeUrl() || '/'})
+  router.push({path: localeUrl() || '/home'})
 }
 
 

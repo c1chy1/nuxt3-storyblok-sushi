@@ -1,29 +1,11 @@
 <script setup lang="ts">
 
-defineProps({
+ defineProps({
   blok: {
     type: Object,
     default: () => ({}),
   }
 })
-
-const localePath = useLocalePath()
-const { locale, locales, setLocale } = useI18n()
-
-const availableLocales = computed(() => {
-  return (locales.value).filter(i => i.code !== locale.value)
-});
-
-
-console.log(locales)
-
-/*const storyblokApi = useStoryblokApi()
-const { data } = await storyblokApi.get('cdn/stories/categories', {
-  version: 'draft',
-  language: locale.value
-})
-
-console.log(data)*/
 
 const {categories, fetchCategories, formattedCategories} = useCategories()
 await fetchCategories()

@@ -13,6 +13,5 @@
 
 const locale = useState('locale')
 
-const test = locale.value
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 </script>

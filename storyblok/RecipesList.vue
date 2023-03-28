@@ -19,13 +19,12 @@
 
 <script setup lang="ts">
 
-const props = defineProps<{
+defineProps<{
 
   blok:{
     title:string,
 
   }}>();
-const locale = useState('locale')
 
 const { recipes, fetchRecipes } = useRecipes()
 

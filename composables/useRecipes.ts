@@ -4,10 +4,10 @@ const state = reactive({
     recipes: []
 })
 
-const locale = useState('locale')
+
 export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
     const storyblokApi = useStoryblokApi()
-
+    const {locale} = useI18n()
     async function fetchRecipes() {
         let params = {
             version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',

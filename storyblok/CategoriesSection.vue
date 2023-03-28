@@ -1,15 +1,3 @@
-<script setup lang="ts">
-
- defineProps({
-  blok: {
-    type: Object,
-    default: () => ({}),
-  }
-})
-
-const {categories, fetchCategories, formattedCategories} = useCategories()
-await fetchCategories()
-</script>
 <template>
   <section
       class="relative categories lg:px-8  bg-shrimp-400 dark:bg-dark-background dark:border-b-4 dark:border-dark-paragraph w-full   lg:h-[600px] mt-24 md:mt-[9rem] transition-all duration-700">
@@ -55,3 +43,15 @@ await fetchCategories()
     </div>
   </section>
 </template>
+<script setup lang="ts">
+
+defineProps({
+  blok: {
+    type: Object,
+    default: () => ({}),
+  }
+})
+
+const {categories, fetchCategories, formattedCategories} = useCategories()
+await fetchCategories()
+</script>

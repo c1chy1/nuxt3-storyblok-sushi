@@ -24,7 +24,7 @@
         <p class="mb-8  text-xs lg:text-base">{{ blok.text }}</p>
         <ul class="flex justify-end">
           <li v-for="(action, index) in blok.actions" class="mr-4" >
-            <NuxtLink to="/recipes" v-if="index === 0">
+            <NuxtLink :to="action.link.cached_url" v-if="index === 0">
               <StoryblokComponent :blok="action" />
             </NuxtLink>
 

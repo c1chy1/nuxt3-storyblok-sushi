@@ -122,7 +122,7 @@ export default defineNuxtConfig({
         }],
         ['@kevinmarrec/nuxt-pwa', {
 
-            baseURL: "/home",
+            baseURL: "/",
 
             workbox: {
                 enabled: true,
@@ -152,24 +152,7 @@ export default defineNuxtConfig({
 
     i18n: {
         strategy: 'prefix_except_default',
-        locales: [
-
-            {
-                code: 'en',
-                iso: 'en-US',
-                name: 'English',
-            },
-            {
-                code: 'de',
-                iso: 'de-DE',
-                name: 'Germany',
-            },
-
-            {
-                code: 'pl',
-                iso: 'pl-PL',
-                name: 'Polish',
-            },],
+        locales: ['en', 'de', 'pl'],
         defaultLocale: 'en', // default locale
         noPrefixDefaultLocale: true,
     },

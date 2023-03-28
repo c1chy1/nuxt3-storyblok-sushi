@@ -1,14 +1,15 @@
+
 const state = reactive({
     categories: [],
 })
 
-const locale = useState('locale')
-
 export function useCategories() {
+    const {locale} = useI18n()
+
     const storyblokApi = useStoryblokApi()
 
     async function fetchCategories() {
-        const { data } = await storyblokApi.get('cdn/stories/', {
+        const { data } = await storyblokApi.get(`cdn/stories/`, {
             version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
             starts_with: 'categories/',
             is_startpage: false,

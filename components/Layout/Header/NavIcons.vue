@@ -25,13 +25,15 @@
 import SearchIcon from "~/components/Icons/SearchIcon.vue";
 
 const router = useRouter()
- const { locale } = useI18n()
+ const locale = useState('locale')
 
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 const changeLocale = (loc ) => {
   locale.value = loc
   router.push({path: localeUrl() || '/home'})
 }
+
+
 
 
 const id = 0
@@ -122,7 +124,7 @@ const icons = shallowRef([
     }),
   },
   {
-    loc: "en",
+    loc: "",
     id: `quadrant_${number.value++}`,
     name: "fade-left",
     icon: defineComponent({
@@ -205,7 +207,7 @@ const icons = shallowRef([
     id: `quadrant_${number.value++}`,
     name: "fade-down",
     icon: SearchIcon,
-    loc:'recipes'
+    loc: locale.value
   }
 ])
 

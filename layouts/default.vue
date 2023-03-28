@@ -4,7 +4,7 @@
 
     <LayoutNavigation/>
     <ButtonsDarkModeButton/>
-    <IconsLogo/>
+<!--    <IconsLogo/>-->
     <slot class="overflow-y-hidden w-full"/>
     <IconsShareIcons/>
   </main>
@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 
-const locale = useState('locale')
+const { locale } = useI18n()
 
 </script>
 

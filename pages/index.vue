@@ -1,12 +1,8 @@
 <script setup>
 const { slug } = useRoute().params;
-const { locale } = useI18n()
+const {locale} = useI18n()
 
 
-
-onBeforeMount(() => {
-  useState('locale').value = 'en'
-})
 
 const resolveRelations = ['categories']
 const storyblokApiInstance = useStoryblokApi();

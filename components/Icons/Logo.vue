@@ -11,7 +11,8 @@
 
 <script setup lang="ts">
 
-const locale = useState('locale')
+const {locale} = useI18n()
+
 
 const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
 </script>

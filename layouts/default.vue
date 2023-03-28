@@ -4,7 +4,7 @@
 
     <LayoutNavigation/>
     <ButtonsDarkModeButton/>
-<!--    <IconsLogo/>-->
+    <IconsLogo/>
     <slot class="overflow-y-hidden w-full"/>
     <IconsShareIcons/>
   </main>

@@ -77,8 +77,8 @@ export default defineNuxtConfig({
 
             title: 'c1chy.Sushi',
             meta: [
-          /*      ...OPEN_GRAPH,
-                ...TWITTER,*/
+                ...OPEN_GRAPH,
+                ...TWITTER,
             ],
 
         }

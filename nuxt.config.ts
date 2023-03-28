@@ -24,7 +24,7 @@ const OPEN_GRAPH = [
     {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://c1chy-sushi.netlify.app/home',
+        content: 'https://c1chy-sushi.netlify.app/',
     },
     {
         hid: "og:image",
@@ -68,13 +68,13 @@ const TWITTER = [
     },
 
     {
-        hid: "twitter:image:width",
-        name: "twitter:width",
-        content: 300
+        hid: "og:image:width",
+        name: "og:image:width",
+        content: 600
     },
     {
-        hid: 'twitter:image:height',
-        name: 'twitter:image:height',
+        hid: 'og:image:height',
+        name: 'og:image:height',
         content: 200
     },
 

@@ -12,6 +12,11 @@ const OPEN_GRAPH = [
         content: 'c1chy.Sushi',
     },
     {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+    },
+    {
         hid: 'og:description',
         name: 'og:description',
         content: 'Sushi App',
@@ -19,7 +24,7 @@ const OPEN_GRAPH = [
     {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://c1chy-sushi.netlify.app',
+        content: 'https://c1chy-sushi.netlify.app/home',
     },
     {
         hid: "og:image",
@@ -60,6 +65,17 @@ const TWITTER = [
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: 'c1chy.Sushi Preview',
+    },
+
+    {
+        hid: "twitter:image:width",
+        name: "twitter:width",
+        content: 300
+    },
+    {
+        hid: 'twitter:image:height',
+        name: 'twitter:image:height',
+        content: 200
     },
 
 ]

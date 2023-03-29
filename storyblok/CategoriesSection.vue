@@ -4,11 +4,11 @@
 
 
     <nuxt-img
-        sizes="sm:75vw"
+        sizes=" 25vw  xl:75vw"
         format="webp"
         aspect-ratio="16/9"
         provider="storyblok"
-        class="absolute right-0 -top-12 md:-top-[12rem] z-10"
+        class="absolute w-full right-0 -top-12 md:-top-[12rem] z-10"
         src="https://a.storyblok.com/f/193348/1440x506/a5c0bcfea5/tint-orange.png" alt="" />
 
     <div class="z-10  w-full lg:pb-12 px-8 md:px-0 ">
@@ -17,8 +17,8 @@
           <h2 class="text-white font-display text-2xl text-center lg:text-left lg:text-4xl font-bold mb-8 w-full md:w-2/3">
             {{ blok.title }}
           </h2>
-          <ul class="grid lg:grid-cols-3 gap-8 py-8 ">
-            <li v-for="{ icon, name, uuid  } of formattedCategories" :key="uuid" class="last:col-span-3"
+          <ul class="sm:grid  sm:grid-cols-3 gap-8 py-8 ">
+            <li v-for="{ icon, name, uuid  } of formattedCategories" :key="uuid" class="py-4 sm:py-2 sm:last:col-span-3"
             >
               <div
                   class="bg-dark-paragraph dark:bg-dark-navigation shadow-lg rounded-lg p-4 flex flex-col items-center  transition-all duration-700"
@@ -43,7 +43,7 @@
               aspect-ratio="16/9"
               provider="storyblok"
               sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
-              class="object-cover mx-auto "
+              class="object-cover mx-auto h-full w-full"
               :src="blok.media.filename"
               :alt="blok.media.alt"/>
 
@@ -53,14 +53,14 @@
   </section>
 </template>
 <script setup lang="ts">
-
+import {useCategories} from "~/composables/useCategories";
 defineProps({
   blok: {
     type: Object,
     default: () => ({}),
   }
 })
-import {useCategories} from "~/composables/useCategories";
+
 const {categories, fetchCategories, formattedCategories} = useCategories()
 await fetchCategories()
 </script>

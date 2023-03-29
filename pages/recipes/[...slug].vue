@@ -53,7 +53,9 @@
 
       </header>
       <div class="steps mx-auto pt-6 lg:pt-4 prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display lg:text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
-        <RichTextRenderer  v-if="story.content.steps" :document="story.content.steps"></RichTextRenderer>
+        <RichTextRenderer
+            v-if="story.content.steps"
+            :document="story.content.steps"></RichTextRenderer>
       </div>
 
   <AnimationsSushi :story="story" />
@@ -61,15 +63,16 @@
 </template>
 
 <script setup lang="ts">
-
+import {useRecipes} from "~/composables/useRecipes";
 import { RichTextRenderer } from '@marvr/storyblok-rich-text-vue-renderer'
+
 
 const route = useRoute()
 const { slug } = route.params
 const { fetchRecipeBySlug } = useRecipes()
 const story = await fetchRecipeBySlug(slug as string)
 const locale = useState('locale')
-
+console.log(story.content)
 </script>
 
 <style scoped>

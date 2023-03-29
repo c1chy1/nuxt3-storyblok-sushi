@@ -202,10 +202,11 @@ const icons = shallowRef([
     }),
   },
   {
+    loc: 'recipes',
     id: `quadrant_${number.value++}`,
     name: "fade-down",
     icon: SearchIcon,
-    loc:locale.value
+
   }
 ])
 

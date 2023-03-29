@@ -57,6 +57,8 @@
 
 <script setup lang="ts">
 
+import {useCategories} from "~/composables/useCategories";
+import {useRecipes} from "~/composables/useRecipes";
 import gsap from 'gsap'
 
 

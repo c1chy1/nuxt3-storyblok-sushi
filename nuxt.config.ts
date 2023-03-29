@@ -16,6 +16,8 @@ const OPEN_GRAPH = [
         property: 'og:type',
         content: 'website',
     },
+
+    { name: "robots", content: "max-image-preview:large" },
     {
         hid: 'og:description',
         name: 'og:description',

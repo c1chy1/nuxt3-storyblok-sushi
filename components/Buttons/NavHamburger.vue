@@ -20,8 +20,8 @@
 </template>
 
 <script setup>
-/*import { useNavStore } from "~/stores/nav";
-let store = useNavStore();*/
+
+import {useMenu} from "~/composables/useMenu";
 const {isOpenMenu } = useMenu()
 const emit = defineEmits(["showMenu"]);
 emit("showMenu");

@@ -22,6 +22,8 @@
 
 
 import gsap from 'gsap'
+import {useMenu} from "~/composables/useMenu";
+
 
 let menu = ref(null);
 const tl = gsap.timeline({paused:true})

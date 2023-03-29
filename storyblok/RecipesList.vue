@@ -18,6 +18,7 @@
 </template>
 
 <script setup lang="ts">
+import {useRecipes} from "~/composables/useRecipes";
 
 defineProps<{
 

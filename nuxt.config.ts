@@ -16,8 +16,6 @@ const OPEN_GRAPH = [
         property: 'og:type',
         content: 'website',
     },
-
-    { name: "robots", content: "max-image-preview:large" },
     {
         hid: 'og:description',
         name: 'og:description',
@@ -111,7 +109,6 @@ export default defineNuxtConfig({
         transpile: ['@marvr/storyblok-rich-text-vue-renderer', 'gsap'],
     },
     image: {
-
         storyblok: {
             baseURL: 'https://a.storyblok.com',
         },

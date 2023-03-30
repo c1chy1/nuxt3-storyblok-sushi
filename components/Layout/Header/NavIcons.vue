@@ -15,6 +15,19 @@
 
     </div>
   </div>
+
+  <div
+     id="quadrant_3"
+      class="quadrant__item  my-1 w-0 lg:w-1/2 h-1/6 lg:h-1/2 lg:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 ">
+    <NuxtLink
+        class="flex justify-center"
+        :to="localePath('recipes')">
+      <SearchIcon
+    id="fade-down"
+    class=" w-16 h-16 opacity-0 "/>
+  </NuxtLink>
+  </div>
+
 </template>
 
 <script setup lang="ts">
@@ -23,14 +36,15 @@
 })
 
 import SearchIcon from "~/components/Icons/SearchIcon.vue";
-
+ const localePath = useLocalePath()
 const router = useRouter()
- const {locale} = useI18n()
+ const locale = useState('locale')
 
-const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : ''
-const changeLocale = (loc ) => {
+
+const localeUrl = () => locale.value !== 'en' ? `/${locale.value}` : '/'
+const changeLocale = (loc:any ) => {
   locale.value = loc
-  router.push({path: localeUrl() || '/home'})
+  router.push({path: localeUrl() || '/'})
 }
 
 
@@ -201,13 +215,8 @@ const icons = shallowRef([
           ]),
     }),
   },
-  {
-    loc: 'recipes',
-    id: `quadrant_${number.value++}`,
-    name: "fade-down",
-    icon: SearchIcon,
 
-  }
+
 ])
 
 

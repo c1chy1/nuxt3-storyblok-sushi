@@ -63,6 +63,7 @@ import gsap from 'gsap'
 
 
 const locale = useState('locale')
+const localeLang = locale.value
 
 const filter = ref('')
 
@@ -101,7 +102,6 @@ watch(category, async () => {
   await fetchRecipes()
 })
 
-const localeLang = locale.value
 
 
 

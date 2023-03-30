@@ -42,7 +42,7 @@
             <ClientOnly>
               <Icon name="mdi:user-group"  size="28"/>
             </ClientOnly>
-            <span class="ml-2">Serves {{ story.content.comensales }}</span>
+            <span class="ml-2">{{ story.content.comensales }}</span>
           </li>
         </ul>
 

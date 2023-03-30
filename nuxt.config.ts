@@ -67,17 +67,6 @@ const TWITTER = [
         content: 'c1chy.Sushi Preview',
     },
 
-    {
-        hid: "og:image:width",
-        name: "og:image:width",
-        content: 600
-    },
-    {
-        hid: 'og:image:height',
-        name: 'og:image:height',
-        content: 200
-    },
-
 ]
 
 

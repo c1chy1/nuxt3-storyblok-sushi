@@ -1,16 +1,17 @@
 <template>
-  <article class="rounded-lg overflow-hidden shadow-2xl w-64 2xl:w-80 mx-auto " :key="uuid">
+  <article class="rounded-lg overflow-hidden shadow-2xl w-64 xl:w-72 2xl:w-80 mx-auto " :key="uuid">
     <div class="card-hover  h-[28rem] sm:[24rem]    lg:h-[32rem]  mx-auto  group w-full relative text-right rounded-xl ">
       <div class="card-hover__content  after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
         <h3 class="card-hover__title mx-auto lg:w-5/6 font-bold text-base lg:text-xl font-display text-shrimp-600 dark:text-shrimp-300  z-50">
           {{ content.title }}
         </h3>
-        <p class="card-hover__text dark:text-dark-paragraph w-3/4 lg:text-sm z-50 absolute top-4 lg:top-2 "> {{ content.description }}</p>
+        <p class="card-hover__text group-hover:translate-y-[90%] 2xl:group-hover:translate-y-[130%] dark:text-dark-paragraph w-3/4 text-xs lg:text-sm z-50 absolute top-4 lg:top-2 ">
+          {{ content.description }}</p>
 
         <img
             class="absolute lg:relative mt-16  lg:mt-6 group-hover:ml-4  px-auto  dark:text-red dark:contrast-[1]
-              group-hover:translate-x-[80px] group-hover:scale-75 group-hover:translate-y-[65px]
-            lg:group-hover:translate-x-[100px] lg:group-hover:scale-75 lg:group-hover:translate-y-[90px]  lg:group-hover:absolute  w-16 h-16 grayscale contrast-[.25] z-50 transform transition-all  duration-500 "
+              group-hover:translate-x-[90px] group-hover:scale-75 group-hover:translate-y-[65px]
+            lg:group-hover:translate-x-[100px] lg:group-hover:scale-50 xl:group-hover:scale-75 lg:group-hover:translate-y-[90px]  lg:group-hover:absolute  w-16 h-16 grayscale contrast-[.25] z-50 transform transition-all  duration-500 "
             :src="content.category.content.icon.filename"
             alt=""
         />
@@ -106,7 +107,6 @@ $firaSans: 'Fira Sans', sans-serif;
 
       &__text {
 
-        transform: translateY(100%);
         opacity: 1;
         transition: all 0.3s 0.5s cubic-bezier(.1, .72, .4, .97);
       }

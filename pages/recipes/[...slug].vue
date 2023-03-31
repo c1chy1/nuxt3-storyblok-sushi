@@ -3,23 +3,23 @@
 
 
 <section :id="story.content.title"  >
-      <header v-if="story" class="relative  mt-16 lg:my-32 container mx-auto px-4 md:px-0">
+      <header v-if="story" class="relative flex flex-col lg:flex-row mt-16  container mx-auto px-4 md:px-0">
 
-        <div class="flex  justify-end w-full lg:w-1/2">
+        <div class="relative flex  justify-end w-full lg:w-1/2  lg:left-6  -top-4 z-10">
           <NuxtImg
               loading="lazy"
               preload
               provider="storyblok"
               format="webp"
               aspect-ratio="16/9"
-              sizes="sm:50vw md:75vw lg:[600px] xl:[1200px]"
-              class="mx-auto w-full lg:w-11/12 lg:mr-4  object-cover rounded-lg aspect-square"
+              sizes="sm:50vw md:60vw lg:[600px] xl:[800px]"
+              class="mx-auto w-52 h-40 sm:h-1/3 sm:w-2/3  md:h-3/5  md:w-2/5  lg:h-2/5 lg:w-4/5   lg:mr-4  xl:h-1/2 2xl:w-full 2xl:h-2/3  xl:object-cover rounded-lg aspect-square"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />
         </div>
         <div
-            class="bg-white dark:bg-dark-buttonText dark:bg-opacity-90 dark:contrast-[.80] rounded-lg overflow-hidden md:shadow-md md:px-8 py-8 w-full md:absolute md:w-1/2 top-4 right-8"
+            class="  px-0 md:px-4 xl:px-8 py-8 w-11/12 mx-auto  md:w-2/3 -top-4 bg-white dark:bg-dark-buttonText dark:bg-opacity-90 dark:contrast-[.80] rounded-lg overflow-hidden md:shadow-md   transition-all z-[15]"
         >
         <h1 class="text-shrimp-700 font-display text-center text-xl lg:text-left lg:text-4xl font-bold mb-12 lg:w-2/3">
           {{ story.content.title }}
@@ -31,12 +31,12 @@
               alt=""
           />
         </span>
-        <ul class="flex  mb-4 lg:mb-8 px-6 lg:px-2 border-b border-gray-200 pb-4 text-gray-400 ">
+        <ul class="flex  mb-2 lg:mb-4 px-6 lg:px-2 border-b border-gray-200 pb-4 text-gray-400 ">
           <li class="flex items-center mr-4 text-sm lg:text-base dark:text-dark-paragraph transition-all">
             <ClientOnly>
               <Icon name="ic:outline-more-time"  size="28"/>
             </ClientOnly>
-            <span class="ml-2">{{ story.content.prep_time }} mins</span>
+            <span class="ml-2">{{ story.content.prep_time }} min.</span>
           </li>
           <li class="flex items-center text-sm lg:text-base dark:text-dark-paragraph transition-all">
             <ClientOnly>
@@ -46,13 +46,13 @@
           </li>
         </ul>
 
-          <div class="test prose prose-ul:font-display  lg:text-md leading-0 prose-li:text-dark-buttonText prose-p:m-0 prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-8 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl prose-li:transition-all">
+          <div class=" prose prose-ul:font-display text-xs sm:text-sm lg:text-base  leading-0 prose-h4:text-sm prose-li:text-dark-buttonText prose-p:m-0 prose-li:dark:marker:text-dark-paragraph prose-li:dark:text-dark-paragraph prose-li:marker:text-dark-buttonText px-4 md:px-0 prose-li:pl-0 text-red  dark:prose-invert prose-img:rounded-xl transition-all">
           <RichTextRenderer :document="story.content.ingredients"></RichTextRenderer>
         </div>
       </div>
 
       </header>
-      <div class="steps mx-auto pt-6 lg:pt-4 prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display lg:text-xl prose dark:prose-invert px-8 md:px-0 prose-img:rounded-xl transition-all">
+      <div class="steps mx-auto text-sm sm:text-base   leading-6 xl:leading-normal pt-6 lg:pt-24 prose prose-headings:dark:text-dark-buttonBackground prose-p:font-display lg:text-xl prose dark:prose-invert px-8 md:px-4 prose-img:rounded-xl transition-all">
         <RichTextRenderer
             v-if="story.content.steps"
             :document="story.content.steps"></RichTextRenderer>

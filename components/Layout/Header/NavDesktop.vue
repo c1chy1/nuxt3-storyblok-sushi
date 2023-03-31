@@ -42,7 +42,7 @@ onMounted(() => {
     .to('#quadrant_1', 0.15, {x: 5, y: -5, borderRadius : 10}, 'seperate')
     .to('#fade-right', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2')
     .to('#quadrant_2', 0.15, {x: -5, y: 5, borderRadius : 10}, 'seperate')
-    .to('svg', 0.2, {opacity: 1, y: 0}, 'seperate+=0.2')
+    .to('#fade-down', 0.2, {opacity: 1, y: 0}, 'seperate+=0.2')
     .to('#quadrant_3', 0.15, {x: 5, y: 5, borderRadius : 10}, 'seperate')
     .to('#fade-left', 0.2, {opacity: 1, x: 0}, 'seperate+=0.2')
 

@@ -43,6 +43,12 @@ onMounted(() => {
   start();
 })
 
+onUnmounted(()=>{
+
+  beginAnimation.kill()
+
+})
+
 function start() {
 
 

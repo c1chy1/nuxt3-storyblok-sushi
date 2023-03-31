@@ -36,7 +36,7 @@
           @before-enter="beforeEnter"
           @enter="onEnter"
           :css="false"
-          :class="`relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12  bottom-6 text-md `"
+          :class="`relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 pt-6 xl:pt-12  bottom-6 text-md `"
       >
       <SectionRecipeCard
           v-for="{ uuid, content, slug  } in filteredRecipes"

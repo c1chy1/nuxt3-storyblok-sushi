@@ -110,7 +110,6 @@ function scrollAnimation() {
       const chopstick2 = self.selector("#chopstick-02")
       const heading = self.selector("#heading")
 
-
       timelineSushi.from(circle1, {
         x: "-=220%",
         scrollTrigger: {
@@ -135,9 +134,6 @@ function scrollAnimation() {
             opacity: 0,
             scrollTrigger: {
               trigger: scope.value,
-              /*      start : "top top",
-                  pin:true,
-                  scrub: 1*/
               start: '-=220',
               end: 'top 40%',
               scrub: 1

@@ -13,7 +13,7 @@
               format="webp"
               aspect-ratio="16/9"
               sizes="sm:50vw md:60vw lg:[600px] xl:[800px]"
-              class="mx-auto w-64 h-48 sm:h-1/3 sm:w-2/3  md:h-3/5  md:w-2/5  lg:h-2/5 lg:w-4/5   lg:mr-4  xl:h-1/2 2xl:w-full 2xl:h-2/3  xl:object-cover rounded-lg aspect-square"
+              class="mx-auto   lg:h-3/5  xl:w-5/6 xl:h-4/5 relative xl:left-12  object-cover rounded-lg  aspect-square"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />

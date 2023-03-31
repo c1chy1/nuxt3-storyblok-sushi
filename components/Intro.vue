@@ -3,8 +3,8 @@
       class="sushi-container fixed w-full h-screen bg-[#BBBBAA]  overflow-x-hidden  dark:bg-dark top-0 left-0  flex flex-col  items-center justify-center   xl:justify-end z-50 h-screen transition-all">
 
 
-    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 top-4   xl:top-1/3"></div>
-    <div class="chopstick bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all top-4  xl:top-1/3"></div>
+    <div class="chopstick  -rotate-[24deg]  translate-x-1/2 translate-y-12 bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 top-4   xl:top-1/3"></div>
+    <div class="chopstick -rotate-12 translate-x-1/2 translate-y-12 bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all top-4  xl:top-1/3"></div>
 
 <div class="transform scale-[60%] lg:scale-75 2xl:scale-100 h-1/5 relative">
 
@@ -61,15 +61,15 @@ function start() {
     })
         .from('.dish', 1, {opacity: 0, bottom: '-25%', ease: "Back.easeOut"})
         .from('.sushi-container', 3, {y: -0, ease: "Back.easeOut"})
-        .to('.chopstick-container', 1.5, {top: '20%'}, 1.5)
+        .to('.chopstick-container', 1.5, {top: 0}, 1.5)
         .to('.chopstick', 1.5, {opacity: 1}, 1.5)
         .to('.chopstick2', 1, {
           webkitFilter: "brightness(0.8)",
           filter: "brightness(0.8)",
         }, 2)
         .set( window , {duration: 2, scrollTo: {y: "min"}})
-        .to('.chopstick1', 2, {rotation: 190}, 3.5)
-        .to('.chopstick2', 2, {rotation: 165}, 3.5)
+        .to('.chopstick1', 2, {rotation: 10}, 3.5)
+        .to('.chopstick2', 2, {rotation: -10}, 3.5)
         .to('.shine-left', .5, {left: '30%'}, 4.2)
         .to('.shine-right', .5, {left: '48%'}, 4.2)
         .to('.mouth', .5, {borderRadius: '90% 90% 10% 10%'}, 4.2)
@@ -192,7 +192,7 @@ function start() {
 
   .chopstick1 {
 
-    transform: translate(-50%) rotate(-187deg);
+
     height: 0;
     width: 10px;
 
@@ -200,7 +200,7 @@ function start() {
 
   .chopstick2 {
 
-    transform: translate(-50%) rotate(-200deg);
+
     height: 0;
     width: 10px;
   }
@@ -210,7 +210,8 @@ function start() {
     opacity: 0;
     width: 15px;
     border-radius: 10px;
-    clip-path: polygon(35% 0%, 80% 0%, 100% 100%, 0% 100%);
+/*    clip-path: polygon(35% 0%, 80% 0%, 100% 100%, 0% 100%);*/
+    clip-path: polygon(0 0%, 100% 0%, 80% 100%, 35% 100%);
     position: absolute;
     overflow: hidden;
   }
@@ -222,15 +223,16 @@ function start() {
   }
 
   .chopstick::before {
-    height: 25px;
-    background: #fff;
-  }
 
-  .chopstick::after {
     height: 60px;
     background: repeating-linear-gradient(0deg, #654F4F, #654F4F 11px, #F1E3AA 2px, #F1E3AA 19px);
     position: absolute;
-    bottom: 0px;
+    top: 0px;
+  }
+
+  .chopstick::after {
+    height: 25px;
+    background: #fff;
   }
 
 

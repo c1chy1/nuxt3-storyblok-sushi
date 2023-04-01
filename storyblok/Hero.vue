@@ -1,6 +1,6 @@
 <template>
 
-  <div id="hero" class="hero container mx-auto flex flex-col  px-2  sm:px-4 md:px-8  lg:px-12 xl:px-16 2xl:px-10">
+  <div id="hero" class="hero container mx-auto flex flex-col  px-2  sm:px-4 md:px-8  lg:px-12 xl:px-20 2xl:px-10">
     <div class="flex pt-8 lg:pt-12 justify-between flex-col sm:flex-row mx-auto  font-sans">
 
       <div class=" w-full sm:w-1/2">

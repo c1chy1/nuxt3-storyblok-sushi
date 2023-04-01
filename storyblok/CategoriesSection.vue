@@ -12,7 +12,7 @@
         src="https://a.storyblok.com/f/193348/1440x506/a5c0bcfea5/tint-orange.png" alt="" />
 
     <div class="z-10  w-full lg:pb-12 px-8 md:px-0 ">
-      <div class="container mx-auto flex items-center md:justify-between z-10 flex-col-reverse md:flex-row">
+      <div class="container px-2  sm:px-4 md:px-8  lg:px-12 xl:px-20 2xl:px-10 mx-auto flex items-center md:justify-between z-10 flex-col-reverse md:flex-row">
         <div class="w-full py-8 md:py-4 md:w-1/2 z-20">
           <h2 class="text-white font-display text-2xl text-center lg:text-left lg:text-4xl font-bold mb-8 w-full md:w-2/3">
             {{ blok.title }}

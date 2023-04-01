@@ -10,7 +10,7 @@
             provider="storyblok"
             format="webp"
             quality="100"
-            sizes="sm:75vw lg:50vw xl:100vw "
+            sizes="sm:75vw lg:50vw  "
             class=" lg:w-full h-full mx-auto"
             :src="blok.media.filename"
             :alt="blok.media.alt"

@@ -42,8 +42,7 @@ const OPEN_GRAPH = [
 
 const TWITTER = [
 
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: 'website' },
+    { hid: 't-type', name: 'twitter:card', content: 'summary' },
 
     {
         hid: 'twitter:title',

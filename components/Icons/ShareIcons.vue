@@ -20,9 +20,8 @@
         network="facebook"
         url="https://c1chy-sushi.netlify.app/"
         :title="title"
-        @open="open"
-        @change="check"
-        @close="close"
+        class="delay-500 transition-all ease-in-out"
+        :class="show ? 'rotate-0 ' : '-rotate-45 '"
 
     >
     <button class="shareButton fb bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0  dark:bg-dark-navigation" @click="close" :class="{open : show}">
@@ -33,9 +32,8 @@
         network="twitter"
         url="https://c1chy-sushi.netlify.app/"
         :title="title"
-        @open="open"
-        @change="check"
-        @close="close"
+        class="delay-[750ms] transition-all ease-in-out"
+        :class="show ? 'rotate-0 ' : '-rotate-45'"
     >
     <button class="shareButton tw  bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="prime:twitter"/>
@@ -45,9 +43,8 @@
         network="telegram"
         url="https://c1chy-sushi.netlify.app/"
         :title="title"
-        @open="open"
-        @change="check"
-        @close="close"
+        class="delay-1000 transition-all ease-in-out"
+        :class="show ? 'rotate-0 ' : '-rotate-45'"
 
     ><button class="shareButton ig bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="icon-park:telegram"/>
@@ -97,6 +94,8 @@ const close = () => {
 
 <style scoped lang="sass">
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700")
+
+
 .content
   display: flex
   justify-content: center
@@ -107,11 +106,12 @@ const close = () => {
       position: absolute
       transition: all 150ms
     .share, &.open .close, &.sent .check
-      transform: rotate(0) scale(1) !important
+      transform: scale(1) !important
       opacity: 1
     .close, &.open .share, .check, &.sent .share
       opacity: 0
-      transform: rotate(45deg) scale(0)
+      transform: scale(0)
+
 
 .shareButton, .shareButton.open
   border: none
@@ -150,6 +150,6 @@ const close = () => {
   overflow: hidden
   margin: 0
   opacity: 0
-  transform: scale(0) rotate(45deg)
+  transform: scale(0)
 
 </style>

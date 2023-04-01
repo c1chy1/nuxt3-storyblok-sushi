@@ -33,7 +33,7 @@ onMounted(() => {
       height: '150px',
       ease: "Expo.easeOut",
     }, 'first')
-    .to("svg", 0.3, {rotate: -45}, 'first')
+    .to(".cube svg", 0.3, {rotate: -45}, 'first')
     .to(vertical.value, 0.3, {height: '0', ease: "Power1.easeIn"}, 'first')
     .to(horizontal.value, 0.3, {width: '0',  ease: "Power1.easeIn"}, 'first')
     .to('.quadrant', 0.5, {backgroundColor: 'transparent' , borderRadius : 25}, 'first')

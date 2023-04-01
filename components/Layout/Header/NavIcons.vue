@@ -17,6 +17,7 @@
   </div>
 
   <div
+      @click="close"
      id="quadrant_3"
       class="quadrant__item  my-1 w-0 lg:w-1/2 h-1/6 lg:h-1/2 lg:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 ">
     <NuxtLink

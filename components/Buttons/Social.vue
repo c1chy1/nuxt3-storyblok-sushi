@@ -29,10 +29,7 @@ const route = useRoute()
 const networks = [
   { network: 'facebook', name: 'Facebook', icon: resolveComponent('IconsFacebook') },
   { network: 'twitter', name: 'Twitter', icon: resolveComponent('IconsTwitter') }]
-const tags = ref('')
-onMounted(() => {
-  tags.value = props.hashtags?.replace(', ', ',')
-})
+
 
 
 

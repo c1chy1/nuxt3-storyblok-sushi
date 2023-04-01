@@ -12,8 +12,8 @@
               provider="storyblok"
               format="webp"
               aspect-ratio="16/9"
-              sizes="sm:50vw md:60vw lg:[600px] xl:[800px]"
-              class="mx-auto  max-h-[32rem]  lg:h-3/5  xl:w-5/6 xl:h-4/5 relative xl:left-12  object-cover rounded-lg  aspect-square"
+              sizes=" sm:50vw md:60vw lg:[600px] xl:[800px]"
+              class="mx-auto   md:max-h-[18rem]  lg:max-h-[22rem] xl:max-h-[26rem]  2xl:max-h-[30rem]   relative xl:left-12  object-cover rounded-lg  aspect-square"
               :src="story.content.media.filename"
               :alt="story.content.media.alt"
           />

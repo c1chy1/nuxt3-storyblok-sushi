@@ -1,6 +1,6 @@
 <template>
   <section class="recipes-list w-full">
-    <div class="container mx-auto py-20 px-2  sm:px-4 md:px-8  lg:px-12 xl:px-20 2xl:px-10">
+    <div class="container mx-auto py-20 px-2  px-2  sm:px-4 md:px-8  lg:px-12 xl:px-16 2xl:px-20">
       <h2 class="text-shrimp-500 font-display text-2xl  lg:text-4xl font-bold mb-8 lg:mb-16 w-2/3">
 {{blok.title}}
       </h2>

@@ -11,14 +11,14 @@
     </h2>
     <div class="w-full flex justify-between py-8 mb-4">
       <div class="form-control w-1/2 flex items-center relative dark:text-dark-buttonText">
-        <input type="text" class="w-full  dark:outline-0 bg-gray-200 rounded-lg px-4 py-2 text-sm"
+        <input type="text" class="w-full border-2 border-black  dark:outline-0 bg-gray-200 rounded-lg px-4 py-2 text-sm"
                v-model="filter" />
         <ClientOnly>
           <Icon name="material-symbols:content-paste-search-rounded"  size="28" class="dark:text-dark-buttonText absolute right-4"/>
         </ClientOnly>
       </div>
       <div class="form-control w-1/3 flex  items-center relative dark:text-dark-buttonText">
-        <select class="w-full bg-gray-200 dark:outline-0 rounded-lg px-4 py-2 text-sm appearance-none"
+        <select class="w-full bg-gray-200 border-2 border-black dark:outline-0 rounded-lg px-4 py-2 text-sm appearance-none"
                 v-model="category">
           <option value="">None</option>
           <option v-for="{ content, uuid  } of categories"
@@ -36,7 +36,7 @@
           @before-enter="beforeEnter"
           @enter="onEnter"
           :css="false"
-          :class="`relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 pt-6 xl:pt-12  bottom-6 text-md `"
+          :class="`relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-6 xl:pt-12  bottom-6 text-md `"
       >
       <SectionRecipeCard
           v-for="{ uuid, content, slug  } in filteredRecipes"

@@ -65,7 +65,7 @@
         </g>
       </g>
     </svg>
-    <h1  id="heading" class="heading xl:text-3xl font-display">{{story.content.thanks}}</h1>
+    <h1  id="heading" class="heading text-base lg:text-3xl font-display">{{story.content.thanks}}</h1>
 
   </div>
 

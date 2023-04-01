@@ -1,10 +1,10 @@
 <template>
   <div
-      class="sushi-container fixed w-full h-screen bg-[#BBBBAA]  overflow-x-hidden  dark:bg-dark top-0 left-0  flex flex-col  items-center justify-center   xl:justify-end z-50 h-screen transition-all">
+      class="sushi-container pb-12 lg:pb-24 b-5 fixed w-full h-screen bg-[#BBBBAA]  overflow-x-hidden  dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
 
 
-    <div class="chopstick  -rotate-[24deg]  translate-x-1/2 translate-y-12 bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 top-4   xl:top-1/3"></div>
-    <div class="chopstick -rotate-12 translate-x-1/2 translate-y-12 bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all top-4  xl:top-1/3"></div>
+    <div class="chopstick  -rotate-[24deg]  translate-x-1/2 translate-y-12 bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 "></div>
+    <div class="chopstick -rotate-12 translate-x-1/2 translate-y-12 bg-[#654F4F] dark:bg-[#F1E3AA] chopstick2 transition-all "></div>
 
 <div class="transform scale-[60%] lg:scale-75 2xl:scale-100 h-1/5 relative">
 
@@ -61,7 +61,8 @@ function start() {
     })
         .from('.dish', 1, {opacity: 0, bottom: '-25%', ease: "Back.easeOut"})
         .from('.sushi-container', 3, {y: -0, ease: "Back.easeOut"})
-        .to('.chopstick-container', 1.5, {top: 0}, 1.5)
+        .from('.chopstick-container', 1.5, {top: 50}, 1.5)
+        .from('.chopstick', 3, {top: 30}, 2)
         .to('.chopstick', 1.5, {opacity: 1}, 1.5)
         .to('.chopstick2', 1, {
           webkitFilter: "brightness(0.8)",
@@ -91,7 +92,7 @@ function start() {
         })
 
         .to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
-        .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)
+/*        .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)*/
 
 
 

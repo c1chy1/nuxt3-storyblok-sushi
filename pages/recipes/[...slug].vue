@@ -3,7 +3,7 @@
 
 
 <section :id="story.content.title"  >
-      <header v-if="story" class="relative flex flex-col lg:flex-row mt-16  container mx-auto px-4 md:px-0">
+      <header v-if="story" class="relative flex flex-col lg:flex-row mt-16  container mx-auto px-2  sm:px-4 md:px-8  lg:px-12 xl:px-16 2xl:px-28">
 
         <div class="relative flex  justify-end w-full lg:w-1/2  lg:left-6  -top-4 z-10">
           <NuxtImg

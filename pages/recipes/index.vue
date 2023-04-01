@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto  py-10 lg:py-20 px-8">
+  <div class="container mx-auto  py-10 lg:py-20 px-2  sm:px-4 md:px-8  lg:px-12 xl:px-16 2xl:px-28">
     <h2 v-if="localeLang === 'en'" class="text-shrimp-500 font-display text-4xl font-bold mb-16 w-2/3">
     Recipes
     </h2>
@@ -36,7 +36,7 @@
           @before-enter="beforeEnter"
           @enter="onEnter"
           :css="false"
-          :class="`relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 pt-6 xl:pt-12  bottom-6 text-md `"
+          :class="`relative grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 pt-6 xl:pt-12  bottom-6 text-md `"
       >
       <SectionRecipeCard
           v-for="{ uuid, content, slug  } in filteredRecipes"

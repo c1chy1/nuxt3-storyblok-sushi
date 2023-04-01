@@ -1,5 +1,5 @@
 <template>
 
-  <LayoutHeaderNavDesktop class="invisible lg:visible"/>
-<LayoutHeaderNavMobile class="visible lg:invisible"/>
+  <LayoutHeaderNavDesktop class="invisible xl:visible"/>
+<LayoutHeaderNavMobile class="visible xl:invisible"/>
 </template>

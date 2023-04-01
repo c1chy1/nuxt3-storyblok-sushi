@@ -24,7 +24,7 @@
         <h1 class="text-shrimp-700 font-display text-center text-xl lg:text-left lg:text-4xl font-bold mb-12 lg:w-2/3">
           {{ story.content.title }}
         </h1>
-          <span class="bg-gray-100 rounded-full absolute right-8 p-4">
+          <span class="bg-gray-100 rounded-full absolute  right-8 sm:right-12 md:right-40 lg:right-16 xl:right-24 2xl:right-32 p-4">
           <img
               class="w-[36px] h-[36px] grayscale contrast-[.25]"
               :src="story.content.category.content.icon.filename"

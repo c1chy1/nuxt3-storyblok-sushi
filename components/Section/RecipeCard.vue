@@ -1,7 +1,7 @@
 <template>
   <article class="rounded-lg overflow-hidden shadow-2xl   w-64 sm:w-full h-full  max-w-xs mx-auto " :key="uuid">
     <div class="card-hover  h-[28rem] sm:[h-24rem]    lg:h-[32rem]  mx-auto  group w-full relative text-right rounded-xl ">
-      <div class="card-hover__content  after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
+      <div class="card-hover__content  after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 max-h- dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
         <h3 class="card-hover__title mx-auto w-5/6 lg:w-full font-bold text-base lg:text-xl font-display text-shrimp-600 dark:text-shrimp-300 px-2 z-50">
           {{ content.title }}
         </h3>

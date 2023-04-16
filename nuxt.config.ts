@@ -74,6 +74,7 @@ export default defineNuxtConfig({
 
     app: {
         pageTransition: {name: 'slide', mode: 'out-in'},
+
         head: {
             bodyAttrs: {
                 class: 'overflow-x-hidden'
@@ -84,6 +85,8 @@ export default defineNuxtConfig({
                 ...OPEN_GRAPH,
                 ...TWITTER,
             ],
+
+            link: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 
         }
     },

@@ -24,7 +24,7 @@ const OPEN_GRAPH = [
     {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://c1chy-sushi.netlify.app/',
+        content: 'https://nuxt3-storyblok-sushi.vercel.app/',
     },
     {
         hid: "og:image",

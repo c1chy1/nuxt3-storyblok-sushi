@@ -18,8 +18,9 @@
     </button>
     <ShareNetwork
         network="facebook"
-        url="https://c1chy-sushi.netlify.app/"
+        url="https://nuxt3-storyblok-sushi.vercel.app/"
         :title="title"
+        description=""
         class="delay-500 transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45 '"
 
@@ -30,7 +31,7 @@
     </ShareNetwork>
     <ShareNetwork
         network="twitter"
-        url="https://c1chy-sushi.netlify.app/"
+        url="https://nuxt3-storyblok-sushi.vercel.app/"
         :title="title"
         class="delay-[750ms] transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45'"
@@ -41,8 +42,9 @@
     </ShareNetwork>
     <ShareNetwork
         network="telegram"
-        url="https://c1chy-sushi.netlify.app/"
+        url="https://nuxt3-storyblok-sushi.vercel.app/"
         :title="title"
+
         class="delay-1000 transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45'"
 
@@ -93,8 +95,6 @@ const close = () => {
 </script>
 
 <style scoped lang="sass">
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700")
-
 
 .content
   display: flex

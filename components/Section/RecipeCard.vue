@@ -38,9 +38,9 @@
         aspect-ratio="16/9"
         provider="storyblok"
         format="webp"
-        width="100"
+        width="150"
         height="100"
-        sizes="sm:100px md:200px lg:400px" class="card__img w-full rounded-lg aspect-video object-cover"
+        sizes="sm:100px lg:200px 2xl:400px" class="card__img w-full rounded-lg aspect-video object-cover"
         :src="content.media.filename"
         :alt="content.media.alt"/>
     </div>
@@ -61,14 +61,6 @@ defineProps<{
 }>()
 </script>
 <style scoped lang="scss">
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap');
-
-$firaSans: 'Fira Sans', sans-serif;
-
 
 .card-hover {
   $root: &;

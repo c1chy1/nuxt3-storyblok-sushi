@@ -29,13 +29,13 @@ const OPEN_GRAPH = [
     {
         hid: "og:image",
         property: "og:image",
-        content: "https://www.web300421.roc130.rockinghoster.cloud/c1chy.sushi.png"
+        content: "https://res.cloudinary.com/dy8wzssqw/image/upload/v1681682549/c1chy_sushi_q2o0rz.png"
     },
 
     {
         hid: "og:image:secure_url",
         property: "og:image:secure_url",
-        content: "https://www.web300421.roc130.rockinghoster.cloud/c1chy.sushi.png"
+        content: "https://res.cloudinary.com/dy8wzssqw/image/upload/v1681682549/c1chy_sushi_q2o0rz.png"
     },
     {property: 'og:updated_time', content: new Date().toISOString()},
 ]
@@ -58,7 +58,7 @@ const TWITTER = [
     {
         hid: "twitter:image",
         name: "twitter:image",
-        content: "https://www.web300421.roc130.rockinghoster.cloud/c1chy.sushi.png"
+        content: "https://res.cloudinary.com/dy8wzssqw/image/upload/v1681682549/c1chy_sushi_q2o0rz.png"
     },
     {
         hid: 'twitter:image:alt',

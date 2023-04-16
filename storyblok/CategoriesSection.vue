@@ -47,7 +47,7 @@
               height="500"
 
               provider="storyblok"
-              sizes="sm:100px lg:200px"
+              sizes="sm:100px lg:200px  2xl:500px"
               class="object-cover mx-auto h-full w-full pt-10 xl:pt-0"
               :src="blok.media.filename"
               :alt="blok.media.alt"/>

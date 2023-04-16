@@ -38,7 +38,7 @@
         aspect-ratio="16/9"
         provider="storyblok"
         format="webp"
-        sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]" class="card__img w-full rounded-lg aspect-video object-cover"
+        sizes="" class="card__img w-full rounded-lg aspect-video object-cover"
         :src="content.media.filename"
         :alt="content.media.alt"/>
     </div>

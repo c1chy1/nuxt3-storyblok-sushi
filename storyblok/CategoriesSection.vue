@@ -4,7 +4,7 @@
 
 
     <nuxt-img
-        sizes="sm:75vw  xl:100vw"
+        sizes="sm:200px  xl:75vw"
         format="webp"
         aspect-ratio="16/9"
         width="1300"

@@ -5,7 +5,7 @@ node_modules
 .cache
 .output
 .npmrc
-.pnpm-lock.yaml
+pnpm-lock.yaml
 .env
 localhost.pem
 localhost-key.pem

@@ -4,11 +4,13 @@
 
 
     <nuxt-img
-        sizes="25vw xl:75vw"
+        sizes="sm:75vw  xl:100vw"
         format="webp"
         aspect-ratio="16/9"
+        width="1300"
+        height="450"
         provider="storyblok"
-        class="absolute w-full right-0 -top-12 md:-top-[12rem] z-10"
+        class="absolute right-0 -top-12 md:-top-[12rem] z-10"
         src="https://a.storyblok.com/f/193348/1440x506/a5c0bcfea5/tint-orange.png" alt="" />
 
     <div class="z-10  w-full lg:pb-12 px-8 md:px-0 ">

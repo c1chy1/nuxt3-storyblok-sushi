@@ -85,16 +85,12 @@ export default defineNuxtConfig({
                 ...OPEN_GRAPH,
                 ...TWITTER,
             ],
-
-            link: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-
         }
     },
 
     nitro: {
         compressPublicAssets: true,
     },
-
     css: ['~/assets/css/tailwind.scss'],
     build: {
         transpile: ['@marvr/storyblok-rich-text-vue-renderer', 'gsap'],
@@ -107,6 +103,7 @@ export default defineNuxtConfig({
     webVitals: {
         debug : true
     },
+    link: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 
     modules: [['@storyblok/nuxt',
         {

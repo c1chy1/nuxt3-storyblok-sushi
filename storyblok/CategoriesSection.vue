@@ -4,7 +4,7 @@
 
 
     <nuxt-img
-        sizes=" 25vw  xl:75vw"
+        sizes="25vw xl:75vw"
         format="webp"
         aspect-ratio="16/9"
         provider="storyblok"
@@ -41,9 +41,12 @@
               v-if="blok.media"
               format="webp"
               aspect-ratio="16/9"
+              width="350"
+              height="500"
+
               provider="storyblok"
-              sizes="sm:100vw md:75vw lg:[600px] xl:[1200px]"
-              class="object-cover mx-auto h-full w-full"
+              sizes="sm:100px lg:200px"
+              class="object-cover mx-auto h-full w-full pt-10 xl:pt-0"
               :src="blok.media.filename"
               :alt="blok.media.alt"/>
 

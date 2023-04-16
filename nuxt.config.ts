@@ -101,6 +101,9 @@ export default defineNuxtConfig({
             baseURL: 'https://a.storyblok.com',
         },
     },
+    webVitals: {
+        debug : true
+    },
 
     modules: [['@storyblok/nuxt',
         {
@@ -136,7 +139,9 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@averjs/nuxt-compression',
         '@nuxtjs/fontaine',
-        '@nuxtjs/critters'],
+        '@nuxtjs/critters'
+    ,'@nuxtjs/web-vitals',
+    'nuxt-vercel-analytics'],
 
     i18n: {
         strategy: 'prefix_except_default',

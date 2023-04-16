@@ -16,11 +16,13 @@
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/fontaine": "^0.2.4",
     "@nuxtjs/tailwindcss": "^6.4.0",
+    "@nuxtjs/web-vitals": "^0.2.4",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "nuxt": "^3.3.1",
     "nuxt-gsap-module": "^1.7.2",
     "nuxt-icon": "^0.2.11",
+    "nuxt-vercel-analytics": "^0.1.2",
     "sass": "^1.58.3",
     "sass-loader": "10.4.1"
   },

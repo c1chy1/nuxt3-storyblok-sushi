@@ -4,6 +4,7 @@ node_modules
 .nitro
 .cache
 .output
+.npmrc
 .env
 localhost.pem
 localhost-key.pem

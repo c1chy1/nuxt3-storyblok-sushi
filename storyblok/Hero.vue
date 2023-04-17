@@ -17,6 +17,7 @@
             :src="blok.media.filename"
             :alt="blok.media.alt"
             :title="blok.media.title"
+            decoding="async"
         />
       </div>
       <div class=" p-4 md:p-4 mt-6 lg:mt-24 w-full sm:w-1/2 lg:w-2/5">

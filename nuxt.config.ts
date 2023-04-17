@@ -103,8 +103,6 @@ export default defineNuxtConfig({
     webVitals: {
         debug : true
     },
-    link: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-
     modules: [['@storyblok/nuxt',
         {
             accessToken: process.env.STORYBLOK_API_TOKEN,

@@ -79,7 +79,9 @@ export default defineNuxtConfig({
             bodyAttrs: {
                 class: 'overflow-x-hidden'
             },
-
+            link: [
+                { rel: 'preconnect', href: '//img2.storyblok.com' },
+            ],
             title: 'c1chy.Sushi',
             meta: [
                 ...OPEN_GRAPH,

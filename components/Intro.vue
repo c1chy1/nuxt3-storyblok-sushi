@@ -1,6 +1,6 @@
 <template>
   <div
-      class="sushi-container pb-12 lg:pb-24 b-5 fixed w-full h-screen bg-[#BBBBAA]  overflow-x-hidden  dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
+      class="sushi-container will-change-transform pb-12 lg:pb-24 b-5 fixed w-full h-screen bg-[#BBBBAA]  overflow-x-hidden  dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
 
 
     <div class="chopstick  -rotate-[24deg]  translate-x-1/2 translate-y-12 bg-[#654F4F] dark:bg-[#F1E3AA] chopstick1 transition-all z-50 "></div>
@@ -10,7 +10,7 @@
 
 
   <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">
-
+<h1>TEST</h1>
       <div class="rice w-3/4   h-12 top-4 absolute"></div>
       <div class="seaweed w-3/4 h-32 "></div>
       <div class="salmon w-1/2 h-8 top-3  absolute"></div>

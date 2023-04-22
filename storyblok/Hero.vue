@@ -38,7 +38,7 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
+<script defer setup lang="ts">
  defineProps({
   blok: {
     type: Object,

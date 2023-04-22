@@ -32,7 +32,8 @@
         <h4  v-if="localeLang === 'en'"  >Learn <span class="text-[#9A3C03]">now!<br></span> it's very<span  class="text-[#9A3C03]"> simple!</span></h4>
         <h4  v-if="localeLang === 'pl'" >Naucz <span class="text-[#9A3C03]">się !<br></span> to bardzo<span  class="text-[#9A3C03]"> proste!</span></h4>
         <h4  v-if="localeLang === 'de'" >Lern <span class="text-[#9A3C03]">jetzt !<br></span> es ist<span  class="text-[#9A3C03]"> einfach!</span></h4>
-      </div><NuxtImg
+      </div>
+        <NuxtImg
         preload
         loading="lazy"
         aspect-ratio="16/9"

@@ -1,4 +1,4 @@
-<script setup>
+<script defer setup>
 const { slug } = useRoute().params;
 const {locale} = useI18n()
 

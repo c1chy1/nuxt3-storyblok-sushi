@@ -1,4 +1,3 @@
-import {apiPlugin} from "@storyblok/vue"
 
 const OPEN_GRAPH = [
     {
@@ -112,7 +111,10 @@ export default defineNuxtConfig({
         {
             accessToken: process.env.STORYBLOK_API_TOKEN,
             bridge: true,
-            use: [apiPlugin]
+            cache: {
+                clear: 'auto',
+                type: 'memory'
+            }
         }],
         ['@kevinmarrec/nuxt-pwa', {
 

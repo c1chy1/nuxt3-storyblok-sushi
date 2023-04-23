@@ -1,25 +1,22 @@
 <template>
   <div v-for="item in icons" :key="icons.name"
        :id="item.id"
-       class="quadrant__item  my-1 w-0 lg:w-1/2 h-1/6 lg:h-1/2 lg:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
+       class="quadrant__item  my-1 w-0 sm:my-4   lg:w-1/2 h-1/6 lg:h-1/2 xl:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
        @click="changeLocale(item.loc)">
     <div
         @click="close"
-        class="quadrant__item__content  lg:absolute transform lg:-translate-x-1/2 lg:-translate-y-1/2"
-
+        class="quadrant__item__content   lg:absolute transform lg:-translate-x-1/2 lg:-translate-y-1/2"
     ><component
-
-        class=" w-12 h-12 opacity-0 "
+            class=" w-12 h-12 opacity-0 "
         :is="item.icon" :id="item.name">
     </component>
-
     </div>
   </div>
-
-  <div
+    <div
       @click="close"
      id="quadrant_3"
-      class="quadrant__item  my-1 w-0 lg:w-1/2 h-1/6 lg:h-1/2 lg:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 ">
+      class="quadrant__item  my-1 w-0 sm:my-4  lg:w-1/2 h-1/6 lg:h-1/2 xl:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
+  >
     <NuxtLink
         class="flex justify-center"
         :to="localePath('recipes')">
@@ -59,7 +56,7 @@ const icons = shallowRef([
     name: "fade-up",
     icon: defineComponent({
       render: () =>
-          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'lg:arrow-up'}, [
+          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'xl:arrow-up'}, [
             h('path', {
               d: 'M0,249.2v121.6c0,27.2,21.6,46.4,48,46.4h400c26.4,0,48-19.2,48-46.4V249.2H0z',
               style: 'fill:#E13E3E'
@@ -93,7 +90,7 @@ const icons = shallowRef([
     name: "fade-right",
     icon: defineComponent({
       render: () =>
-          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'lg:arrow-right'}, [
+          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'xl:arrow-right'}, [
             h('path', {
               d: 'M0,304v65.6C0,396.8,21.6,416,48,416h400c26.4,0,48-19.2,48-46.4V304H0z',
               style: 'fill:#F8D12E'
@@ -142,7 +139,7 @@ const icons = shallowRef([
     name: "fade-left",
     icon: defineComponent({
       render: () =>
-          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'lg:arrow-left'}, [
+          h('svg', {height: '40px', fill: '#973928', viewBox: '0 0 496 496', class: 'xl:arrow-left'}, [
             h('path', {
               d: 'M496,369.6c0,27.2-21.6,46.4-48,46.4H48c-26.4,0-48-19.2-48-46.4V126.4C0,99.2,21.6,80,48,80h400 c26.4,0,48,19.2,48,46.4V369.6z',
               style: 'fill:#29337A'

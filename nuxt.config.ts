@@ -90,12 +90,15 @@ export default defineNuxtConfig({
         }
     },
 
+
     nitro: {
         compressPublicAssets: true,
     },
     css: ['~/assets/css/tailwind.scss'],
     build: {
         transpile: ['@marvr/storyblok-rich-text-vue-renderer', 'gsap'],
+
+
     },
     image: {
         storyblok: {

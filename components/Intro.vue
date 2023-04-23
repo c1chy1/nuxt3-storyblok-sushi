@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div v-if="!active"
       class="sushi-container will-change-transform pb-12 lg:pb-24 b-5 fixed w-full h-screen bg-[#BBBBAA]  overflow-x-hidden  dark:bg-dark top-0 left-0  flex flex-col  items-center justify-end z-50 h-screen transition-all">
 
 
@@ -11,9 +11,9 @@
 
   <div class="roll h-52 w-52 sm:w-60 bottom-12 flex flex-col justify-center items-center">
 <h1>TEST</h1>
-      <div class="rice w-3/4   h-12 top-4 absolute"></div>
-      <div class="seaweed w-3/4 h-32 "></div>
-      <div class="salmon w-1/2 h-8 top-3  absolute"></div>
+      <div class="rice w-3/4   h-12 top-8 absolute"></div>
+      <div class="seaweed w-3/4 h-32  "></div>
+      <div class="salmon w-1/2 h-8 top-8  absolute"></div>
       <div class="eye-left  w-5 h-5 left-[25%] top-[40%]  absolute"></div>
       <div class="shine-left h-1 w-1  left-[26.4%] top-[44%] absolute"></div>
       <div class="eye-right w-5 h-5 left-[43%] top-[40%]  absolute"></div>
@@ -26,9 +26,11 @@
 
   </div>
   </div>
+
+
 </template>
 
-<script setup lang="ts">
+<script defer setup lang="ts">
 
 
 import gsap from 'gsap'
@@ -36,9 +38,13 @@ import gsap from 'gsap'
 const beginAnimation = gsap.timeline();
 
 
+let active = ref(false)
+
+
 
 
 onMounted(() => {
+
 
   start();
 })
@@ -50,11 +56,8 @@ onUnmounted(()=>{
 })
 
 function start() {
-
-
-
-  let responsive = gsap.matchMedia()
-  responsive.add("(min-width: 0)", () => {
+    let responsive = gsap.matchMedia()
+  responsive.add("(min-width: 320px)", () => {
     beginAnimation  .set('body', {
       overflowY: 'hidden',
 
@@ -92,7 +95,7 @@ function start() {
         })
 
         .to('.shine-right', .5, {left: '44.2%', top: '41.4%', width: '14px', height: '14px'}, 5.2)
-        .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%'}, 6.7)
+        .to('.sushi-container', 0.6, {ease: "Power4.easeOut", y: '-100%' }, 6.7)
 
 
 
@@ -107,6 +110,15 @@ function start() {
     beginAnimation.to('.chopstick-container', 1.5, {top: '34%'}, 1.5)
 
   })
+
+    setTimeout(end, 8000)
+
+}
+
+function end() {
+
+    active.value = true
+
 }
 
 </script>

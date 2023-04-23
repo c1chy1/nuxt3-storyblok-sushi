@@ -28,8 +28,6 @@ import {useMenu} from "~/composables/useMenu";
 let menu = ref(null);
 const tl = gsap.timeline({paused:true})
 
-
-
 onMounted(() => {
   const links = document.querySelectorAll('.menu-nav svg')
   const divs = document.querySelectorAll('.menu-nav .quadrant__item')
@@ -83,8 +81,6 @@ function toggle() {
 
 .menu-nav {
   list-style: none;
-  margin: 0;
-  padding: 30px 0;
   text-align: center;
   width: 100%;
   font-size: 2rem;

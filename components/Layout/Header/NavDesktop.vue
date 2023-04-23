@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed  xl:right-24 bottom-24 z-20  rounded-full dark:bg-transparent transition-all">
+  <nav class="fixed  lg:right-24 bottom-24 z-20  rounded-full dark:bg-transparent transition-all">
     <div class="cube  xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 shadow-2xl rounded-lg " ref="cube" @mouseenter="playTimeline" @mouseleave="reverseTimeline">
       <div class="plus ">
         <div class="plus-horizontal bg-white " ref="horizontal"></div>
@@ -22,9 +22,8 @@ const vertical = ref()
 
 onMounted(() => {
 
-
   let responsive = gsap.matchMedia()
-  responsive.add("(min-width: 1024px)", () => {
+  responsive.add("(min-width: 1280px)", () => {
     tl.timeScale(1.6)
     .to(cube.value, 0.7, {
       translate: '25% 25%',

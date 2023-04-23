@@ -1,5 +1,5 @@
 <template>
-  <main>
+
 
      <Intro/>
     <LayoutNavigation/>
@@ -7,7 +7,7 @@
     <IconsLogo/>
     <slot class="overflow-y-hidden w-full"/>
     <IconsShareIcons/>
-  </main>
+
 </template>
 
 

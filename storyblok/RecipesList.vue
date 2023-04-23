@@ -17,7 +17,7 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script defer setup lang="ts">
 import {useRecipes} from "~/composables/useRecipes";
 
 defineProps<{

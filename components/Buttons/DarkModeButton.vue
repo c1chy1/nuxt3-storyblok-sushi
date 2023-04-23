@@ -1,20 +1,20 @@
 <template>
   <div
-      class="switch z-50 fixed  right-2 top-2 h-20 w-10 lg:w-14 lg:h-28  lg:right-24 lg:top-6 bg-shrimp-600 dark:bg-dark-navigation"
+      class="switch z-50 fixed  right-2 top-2 h-20 w-10 xl:w-14 xl:h-28  sm:right-5 xl:right-24 xl:top-6 bg-shrimp-600 dark:bg-dark-navigation"
       @click="open"
   >
-    <div class="toggle-button pt-2 transform scale-50 lg:scale-[70%]">
+    <div class="toggle-button pt-2 transform scale-50 xl:scale-[70%]">
       <div class="toggle h-8 w-8  mx-auto"></div>
       <div class="moon-mask bg-shrimp-600 dark:bg-dark-navigation "></div>
-      <div class="circles-wrapper absolute -left-[8px] top-[52px] lg:-left-[1px] ">
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
-        <div class="circle h-2 w-0.5 lg:w-1"></div>
+      <div class="circles-wrapper absolute -left-[8px] top-[52px] xl:-left-[1px] ">
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
+        <div class="circle h-2 w-0.5 xl:w-1"></div>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ onMounted(()=> {
 
 
   let responsive = gsap.matchMedia()
-  responsive.add("(min-width: 1024px)", () => {
+  responsive.add("(min-width: 1280px)", () => {
     tl
         .to(".moon-mask", 0.2, {translateY: 32, translateX: -10}, 0.2)
         .to(".toggle-button", 0.2, {translateY: 60}, 0.2)

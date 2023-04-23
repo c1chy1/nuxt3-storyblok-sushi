@@ -6,7 +6,8 @@
     "dev:https": "nuxt dev --https",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "analyze": "nuxt --analyze"
   },
   "devDependencies": {
     "@averjs/nuxt-compression": "^1.2.2",

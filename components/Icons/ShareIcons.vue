@@ -1,5 +1,5 @@
 <template>
-  <div class="content items-center fixed lg:flex-col left-3 lg:left-12 bottom-4 lg:-bottom-0 z-30">
+  <div class="content items-center fixed xl:flex-col left-3 xl:left-12 bottom-4 xl:-bottom-0 z-30">
     <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
             :class="[{ open : show  } , check ? '' : 'sent']"
             @click="open">

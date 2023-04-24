@@ -1,12 +1,12 @@
 <template>
   <div
-      class="switch z-50 fixed  right-2 top-2 h-20 w-10 xl:w-14 xl:h-28  sm:right-5 xl:right-24 xl:top-6 bg-shrimp-600 dark:bg-dark-navigation"
+      class="switch z-50 fixed  right-4 top-2 h-14 md:h-20 md:w-10 xl:w-14 xl:h-28  sm:right-5 xl:right-24 xl:top-6 bg-shrimp-600 dark:bg-dark-navigation"
       @click="open"
   >
-    <div class="toggle-button pt-2 transform scale-50 xl:scale-[70%]">
-      <div class="toggle h-8 w-8  mx-auto"></div>
-      <div class="moon-mask bg-shrimp-600 dark:bg-dark-navigation "></div>
-      <div class="circles-wrapper absolute -left-[8px] top-[52px] xl:-left-[1px] ">
+    <div class="toggle-button  md:pt-2 transform  scale-50 xl:scale-[60%]">
+      <div class="toggle p-1 h-6 w-6 md:h-8 md:w-8  mx-auto"></div>
+      <div class="moon-mask h-6 w-5 md:w-6 bg-shrimp-600 dark:bg-dark-navigation "></div>
+      <div class="circles-wrapper scale-75 md:scale-100 absolute -left-[9px] top-[34px] md:-left-[8px] md:top-[52px]   xl:-left-[1px] ">
         <div class="circle h-2 w-0.5 xl:w-1"></div>
         <div class="circle h-2 w-0.5 xl:w-1"></div>
         <div class="circle h-2 w-0.5 xl:w-1"></div>
@@ -18,7 +18,6 @@
       </div>
     </div>
   </div>
-
 
 </template>
 
@@ -39,7 +38,6 @@ onMounted(()=> {
  if(localDarkMode === 'dark')  colorModeStore.switchColorMode()
 
   tl
-      .set(".switch", {boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)"})
       .to(".toggle-button", 0.2, {scale: 0.7}, 0)
       .set(".toggle", {backgroundColor: "#FFF"})
       .set(".circle", {display: "none"})
@@ -49,12 +47,26 @@ onMounted(()=> {
 
 
   let responsive = gsap.matchMedia()
-  responsive.add("(min-width: 1280px)", () => {
+
+    responsive.add("(min-width: 320px)", () => {
+        tl
+            .to(".moon-mask", 0.2, {translateX: 8,translateY:-27, }, 0.2)
+            .to(".toggle-button", 0.2, {translateY: 28}, 0.2)
+            .to(".toggle-button", 0.2, {scale: 0.6}, 0.5)
+    })
+
+  responsive.add("(min-width: 768px)", () => {
     tl
-        .to(".moon-mask", 0.2, {translateY: 32, translateX: -10}, 0.2)
-        .to(".toggle-button", 0.2, {translateY: 60}, 0.2)
-        .to(".toggle-button", 0.2, {scale: 0.9}, 0.5)
+        .to(".moon-mask", 0.2, {translateX: 14, translateY: -29}, 0.2)
+        .to(".toggle-button", 0.2, {translateY: 36}, 0.2)
+        .to(".toggle-button", 0.2, {scale: 0.7}, 0.5)
   })
+
+    responsive.add("(min-width: 1280px)", () => {
+        tl
+            .to(".moon-mask", 0.2, {translateX: 23, translateY: -32}, 0.2)
+            .to(".toggle-button", 0.2, {translateY: 64}, 0.2)
+    })
 
 })
 
@@ -103,9 +115,7 @@ $white: #fff;
 }
 .moon-mask {
   position: absolute;
-  width: 35px;
-  height: 35px;
-  margin: -74px 0 0 34px;
+
   border-radius: 50%;
 }
 .circles-wrapper {

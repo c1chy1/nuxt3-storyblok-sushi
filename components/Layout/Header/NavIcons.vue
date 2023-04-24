@@ -1,7 +1,7 @@
 <template>
   <div v-for="item in icons" :key="icons.name"
        :id="item.id"
-       class="quadrant__item  my-1 w-0 sm:my-4   lg:w-1/2 h-1/6 lg:h-1/2 xl:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
+       class="quadrant__item  my-1 w-0 sm:my-4   lg:w-1/2 h-1/6 lg:h-1/2 xl:my-0 bg-shrimp-500 xl:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
        @click="changeLocale(item.loc)">
     <div
         @click="close"
@@ -15,14 +15,14 @@
     <div
       @click="close"
      id="quadrant_3"
-      class="quadrant__item  my-1 w-0 sm:my-4  lg:w-1/2 h-1/6 lg:h-1/2 xl:my-0 bg-shrimp-500 lg:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
+      class="quadrant__item  my-1 w-0 sm:my-4  lg:w-1/2 h-1/6 lg:h-1/2 xl:my-0 bg-shrimp-500 xl:bg-shrimp-600 dark:bg-dark-navigation transition-all  shadow-2xl  border-dark dark:border-white active:border-2 "
   >
     <NuxtLink
         class="flex justify-center"
         :to="localePath('recipes')">
       <SearchIcon
     id="fade-down"
-    class=" w-16 h-16 opacity-0 "/>
+    class=" w-12 h-12 opacity-0 "/>
   </NuxtLink>
   </div>
 
@@ -230,6 +230,10 @@ const icons = shallowRef([
 
 }
 
+
+@media (min-width: 1280px) {
+
+}
 #quadrant_0 {
 
   border-top-left-radius: 12px;
@@ -254,24 +258,6 @@ const icons = shallowRef([
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.arrow-down,
-.arrow-left,
-.arrow-right,
-.arrow-up {
-  opacity: 0;
-}
-.arrow-up {
-  transform: translateY(10px);
-}
-.arrow-down {
-  transform: translateY(-10px);
-}
-.arrow-left {
-  transform: translateX(10px);
-}
-.arrow-right {
-  transform: translateX(-10px);
 }
 
 </style>

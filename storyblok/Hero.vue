@@ -5,20 +5,15 @@
 
       <div class="w-full sm:w-1/2">
         <NuxtImg
-
-
                 preload
-            v-if="blok.media"
-            provider="storyblok"
             format="webp"
             quality="100"
             width="500"
             height="500"
             sizes="sm:150px lg:250px  xl:500px "
-            class=" mx-auto"
-            :src="blok.media.filename"
-            :alt="blok.media.alt"
-            :title="blok.media.title"
+            class="mx-auto"
+            src="/sushi-hero.png"
+            alt="sushi c1chy"
             decoding="async"
         />
 

@@ -80,7 +80,7 @@ export default defineNuxtConfig({
             },
             link: [
                 { rel: 'preconnect', href: 'a.storyblok.com' },
-                { rel: 'preload', href: 'https://a.storyblok.com/f/193348/1440x506/a5c0bcfea5/tint-orange.png'
+                { rel: 'preload', href: '/sushi-hero.png'
                 , as: 'image',
                     fetchpriority : 'high'
                 },

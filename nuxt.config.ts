@@ -79,7 +79,11 @@ export default defineNuxtConfig({
                 class: 'overflow-x-hidden'
             },
             link: [
-                { rel: 'preconnect', href: '//img2.storyblok.com' },
+                { rel: 'preconnect', href: 'a.storyblok.com' },
+                { rel: 'preload', href: 'https://a.storyblok.com/f/193348/1440x506/a5c0bcfea5/tint-orange.png'
+                , as: 'image',
+                    fetchpriority : 'high'
+                },
             ],
             title: 'c1chy.Sushi',
             meta: [

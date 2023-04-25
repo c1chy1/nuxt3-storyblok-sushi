@@ -12,7 +12,7 @@
             height="500"
             sizes="sm:150px lg:250px  xl:500px "
             class="mx-auto"
-            src="/sushi-hero.png"
+            src="https://res.cloudinary.com/dy8wzssqw/image/upload/w_500,f_auto/v1682449796/sushi-hero_toxlsw.png"
             alt="sushi c1chy"
             decoding="async"
         />

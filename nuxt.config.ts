@@ -80,9 +80,9 @@ export default defineNuxtConfig({
             },
             link: [
                 { rel: 'preconnect', href: 'a.storyblok.com' },
-                { rel: 'preload', href: '/sushi-hero.png'
+                { rel: 'preload', href: 'https://res.cloudinary.com/dy8wzssqw/image/upload/w_500,f_auto/v1682449796/sushi-hero_toxlsw.png'
                 , as: 'image',
-                    fetchpriority : 'high'
+                   priority : 'high'
                 },
             ],
             title: 'c1chy.Sushi',

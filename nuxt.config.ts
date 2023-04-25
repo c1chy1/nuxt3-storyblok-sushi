@@ -79,12 +79,21 @@ export default defineNuxtConfig({
                 class: 'overflow-x-hidden'
             },
             link: [
-                { rel: 'preconnect', href: 'a.storyblok.com' },
+                { rel: 'preconnect', href: 'https://a.storyblok.com' },
                 { rel: 'preload', href: 'https://res.cloudinary.com/dy8wzssqw/image/upload/w_500,f_auto/v1682449796/sushi-hero_toxlsw.png'
-                , as: 'image',
+                , as: 'font',
                    priority : 'high'
                 },
+                { rel: 'preload', href: '../fonts/Dosis-Regular.woff2'
+                    , as: 'font',
+                    type : 'font/woff2'
+                },
+                { rel: 'preload', href: '../fonts/Dosis-Bold.woff2'
+                    , as: 'font',
+                   type : 'font/woff2'
+                },
             ],
+
             title: 'c1chy.Sushi',
             meta: [
                 ...OPEN_GRAPH,

@@ -70,7 +70,6 @@ const TWITTER = [
 
 export default defineNuxtConfig({
     ssr: false,
-
     app: {
         pageTransition: {name: 'slide', mode: 'out-in'},
 
@@ -88,10 +87,7 @@ export default defineNuxtConfig({
                     , as: 'font',
                     type : 'font/woff2'
                 },
-                { rel: 'preload', href: '../fonts/Dosis-Bold.woff2'
-                    , as: 'font',
-                   type : 'font/woff2'
-                },
+
             ],
 
             title: 'c1chy.Sushi',
@@ -106,7 +102,7 @@ export default defineNuxtConfig({
     nitro: {
         compressPublicAssets: true,
     },
-    css: ['~/assets/css/tailwind.scss'],
+    css: ['~/assets/css/tailwind.css'],
     build: {
         transpile: ['@marvr/storyblok-rich-text-vue-renderer', 'gsap'],
 
@@ -116,6 +112,9 @@ export default defineNuxtConfig({
         storyblok: {
             baseURL: 'https://a.storyblok.com',
         },
+        cloudinary: {
+            baseURL: 'https://res.cloudinary.com/dy8wzssqw/image/upload/'
+        }
     },
     webVitals: {
         debug : true

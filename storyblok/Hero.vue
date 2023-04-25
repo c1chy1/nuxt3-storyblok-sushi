@@ -1,6 +1,6 @@
 <template>
 
-  <div id="hero" class="hero container h-screen mx-auto flex flex-col  px-2  sm:px-4 md:px-8  lg:px-12 xl:px-16 2xl:px-28">
+  <header id="hero" class="hero container h-screen mx-auto flex flex-col  px-2  sm:px-4 md:px-8  lg:px-12 xl:px-16 2xl:px-28">
     <div class="flex justify-end sm:justify-between  sm:h-auto xl:pt-12 flex-col-reverse sm:flex-row mx-auto">
 
       <div class="w-full sm:w-1/2">
@@ -34,7 +34,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 <script defer setup lang="ts">
  defineProps({

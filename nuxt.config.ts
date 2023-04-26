@@ -79,9 +79,10 @@ export default defineNuxtConfig({
             },
             link: [
                 { rel: 'preconnect', href: 'https://a.storyblok.com' },
+                { rel: 'preconnect', href: 'https://cdnjs.cloudflare.com' },
                 { rel: 'preload', href: 'https://res.cloudinary.com/dy8wzssqw/image/upload/w_500,f_auto/v1682449796/sushi-hero_toxlsw.png'
-                , as: 'font',
-                   priority : 'high'
+                , as: 'image'
+                , fetchpriority : 'high'
                 },
                 { rel: 'preload', href: '../fonts/Dosis-Regular.woff2'
                     , as: 'font',

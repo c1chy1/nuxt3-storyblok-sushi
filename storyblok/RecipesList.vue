@@ -5,7 +5,7 @@
 {{blok.title}}
       </h2>
       <div class="grid grid-cols- sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-6 2xl:gap-y-12 ">
-        <SectionRecipeCard
+        <lazy-SectionRecipeCard
             v-for="{ uuid, content, slug } in recipes"
             :key="uuid"
             :uuid="uuid"

@@ -18,7 +18,7 @@
         </ClientOnly>
       </div>
       <div class="form-control w-1/3 flex  items-center relative dark:text-dark-buttonText">
-        <select class="w-full bg-gray-200 border-2 border-black dark:outline-0 rounded-lg px-4 py-2 text-sm appearance-none"
+        <select class="w-full bg-gray-200 border-2 border-black dark:outline-0 rounded-lg px-4 py-2 text-xs lg:text-sm appearance-none"
                 v-model="category">
           <option value="">None</option>
           <option v-for="{ content, uuid  } of categories"

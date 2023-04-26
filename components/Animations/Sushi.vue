@@ -80,9 +80,7 @@ if (process.client) {
 }
 
 defineProps({
-
-  story : Object,
-
+  story : Object
 })
 
 

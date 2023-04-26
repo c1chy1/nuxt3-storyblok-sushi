@@ -87,6 +87,7 @@ export default defineNuxtConfig({
                 { rel: 'preload', href: '../fonts/Dosis-Regular.woff2'
                     , as: 'font',
                     type : 'font/woff2'
+                    , fetchpriority : 'high'
                 },
 
             ],
@@ -98,6 +99,8 @@ export default defineNuxtConfig({
             ],
         }
     },
+
+
 
 
     nitro: {
@@ -190,14 +193,35 @@ export default defineNuxtConfig({
     compression: {
         viteCompression: {
             algorithm: 'gzip',
-            threshold: 513
+            threshold: 513,
+            cacheControl:'https://res.cloudinary.com/dy8wzssqw/image/upload/w_500,f_auto/v1682449796/sushi-hero_toxlsw.png'
         }
     },
 
     vite: {
         build: {
-            chunkSizeWarningLimit: 1024
-        }
+            chunkSizeWarningLimit: 1024,
+            extractCSS: true,
+            splitChunks: {
+                // layouts: true
+            },
+
+            // quiet: true,
+            analyze: process.env.ENV_ANALYZE == 'analyze',
+
+            optimization: {
+                minimize: process.env.NODE_ENV !== 'development',
+            },
+            optimizeCSS: {
+                assetNameRegExp: /\.optimize\.css$/g,
+                // cssProcessor: require('cssnano'),
+                cssProcessorPluginOptions: {
+                    preset: ['default', { discardComments: { removeAll: true } }],
+                },
+                canPrint: true
+            },
+        },
+        treeShake: true,
     }
 
 

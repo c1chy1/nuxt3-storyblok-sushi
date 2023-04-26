@@ -40,9 +40,6 @@ const beginAnimation = gsap.timeline();
 
 let active = ref(false)
 
-
-
-
 onMounted(() => {
 
 
@@ -64,7 +61,7 @@ function start() {
     })
         .from('.dish', 1, {opacity: 0, bottom: '-25%', ease: "Back.easeOut"})
         .from('.sushi-container', 3, {y: -0, ease: "Back.easeOut"})
-        .from('.chopstick-container', 1.5, {top: 50}, 1.5)
+        .from('.chopstick-container', 1.5, {translateY: 50}, 1.5)
         .from('.chopstick', 3, {top: 30}, 2)
         .to('.chopstick', 1.5, {opacity: 1}, 1.5)
         .to('.chopstick2', 1, {

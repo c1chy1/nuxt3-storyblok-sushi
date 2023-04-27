@@ -1,6 +1,6 @@
 <template>
   <div class="content items-center fixed xl:flex-col left-3 xl:left-12 bottom-4 xl:-bottom-0 z-30">
-    <button class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
+    <button aria-label="Open" title="Open" role="button" class="shareButton h-6 w-6  lg:h-10 lg:w-10 p-2 lg:p-4 flex justify-center items-center main bg-[#FA6A14] dark:bg-dark-navigation"
             :class="[{ open : show  } , check ? '' : 'sent']"
             @click="open">
 
@@ -22,10 +22,11 @@
         :title="title"
         description=""
         class="delay-500 transition-all ease-in-out"
-        :class="show ? 'rotate-0 ' : '-rotate-45 '"
+        :class="show ? 'rotate-0 ' : '-rotate-45'"
+
 
     >
-    <button class="shareButton fb bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0  dark:bg-dark-navigation" @click="close" :class="{open : show}">
+    <button aria-label="share facebook" title="share facebook" role="button" class="shareButton fb bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0  dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="ri:facebook-fill"/>
     </button>
     </ShareNetwork>
@@ -35,8 +36,9 @@
         :title="title"
         class="delay-[750ms] transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45'"
+
     >
-    <button class="shareButton tw  bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
+    <button aria-label="share twitter" title="share twitter" role="button"  class="shareButton tw  bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="prime:twitter"/>
     </button>
     </ShareNetwork>
@@ -44,11 +46,11 @@
         network="telegram"
         url="https://nuxt3-storyblok-sushi.vercel.app/"
         :title="title"
-
         class="delay-1000 transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45'"
 
-    ><button class="shareButton ig bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
+
+    ><button aria-label="share telegram" title="share telegram" role="button"  class="shareButton ig bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
       <Icon class="h-5 w-5 mx-auto" name="icon-park:telegram"/>
     </button>
     </ShareNetwork>

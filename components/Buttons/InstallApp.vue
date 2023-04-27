@@ -2,17 +2,17 @@
   <li>
     <button
         type="button"
-        class="font-bold  font-sans text-xs lg:text-base border-2  px-2 py-1.5 relative bg-shrimp-600 text-white border-transparent hover:text-dark-buttonText dark:hover:text-white  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground"
+        class="font-bold  font-sans text-xs lg:text-base border-2  px-2 py-1.5 relative bg-shrimp-800 text-white border-transparent hover:text-dark-buttonText dark:hover:text-white  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground"
         @click="installApp"
 
     ><div v-if="isInstallable"
 
       >
-        <span class="bg-shrimp-600 dark:bg-dark "/>
-        <span class="bg-shrimp-600 dark:bg-dark"/>
+        <span class="bg-shrimp-800 dark:bg-dark "/>
+        <span class="bg-shrimp-800 dark:bg-dark"/>
         {{ label }}
-        <span class="bg-shrimp-600 dark:bg-dark"/>
-        <span class="bg-shrimp-600 dark:bg-dark"/>
+        <span class="bg-shrimp-800 dark:bg-dark"/>
+        <span class="bg-shrimp-800 dark:bg-dark"/>
       </div>
       <button
           :disabled="!isInstallable"

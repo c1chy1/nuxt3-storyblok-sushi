@@ -80,6 +80,7 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'preconnect', href: 'https://a.storyblok.com' },
                 { rel: 'preconnect', href: 'https://cdnjs.cloudflare.com' },
+                { rel: 'preconnect', href: 'https://storage.googleapis.com' },
                 { rel: 'preload', href: 'https://res.cloudinary.com/dy8wzssqw/image/upload/w_500,f_auto/v1682449796/sushi-hero_toxlsw.png'
                 , as: 'image'
                 , fetchpriority : 'high'
@@ -101,7 +102,30 @@ export default defineNuxtConfig({
     },
 
 
-
+    optimization: {
+        splitChunks: {
+            chunks: 'async',
+            minSize: 30000,
+            maxSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            automaticNameMaxLength: 30,
+            name: true,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
+                }
+            }
+        }
+    },
 
     nitro: {
         compressPublicAssets: true,
@@ -180,21 +204,20 @@ export default defineNuxtConfig({
 
 
     colorMode: {
-        preference: 'system', // default value of $colorMode.preference
-        fallback: 'light', // fallback value if not system preference found
+        preference: 'system',
+        fallback: 'light',
         hid: 'nuxt-color-mode-script',
         globalName: '__NUXT_COLOR_MODE__',
         componentName: 'ColorScheme',
         classPrefix: '',
-        classSuffix: '', // remove -mode suffix for Tailwind Dark mode support
+        classSuffix: '',
         storageKey: 'nuxt-color-mode'
     },
 
     compression: {
         viteCompression: {
-            algorithm: 'gzip',
-            threshold: 513,
-            cacheControl:'https://res.cloudinary.com/dy8wzssqw/image/upload/w_500,f_auto/v1682449796/sushi-hero_toxlsw.png'
+            algorithm: 'brotli',
+            threshold: 513
         }
     },
 
@@ -223,6 +246,4 @@ export default defineNuxtConfig({
         },
         treeShake: true,
     }
-
-
 })

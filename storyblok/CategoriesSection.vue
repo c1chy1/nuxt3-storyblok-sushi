@@ -14,7 +14,7 @@
       <div class="z-10  w-full lg:pb-12 px-8 md:px-0 ">
       <div class="container  px-2  sm:px-4 md:px-8  lg:px-12 xl:px-16 2xl:px-28 mx-auto flex items-center md:justify-between z-10 flex-col-reverse md:flex-row">
         <div class="w-full py-8 md:py-4 md:w-1/2 z-20">
-          <h2 class="text-white font-display text-2xl text-center lg:text-left lg:text-4xl font-bold mb-8 w-full md:w-2/3">
+          <h2 class="text-shrimp-800 font-display text-2xl text-center lg:text-left lg:text-4xl font-bold mb-8 w-full md:w-2/3">
             {{ blok.title }}
           </h2>
           <ul class="sm:grid  sm:grid-cols-3 gap-8 py-8 ">
@@ -28,7 +28,7 @@
                     :src="icon.filename"
                     :alt="icon.alt"
                 />
-                <h3 class="text-shrimp-600 dark:text-dark-paragraph font-display text-xl font-bold mb-4 ">
+                <h3 class="text-shrimp-700 dark:text-dark-paragraph font-display text-xl font-bold mb-4 ">
                   {{ name }}
                 </h3>
               </div>
@@ -43,7 +43,6 @@
               aspect-ratio="16/9"
               width="350"
               height="500"
-
               provider="storyblok"
               sizes="sm:100px lg:200px  2xl:500px"
               class="object-cover mx-auto h-full w-full pt-10 xl:pt-0"

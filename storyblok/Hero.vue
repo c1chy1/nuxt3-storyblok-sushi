@@ -19,7 +19,7 @@
 
       </div>
       <div class=" p-4 md:p-4 mt-6 lg:mt-24 w-full sm:w-1/2 lg:w-2/5">
-        <h1 class="text-shrimp-600 text-center lg:text-left font-display text-base lg:text-3xl font-bold mb-4">
+        <h1 class="text-shrimp-800 text-center lg:text-left font-display text-base lg:text-3xl font-bold mb-4">
           {{ blok.title }}
         </h1>
         <p class="mb-8  text-xs lg:text-base">{{ blok.text }}</p>

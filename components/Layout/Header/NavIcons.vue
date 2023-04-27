@@ -19,6 +19,7 @@
   >
     <NuxtLink
         class="flex justify-center"
+        aria-label="japanese recipes"
         :to="localePath('recipes')">
       <SearchIcon
     id="fade-down"

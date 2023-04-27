@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import gsap from 'gsap'
+import gsap from 'gsap/gsap-core'
 let tl = gsap.timeline();
 
 const cube = ref()

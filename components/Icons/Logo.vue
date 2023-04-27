@@ -4,7 +4,7 @@
   <NuxtLink :to="localeUrl() || '/'"
             class=" logo pt-4  flex items-center font-display text-xl lg:text-3xl font-bold text-gray-800 dark:text-white transition-all">
     <img src="/logo.svg" class="h-5 w-6 lg:h-8 lg:w-10 mr-2" alt="Sushi Wuut"/>
-    c1chy<span class="text-shrimp-600">Sushi</span>
+    c1chy<span class="text-shrimp-700">Sushi</span>
   </NuxtLink>
   </div>
 </template>

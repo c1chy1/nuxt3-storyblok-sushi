@@ -11,15 +11,15 @@ defineProps({
       class="font-bold font-sans text-xs lg:text-base border-2 rounded-full px-2 py-1.5 relative"
       :class="
       blok.type === 'solid'
-        ? 'bg-shrimp-600 text-white border-transparent hover:text-dark-buttonText dark:hover:text-white  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
-        : 'bg-white text-shrimp-600 border-shrimp-600 hover:text-dark-buttonText dark:hover:text-white dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
+        ? 'bg-shrimp-800 text-white border-transparent hover:text-dark-buttonText dark:hover:text-white  dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
+        : 'bg-white text-shrimp-800 border-shrimp-800 hover:text-dark-buttonText dark:hover:text-white dark:border-dark-buttonBackground dark:text-dark-buttonText dark:bg-dark-buttonBackground'
     "
   >
     {{ blok.label }}
-   <span class="bg-shrimp-600 dark:bg-dark"/>
-    <span class="bg-shrimp-600 dark:bg-dark"/>
-    <span class="bg-shrimp-600 dark:bg-dark"/>
-    <span class="bg-shrimp-600 dark:bg-dark"/>
+   <span class="bg-shrimp-800 dark:bg-dark"/>
+    <span class="bg-shrimp-800 dark:bg-dark"/>
+    <span class="bg-shrimp-800 dark:bg-dark"/>
+    <span class="bg-shrimp-800 dark:bg-dark"/>
   </button>
 
 

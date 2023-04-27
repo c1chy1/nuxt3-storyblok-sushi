@@ -3,7 +3,7 @@
       class="relative categories bg-shrimp-400 dark:bg-dark-background dark:border-b-4 dark:border-dark-paragraph w-full   lg:h-[600px] transition-all duration-700">
 
       <nuxt-img
-              sizes="sm:200px  xl:75vw"
+              sizes="sm:200px   xl:600px"
               format="webp"
               aspect-ratio="16/9"
               width="1300"

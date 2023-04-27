@@ -2,7 +2,7 @@
   <article class="rounded-lg overflow-hidden shadow-2xl w-64 sm:w-full h-full  max-w-xs mx-auto " :key="uuid">
     <div class="card-hover  h-[28rem] sm:[h-24rem]    lg:h-[32rem]  mx-auto  group w-full relative text-right rounded-xl ">
       <div class="card-hover__content  after:bg-white before:bg-white dark:after:bg-shrimp-900  dark:before:bg-shrimp-900 max-h- dark:bg-shrimp-900 text-base font-display bg-white  flex flex-col items-center h-2/5 lg:h-1/3 ">
-        <h3 class="card-hover__title mx-auto w-5/6 lg:w-full font-bold text-base lg:text-xl font-display text-shrimp-600 dark:text-shrimp-300 px-2 z-50">
+        <h3 class="card-hover__title mx-auto w-5/6 lg:w-full font-bold text-base lg:text-xl font-display text-shrimp-700 dark:text-shrimp-300 px-2 z-50">
           {{ content.title }}
         </h3>
         <p class="card-hover__text group-hover:translate-y-[90%] lg:group-hover:translate-y-[120%]  2xl:group-hover:translate-y-[130%] dark:text-dark-paragraph w-4/5 text-xs lg:text-sm z-50 absolute top-4 lg:top-2 ">
@@ -17,7 +17,7 @@
         />
 
         <NuxtLink :to="`${localeUrl()}/recipes/${slug}`"
-                  class="card-hover__link dark:bg-shrimp-900  dark:text-shrimp-300 text-xl lg:text-2xl text-shrimp-600 font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full z-30"
+                  class="card-hover__link dark:bg-shrimp-900  dark:text-shrimp-300 text-xl lg:text-2xl text-shrimp-700 font-semibold  font-display invisible  group-hover:visible  absolute flex justify-center items-end  left-0 top-0 w-full h-full z-30"
 
         >
           <span v-if="localeLang === 'en'" >Learn How</span>

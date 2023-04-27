@@ -18,8 +18,8 @@
     </button>
     <ShareNetwork
         network="facebook"
-        url="https://nuxt3-storyblok-sushi.vercel.app/"
-        :title="title"
+        url="https://c1chyapp.de"
+        :title="title.value"
         description=""
         class="delay-500 transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45'"
@@ -32,20 +32,20 @@
     </ShareNetwork>
     <ShareNetwork
         network="twitter"
-        url="https://nuxt3-storyblok-sushi.vercel.app/"
-        :title="title"
+        url="https://c1chyapp.de"
+        :title="title.value"
         class="delay-[750ms] transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45'"
 
     >
-    <button aria-label="share twitter" title="share twitter" role="button"  class="shareButton tw  bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
-      <Icon class="h-5 w-5 mx-auto" name="prime:twitter"/>
+    <button  aria-label="share twitter" title="share twitter" role="button"  class="shareButton tw  bg-[#FA6A14] dark:fill-white p-1.5 lg:p-3 lg:h-8 lg:w-8 opacity-0 dark:bg-dark-navigation" @click="close" :class="{open : show}">
+   <Icon class="h-5 w-5 mx-auto" name="prime:twitter"/>
     </button>
     </ShareNetwork>
     <ShareNetwork
         network="telegram"
-        url="https://nuxt3-storyblok-sushi.vercel.app/"
-        :title="title"
+        url="https://c1chyapp.de"
+        :title="title.value"
         class="delay-1000 transition-all ease-in-out"
         :class="show ? 'rotate-0 ' : '-rotate-45'"
 
